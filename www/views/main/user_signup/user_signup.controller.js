@@ -10,7 +10,7 @@
   
   function UserSignupController($log) {
     // INSTANTIATIONS
-    $log.info('> User Sign Up Controller activated <');
+    $log.controller('User Signup');
     var vm = this;
     
     // LOCAL VARS

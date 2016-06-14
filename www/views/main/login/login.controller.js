@@ -10,7 +10,7 @@
   
   function LoginController($log) {
     // INSTANTIATIONS
-    $log.info('> Login Controller activated <')
+    $log.controller('Login')
     var vm = this;
     
     // LOCAL VARS

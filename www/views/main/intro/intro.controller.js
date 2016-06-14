@@ -6,11 +6,11 @@
     .module('Controllers')
     .controller('Intro.controller', IntroController);
   
-  IntroController.$inject = ['$log'];
+  IntroController.$inject = ['UrlFactory', '$log'];
   
-  function IntroController($log) {
+  function IntroController(url, $log) {
     // INSTANTIATIONS
-    $log.info('> Intro Controller activated. <');
+    $log.controller("Intro")
     var vm = this;
     
     // LOCAL VARS

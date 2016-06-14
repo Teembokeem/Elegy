@@ -10,7 +10,7 @@
 
   function OverviewController($log) {
     // INSTANTIATIONS
-    $log.info('> Overview Controller activated. <');
+    $log.controller('Overview');
     var vm = this;
 
     // LOCAL VARS
