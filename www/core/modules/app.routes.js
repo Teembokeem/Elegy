@@ -66,6 +66,18 @@
         controllerId: 'DepartedSignup'
     })
     
+    .state('app.overview', {
+        url: '/overview',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/overview/overview.html',
+            controller: 'Overview.controller',
+            controllerAs: 'Overview'
+          }
+        },
+        controllerId: 'Overview'
+    })
+    
     
     
 

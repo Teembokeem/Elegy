@@ -10,7 +10,7 @@
   
   function IntroController($log) {
     // INSTANTIATIONS
-    $log.info('> Intro Controller loaded. <');
+    $log.info('> Intro Controller activated. <');
     var vm = this;
     
     // LOCAL VARS

@@ -27,7 +27,7 @@
     
     function stateChangeLogger($rootScope, $log) {
       $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
-        $log.debug(`State Change Detected. Traveling to ${toState.url} from ${fromState.url === "^" ? "reload" : fromState.url}. ${toState.controllerId} Controller activated`);
+        $log.debug(`State Change Detected. Traveling to ${toState.url} from ${fromState.url === "^" ? "reload" : fromState.url}. ${toState.controllerId} Controller to be loaded.`);
       })
     }
 
