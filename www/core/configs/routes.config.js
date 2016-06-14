@@ -2,7 +2,7 @@
   'use strict'
     
   angular
-    .module('Elegy')
+    .module('Configs')
     .config(routesProvider);
 
   function routesProvider($stateProvider, $urlRouterProvider) {
