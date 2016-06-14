@@ -4,13 +4,13 @@
   
   angular
     .module('Controllers')
-    .controller('Signup.controller', SignupController);
+    .controller('UserSignup.controller', UserSignupController);
     
-  SignupController.$inject = ['$log'];
+  UserSignupController.$inject = ['$log'];
   
-  function SignupController($log) {
+  function UserSignupController($log) {
     // INSTANTIATIONS
-    $log.info('> Sign Up Controller activated <');
+    $log.info('> User Sign Up Controller activated <');
     var vm = this;
     
     // LOCAL VARS
