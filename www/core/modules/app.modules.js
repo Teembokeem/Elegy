@@ -2,7 +2,7 @@
   'use strict'
   
   angular
-    .module('Elegy', ['ionic', 'Controllers', 'Services'])
+    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -21,8 +21,8 @@
     })
     
     .run(stateChangeLogger);
-    
     stateChangeLogger.$inject = ['$rootScope', '$log'];
+    
 
     
     function stateChangeLogger($rootScope, $log) {

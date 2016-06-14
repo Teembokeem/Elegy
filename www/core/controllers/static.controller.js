@@ -7,9 +7,10 @@
     .module('Controllers')
     .controller('Static.controller', StaticController)
   
-  function StaticController($log, Chats) {
+  StaticController.$inject = ['$log'];
+  function StaticController($log) {
     // INSTANTIATIONS
-    $log.info("> Static Controller loaded <");
+    $log.controller("Static");
     var vm = this;
   
   }
