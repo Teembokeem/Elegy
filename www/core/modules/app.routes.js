@@ -26,7 +26,8 @@
             controller: 'Intro.controller',
             controllerAs: 'Intro'
           }
-        }
+        },
+        controllerId: 'Intro'
     })
     
     .state('app.login', {
@@ -37,18 +38,32 @@
             controller: 'Login.controller',
             controllerAs: 'Login'
           }
-        }
+        },
+        controllerId: 'Login'
     })
     
-    .state('app.signup', {
-        url: '/signup',
+    .state('app.user-signup', {
+        url: '/user-signup',
         views: {
           'app-user': {
-            templateUrl: 'views/main/signup/signup.html',
-            controller: 'Signup.controller',
-            controllerAs: 'Signup'
+            templateUrl: 'views/main/user_signup/user_signup.html',
+            controller: 'UserSignup.controller',
+            controllerAs: 'UserSignup'
           }
-        }
+        },
+        controllerId: 'UserSignup'
+    })
+    
+    .state('app.departed-signup', {
+        url: '/departed-signup',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/departed_signup/departed_signup.html',
+            controller: 'DepartedSignup.controller',
+            controllerAs: 'DepartedSignup'
+          }
+        },
+        controllerId: 'DepartedSignup'
     })
     
     
