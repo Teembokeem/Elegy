@@ -40,6 +40,17 @@
         }
     })
     
+    .state('app.signup', {
+        url: '/signup',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/signup/signup.html',
+            controller: 'Signup.controller',
+            controllerAs: 'Signup'
+          }
+        }
+    })
+    
     
     
 

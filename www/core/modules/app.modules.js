@@ -18,7 +18,17 @@
           StatusBar.styleDefault();
         }
       });
-    });
+    })
+    
+    .run(stateChangeLogger);
+    
+    stateChangeLogger.$inject = ['$rootScope', '$log'];
+    
+    function stateChangeLogger($rootScope, $log) {
+      $rootScope.$on('$stateChangeStart', function(toState) {
+        $log.debug(`State Change Detected. Traveling to ${toState.url}. ${toState.controllerAs} Controller Activated`);
+      })
+    }
 
   
 })();
