@@ -20,20 +20,18 @@
 
     .state('app.intro', {
         url: '/intro',
-        // views: {
-        // 'app-dash': {
-        //     templateUrl: 'views/menu_bar/tab-dash.html',
-        //     // controller: 'DashCtrl'
-        // }
-        // }
-        templateUrl: 'views/main/intro/intro.template.html',
-        controller: 'Intro.controller',
-        controllerAs: 'Intro'
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/intro/intro.html',
+            controller: 'Intro.controller',
+            controllerAs: 'Intro'
+          }
+        }
     })
     
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/intro');
-
   };
+  
 })();
