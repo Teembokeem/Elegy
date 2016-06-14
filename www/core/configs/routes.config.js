@@ -102,6 +102,30 @@
         controllerId: 'Referral'
     })
     
+    .state('app.guest-signup', {
+        url: '/guest-signup',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/guest_signup/guest_signup.html',
+            controller: 'GuestSignup.controller',
+            controllerAs: 'GuestSignup'
+          }
+        },
+        controllerId: 'GuestSignup'
+    })
+    
+    .state('app.feed', {
+        url: '/feed',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/feed/feed.html',
+            controller: 'Feed.controller',
+            controllerAs: 'Feed'
+          }
+        },
+        controllerId: 'Feed'
+    })
+    
     
     
 
