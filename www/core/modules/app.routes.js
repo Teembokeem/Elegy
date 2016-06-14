@@ -29,6 +29,19 @@
         }
     })
     
+    .state('app.login', {
+        url: '/login',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/login/login.html',
+            controller: 'Login.controller',
+            controllerAs: 'Login'
+          }
+        }
+    })
+    
+    
+    
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/intro');
