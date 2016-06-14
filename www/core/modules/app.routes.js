@@ -78,6 +78,30 @@
         controllerId: 'Overview'
     })
     
+    .state('app.event', {
+        url: '/event',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/event/event.html',
+            controller: 'Event.controller',
+            controllerAs: 'Event'
+          }
+        },
+        controllerId: 'Event'
+    })
+    
+    .state('app.referral', {
+        url: '/referral',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/referral/referral.html',
+            controller: 'Referral.controller',
+            controllerAs: 'Referral'
+          }
+        },
+        controllerId: 'Referral'
+    })
+    
     
     
 
