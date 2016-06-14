@@ -126,6 +126,18 @@
         controllerId: 'Feed'
     })
     
+    .state('app.program', {
+        url: '/program',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/program/program.html',
+            controller: 'Program.controller',
+            controllerAs: 'Program'
+          }
+        },
+        controllerId: 'Program'
+    })
+    
     
     
 
