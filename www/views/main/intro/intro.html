@@ -1,18 +1,42 @@
-<ion-view view-title="I N T R O">
-<ion-content scroll="false">
-  <ion-slides  options="options" slider="data.slider">
-    <ion-slide-page>
-      <div class="box blue" id="slide1"><h1>elegy</h1></div>
-    </ion-slide-page>
-    <ion-slide-page>
-      <div class="box blue"><h1>BLUE</h1></div>
-    </ion-slide-page>
-    <ion-slide-page>
-      <div class="box yellow"><h1>YELLOW</h1></div>
-    </ion-slide-page>
-    <ion-slide-page>
-      <div class="box pink"><h1>PINK</h1></div>
-    </ion-slide-page>
-  </ion-slides>
-</ion-content>
+<link rel="stylesheet" href="../views/main/intro/intro.css">
+
+<ion-view view-title="I N T R O" hide-tabs="true">
+  <ion-content scroll="false">
+    
+    <div class="logo"><h1 id="intro-logo">elegy</h1></div>
+    
+    <ion-slides options="Intro.options" slider="data.slider">
+      <ion-slide-page>
+        <div class="ion-slides">
+          <span ui-sref="app.login">SKIP</span>
+          <div class="content">
+            content
+          </div>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <div class="ion-slides">
+          <span ui-sref="app.login">SKIP</span>
+          <div class="content">
+            content
+          </div>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page>
+        <div class="ion-slides">
+          <div class="content">
+            content
+          </div>
+          <button ui-sref="app.login"class="button button-dark">
+            Start Now
+          </button>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+    
+    <h3>elegy</h3>
+
+    
+
+  </ion-content>
 </ion-view>

@@ -12,7 +12,7 @@
     // INSTANTIATIONS
     $log.controller("Intro")
     var vm = this;
-    
+
     // LOCAL VARS
     
     // BOUND FUNCTIONS
