@@ -18,6 +18,7 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+
     <!-- your app's js -->
     <script src="core/modules/app.modules.js"></script>
 
@@ -41,6 +42,9 @@
     <script src="core/modules/app.configs.js"></script>
     <script src="core/configs/log.config.js"></script>
     <script src="core/configs/routes.config.js"></script>
+
+    <script src="core/modules/app.directives.js"></script>
+    <script src="core/directives/hideTabs.directive.js"></script>
     
   </head>
   <body ng-app="Elegy">
@@ -48,8 +52,6 @@
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
