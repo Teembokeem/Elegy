@@ -1,4 +1,9 @@
 /* Empty. Add your own CSS if you like */
-body, h1 {
+body * {
   font-family: Didot;
+  text-align: center;
+}
+
+#slide1 {
+  margin-top: 60%;
 }
