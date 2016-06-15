@@ -20,6 +20,9 @@
     };
     
     // BOUND FUNCTIONS
+    vm.authenticate = function() {
+
+    }
     
     // HELPERS
   }
