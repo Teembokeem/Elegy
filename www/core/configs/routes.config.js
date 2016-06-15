@@ -138,6 +138,18 @@
         controllerId: 'Program'
     })
     
+    .state('app.schedule', {
+        url: '/schedule',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/schedule/schedule.html',
+            controller: 'Schedule.controller',
+            controllerAs: 'Schedule'
+          }
+        },
+        controllerId: 'Schedule'
+    })
+    
     
     
 
