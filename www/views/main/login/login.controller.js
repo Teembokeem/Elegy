@@ -14,6 +14,10 @@
     var vm = this;
     
     // LOCAL VARS
+    vm.credentials = {
+      user: '',
+      password: ''
+    };
     
     // BOUND FUNCTIONS
     
