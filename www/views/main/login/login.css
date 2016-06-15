@@ -1,4 +1,4 @@
-.login-form {
+.login-form * {
   top: 9em;
-  font-family: Gotham;
+  font-family: Gotham !important;
 }

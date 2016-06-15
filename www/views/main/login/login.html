@@ -4,13 +4,19 @@
   <ion-content>
     <div class="list login-form">
       <label class="item item-input">
-        <input type="text" value="{{Login.credentials.user}}">
+        <input type="text" placeholder="U S E R N A M E" value="{{Login.credentials.user}}">
       </label>
       <label class="item item-input">
-        <input type="password" value="{{Login.credentials.password}}">
+        <input type="password" placeholder="P A S S W O R D" value="{{Login.credentials.password}}">
       </label>
-      <button ui-sref="Login.authenticate()" class="button button-dark">
-        Start Now
+      <br>
+      <button ui-sref="Login.authenticate()" class="button button-stable">
+        L O G I N
+     </button>
+      <br>
+      <br>
+      <button ui-sref="Login.authenticate()" class="button button-stable">
+        S I G N U P
      </button>
     </div>
 
