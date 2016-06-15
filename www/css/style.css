@@ -3,3 +3,9 @@ body * {
   font-family: Didot;
   text-align: center;
 }
+
+button {
+  /*font-family: verdana;*/
+  width: 11em;
+  height: 2em;
+}
