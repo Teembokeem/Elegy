@@ -38,7 +38,7 @@
     }
 
     function destroy() {
-
+      $window.localStorage.removeItem(TOKEN_KEY);
     }
 
   }
