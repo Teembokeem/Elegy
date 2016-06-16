@@ -21,11 +21,11 @@
     return service;
 
     function store(token) {
-      $window.localStorage.setItem(TOKEN_KEY, token)
+      $window.localStorage.setItem(TOKEN_KEY, token);
     }
 
     function retrieve() {
-
+      return $window.localStorage.getItem(TOKEN_KEY);
     }
 
     function decode() {
