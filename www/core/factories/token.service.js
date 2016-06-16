@@ -29,7 +29,12 @@
     }
 
     function decode() {
-
+      var token = retrieve();
+      if (token) {
+        return $window.jwt_decode(token);
+      } else {
+        return null;
+      }
     }
 
     function destroy() {
