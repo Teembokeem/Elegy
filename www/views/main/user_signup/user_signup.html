@@ -1,6 +1,48 @@
-<ion-view view-title="U S E R S I G N U P">
-  <ion-content>
-    <h1>U S E R S I G N U P</h1>
+<ion-view view-title="U S E R S I G N U P" hide-tabs="true">
+  <ion-content class="user-signup-view">
+    <h3>S I G N U P</h3>
+    <div class="list signup-form container">
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="F I R S T N A M E" ng-model="UserSignup.newUser.first">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="L A S T N A M E" ng-model="UserSignup.newUser.last">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="E M A I L" ng-model="UserSignup.newUser.email">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="password" placeholder="P A S S W O R D" ng-model="UserSignup.newUser.password">
+          </label>
+        </div>
+      </div>
 
+
+          <ion-checkbox ng-model="UserSignup.newUser.vendor">Vendor</ion-checkbox>
+
+
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ng-click="UserSignup.submitForm()" class="button button-light ">
+              S I G N U P
+          </button>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
