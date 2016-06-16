@@ -20,8 +20,8 @@
     };
     return service;
 
-    function store() {
-      
+    function store(token) {
+      $window.localStorage.setItem(TOKEN_KEY, token)
     }
 
     function retrieve() {
