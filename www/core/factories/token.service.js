@@ -10,7 +10,7 @@
   function tokenService($window, $log) {
     $log.debug('Token Service loaded.');
 
-    var TOKEN_KEY = 'the_dearly_departed';
+    var TOKEN_KEY = 'elegy_token';
 
     var service = {
       store: store,

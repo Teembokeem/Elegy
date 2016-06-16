@@ -142,12 +142,12 @@
         url: '/schedule',
         views: {
           'app-user': {
-            templateUrl: 'views/main/program/program.html',
-            controller: 'Program.controller',
-            controllerAs: 'Program'
+            templateUrl: 'views/main/schedule/schedule.html',
+            controller: 'Schedule.controller',
+            controllerAs: 'Schedule'
           }
         },
-        controllerId: 'Program'
+        controllerId: 'Schedule'
     })
     
     
