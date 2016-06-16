@@ -3,7 +3,7 @@
 
   angular
     .module('Services')
-    .factory('UrlFactory', urlFactory);
+    .factory('urlFactory', urlFactory);
   
   urlFactory.$inject = [];
 
