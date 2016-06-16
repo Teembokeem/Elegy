@@ -22,9 +22,11 @@
     // BOUND FUNCTIONS
     vm.authenticate = function() {
       $log.info("Sending Credentials, ", vm.credentials);
+      
       authService.logIn(vm.credentials)
       .then(function(decodedToken) {
         $log.info("Credentials approved, ", decodedToken);
+        
         $state.go('app.overview');
       }, function(err) {
         $log.info(err);
