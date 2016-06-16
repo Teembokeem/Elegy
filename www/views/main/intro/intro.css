@@ -38,7 +38,7 @@ ion-slides .ion-slides {
   top: 27em;
 }
 
-h3 {
+.intro-view h3 {
   position: absolute;
   bottom: 0.5em;
   left: 6.6em;
