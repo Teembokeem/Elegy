@@ -40,11 +40,19 @@
 
     function logOut() {
       tokenService.destroy();
-      $log.debug("Goodbye.");
+      $log.debug("Goodbye.")
     }
 
     function currentUser() {
+      var tokenData = token.decode();
 
+      if (tokenData) {
+        tokenData.expiresAt = Date(tokenData.exp);
+
+        delete tokenData.exp;
+        delete tokenData.iat;
+      }
+      return tokenData;
     }
 
     function refreshToken() {
