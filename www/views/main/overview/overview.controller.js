@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   //TODO:
-
+  // 1. use tokenservice to dictate whether user sees carousel aka this controller else skip straight to event controller.
   angular
     .module('Controllers')
     .controller('Overview.controller', OverviewController);
