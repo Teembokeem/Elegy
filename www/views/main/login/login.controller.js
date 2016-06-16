@@ -15,13 +15,13 @@
     
     // LOCAL VARS
     vm.credentials = {
-      user: '',
-      password: ''
+      email: 'elegy@email.com',
+      password: 'elegy'
     };
     
     // BOUND FUNCTIONS
     vm.authenticate = function() {
-
+      $log.info("Sending Credentials, ", vm.credentials)
     }
     
     // HELPERS
