@@ -35,7 +35,7 @@
     }
 
     function isLoggedIn() {
-
+      return (tokenService.retrieve() != null);
     }
 
     function logOut() {
