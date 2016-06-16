@@ -63,7 +63,8 @@
             controllerAs: 'DepartedSignup'
           }
         },
-        controllerId: 'DepartedSignup'
+        controllerId: 'DepartedSignup',
+        authorized: true
     })
     
     .state('app.overview', {
@@ -75,7 +76,8 @@
             controllerAs: 'Overview'
           }
         },
-        controllerId: 'Overview'
+        controllerId: 'Overview',
+        authorized: true
     })
     
     .state('app.event', {
@@ -87,7 +89,8 @@
             controllerAs: 'Event'
           }
         },
-        controllerId: 'Event'
+        controllerId: 'Event',
+        authorized: true
     })
     
     .state('app.referral', {
@@ -123,7 +126,8 @@
             controllerAs: 'Feed'
           }
         },
-        controllerId: 'Feed'
+        controllerId: 'Feed',
+        authorized: true
     })
     
     .state('app.program', {
@@ -135,7 +139,8 @@
             controllerAs: 'Program'
           }
         },
-        controllerId: 'Program'
+        controllerId: 'Program',
+        authorized: true
     })
     
     .state('app.schedule', {
@@ -147,7 +152,8 @@
             controllerAs: 'Schedule'
           }
         },
-        controllerId: 'Schedule'
+        controllerId: 'Schedule',
+        authorized: true
     })
     
     
