@@ -5,9 +5,9 @@
     .module('Services')
     .factory('authService', authService);
   
-  authService.$inject = ['tokenService', '$log', '$http'];
+  authService.$inject = ['tokenService', '$log', '$http', 'urlFactory'];
 
-  function authService(tokenService, $log, $http) {
+  function authService(tokenService, $log, $http, urlFactory) {
     $log.info('Token Service loaded.');
 
     var service = {
@@ -23,7 +23,7 @@
     function logIn(data) {
       var promise = $http({
         method: 'POST',
-        url: '/api/token',
+        url: urlFactory + '/token',
         data: data
       })
       .then(function(res) {
@@ -56,7 +56,16 @@
     }
 
     function refreshToken() {
+      var promise = $http({
+        method: 'POST',
+        url: urlFactory + '/token/refresh'
+      })
+      .then(function(res) {
+        tokenService.store(res.data.token);
+        return token.decode();
+      });
 
+      return promise;
     }
   }
   
