@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log'];
+  LoginController.$inject = ['$log', 'authService'];
   
-  function LoginController($log) {
+  function LoginController($log, authService) {
     // INSTANTIATIONS
     $log.controller('Login')
     var vm = this;
@@ -21,7 +21,8 @@
     
     // BOUND FUNCTIONS
     vm.authenticate = function() {
-      $log.info("Sending Credentials, ", vm.credentials)
+      $log.info("Sending Credentials, ", vm.credentials);
+
     }
     
     // HELPERS
