@@ -17,6 +17,7 @@
     return service;
 
     function create(data) {
+      $log.info("User Service create.")
       var promise = $http({
         method: 'POST',
         url: urlFactory + '/users',

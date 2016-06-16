@@ -21,12 +21,14 @@
     return service;
 
     function logIn(data) {
+      $log.info('Auth Service login')
       var promise = $http({
         method: 'POST',
         url: urlFactory + '/token',
         data: data
       })
       .then(function(res) {
+        $log.info('Auth Service login success.')
         tokenService.store(res.data.token);
         return tokenService.decode();
       })
