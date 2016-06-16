@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Intro.controller', IntroController);
   
-  IntroController.$inject = ['UrlFactory', '$log'];
+  IntroController.$inject = ['$log'];
   
-  function IntroController(url, $log) {
+  function IntroController($log) {
     // INSTANTIATIONS
     $log.controller("Intro")
     var vm = this;
