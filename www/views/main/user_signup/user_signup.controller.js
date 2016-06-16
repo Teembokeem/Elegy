@@ -14,8 +14,17 @@
     var vm = this;
     
     // LOCAL VARS
+    vm.newUser = {
+      first: '',
+      last: '',
+      email: '',
+      password: ''
+    }
     
     //  BOUND FUNCTIONS
+    vm.submitForm = function() {
+      $log.info("Sending Form, ", vm.newUser)
+    }
     
     // HELPERS
   }
