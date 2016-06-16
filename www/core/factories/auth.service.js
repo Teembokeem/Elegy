@@ -20,8 +20,18 @@
 
     return service;
 
-    function logIn() {
-      
+    function logIn(data) {
+      var promise = $http({
+        method: 'POST',
+        url: '/api/token',
+        data: data
+      })
+      .then(function(res) {
+        tokenService.store(res.data.token);
+        return tokenService.decode();
+      })
+
+      return promise;
     }
 
     function isLoggedIn() {
