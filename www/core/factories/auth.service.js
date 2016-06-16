@@ -39,7 +39,8 @@
     }
 
     function logOut() {
-
+      tokenService.destroy();
+      $log.debug("Goodbye.");
     }
 
     function currentUser() {
