@@ -80,6 +80,18 @@
         authorized: true
     })
     
+    .state('app.home', {
+        url: '/home',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/home/home.html',
+            controller: 'Home.controller',
+            controllerAs: 'Home'
+          }
+        },
+        controllerId: 'Home'
+    })
+    
     .state('app.event', {
         url: '/event',
         views: {
