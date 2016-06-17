@@ -22,7 +22,7 @@
     }
     
     //  BOUND FUNCTIONS
-    vm.submitForm = function() {
+    vm.submitUserForm = function() {
       $log.info("Sending Form, ", vm.newUser);
       userService
         .create(vm.newUser)
