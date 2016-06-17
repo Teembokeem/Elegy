@@ -11,7 +11,8 @@
     $log.info('User Service loaded.');
 
     var service = {
-      create: create
+      create: create,
+      setupEvent: setupEvent
     }
 
     return service;
@@ -21,6 +22,17 @@
       var promise = $http({
         method: 'POST',
         url: urlFactory + '/users',
+        data: data
+      });
+
+      return promise;
+    }
+
+    function setupEvent(data) {
+      $log.info("User Service setup event.")
+      var promise = $http({
+        method: 'POST',
+        url: urlFactory + '/departed',
         data: data
       });
 
