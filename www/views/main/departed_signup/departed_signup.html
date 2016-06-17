@@ -1,6 +1,47 @@
-<ion-view view-title="D E P A R T E D S I G N U P">
-  <ion-content>
-    <h1>D E P A R T E D S I G N U P</h1>
+<ion-view view-title="D E P A R T E D S I G N U P" hide-tabs="true">
+  <ion-content class="departed-signup-view">
+    <h3>ON BEHALF OF</h3>
+    <div class="list signup-form container">
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="F I R S T N A M E" ng-model="UserSignup.newUser.first">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="L A S T N A M E" ng-model="UserSignup.newUser.last">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-10">
+        </div>
+        <div class="col ">
 
+            <input class="date" type="date" ng-model="UserSignup.newUser.dob">
+
+        </div>
+        <div class="col to">
+          to
+        </div>
+        <div class="col ">
+
+            <input class="date" type="date" ng-model="UserSignup.newUser.dod">
+
+        </div>
+      </div>
+      <div class="row">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ng-click="UserSignup.submitForm()" class="button button-light ">
+              S U B M I T
+          </button>
+        </div>
+      </div>
   </ion-content>
 </ion-view>
