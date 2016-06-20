@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('DepartedSignup.controller', DepartedSignupController);
   
-  DepartedSignupController.$inject = ['$log', 'userService'];
+  DepartedSignupController.$inject = ['$log', 'userService', 'dataService', '$state'];
 
-  function DepartedSignupController($log, userService) {
+  function DepartedSignupController($log, userService, dataService, $state) {
     // INSTANTIATIONS
     $log.controller('Departed Signup');
     var vm = this;
@@ -28,6 +28,12 @@
         .setupEvent(vm.newDeparted)
         .then(function(res) {
           $log.info('Successfully created assets: ', res.data);
+          dataService.setData('event', res.data.event)
+          dataService.setData('departed', res.data.departed);
+          $state.go('^.event');
+        })
+        .catch(function(err) {
+          if (err) console.log(err);
         })
     }
 
