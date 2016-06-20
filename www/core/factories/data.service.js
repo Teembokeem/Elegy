@@ -20,11 +20,11 @@
     return service;
 
     function getData(key) {
-      return data[key]
+      return JSON.parse(localStorage.getItem(key));
     }
 
     function setData(key, value) {
-      data[key] = value;
+      localStorage.setItem(key, JSON.stringify(value));
     }
 
   }
