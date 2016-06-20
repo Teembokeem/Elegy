@@ -6,17 +6,20 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log'];
+  EventController.$inject = ['$log', 'dataService'];
 
-  function EventController($log) {
+  function EventController($log, dataService) {
     // INSTANTIATIONS
     $log.controller('Event');
     var vm = this;
 
     // LOCAL VARS
+    $log.info("afdjsafjdsalfjdsalkfjsdskalfas", dataService.getData('event'))
 
     // BOUND FUNCTIONS
-
+    vm.okay = function() {
+      $log.info(dataService.getData('event'))  
+  }
     // HELPERS
     
   }
