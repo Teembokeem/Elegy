@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('UserSignup.controller', UserSignupController);
     
-  UserSignupController.$inject = ['$state', '$log', 'userService', 'authService'];
+  UserSignupController.$inject = ['$state', '$log', 'userService', 'tokenService'];
   
-  function UserSignupController($state, $log, userService, authService) {
+  function UserSignupController($state, $log, userService, tokenService) {
     // INSTANTIATIONS
     $log.controller('User Signup');
     var vm = this;
@@ -28,7 +28,7 @@
         .create(vm.newUser)
         .then(function(res) {
             $log.info('Successfully created user, ' + res.data.first + ' ' +  res.data.last, res.data);
-            return authService.logIn(vm.newUser);
+            return tokenService.store(res.data.token);
         })
         .then(function(decodedToken) {
           $log.info('Logged In via Auth service login. ', decodedToken);
