@@ -9827,7 +9827,15 @@ button {
   border-color: black !important;
   border: 1px solid black; }
 
-#intro-logo {
+.login-view .login-form {
+  font-family: Gotham !important;
+  margin-bottom: 0; }
+
+.login-view h3 {
+  margin-top: 40%;
+  text-align: center; }
+
+.intro-view #intro-logo {
   font-size: 5em;
   animation-name: example;
   animation-duration: 2s;
@@ -9849,7 +9857,7 @@ button {
     opacity: 0;
     position: relative; } }
 
-ion-slides {
+.intro-view ion-slides {
   animation-name: slides;
   animation-duration: 3s; }
 
@@ -9861,15 +9869,15 @@ ion-slides {
   100% {
     opacity: 1; } }
 
-ion-slides .ion-slides {
+.intro-view ion-slides .ion-slides {
   margin-top: 50px !important; }
 
-.ion-slides span {
+.intro-view .ion-slides span {
   position: absolute;
   right: 2em;
   top: 5em; }
 
-.ion-slides button {
+.intro-view .ion-slides button {
   top: 27em; }
 
 .intro-view h3 {
@@ -9879,7 +9887,7 @@ ion-slides .ion-slides {
   animation-name: slides;
   animation-duration: 3s; }
 
-.swiper-pagination {
+.intro-view .swiper-pagination {
   bottom: 4em !important; }
 
 .user-signup-view h3 {
@@ -9889,14 +9897,6 @@ ion-slides .ion-slides {
 .user-signup-view .checkbox-icon {
   margin-left: 30%; }
 
-.login-form {
-  font-family: Gotham !important;
-  margin-bottom: 0; }
-
-.login-view h3 {
-  margin-top: 40%;
-  text-align: center; }
-
 .departed-signup-view h3 {
   margin-top: 20%;
   text-align: center; }
@@ -9904,10 +9904,5 @@ ion-slides .ion-slides {
 .departed-signup-view .item-i.to input {
   padding-right: 0px; }
 
-/*.departed-signup-view .date {
-  padding: 0px 0px 5px 0px !important;
-}
-
-.departed-signup-view .input-label {
-  padding: 7px 10px 0px 0px !important;
-}*/
+.item-avatar * {
+  text-align: left; }
