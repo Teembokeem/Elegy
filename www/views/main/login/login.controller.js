@@ -15,7 +15,7 @@
     
     // LOCAL VARS
     vm.credentials = {
-      email: 'elegy@email.com',
+      email: 'elegy@gmail.com',
       password: 'elegy'
     };
     
@@ -26,11 +26,11 @@
       authService.logIn(vm.credentials)
       .then(function(decodedToken) {
         $log.info("Credentials approved, ", decodedToken);
-        userService.grabEventPackage(vm.credentials)
+        return userService.grabEventPackage(decodedToken._id)
       })
       .then(function(events) {
         $log.info("event package?!?!?!!?!", events)
-        $state.go('app.overview');
+        $state.go('app.home');
       })
       .catch(function(err) {
         $log.info("errrrrr", err)
