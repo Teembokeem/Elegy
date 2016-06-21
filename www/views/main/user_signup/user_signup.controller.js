@@ -27,8 +27,8 @@
       userService
         .create(vm.newUser)
         .then(function(res) {
-            $log.info('Successfully created user, ' + res.data.first + ' ' +  res.data.last, res.data);
-            return tokenService.store(res.data.token);
+            $log.info('Successfully created user, ' + res.data.data.email + ' ' +  res.data.id, res.data);
+            return tokenService.store(res.data.data.token);
         })
         .then(function(decodedToken) {
           $log.info('Logged In via Auth service login. ', decodedToken);
