@@ -8,12 +8,13 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./www/views/main/**/*.scss']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['watch']);
 
 gulp.task('sass', function(done) {
+  console.log('Compiling!')
   gulp.src('./scss/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
@@ -27,7 +28,10 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.sass, ['sass'])
+    .on('change', function(event) {
+      console.log('File LOG' + event.path + ' was ' + event.type + ', running tasks...');
+    });
 });
 
 gulp.task('install', ['git-check'], function() {
