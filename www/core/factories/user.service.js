@@ -11,15 +11,15 @@
     $log.info('User Service loaded.');
 
     var service = {
-      create: create,
+      signup: signup,
       setupEvent: setupEvent,
       grabEventPackage: grabEventPackage
     }
 
     return service;
 
-    function create(data) {
-      $log.info("User Service create.")
+    function signup(data) {
+      $log.info("User Service signup.")
       var promise = $http({
         method: 'POST',
         url: urlFactory + '/users',
@@ -44,8 +44,7 @@
       $log.info('User Service grab Event Package.')
       var promise = $http({
         method: 'GET',
-        url: urlFactory + '/users',
-        data: data
+        url: urlFactory + '/users/' + data
       });
     
     return promise;

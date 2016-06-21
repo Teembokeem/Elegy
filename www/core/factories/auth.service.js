@@ -46,7 +46,7 @@
     }
 
     function currentUser() {
-      var tokenData = token.decode();
+      var tokenData = tokenService.decode();
 
       if (tokenData) {
         tokenData.expiresAt = Date(tokenData.exp);
