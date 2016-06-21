@@ -12,7 +12,8 @@
 
     var service = {
       create: create,
-      setupEvent: setupEvent
+      setupEvent: setupEvent,
+      grabEventPackage: grabEventPackage
     }
 
     return service;
@@ -38,6 +39,18 @@
 
       return promise;
     }
+
+    function grabEventPackage(data) {
+      $log.info('User Service grab Event Package.')
+      var promise = $http({
+        method: 'GET',
+        url: urlFactory + '/users',
+        data: data
+      });
+    
+    return promise;
+    }
+
 
   }
 
