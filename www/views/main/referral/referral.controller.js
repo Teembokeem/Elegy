@@ -10,7 +10,7 @@
 
   function ReferralController($log) {
     // INSTANTIATIONS
-    $log.controller("Referral");
+    $log.instantiate("Referral", 'controller');
     var vm = this;
 
     // LOCAL VARS

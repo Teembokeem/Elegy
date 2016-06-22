@@ -8,7 +8,7 @@
   authService.$inject = ['tokenService', '$log', '$http', 'urlFactory'];
 
   function authService(tokenService, $log, $http, urlFactory) {
-    $log.info('Auth Service loaded.');
+    $log.instantiate('Auth', 'service');
 
     var service = {
       logIn: logIn,

@@ -8,7 +8,7 @@
   userService.$inject = ['$log', '$http', 'urlFactory', 'dataService'];
 
   function userService($log, $http, urlFactory, dataService) {
-    $log.info('User Service loaded.');
+    $log.instantiate('User', 'service');
 
     var service = {
       signup: signup,

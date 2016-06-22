@@ -10,7 +10,7 @@
 
   function GuestSignupController($log) {
     // INSTANTIATIONS
-    $log.controller('Guest Sign Up');
+    $log.instantiate('Guest Sign Up', 'controller');
     var vm = this;
 
     // LOCAL VARS

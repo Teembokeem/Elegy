@@ -10,7 +10,7 @@
 
   function FeedController($log) {
     // INSTANTIATIONS
-    $log.controller('Feed');
+    $log.instantiate('Feed', 'controller');
     var vm = this;
 
     // LOCAL VARS

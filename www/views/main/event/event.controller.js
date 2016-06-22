@@ -10,7 +10,7 @@
 
   function EventController($log, dataService) {
     // INSTANTIATIONS
-    $log.controller('Event');
+    $log.instantiate('Event', 'controller');
     var vm = this;
 
     // LOCAL VARS

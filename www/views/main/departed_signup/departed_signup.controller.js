@@ -10,7 +10,7 @@
 
   function DepartedSignupController($log, userService, dataService, $state, authService) {
     // INSTANTIATIONS
-    $log.controller('Departed Signup');
+    $log.instantiate('Departed Signup', 'controller');
     var vm = this;
 
     // LOCAL VARS

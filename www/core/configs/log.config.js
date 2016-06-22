@@ -9,9 +9,8 @@ angular.module('Configs', [])
          * our enhancement. We're going to add on a date and 
          * time stamp to the message that will be logged.
          */
-        $delegate.controller = function(arg) {
-            var args = [].slice.call(arguments);
-           console.log("> " + arg + " controller activated. <")
+        $delegate.instantiate = function(arg, entity) {
+           console.log("> " + arg + " " + entity + " activated. <")
             
             // Send on our enhanced message to the original debug method.
          

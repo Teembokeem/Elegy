@@ -10,7 +10,7 @@
 
   function OverviewController($log) {
     // INSTANTIATIONS
-    $log.controller('Overview');
+    $log.instantiate('Overview', 'controller');
     var vm = this;
 
     // LOCAL VARS

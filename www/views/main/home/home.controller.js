@@ -11,7 +11,7 @@
 
   function HomeController(urlFactory, $log, authService, dataService) {
     // INSTANTIATIONS
-    $log.controller('Home');
+    $log.instantiate('Home', 'controller');
     var vm = this;
 
     // LOCAL VARS

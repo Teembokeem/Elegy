@@ -10,7 +10,7 @@
 
   function ScheduleController($log) {
     // INSTANTIATIONS
-    $log.controller('Schedule');
+    $log.instantiate('Schedule', 'controller');
     var vm = this;
 
     // LOCAL VARS

@@ -10,7 +10,7 @@
   
   function UserSignupController($state, $log, userService, authService) {
     // INSTANTIATIONS
-    $log.controller('User Signup');
+    $log.instantiate('User Signup', 'controller');
     var vm = this;
     
     // LOCAL VARS

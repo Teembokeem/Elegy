@@ -10,7 +10,7 @@
   StaticController.$inject = ['$log'];
   function StaticController($log) {
     // INSTANTIATIONS
-    $log.controller("Static");
+    $log.instantiate("Static", 'controller');
     var vm = this;
   
   }

@@ -10,7 +10,7 @@
 
   function ProgramController($log) {
     // INSTANTIATIONS
-    $log.controller('Program');
+    $log.instantiate('Program', 'controller');
     var vm = this;
 
     // LOCAL VARS

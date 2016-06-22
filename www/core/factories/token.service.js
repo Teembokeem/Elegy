@@ -8,7 +8,7 @@
   tokenService.$inject = ['$window', '$log'];
 
   function tokenService($window, $log) {
-    $log.info('Token Service loaded.');
+    $log.instantiate('Token', 'service');
 
     var TOKEN_KEY = 'elegy_token';
 
