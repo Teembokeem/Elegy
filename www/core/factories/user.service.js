@@ -49,7 +49,6 @@
       .then(function(res) {
         $log.info('User Service grabEventPackage method success.');
         dataService.setData(['planningEvents', 'attendingEvents'], [res.data.user.planningEvents, res.data.user.attendingEvents]);
-        $log.info('User Service grabEventPackage data storage set.')
         return res.data.user;
       })
     

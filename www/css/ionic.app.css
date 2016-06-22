@@ -9904,5 +9904,22 @@ button {
 .departed-signup-view .item-i.to input {
   padding-right: 0px; }
 
-.item-avatar * {
-  text-align: left; }
+.home-view .item-divider {
+  background-color: rgba(23, 119, 158, 0.4);
+  color: rgba(40, 40, 40, 0.8); }
+
+.home-view .item-avatar {
+  padding-bottom: 0; }
+  .home-view .item-avatar * {
+    text-align: left; }
+  .home-view .item-avatar h2, .home-view .item-avatar p {
+    font-family: avenir; }
+  .home-view .item-avatar .col {
+    display: inline-block; }
+  .home-view .item-avatar .swipe {
+    vertical-align: top;
+    text-align: right;
+    width: 30%; }
+
+.home-view .list {
+  margin-bottom: 0 !important; }
