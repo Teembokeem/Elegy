@@ -4,23 +4,32 @@
     <h2>Memories</h2>
     <div class="list">
       <div class="item item-divider">
-        Upcoming Events
+        UPCOMING EVENTS
       </div>
-      <a class="item item-avatar" href="#">
+      <a ng-repeat="event in Home.assets" class="item item-avatar" href="#">
         <img src="../../img/adam.jpg" alt="">
-        <h2>Venkman</h2>
-        <p>Back off, man. I'm a scientist.</p>
+        <div class="col col-60">
+          <h2>{{event.first.split("").join(" ") | uppercase}} &nbsp; {{event.last.split("").join(" ") | uppercase}}</h2>
+          <p>{{event.admin ? "Admin" : "Guest" | uppercase}}</p>
+        </div>
+        <div class="col pull-right swipe">
+          <i class="icon ion-ios-arrow-thin-right"></i>
+        </div>
       </a>
     </div>
-    <br>
     <div class="list">
       <div class="item item-divider">
-        Past Events
+        PAST EVENTS
       </div>
       <a class="item item-avatar" href="#">
         <img src="../../img/ben.png" alt="">
-        <h2>Venkman</h2>
-        <p>Back off, man. I'm a scientist.</p>
+        <div class="col col-60">
+          <h2>{{("Venkman").split("").join(" ") | uppercase}}</h2>
+        <p>{{"Back off, man. I'm a scientist."}}</p>
+        </div>
+        <div class="col pull-right swipe">
+          <i class="icon ion-ios-arrow-thin-right"></i>
+        </div>
       </a>
     </div>
   </ion-content>
