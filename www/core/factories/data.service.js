@@ -9,10 +9,10 @@
 
     var data = {}
 
-  dataService.$inject = ['$log'];
+  dataService.$inject = ['$log', 'eventService', '$q'];
 
-  function dataService($log) {
-    console.log('Data service loaded.');
+  function dataService($log, eventService, $q) {
+    $log.instantiate('Data', 'service');
 
     var service = {
       getData: getData,
@@ -20,12 +20,20 @@
     };
 
     // EXPORTED FUNCTIONS
-    function getData(keys, params) {
-      var retrievalArray = [];
-      for (num in keys) {
-        retrievalArray.push(localStorage.getItem(keys[num]))
-      }
-      return applyOptions(retrievalArray, options[params])
+    function getData(data, parameter) {
+      console.log('apply options', data, parameter);
+        var deferredArr = [];
+        data.forEach(function(datum, idx) {
+          deferredArr.push(transformer[parameter[idx]](datum))
+        });
+        return $q.all(deferredArr)
+          .then(
+            function(val) {
+              return val
+            },
+            function(err) {
+              return err
+            })
     };
 
     function setData(keys, values) {
@@ -36,12 +44,8 @@
 
     // HELPERS
       // getData STACK
-      var options = {
-        // event: eventService
-      }
-
-      function applyOptions(events) {
-        
+      var transformer = {
+        event: eventService
       }
 
     return service;
