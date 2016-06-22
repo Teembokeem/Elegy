@@ -1,5 +1,7 @@
 (function() {
 'use strict';
+// TODO:
+  // 1. do event service
 
   angular
     .module('Services')
@@ -7,9 +9,9 @@
 
     var data = {}
 
-  dataService.$inject = ['$log', 'eventService'];
+  dataService.$inject = ['$log'];
 
-  function dataService($log, eventService) {
+  function dataService($log) {
     console.log('Data service loaded.');
 
     var service = {
@@ -26,20 +28,20 @@
       return applyOptions(retrievalArray, options[params])
     };
 
-    function setData(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
+    function setData(keys, values) {
+      values.forEach(function(value, idx) {
+        localStorage.setItem(keys[idx], JSON.stringify(value))
+      })
     }
 
     // HELPERS
       // getData STACK
       var options = {
-        event: eventService
+        // event: eventService
       }
 
       function applyOptions(events) {
-        JSON.parse(events).forEach(function(event) {
-
-        })
+        
       }
 
     return service;
