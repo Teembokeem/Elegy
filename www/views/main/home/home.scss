@@ -1,3 +1,31 @@
-.item-avatar * {
-  text-align: left;
+.home-view {
+  .item-divider {
+    background-color: rgba(23, 119, 158, 0.4);
+    color: rgba(40, 40, 40, 0.8);
+  }
+  
+  .item-avatar {
+    padding-bottom: 0;
+
+    * {
+      text-align: left;
+    }
+
+    h2, p {
+      font-family: avenir;
+    }
+    
+    .col {
+      display: inline-block;
+    }
+    .swipe {
+      vertical-align: top;
+      text-align: right;
+      width: 30%;
+    }
+  }
+
+  .list {
+    margin-bottom: 0 !important;
+  }
 }
