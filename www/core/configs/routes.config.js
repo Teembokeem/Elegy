@@ -86,7 +86,12 @@
           'app-user': {
             templateUrl: 'views/main/home/home.html',
             controller: 'Home.controller',
-            controllerAs: 'Home'
+            controllerAs: 'Home',
+            resolve: {
+              events: function(dataService) {
+                return (dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event']))
+              }
+            }
           }
         },
         controllerId: 'Home'
