@@ -1,6 +1,31 @@
 <ion-view view-title="E V E N T">
-  <ion-content>
-    <h1>E V E N T</h1>
-    <button ng-click="Event.okay()"></button>
+  <ion-content class="event-view">
+    <div class="user-avatar">
+      <img src="../../img/ben.png" alt="">
+    </div>
+    <div can-swipe="true" class="ng-repeat-chamber" on-swipe-left="Event.slideStep()">
+      <div class="step-container">
+        <h2><span>{{Event.val.title}}</span></h2>
+      </div>
+      <div ng-repeat="parts in Event.val.parts" class="part-container">
+        <div id="part-1" class="part-container row">
+          <div class="part-checker col col-20">
+            <i class="icon ion-ios-close-outline"></i>
+            <div class="vertical-bar"></div>	
+  <!--<i class="icon ion-ios-checkmark-outline"></i>	 for reference: success-->
+          </div>
+          <div class="part-content col">
+            <div class="part-nav col">
+              <h4>{{parts.title}}</h4>
+            </div>
+            <div class="part-description-container col">
+              <p>{{parts.description | uppercase}}</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
