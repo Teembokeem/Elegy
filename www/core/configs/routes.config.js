@@ -11,7 +11,7 @@
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'views/menu_bar/tabs.html',
+      templateUrl: '/index.html',
       controller: 'Static.controller',
       controllerAs: 'Static'
     })
@@ -20,95 +20,70 @@
 
     .state('app.intro', {
         url: '/intro',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/intro/intro.html',
-            controller: 'Intro.controller',
-            controllerAs: 'Intro'
-          }
-        },
+        templateUrl: 'views/main/intro/intro.html',
+        controller: 'Intro.controller',
+        controllerAs: 'Intro',
         controllerId: 'Intro'
     })
     
     .state('app.login', {
         url: '/login',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/login/login.html',
-            controller: 'Login.controller',
-            controllerAs: 'Login'
-          }
-        },
+        templateUrl: 'views/main/login/login.html',
+        controller: 'Login.controller',
+        controllerAs: 'Login',
         controllerId: 'Login'
     })
     
     .state('app.user-signup', {
         url: '/user-signup',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/user_signup/user_signup.html',
-            controller: 'UserSignup.controller',
-            controllerAs: 'UserSignup'
-          }
-        },
+        templateUrl: 'views/main/user_signup/user_signup.html',
+        controller: 'UserSignup.controller',
+        controllerAs: 'UserSignup',
         controllerId: 'UserSignup'
     })
     
     .state('app.departed-signup', {
         url: '/departed-signup',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/departed_signup/departed_signup.html',
-            controller: 'DepartedSignup.controller',
-            controllerAs: 'DepartedSignup'
-          }
-        },
+        templateUrl: 'views/main/departed_signup/departed_signup.html',
+        controller: 'DepartedSignup.controller',
+        controllerAs: 'DepartedSignup',
         controllerId: 'DepartedSignup',
         authorized: true
     })
     
     .state('app.overview', {
         url: '/overview',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/overview/overview.html',
-            controller: 'Overview.controller',
-            controllerAs: 'Overview'
-          }
-        },
+        templateUrl: 'views/main/overview/overview.html',
+        controller: 'Overview.controller',
+        controllerAs: 'Overview',
         controllerId: 'Overview',
         authorized: true
     })
     
     .state('app.home', {
         url: '/home',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/home/home.html',
-            controller: 'Home.controller',
-            controllerAs: 'Home',
-            resolve: {
-              events: function(dataService) {
-                return (dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event']))
-              }
-            }
+        templateUrl: 'views/main/home/home.html',
+        controller: 'Home.controller',
+        controllerAs: 'Home',
+        resolve: {
+          events: function(dataService) {
+            console.log("resolving dependencies")
+            return dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event'])
           }
         },
-        controllerId: 'Home'
+        controllerId: 'Home',
+        authorized: true
     })
     
     .state('app.departed', {
         url: '/:name',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/departed/departed.html',
-            controller: 'Departed.controller',
-            controllerAs: 'Departed',
-            resolve: {
-              event: function(dataService) {
-                return (dataService.getData(['event'], ['event']))
-              }
-            }
+        templateUrl: 'views/main/departed/departed.html',
+        controller: 'Departed.controller',
+        controllerAs: 'Departed',
+        resolve: {
+          event: function(dataService) {
+            console.log("resolving dependencies")
+            return dataService.getData(['event'], ['event'])
           }
         },
         controllerId: 'Departed',
@@ -118,15 +93,11 @@
     
     .state('app.event', {
         url: '/event',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/event/event.html',
-            controller: 'Event.controller',
-            controllerAs: 'Event',
-            resolve: {
-              event: function(dataService) {
-              }
-            }
+        templateUrl: 'views/main/event/event.html',
+        controller: 'Event.controller',
+        controllerAs: 'Event',
+        resolve: {
+          event: function(dataService) {
           }
         },
         controllerId: 'Event',
@@ -135,25 +106,17 @@
     
     .state('app.referral', {
         url: '/referral',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/referral/referral.html',
-            controller: 'Referral.controller',
-            controllerAs: 'Referral'
-          }
-        },
+        templateUrl: 'views/main/referral/referral.html',
+        controller: 'Referral.controller',
+        controllerAs: 'Referral',
         controllerId: 'Referral'
     })
     
     .state('app.guest-signup', {
         url: '/guest-signup',
-        views: {
-          'app-user': {
-            templateUrl: 'views/main/guest_signup/guest_signup.html',
-            controller: 'GuestSignup.controller',
-            controllerAs: 'GuestSignup'
-          }
-        },
+        templateUrl: 'views/main/guest_signup/guest_signup.html',
+        controller: 'GuestSignup.controller',
+        controllerAs: 'GuestSignup',
         controllerId: 'GuestSignup'
     })
     
