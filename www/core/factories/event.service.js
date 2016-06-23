@@ -14,6 +14,7 @@
       var deferred = $q.defer();
 
       if (input) {
+
         deferred.resolve(process(input))
       } else {
         deferred.reject("transform went wrong :(")
@@ -23,23 +24,23 @@
     }
 
     // helpers
-    function process(data) {
-      var tempArr = parse(retrieve(data));
-       if (data === 'planningEvents') {
-         tempArr.forEach(function(obj) {
-           obj.admin = true;
-         })
-       } 
-      return tempArr;
-    }
-    
-    function retrieve(data) {
-      return $window.localStorage.getItem(data)
-    };
+      function process(data) {
+        var tempArr = parse(retrieve(data));
+        if (data === 'planningEvents') {
+          tempArr.forEach(function(obj) {
+            obj.admin = true;
+          })
+        } 
+        return tempArr;
+      }
+      
+      function retrieve(data) {
+        return $window.localStorage.getItem(data)
+      };
 
-    function parse(data) {
-      return JSON.parse(data);
-    };
+      function parse(data) {
+        return JSON.parse(data);
+      };
 
     return transform
   }

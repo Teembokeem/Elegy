@@ -42,7 +42,7 @@
 
     function grabEventPackage(data) {
       $log.info('User Service grab Event Package.')
-      $http({
+      return $http({
         method: 'GET',
         url: urlFactory + '/users/' + data
       })

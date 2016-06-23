@@ -9921,5 +9921,17 @@ button {
     text-align: right;
     width: 30%; }
 
+.home-view .user-avatar {
+  text-align: center; }
+  .home-view .user-avatar img {
+    border-radius: 50%;
+    max-width: 35%; }
+
 .home-view .list {
   margin-bottom: 0 !important; }
+
+.departed-view .user-avatar {
+  text-align: center; }
+  .departed-view .user-avatar img {
+    border-radius: 50%;
+    max-width: 35%; }

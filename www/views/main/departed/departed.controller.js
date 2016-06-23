@@ -3,7 +3,7 @@
 
   angular
     .module('Controllers')
-    .controller('DepartedController', DepartedController);
+    .controller('Departed.controller', DepartedController);
 
   DepartedController.$inject = ['$log', 'dataService', 'event'];
 
@@ -13,12 +13,11 @@
     var vm = this;
 
     // LOCAL VARS
-    vm.event = event;
+    vm.event = event[0];
     $log.info("yes your event", event)
     // BOUND FUNCTIONS
-    vm.okay = function() {
-      $log.info(dataService.getData(['event'],['event']))  
-    }
+
+
     // HELPERS
     
   }
