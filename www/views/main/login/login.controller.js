@@ -30,7 +30,7 @@
       })
       .then(function(events) {
         $log.info("event package?!?!?!!?!", events)
-        $state.go('app.home');
+        $state.go('app.tab.home');
       })
       .catch(function(err) {
         $log.info("errrrrr", err)
