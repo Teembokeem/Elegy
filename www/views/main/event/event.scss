@@ -1,0 +1,56 @@
+.event-view {
+  .user-avatar {
+    text-align: center;
+
+    img {
+      margin-top: 1em;
+      border-radius: 50%;
+      max-width: 20%;
+      margin-bottom: 2em;
+    }
+  }
+  .step-container {
+    h2 {
+      width: 100%; 
+      text-align: center; 
+      border-bottom: 1px solid #000; 
+      line-height: 0.1em;
+      margin: 10px 0 20px; 
+    } 
+
+    h2 span { 
+        background:#fff; 
+        padding:0 10px; 
+    }
+  }
+  // .part-nav {
+  //   border-bottom: 1px solid rgba(100, 100, 100, 0.5)
+  // }
+  .part-content {
+    border: 1px solid rgba(71, 71, 71, 0.7);
+  }
+
+  p {
+      font-family: avenir;
+  }
+
+  .part-checker {
+    text-align: center;
+
+    * {
+      display: block;
+    }
+
+    i {
+      margin-top: 0.5em;
+    }
+
+    .vertical-bar {
+      border-left: 1px solid rgba(100, 100, 100, 0.5);
+      height: inherit;
+      width: 0;
+      position: relative;
+      left: 45%;
+    }
+  }
+}
