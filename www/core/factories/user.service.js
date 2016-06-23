@@ -5,9 +5,9 @@
     .module('Services')
     .factory('userService', userService);
   
-  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService'];
+  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService', '$window'];
 
-  function userService($log, $http, urlFactory, dataService) {
+  function userService($log, $http, urlFactory, dataService, $window) {
     $log.instantiate('User', 'service');
 
     var service = {
@@ -48,6 +48,8 @@
       })
       .then(function(res) {
         $log.info('User Service grabEventPackage method success.');
+        dataService.removeData(['planningEvents', 'attendingEvents']);
+        $log.info("removing items", $window.localStorage.getItem('planningEvents'))
         dataService.setData(['planningEvents', 'attendingEvents'], [res.data.user.planningEvents, res.data.user.attendingEvents]);
         return res.data.user;
       })
