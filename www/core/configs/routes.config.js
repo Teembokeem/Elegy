@@ -60,46 +60,66 @@
         authorized: true
     })
     
-    .state('app.home', {
+    .state('app.tab', {
+      abstract: true, 
+      templateUrl: "views/main/tabs/tabs.html"
+    })
+    
+    .state('app.tab.home', {
         url: '/home',
-        templateUrl: 'views/main/home/home.html',
-        controller: 'Home.controller',
-        controllerAs: 'Home',
-        resolve: {
-          events: function(dataService) {
-            console.log("resolving dependencies")
-            return dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event'])
+        views: {
+          'home': {
+             templateUrl: 'views/main/home/home.html',
+            controller: 'Home.controller',
+            controllerAs: 'Home',
+            resolve: {
+              events: function(dataService) {
+                console.log("resolving dependencies")
+                return dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event'])
+              }
+            }
           }
         },
+        cache: false,
         controllerId: 'Home',
         authorized: true
     })
     
-    .state('app.departed', {
-        url: '/:name',
-        templateUrl: 'views/main/departed/departed.html',
-        controller: 'Departed.controller',
-        controllerAs: 'Departed',
-        resolve: {
-          event: function(dataService) {
-            console.log("resolving dependencies")
-            return dataService.getData(['event'], ['event'])
+    .state('app.tab.departed', {
+        url: '/departed/:name',
+        views: {
+          'home': {
+            templateUrl: 'views/main/departed/departed.html',
+            controller: 'Departed.controller',
+            controllerAs: 'Departed',
+            resolve: {
+              event: function(dataService) {
+                console.log("resolving dependencies")
+                return dataService.getData(['event'], ['event'])
+              }
+            }
           }
         },
+        cache: false,
         controllerId: 'Departed',
         authorized: true
     })
     
     
-    .state('app.event', {
+    .state('app.tab.event', {
         url: '/event',
-        templateUrl: 'views/main/event/event.html',
-        controller: 'Event.controller',
-        controllerAs: 'Event',
-        resolve: {
-          event: function(dataService) {
+        views: {
+          'event': {
+            templateUrl: 'views/main/event/event.html',
+            controller: 'Event.controller',
+            controllerAs: 'Event'
+            // resolve: {
+            //   event: function(dataService) {
+            //   }
+            // }
           }
         },
+        cache: false,
         controllerId: 'Event',
         authorized: true
     })
@@ -123,12 +143,13 @@
     .state('app.feed', {
         url: '/feed',
         views: {
-          'app-user': {
+          'feed': {
             templateUrl: 'views/main/feed/feed.html',
             controller: 'Feed.controller',
             controllerAs: 'Feed'
           }
         },
+        cache: false,
         controllerId: 'Feed',
         authorized: true
     })
