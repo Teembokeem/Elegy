@@ -16,7 +16,8 @@
 
     var service = {
       getData: getData,
-      setData: setData
+      setData: setData,
+      removeData: removeData
     };
 
     // EXPORTED FUNCTIONS
@@ -42,6 +43,12 @@
     function setData(keys, values) {
       values.forEach(function(value, idx) {
         localStorage.setItem(keys[idx], JSON.stringify(value))
+      })
+    }
+
+    function removeData(keys) {
+      return keys.forEach(function(value, idx) {
+        localStorage.removeItem(keys[idx])
       })
     }
 
