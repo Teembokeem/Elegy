@@ -6,7 +6,7 @@
       <div class="item item-divider">
         UPCOMING EVENTS
       </div>
-      <a ng-repeat="event in Home.assets" class="item item-avatar" href="#">
+      <a ng-repeat="event in Home.assets" class="item item-avatar" ng-click="Home.travel(event)">
         <img src="../../img/adam.jpg" alt="">
         <div class="col col-60">
           <h2>{{event.first.split("").join(" ") | uppercase}} &nbsp; {{event.last.split("").join(" ") | uppercase}}</h2>

@@ -14,11 +14,10 @@
     var vm = this;
 
     // LOCAL VARS
-    $log.info("afdjsafjdsalfjdsalkfjsdskalfas", dataService.getData('event'))
 
     // BOUND FUNCTIONS
     vm.okay = function() {
-      $log.info(dataService.getData('event'))  
+      $log.info(dataService.getData(['event'],['event']))  
   }
     // HELPERS
     
