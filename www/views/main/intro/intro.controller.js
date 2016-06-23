@@ -10,7 +10,7 @@
   
   function IntroController($log) {
     // INSTANTIATIONS
-    $log.controller("Intro")
+    $log.instantiate("Intro", 'controller')
     var vm = this;
 
     // LOCAL VARS

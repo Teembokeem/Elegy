@@ -97,13 +97,36 @@
         controllerId: 'Home'
     })
     
+    .state('app.departed', {
+        url: '/:name',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/departed/departed.html',
+            controller: 'Departed.controller',
+            controllerAs: 'Departed',
+            resolve: {
+              event: function(dataService) {
+                return (dataService.getData(['event'], ['event']))
+              }
+            }
+          }
+        },
+        controllerId: 'Departed',
+        authorized: true
+    })
+    
+    
     .state('app.event', {
         url: '/event',
         views: {
           'app-user': {
             templateUrl: 'views/main/event/event.html',
             controller: 'Event.controller',
-            controllerAs: 'Event'
+            controllerAs: 'Event',
+            resolve: {
+              event: function(dataService) {
+              }
+            }
           }
         },
         controllerId: 'Event',
