@@ -16,6 +16,7 @@
 
     // LOCAL VARS
     vm.user = authService.currentUser();
+    $log.info("your resolve", events)
     vm.assets = events[0].concat(events[1]);
     $log.info(vm.assets)
 
@@ -26,7 +27,7 @@
     
     vm.travel = function(data) {
       dataService.setData(['event'], [data]);
-      $state.go('app.departed({name:' + data.first + '})')
+      $state.go('app.departed', {name: data.first })
     }
     // HELPERS
 

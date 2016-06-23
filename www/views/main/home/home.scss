@@ -3,7 +3,7 @@
     background-color: rgba(23, 119, 158, 0.4);
     color: rgba(40, 40, 40, 0.8);
   }
-  
+
   .item-avatar {
     padding-bottom: 0;
 
@@ -22,6 +22,15 @@
       vertical-align: top;
       text-align: right;
       width: 30%;
+    }
+  }
+
+  .user-avatar {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+      max-width: 35%;
     }
   }
 
