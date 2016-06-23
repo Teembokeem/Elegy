@@ -9924,11 +9924,50 @@ button {
 .home-view .user-avatar {
   text-align: center; }
   .home-view .user-avatar img {
+    margin-top: 1em;
     border-radius: 50%;
     max-width: 35%; }
 
 .home-view .list {
   margin-bottom: 0 !important; }
+
+.event-view .user-avatar {
+  text-align: center; }
+  .event-view .user-avatar img {
+    margin-top: 1em;
+    border-radius: 50%;
+    max-width: 20%;
+    margin-bottom: 2em; }
+
+.event-view .step-container h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px; }
+
+.event-view .step-container h2 span {
+  background: #fff;
+  padding: 0 10px; }
+
+.event-view .part-content {
+  border: 1px solid rgba(71, 71, 71, 0.7); }
+
+.event-view p {
+  font-family: avenir; }
+
+.event-view .part-checker {
+  text-align: center; }
+  .event-view .part-checker * {
+    display: block; }
+  .event-view .part-checker i {
+    margin-top: 0.5em; }
+  .event-view .part-checker .vertical-bar {
+    border-left: 1px solid rgba(100, 100, 100, 0.5);
+    height: inherit;
+    width: 0;
+    position: relative;
+    left: 45%; }
 
 .departed-view .user-avatar {
   text-align: center; }

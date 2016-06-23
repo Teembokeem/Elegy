@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('DepartedSignup.controller', DepartedSignupController);
   
-  DepartedSignupController.$inject = ['$log', 'userService', 'dataService', '$state', 'authService'];
+  DepartedSignupController.$inject = ['$log', 'userService', 'dataService', '$state', 'tokenService'];
 
-  function DepartedSignupController($log, userService, dataService, $state, authService) {
+  function DepartedSignupController($log, userService, dataService, $state, tokenService) {
     // INSTANTIATIONS
     $log.instantiate('Departed Signup', 'controller');
     var vm = this;
@@ -27,8 +27,10 @@
       userService
         .setupEvent(vm.newDeparted)
         .then(function(event) {
-          $log.info('successfully saved departed framework. ', event);
-          $state.go('^.home');
+          return userService.grabEventPackage(tokenService.decode()._id)
+        })
+        .then(function(events) {
+          $state.go('^.tab.home');
         })
         .catch(function(err) {
           if (err) console.log(err);

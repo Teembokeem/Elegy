@@ -9,7 +9,7 @@
 
   function DepartedController($log, dataService, event) {
     // INSTANTIATIONS
-    $log.instantiate('Event', 'controller');
+    $log.instantiate('Departed', 'controller');
     var vm = this;
 
     // LOCAL VARS
