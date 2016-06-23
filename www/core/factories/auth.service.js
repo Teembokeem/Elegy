@@ -5,9 +5,9 @@
     .module('Services')
     .factory('authService', authService);
   
-  authService.$inject = ['tokenService', '$log', '$http', 'urlFactory'];
+  authService.$inject = ['tokenService', '$log', '$http', 'urlFactory', 'dataService'];
 
-  function authService(tokenService, $log, $http, urlFactory) {
+  function authService(tokenService, $log, $http, urlFactory, dataService) {
     $log.instantiate('Auth', 'service');
 
     var service = {

@@ -25,13 +25,16 @@
         var deferredArr = [];
         data.forEach(function(datum, idx) {
           deferredArr.push(transformer[parameter[idx]](datum))
+          console.log(deferredArr)
         });
         return $q.all(deferredArr)
           .then(
             function(val) {
+              console.log("success", val)
               return val
             },
             function(err) {
+              console.log("fail", err)
               return err
             })
     };
