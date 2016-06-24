@@ -1,39 +1,37 @@
 <ion-view view-title="V E N D O R | S I G N U P">
   <ion-content class="vendor-signup-view">
-    <h3>ON BEHALF OF</h3>
+    <h3>ADD YOUR BUSINESS INFO</h3>
     <div class="list signup-form container">
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="F I R S T N A M E" ng-model="DepartedSignup.newDeparted.first">
+            <input type="text" placeholder="B U S I N E S S | N A M E" ng-model="VendorSignup.newVendor.businessName">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="L A S T N A M E" ng-model="DepartedSignup.newDeparted.last">
+            <input type="text" placeholder="A D D R E S S" ng-model="VendorSignup.newVendor.address">
           </label>
         </div>
       </div>
       <div class="row">
-
-        <div class="col col-10">
-
+        <div class="col col-50">
+          <label class="item item-input">
+            <input type="text" placeholder="P E R S O N A L #" ng-model="VendorSignup.newVendor.phone.personal">
+          </label>
         </div>
         <div class="col col-50">
-            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dob">
+          <label class="item item-input">
+            <input type="text" placeholder="B U S I N E S S #" ng-model="VendorSignup.newVendor.phone.business">
+          </label>
         </div>
-        <div class="col ">
-            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dod">
-        </div>
-      </div>
-      <div class="row">
       </div>
       <br>
       <div class="row">
         <div class="col">
-          <button ng-click="DepartedSignup.submitDepartedForm()" class="button button-light ">
+          <button ng-click="VendorSignup.submitVendorForm()" class="button button-light ">
               S U B M I T
           </button>
         </div>
