@@ -27,7 +27,7 @@
     
     vm.travel = function(data) {
       dataService.setData(['event'], [data]);
-      $state.go('app.tab.departed', {name: data.first })
+      $state.go('app.departed-tab.departed', {name: data.first })
     }
     // HELPERS
 

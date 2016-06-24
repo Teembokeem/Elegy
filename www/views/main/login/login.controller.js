@@ -30,7 +30,11 @@
       })
       .then(function(events) {
         $log.info("event package?!?!?!!?!", events)
-        $state.go('app.tab.home');
+        if (vm.vendor) {
+          $state.go('app.vendor-tab.vendor-home');
+        } else {
+          $state.go('app.departed-tab.home');
+        }
       })
       .catch(function(err) {
         $log.info("errrrrr", err)

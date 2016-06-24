@@ -18,6 +18,7 @@
           </label>
         </div>
       </div>
+      <ion-checkbox ng-model="Login.vendor">Vendor</ion-checkbox>
       <br>
       <div class="row">
         <div class="col">
@@ -37,17 +38,17 @@
       <br>
       <div class="row">
         <div class="col">
-          <a>Terms & Service</a>
+          <a> {{"Terms & Service" | uppercase}} </a>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <a>Forgot Password?</a>
+          <a>{{"Forgot Password?" | uppercase}}</a>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <a>Login through a Guest Code</a>
+          <a href="#/app/referral">{{"Login Through Guest Code" | uppercase}}</a>
         </div>
       </div>
     </div>
