@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService'];
+  EventController.$inject = ['$log', 'dataService', '$scope'];
 
-  function EventController($log, dataService) {
+  function EventController($log, dataService, $scope) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
@@ -66,6 +66,19 @@
     // BOUND FUNCTIONS
     vm.slideStep = function() {
       vm.val = vm.testObj[(setter ++) % 3]
+      var el = document.getElementsByClassName('step-container')[0];
+  
+  // -> triggering reflow /* The actual magic */
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+        // el.offsetWidth = el.offsetWidth;
+  
+  // -> and re-adding the class
+        el.classList.add("step-title-out");
+        el.classList.remove("step-title-in");
+       setTimeout(function() {
+         el.classList.add("step-title-in");
+         el.classList.remove("step-title-out");
+       }, 1000)
     }
     // HELPERS
     

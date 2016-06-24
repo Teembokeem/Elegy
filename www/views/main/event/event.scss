@@ -1,4 +1,8 @@
 .event-view {
+  animation-name: left-content;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
   .user-avatar {
     text-align: center;
 
@@ -10,6 +14,17 @@
     }
   }
   .step-container {
+    .step-title-in {
+      animation-name: left-content;
+      animation-duration: 1.5s;
+     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .step-title-out {
+      animation-name: opacity-out;
+      animation-duration: 1s;
+     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    }
     h2 {
       width: 100%; 
       text-align: center; 
@@ -26,31 +41,53 @@
   // .part-nav {
   //   border-bottom: 1px solid rgba(100, 100, 100, 0.5)
   // }
-  .part-content {
-    border: 1px solid rgba(71, 71, 71, 0.7);
-  }
-
-  p {
-      font-family: avenir;
-  }
-
-  .part-checker {
+  .part-container {
     text-align: center;
+    
+    .part-content, .part-checker {
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+    }
+    
+    .part-content {
+      // border: 1px solid rgba(71, 71, 71, 0.7);
 
-    * {
-      display: block;
+      * {
+        padding: 0 0;
+      }
+      h4 {
+        font-family: Avenir;
+        animation-name: left-content;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      
+      p {
+        font-family: Century Schoolbook;
+        font-style: italic;
+        font-size: 1.2em;
+        animation-name: right-content;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
     }
 
-    i {
-      margin-top: 0.5em;
+    .part-checker {
+      text-align: center;
+      padding-top: 0.7em;
+      color: red;
+      font-size: 2.3em;
+
     }
 
-    .vertical-bar {
-      border-left: 1px solid rgba(100, 100, 100, 0.5);
-      height: inherit;
-      width: 0;
-      position: relative;
-      left: 45%;
+    .divider {
+      border-bottom: 1px solid rgba(75, 75, 75, 0.7);
+      animation-name: opacity;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     }
   }
 }
+
+
