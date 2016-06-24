@@ -50,6 +50,22 @@
         controllerId: 'DepartedSignup',
         authorized: true
     })
+
+    .state('app.referral', {
+        url: '/referral',
+        templateUrl: 'views/main/referral/referral.html',
+        controller: 'Referral.controller',
+        controllerAs: 'Referral',
+        controllerId: 'Referral'
+    })
+    
+    .state('app.guest-signup', {
+        url: '/guest-signup',
+        templateUrl: 'views/main/guest_signup/guest_signup.html',
+        controller: 'GuestSignup.controller',
+        controllerAs: 'GuestSignup',
+        controllerId: 'GuestSignup'
+    })
     
     .state('app.overview', {
         url: '/overview',
@@ -60,12 +76,12 @@
         authorized: true
     })
     
-    .state('app.tab', {
+    .state('app.departed-tab', {
       abstract: true, 
-      templateUrl: "views/main/tabs/tabs.html"
+      templateUrl: "views/main/tabs/departed_tabs.html"
     })
     
-    .state('app.tab.home', {
+    .state('app.departed-tab.home', {
         url: '/home',
         views: {
           'home': {
@@ -85,7 +101,7 @@
         authorized: true
     })
     
-    .state('app.tab.departed', {
+    .state('app.departed-tab.departed', {
         url: '/departed/:name',
         views: {
           'home': {
@@ -106,7 +122,7 @@
     })
     
     
-    .state('app.tab.event', {
+    .state('app.departed-tab.event', {
         url: '/event',
         views: {
           'event': {
@@ -122,22 +138,6 @@
         cache: false,
         controllerId: 'Event',
         authorized: true
-    })
-    
-    .state('app.referral', {
-        url: '/referral',
-        templateUrl: 'views/main/referral/referral.html',
-        controller: 'Referral.controller',
-        controllerAs: 'Referral',
-        controllerId: 'Referral'
-    })
-    
-    .state('app.guest-signup', {
-        url: '/guest-signup',
-        templateUrl: 'views/main/guest_signup/guest_signup.html',
-        controller: 'GuestSignup.controller',
-        controllerAs: 'GuestSignup',
-        controllerId: 'GuestSignup'
     })
     
     .state('app.feed', {
@@ -179,6 +179,34 @@
         controllerId: 'Schedule',
         authorized: true
     })
+
+    .state('app.vendor-signup', {
+        url: '/vendor-signup',
+        templateUrl: 'views/main/vendor_signup/vendor_signup.html',
+        controller: 'VendorSignup.controller',
+        controllerAs: 'VendorSignup',
+        controllerId: 'VendorSignup',
+        authorized: true
+    })
+
+    .state('app.vendor-tab', {
+      abstract: true, 
+      templateUrl: "views/main/tabs/vendor_tabs.html"
+    })
+
+    .state('app.vendor-tab.vendor-home', {
+        url: '/vendor-home',
+        views: {
+          'vendor-home': {
+            templateUrl: 'views/main/vendor_home/vendor_home.html',
+            controller: 'VendorHome.controller',
+            controllerAs: 'VendorHome'
+          }
+        },
+        controllerId: 'VendorHome',
+        authorized: true
+    })
+    
     
     
     
