@@ -1,0 +1,28 @@
+ <ion-tabs ng-class="{'tabs-item-hide' : $root.hideTabs}" class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- Tab-less Collection -->
+  <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/app/vendor-home">
+    <ion-nav-view name="vendor-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Event Tab -->
+  <ion-tab title=" Vendor Stuff 1" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/app/event">
+    <ion-nav-view name="event"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Feed Tab -->
+  <ion-tab title=" Vendor Stuff 2" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/app/feed">
+    <ion-nav-view name="feed"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Event Info Tab -->
+  <ion-tab title=" Vendor Stuff 3" icon-off="ion-ios-time-outline" icon-on="ion-ios-time" href="#/app/schedule">
+    <ion-nav-view name="schedule"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Messages Tab -->
+  <ion-tab title=" Vendor Stuff 4" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/app/message">
+    <ion-nav-view name="message"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>
