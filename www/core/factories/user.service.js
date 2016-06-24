@@ -5,14 +5,15 @@
     .module('Services')
     .factory('userService', userService);
   
-  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService', '$window'];
+  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService', '$window', 'tokenService'];
 
-  function userService($log, $http, urlFactory, dataService, $window) {
+  function userService($log, $http, urlFactory, dataService, $window, tokenService) {
     $log.instantiate('User', 'service');
 
     var service = {
       signup: signup,
       setupEvent: setupEvent,
+      setupVendor: setupVendor,
       grabEventPackage: grabEventPackage
     }
 
@@ -36,6 +37,23 @@
         url: urlFactory + '/departed',
         data: data
       });
+
+      return promise;
+    }
+
+    function setupVendor(data) {
+      $log.info("User Service Setup Vendor.")
+      var promise = $http({
+        method: 'POST',
+        url: urlFactory + '/vendor',
+        data: data
+      }).then(function(done) {
+        $log.info("User service Setup Vendor success, storing vals.")
+        tokenService.store(done.data.token);
+        return grabEventPackage(tokenService.decode(done.data.token)._id)
+      }).catch(function(err) {
+        $log.info("ehoh.", err)
+      })
 
       return promise;
     }
