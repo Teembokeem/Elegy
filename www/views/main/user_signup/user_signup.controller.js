@@ -32,7 +32,11 @@
         })
         .then(function(decodedToken) {
           $log.info('Logged In via Auth service login. ', decodedToken);
-          $state.go('app.departed-signup');
+          if (vm.vendor) {
+            $state.go('app.vendor-signup');
+          } else {
+            $state.go('app.departed-signup');
+          }
         })
         .catch(function(err) {
           $log.error("We got an error! ", err);
