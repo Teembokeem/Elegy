@@ -31,41 +31,87 @@
         ]
       },
       {
-        title: "Burial Preparations",
+        title: "Major Decisions",
         parts: [
           {
-            title: "Casket",
+            title: "State Laws",
             description: "Lorem ipsum"
           },
           {
-            title: 'Flowers',
+            title: 'Licensing',
             description: "Hallo"
           },
           {
-            title: 'Mural',
+            title: 'Meeting with the Funeral Director',
             description: "artsy stuff"
           }
         ]
       },
       {
-        title: "Invite People",
+        title: "Keepsake Setup",
         parts: [
           {
-            title: "Confirm Schedule and Program",
+            title: "Confirm Payment Accounts",
             description: "Lorem ipsum"
           },
           {
-            title: 'Enter emails',
+            title: 'Add A Main Photo',
+            description: "Hallo"
+          },
+          {
+            title: "Write A Memorandum",
+            description: "Lorem ipsum"
+          }
+        ]
+      },
+      {
+        title: "General Preparations",
+        parts: [
+          {
+            title: "Create A Schedule",
+            description: "Lorem ipsum"
+          },
+          {
+            title: 'Plan the Day Of Program',
             description: "Hallo"
           }
         ]
-      }
+      },
+      {
+        title: "Purchasables",
+        parts: [
+          {
+            title: "Flowers, Wreaths",
+            description: "Lorem ipsum"
+          },
+          {
+            title: 'Program Assets',
+            description: "Hallo"
+          }
+        ]
+      },
+      {
+        title: "Invitations",
+        parts: [
+          {
+            title: "Review Profile & items",
+            description: "Lorem ipsum"
+          },
+          {
+            title: 'Invite Friends and Family',
+            description: "Hallo"
+          }
+        ]
+      },
+
+      
     ]
         vm.val = vm.testObj[setter];
 
     // BOUND FUNCTIONS
-    vm.slideStep = function() {
-      vm.val = vm.testObj[(setter ++) % 3]
+    vm.slideStep = function(dir) {
+      
+      vm.val = vm.testObj[(((dir === 'left') ? setter ++ : setter = setter + 5)) % vm.testObj.length]
       var el = document.getElementsByClassName('step-container')[0];
   
   // -> triggering reflow /* The actual magic */

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   // TODO:
-
+    // 1, attach grabEventPackage to setupEvent. return from setupEvent method should be the token. 
   angular
     .module('Controllers')
     .controller('DepartedSignup.controller', DepartedSignupController);

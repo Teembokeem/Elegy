@@ -9862,8 +9862,19 @@ button {
   margin-bottom: 0; }
 
 .login-view h3 {
-  margin-top: 40%;
+  margin-top: 20%;
+  font-size: 50px;
   text-align: center; }
+
+.login-view .checkbox-icon {
+  margin-left: 30%; }
+
+.login-view a {
+  font-family: Avenir;
+  color: black; }
+
+.login-view .item-checkbox {
+  border-style: none; }
 
 .intro-view #intro-logo {
   font-size: 5em;
@@ -9966,6 +9977,8 @@ button {
   animation-name: left-content;
   animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .event-view h4 {
+    letter-spacing: 5px; }
   .event-view .user-avatar {
     text-align: center; }
     .event-view .user-avatar img {
@@ -10026,3 +10039,38 @@ button {
   .departed-view .user-avatar img {
     border-radius: 50%;
     max-width: 35%; }
+
+.vendor-signup-view h3 {
+  margin-top: 20%;
+  text-align: center; }
+
+.vendor-signup-view .checkbox-icon {
+  margin-left: 30%; }
+
+.vendor-home-view {
+  animation-name: left-content;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .vendor-home-view .item-divider {
+    background-color: rgba(23, 119, 158, 0.4);
+    color: rgba(40, 40, 40, 0.8); }
+  .vendor-home-view .item-avatar {
+    padding-bottom: 0; }
+    .vendor-home-view .item-avatar * {
+      text-align: left; }
+    .vendor-home-view .item-avatar h2, .vendor-home-view .item-avatar p {
+      font-family: avenir; }
+    .vendor-home-view .item-avatar .col {
+      display: inline-block; }
+    .vendor-home-view .item-avatar .swipe {
+      vertical-align: top;
+      text-align: right;
+      width: 30%; }
+  .vendor-home-view .user-avatar {
+    text-align: center; }
+    .vendor-home-view .user-avatar img {
+      margin-top: 1em;
+      border-radius: 50%;
+      max-width: 35%; }
+  .vendor-home-view .list {
+    margin-bottom: 0 !important; }

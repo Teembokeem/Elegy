@@ -3,7 +3,7 @@
     <div class="user-avatar">
       <img src="../../img/ben.png" alt="">
     </div>
-    <div an-swipe="true" class="ng-repeat-chamber" on-swipe-left="Event.slideStep()">
+    <div an-swipe="true" class="ng-repeat-chamber" on-swipe-left="Event.slideStep('left')" on-swipe-right="Event.slideStep('right')">
       <!--1-->
       <div class="step-title-in step-container">
         <h2><span >{{Event.val.title}}</span></h2>
@@ -23,7 +23,7 @@
           <div class="part-content col">
             <!--2.2.1-->
             <div class="part-nav col">
-              <h4>{{parts.title.split("").join(" ") | uppercase}}</h4>
+              <h4>{{parts.title | uppercase}}</h4>
             </div>
            
             <!--2.2.2-->
