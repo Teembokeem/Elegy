@@ -1,4 +1,8 @@
 .home-view {
+  animation-name: left-content;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
   .item-divider {
     background-color: rgba(23, 119, 158, 0.4);
     color: rgba(40, 40, 40, 0.8);

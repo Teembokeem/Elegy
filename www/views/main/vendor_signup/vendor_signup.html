@@ -1,0 +1,42 @@
+<ion-view view-title="V E N D O R | S I G N U P">
+  <ion-content class="vendor-signup-view">
+    <h3>ON BEHALF OF</h3>
+    <div class="list signup-form container">
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="F I R S T N A M E" ng-model="DepartedSignup.newDeparted.first">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="L A S T N A M E" ng-model="DepartedSignup.newDeparted.last">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col col-10">
+
+        </div>
+        <div class="col col-50">
+            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dob">
+        </div>
+        <div class="col ">
+            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dod">
+        </div>
+      </div>
+      <div class="row">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ng-click="DepartedSignup.submitDepartedForm()" class="button button-light ">
+              S U B M I T
+          </button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>
