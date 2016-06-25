@@ -14,6 +14,7 @@
       signup: signup,
       setupEvent: setupEvent,
       setupVendor: setupVendor,
+      setupGuest: setupGuest,
       grabEventPackage: grabEventPackage
     }
 
@@ -47,12 +48,30 @@
         method: 'POST',
         url: urlFactory + '/vendor',
         data: data
-      }).then(function(done) {
+      }).then(function(res) {
         $log.info("User service Setup Vendor success, storing vals.")
-        tokenService.store(done.data.token);
-        return grabEventPackage(tokenService.decode(done.data.token)._id)
+        tokenService.store(res.data.token);
+        return grabEventPackage(tokenService.decode(res.data.token)._id)
       }).catch(function(err) {
         $log.info("ehoh.", err)
+      })
+
+      return promise;
+    }
+
+    function setupGuest(data) {
+      $log.info("User Service Setup Guest.")
+      var promise = $http({
+        method: 'GET',
+        url: urlFactory + '/departed',
+        params: {
+          code: data.code,
+          email: data.email
+        }
+      }).then(function(res) {
+        $log.info("yo res", res);
+      }).catch(function(err) {
+        $log.info("errrrrr", err)
       })
 
       return promise;
