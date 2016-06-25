@@ -1,7 +1,28 @@
 <ion-view view-title="E L E G Y">
-  <ion-content>
-    <h1></h1>
+  <ion-content class="referral-view">
+    <div class="container">
+      <div class="row">
+        <h4 class="col">{{"input your Invite Code Here" | uppercase}}</h4>
+        <br>
+        <br>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="C O D E" ng-model="Referral.newGuest.code" ng-change="Referral.validateCode()">
+          </label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <label class="item item-input">
+            <input type="text" placeholder="E M A I L" ng-model="Referral.newGuest.email" ng-change="Referral.validateCode()">
+          </label>
+        </div>
+      </div>
 
+    </div>
     
 
   </ion-content>

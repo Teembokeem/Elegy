@@ -1,0 +1,42 @@
+.referral-view {
+  h4 {
+    margin-top: 30%;
+    font-family: Avenir;
+    letter-spacing: 4px;
+  }
+
+  .item-input {
+    margin-top: 30%;
+    border-style: none;
+    border-bottom: 1px solid rgba(70, 70, 70, 0.7);
+    width: 70%;
+    
+    input {
+      font-size: 40px;
+      letter-spacing: 5px;
+    }
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+.loading {
+  border-radius: 10px;
+  height: 20%;
+  width: 50%;
+  padding: 10px 5px !important;
+  
+  span {
+    font-family: Avenir;
+    font-size: 12px;
+    letter-spacing: 10px;
+  }
+}
+
+.spinner svg {
+  stroke: white;
+}
