@@ -197,13 +197,26 @@
     .state('app.vendor-tab.vendor-home', {
         url: '/vendor-home',
         views: {
-          'vendor-home': {
+          'Dashboard': {
             templateUrl: 'views/main/vendor_home/vendor_home.html',
             controller: 'VendorHome.controller',
             controllerAs: 'VendorHome'
           }
         },
         controllerId: 'VendorHome',
+        authorized: true
+    })
+
+    .state('app.vendor-tab.vendor-inventory', {
+        url: '/vendor-inventory',
+        views: {
+          'Inventory': {
+            templateUrl: 'views/main/vendor_inventory/vendor_inventory.html',
+            controller: 'VendorInventory.controller',
+            controllerAs: 'VendorInventory'
+          }
+        },
+        controllerId: 'VendorInventory',
         authorized: true
     })
     
