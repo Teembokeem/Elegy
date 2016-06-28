@@ -6,7 +6,7 @@
     <h4>{{Home.user.email}}</h4>
     <div class="list">
       <div class="item item-divider">
-        UPCOMING EVENTS
+        {{('UPCOMING EVENTS').split('').join(' ')}}
       </div>
       <a ng-repeat="event in Home.assets" class="item item-avatar" ng-click="Home.travel(event)">
         <img src="../../img/adam.jpg" alt="">
@@ -21,7 +21,7 @@
     </div>
     <div class="list">
       <div class="item item-divider">
-        PAST EVENTS
+        {{('PAST EVENTS').split('').join(' ')}}
       </div>
       <a class="item item-avatar" href="#">
         <img src="../../img/ben.png" alt="">
