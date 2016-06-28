@@ -11,6 +11,7 @@
     $log.instantiate('Auth', 'service');
 
     var service = {
+      queryVendor: queryVendor,
       logIn: logIn,
       isLoggedIn: isLoggedIn,
       logOut: logOut,
@@ -19,6 +20,21 @@
     };
 
     return service;
+
+    function queryVendor(data) {
+      $log.info('Auth Service login vendor')
+      var promise = $http({
+        method: 'GET',
+        url: urlFactory + '/vendor',
+        params: data
+      })
+      .then(function(res) {
+        $log.info("Auth Service login vendor success");
+        return res
+      })
+
+      return promise;
+    }
 
     function logIn(data) {
       $log.info('Auth Service login')
