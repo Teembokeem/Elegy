@@ -1,4 +1,6 @@
 /* Empty. Add your own CSS if you like */
+
+
 body * {
   font-family: Didot;
   text-align: center;
@@ -16,6 +18,13 @@ button {
   border: 1px solid black;
 }
 
+.popup-container {
+  * {
+    border-radius: 2em;
+    font-family: Avenir;
+  }
+}
+
   @keyframes opacity {
     0%   {opacity: 0}
     100% {opacity: 1}
@@ -24,6 +33,16 @@ button {
   @keyframes opacity-out {
     0%   {opacity: 1}
     100% {opacity: 0}
+  }
+
+  @keyframes left-out {
+    from {right: 0; position: relative}
+    to{right: 15%; position: relative}
+  }
+
+  @keyframes right-in {
+    from {right: 15%; position: relative}
+    to{right: 0; position: relative}
   }
 
   @keyframes left-content {

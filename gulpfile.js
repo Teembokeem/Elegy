@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./www/views/main/**/*.scss']
+  sass: ['./www/views/main/**/*.scss', './www/css/*.scss']
 };
 
 gulp.task('default', ['watch']);

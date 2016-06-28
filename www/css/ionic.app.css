@@ -9829,6 +9829,10 @@ button {
   border-color: black !important;
   border: 1px solid black; }
 
+.popup-container * {
+  border-radius: 2em;
+  font-family: Avenir; }
+
 @keyframes opacity {
   0% {
     opacity: 0; }
@@ -9840,6 +9844,22 @@ button {
     opacity: 1; }
   100% {
     opacity: 0; } }
+
+@keyframes left-out {
+  from {
+    right: 0;
+    position: relative; }
+  to {
+    right: 15%;
+    position: relative; } }
+
+@keyframes right-in {
+  from {
+    right: 15%;
+    position: relative; }
+  to {
+    right: 0;
+    position: relative; } }
 
 @keyframes left-content {
   from {
@@ -9951,7 +9971,8 @@ button {
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .home-view .item-divider {
     background-color: rgba(23, 119, 158, 0.4);
-    color: rgba(40, 40, 40, 0.8); }
+    color: white;
+    font-family: Avenir; }
   .home-view .item-avatar {
     padding-bottom: 0; }
     .home-view .item-avatar * {
@@ -10079,8 +10100,8 @@ button {
   margin-left: 30%; }
 
 .vendor-home-view {
-  animation-name: left-content;
-  animation-duration: 1.5s;
+  animation-name: opacity;
+  animation-duration: 2s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .vendor-home-view .item-divider {
     background-color: rgba(23, 119, 158, 0.4);
@@ -10102,6 +10123,107 @@ button {
     .vendor-home-view .user-avatar img {
       margin-top: 1em;
       border-radius: 50%;
-      max-width: 35%; }
+      max-width: 20%; }
   .vendor-home-view .list {
     margin-bottom: 0 !important; }
+  .vendor-home-view .activity-stats-bar {
+    border-top: 1px solid rgba(140, 140, 140, 0.5);
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
+    .vendor-home-view .activity-stats-bar * {
+      font-family: Avenir;
+      font-size: 1em; }
+    .vendor-home-view .activity-stats-bar .row {
+      padding: 0 0; }
+      .vendor-home-view .activity-stats-bar .row .col {
+        border-bottom: 2px solid black;
+        height: 3em;
+        padding-top: 0.7em; }
+    .vendor-home-view .activity-stats-bar .passive {
+      font-color: rgba(160, 160, 160, 0.8);
+      border-style: none !important; }
+  .vendor-home-view .activity-container {
+    margin-left: 2em;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+    animation-name: opacity, right-in;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+    .vendor-home-view .activity-container * {
+      text-align: left;
+      padding-left: 0; }
+    .vendor-home-view .activity-container .activity-tldr-bar {
+      margin-bottom: 0.2em;
+      font-size: 1.2em; }
+    .vendor-home-view .activity-container .activity-details {
+      margin-bottom: 0.2em; }
+      .vendor-home-view .activity-container .activity-details * {
+        font-family: Avenir; }
+      .vendor-home-view .activity-container .activity-details .activity-item-image {
+        max-width: 20%; }
+        .vendor-home-view .activity-container .activity-details .activity-item-image img {
+          max-width: 100%;
+          border-radius: 10%; }
+      .vendor-home-view .activity-container .activity-details .activity-item-description {
+        padding-left: 1em; }
+        .vendor-home-view .activity-container .activity-details .activity-item-description .activity-item-name {
+          font-weight: bold; }
+  .vendor-home-view .activity-container.ng-hide {
+    animation-name: opacity-out, left-out;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+
+.vendor-inventory-view .item-divider {
+  background-color: rgba(23, 119, 158, 0.4);
+  color: rgba(40, 40, 40, 0.8); }
+
+.vendor-inventory-view .user-avatar {
+  text-align: center; }
+  .vendor-inventory-view .user-avatar img {
+    margin-top: 1em;
+    border-radius: 50%;
+    max-width: 20%; }
+
+.vendor-inventory-view .list {
+  margin-bottom: 0 !important; }
+
+.vendor-inventory-view .container {
+  animation-name: left-content;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .vendor-inventory-view .container .activity-stats-bar {
+    border-top: 1px solid rgba(140, 140, 140, 0.5);
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
+    .vendor-inventory-view .container .activity-stats-bar * {
+      font-family: Avenir;
+      font-size: 1.1em; }
+    .vendor-inventory-view .container .activity-stats-bar .row {
+      padding: 0 0; }
+      .vendor-inventory-view .container .activity-stats-bar .row .col {
+        height: 3em;
+        padding-top: 1em; }
+    .vendor-inventory-view .container .activity-stats-bar .col-50 {
+      border-right: 1px solid rgba(140, 140, 140, 0.5); }
+    .vendor-inventory-view .container .activity-stats-bar .passive {
+      background-color: rgba(100, 100, 100, 0.1);
+      font-weight: normal; }
+  .vendor-inventory-view .container .activity-container {
+    margin-left: 2em;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
+    .vendor-inventory-view .container .activity-container * {
+      text-align: left;
+      padding-left: 0; }
+    .vendor-inventory-view .container .activity-container .activity-tldr-bar {
+      margin-bottom: 0.2em;
+      font-size: 1.2em; }
+    .vendor-inventory-view .container .activity-container .activity-details {
+      margin-bottom: 0.2em; }
+      .vendor-inventory-view .container .activity-container .activity-details * {
+        font-family: Avenir; }
+      .vendor-inventory-view .container .activity-container .activity-details .activity-item-image {
+        max-width: 20%; }
+        .vendor-inventory-view .container .activity-container .activity-details .activity-item-image img {
+          max-width: 100%;
+          border-radius: 10%; }
+      .vendor-inventory-view .container .activity-container .activity-details .activity-item-description {
+        padding-left: 1em; }
+        .vendor-inventory-view .container .activity-container .activity-details .activity-item-description .activity-item-name {
+          font-weight: bold; }
