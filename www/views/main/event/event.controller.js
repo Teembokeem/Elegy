@@ -6,14 +6,13 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal'];
 
-  function EventController($log, dataService, $scope) {
+  function EventController($log, dataService, $scope, $ionicModal) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
-
 
     // LOCAL VARS
     vm.testObj = [
@@ -22,11 +21,13 @@
         parts: [
           {
             title: "Location",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Price',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -35,15 +36,18 @@
         parts: [
           {
             title: "State Laws",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Licensing',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Meeting with the Funeral Director',
-            description: "artsy stuff"
+            description: "artsy stuff",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -52,15 +56,18 @@
         parts: [
           {
             title: "Confirm Payment Accounts",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Add A Main Photo',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: "Write A Memorandum",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -69,11 +76,13 @@
         parts: [
           {
             title: "Create A Schedule",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Plan the Day Of Program',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -82,11 +91,13 @@
         parts: [
           {
             title: "Flowers, Wreaths",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Program Assets',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -95,11 +106,13 @@
         parts: [
           {
             title: "Review Profile & items",
-            description: "Lorem ipsum"
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
           },
           {
             title: 'Invite Friends and Family',
-            description: "Hallo"
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
           }
         ]
       },
@@ -127,6 +140,39 @@
        }, 1000)
     }
     // HELPERS
+
+
+    $ionicModal.fromTemplateUrl('views/templates/modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    })
+    .then(function( modal ) {
+      vm.modal = modal;
+    });
+
+    vm.openModal = function(input) {
+      $scope.modal = input
+      vm.modal.show(input);
+      console.log(input)
+    };
+
+    $scope.closeModal = function() {
+      vm.modal.hide();
+    };
+    
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      vm.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
+
     
   }
 
