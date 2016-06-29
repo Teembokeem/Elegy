@@ -1,0 +1,45 @@
+.vendor-settings-view {
+  * {
+    font-family: Avenir;
+    text-align: left;
+  }
+
+  .user-avatar {
+    text-align: center;
+
+    img {
+      margin-top: 1em;
+      border-radius: 50%;
+      max-width: 40%;
+    }
+  }
+
+  .container {
+
+    .shop-member-container {
+
+      .row {
+
+        .shop-member-avatar {
+          img {
+            margin-top: 1em;
+            border-radius: 50%;
+            max-width: 100%;
+          }
+        }
+
+        .shop-member-info {
+          padding-top: 2em;
+          padding-left: 1em;
+
+          .valign-container {
+            
+            * {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
