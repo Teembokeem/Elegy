@@ -10171,6 +10171,9 @@ button {
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
 
+.vendor-inventory-view * {
+  font-family: Avenir; }
+
 .vendor-inventory-view .item-divider {
   background-color: rgba(23, 119, 158, 0.4);
   color: rgba(40, 40, 40, 0.8); }
@@ -10189,41 +10192,13 @@ button {
   animation-name: left-content;
   animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
-  .vendor-inventory-view .container .activity-stats-bar {
-    border-top: 1px solid rgba(140, 140, 140, 0.5);
-    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
-    .vendor-inventory-view .container .activity-stats-bar * {
-      font-family: Avenir;
-      font-size: 1.1em; }
-    .vendor-inventory-view .container .activity-stats-bar .row {
-      padding: 0 0; }
-      .vendor-inventory-view .container .activity-stats-bar .row .col {
-        height: 3em;
-        padding-top: 1em; }
-    .vendor-inventory-view .container .activity-stats-bar .col-50 {
-      border-right: 1px solid rgba(140, 140, 140, 0.5); }
-    .vendor-inventory-view .container .activity-stats-bar .passive {
-      background-color: rgba(100, 100, 100, 0.1);
-      font-weight: normal; }
-  .vendor-inventory-view .container .activity-container {
-    margin-left: 2em;
-    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
-    .vendor-inventory-view .container .activity-container * {
-      text-align: left;
-      padding-left: 0; }
-    .vendor-inventory-view .container .activity-container .activity-tldr-bar {
-      margin-bottom: 0.2em;
-      font-size: 1.2em; }
-    .vendor-inventory-view .container .activity-container .activity-details {
-      margin-bottom: 0.2em; }
-      .vendor-inventory-view .container .activity-container .activity-details * {
-        font-family: Avenir; }
-      .vendor-inventory-view .container .activity-container .activity-details .activity-item-image {
-        max-width: 20%; }
-        .vendor-inventory-view .container .activity-container .activity-details .activity-item-image img {
-          max-width: 100%;
-          border-radius: 10%; }
-      .vendor-inventory-view .container .activity-container .activity-details .activity-item-description {
-        padding-left: 1em; }
-        .vendor-inventory-view .container .activity-container .activity-details .activity-item-description .activity-item-name {
-          font-weight: bold; }
+  .vendor-inventory-view .container .col img {
+    width: 100% !important;
+    height: 10em !important; }
+  .vendor-inventory-view .container .listing-row {
+    flex-wrap: wrap; }
+
+.vendor-inventory-view .container.listing-description * {
+  text-align: left;
+  padding: 0 auto;
+  margin-top: -0.5em; }
