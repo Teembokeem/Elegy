@@ -10099,77 +10099,82 @@ button {
 .vendor-signup-view .checkbox-icon {
   margin-left: 30%; }
 
-.vendor-home-view {
+.vendor-home-view .item-divider {
+  background-color: rgba(23, 119, 158, 0.4);
+  color: rgba(40, 40, 40, 0.8); }
+
+.vendor-home-view .item-avatar {
+  padding-bottom: 0; }
+  .vendor-home-view .item-avatar * {
+    text-align: left; }
+  .vendor-home-view .item-avatar h2, .vendor-home-view .item-avatar p {
+    font-family: avenir; }
+  .vendor-home-view .item-avatar .col {
+    display: inline-block; }
+  .vendor-home-view .item-avatar .swipe {
+    vertical-align: top;
+    text-align: right;
+    width: 30%; }
+
+.vendor-home-view .user-avatar {
+  text-align: center; }
+  .vendor-home-view .user-avatar img {
+    margin-top: 1em;
+    border-radius: 50%;
+    max-width: 20%; }
+
+.vendor-home-view .list {
+  margin-bottom: 0 !important; }
+
+.vendor-home-view .activity-stats-bar {
+  border-top: 1px solid rgba(140, 140, 140, 0.5);
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
   animation-name: opacity;
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
-  .vendor-home-view .item-divider {
-    background-color: rgba(23, 119, 158, 0.4);
-    color: rgba(40, 40, 40, 0.8); }
-  .vendor-home-view .item-avatar {
-    padding-bottom: 0; }
-    .vendor-home-view .item-avatar * {
-      text-align: left; }
-    .vendor-home-view .item-avatar h2, .vendor-home-view .item-avatar p {
-      font-family: avenir; }
-    .vendor-home-view .item-avatar .col {
-      display: inline-block; }
-    .vendor-home-view .item-avatar .swipe {
-      vertical-align: top;
-      text-align: right;
-      width: 30%; }
-  .vendor-home-view .user-avatar {
-    text-align: center; }
-    .vendor-home-view .user-avatar img {
-      margin-top: 1em;
-      border-radius: 50%;
+  .vendor-home-view .activity-stats-bar * {
+    font-family: Avenir;
+    font-size: 1em; }
+  .vendor-home-view .activity-stats-bar .row {
+    padding: 0 0; }
+    .vendor-home-view .activity-stats-bar .row .col {
+      border-bottom: 2px solid black;
+      height: 3em;
+      padding-top: 0.7em; }
+  .vendor-home-view .activity-stats-bar .passive {
+    font-color: rgba(160, 160, 160, 0.8);
+    border-style: none !important; }
+
+.vendor-home-view .activity-container {
+  margin-left: 2em;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  animation-name: opacity, right-in;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .vendor-home-view .activity-container * {
+    text-align: left;
+    padding-left: 0; }
+  .vendor-home-view .activity-container .activity-tldr-bar {
+    margin-bottom: 0.2em;
+    font-size: 1.2em; }
+  .vendor-home-view .activity-container .activity-details {
+    margin-bottom: 0.2em; }
+    .vendor-home-view .activity-container .activity-details * {
+      font-family: Avenir; }
+    .vendor-home-view .activity-container .activity-details .activity-item-image {
       max-width: 20%; }
-  .vendor-home-view .list {
-    margin-bottom: 0 !important; }
-  .vendor-home-view .activity-stats-bar {
-    border-top: 1px solid rgba(140, 140, 140, 0.5);
-    border-bottom: 1px solid rgba(140, 140, 140, 0.5); }
-    .vendor-home-view .activity-stats-bar * {
-      font-family: Avenir;
-      font-size: 1em; }
-    .vendor-home-view .activity-stats-bar .row {
-      padding: 0 0; }
-      .vendor-home-view .activity-stats-bar .row .col {
-        border-bottom: 2px solid black;
-        height: 3em;
-        padding-top: 0.7em; }
-    .vendor-home-view .activity-stats-bar .passive {
-      font-color: rgba(160, 160, 160, 0.8);
-      border-style: none !important; }
-  .vendor-home-view .activity-container {
-    margin-left: 2em;
-    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
-    animation-name: opacity, right-in;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
-    .vendor-home-view .activity-container * {
-      text-align: left;
-      padding-left: 0; }
-    .vendor-home-view .activity-container .activity-tldr-bar {
-      margin-bottom: 0.2em;
-      font-size: 1.2em; }
-    .vendor-home-view .activity-container .activity-details {
-      margin-bottom: 0.2em; }
-      .vendor-home-view .activity-container .activity-details * {
-        font-family: Avenir; }
-      .vendor-home-view .activity-container .activity-details .activity-item-image {
-        max-width: 20%; }
-        .vendor-home-view .activity-container .activity-details .activity-item-image img {
-          max-width: 100%;
-          border-radius: 10%; }
-      .vendor-home-view .activity-container .activity-details .activity-item-description {
-        padding-left: 1em; }
-        .vendor-home-view .activity-container .activity-details .activity-item-description .activity-item-name {
-          font-weight: bold; }
-  .vendor-home-view .activity-container.ng-hide {
-    animation-name: opacity-out, left-out;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+      .vendor-home-view .activity-container .activity-details .activity-item-image img {
+        max-width: 100%;
+        border-radius: 10%; }
+    .vendor-home-view .activity-container .activity-details .activity-item-description {
+      padding-left: 1em; }
+      .vendor-home-view .activity-container .activity-details .activity-item-description .activity-item-name {
+        font-weight: bold; }
+
+.vendor-home-view .activity-container.ng-hide {
+  animation-name: opacity-out, left-out;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
 
 .vendor-inventory-view * {
   font-family: Avenir; }
@@ -10189,8 +10194,8 @@ button {
   margin-bottom: 0 !important; }
 
 .vendor-inventory-view .container {
-  animation-name: left-content;
-  animation-duration: 1.5s;
+  animation-name: left-content, opacity;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .vendor-inventory-view .container .col img {
     width: 100% !important;
@@ -10202,3 +10207,68 @@ button {
   text-align: left;
   padding: 0 auto;
   margin-top: -0.5em; }
+
+.vendor-orders-view * {
+  font-family: Avenir; }
+
+.vendor-orders-view .user-avatar {
+  text-align: center; }
+  .vendor-orders-view .user-avatar img {
+    margin-top: 1em;
+    border-radius: 50%;
+    max-width: 20%; }
+
+.vendor-orders-view .orders-bar {
+  border-top: 1px solid rgba(140, 140, 140, 0.5);
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  animation-name: opacity;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .vendor-orders-view .orders-bar * {
+    font-family: Avenir;
+    font-size: 1em; }
+  .vendor-orders-view .orders-bar .row {
+    padding: 0 0; }
+    .vendor-orders-view .orders-bar .row .col {
+      border-bottom: 2px solid black;
+      height: 3em;
+      padding-top: 0.7em; }
+    .vendor-orders-view .orders-bar .row .passive {
+      font-color: rgba(160, 160, 160, 0.8);
+      border-style: none !important; }
+
+.vendor-orders-view .open-orders-container, .vendor-orders-view .completed-orders-container {
+  margin-left: 2em;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+  animation-name: opacity, right-in;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .vendor-orders-view .open-orders-container *, .vendor-orders-view .completed-orders-container * {
+    text-align: left;
+    padding-left: 0; }
+  .vendor-orders-view .open-orders-container .orders-tldr-bar, .vendor-orders-view .completed-orders-container .orders-tldr-bar {
+    margin-bottom: 0.2em;
+    font-size: 1.2em; }
+  .vendor-orders-view .open-orders-container .orders-details, .vendor-orders-view .completed-orders-container .orders-details {
+    margin-bottom: 0.2em; }
+    .vendor-orders-view .open-orders-container .orders-details *, .vendor-orders-view .completed-orders-container .orders-details * {
+      font-family: Avenir; }
+    .vendor-orders-view .open-orders-container .orders-details .orders-item-image, .vendor-orders-view .completed-orders-container .orders-details .orders-item-image {
+      max-width: 20%; }
+      .vendor-orders-view .open-orders-container .orders-details .orders-item-image img, .vendor-orders-view .completed-orders-container .orders-details .orders-item-image img {
+        max-width: 100%;
+        border-radius: 10%; }
+    .vendor-orders-view .open-orders-container .orders-details .orders-item-description, .vendor-orders-view .completed-orders-container .orders-details .orders-item-description {
+      padding-left: 1em; }
+      .vendor-orders-view .open-orders-container .orders-details .orders-item-description .orders-item-name, .vendor-orders-view .completed-orders-container .orders-details .orders-item-description .orders-item-name {
+        font-weight: bold; }
+
+.vendor-orders-view .open-orders-container.ng-hide, .vendor-orders-view .ng-hide.completed-orders-container {
+  animation-name: opacity-out, left-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+
+.vendor-orders-view .completed-orders-container.ng-hide {
+  animation-name: opacity-out, left-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
