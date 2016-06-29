@@ -1,5 +1,9 @@
 .vendor-inventory-view {
 
+  * {
+    font-family: Avenir
+  }
+
   .item-divider {
     background-color: rgba(23, 119, 158, 0.4);
     color: rgba(40, 40, 40, 0.8);
@@ -24,79 +28,29 @@
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
-    .activity-stats-bar {
-      border-top: 1px solid rgba(140, 140, 140, 0.5);
-      border-bottom: 1px solid rgba(140, 140, 140, 0.5);
-      
-      * {
-        font-family: Avenir;
-        // font-weight: bold;
-        font-size: 1.1em;
-      }
-
-      .row {
-        padding: 0 0;
-
-        .col {
-          height: 3em;
-          padding-top: 1em;
-        }
-      }
-
-      .col-50 {
-        border-right: 1px solid rgba(140, 140, 140, 0.5)
-      }
-
-      .passive {
-        background-color: rgba(100 ,100, 100, 0.1);
-        font-weight: normal;
+    .col {
+      img {
+        width: 100% !important;
+        height: 10em !important;
       }
     }
 
-    .activity-container {
-      margin-left: 2em;
-      border-bottom: 1px solid rgba(140, 140, 140, 0.5);
-      // animation-name: opacity, right-in;
-      // animation-duration: 1s;
-      // animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    .listing-row {
+      flex-wrap: wrap;
+    }
+  }
 
-      * {
-        text-align: left;
-        padding-left: 0;
-      }
+  .container.listing-description {
 
-      .activity-tldr-bar {
-        margin-bottom: 0.2em;
-        font-size: 1.2em;
-      }
+    * {
+      text-align: left;
+      padding: 0 auto;
+      margin-top: -0.5em;
+    }
 
-      .activity-details {
-        margin-bottom: 0.2em;
-        
-        * {
-          font-family: Avenir;
-        }
+    .row {
 
-        .activity-item-image {
-          max-width: 20%;
-
-          img {
-            max-width: 100%;
-            border-radius: 10%;
-          }
-        }
-
-        .activity-item-description {
-          padding-left: 1em;
-
-          .activity-item-name {
-            font-weight: bold;
-          }
-
-          .activity-item-price {
-            // color: green;
-          }
-        }
+      .col {
 
       }
     }
