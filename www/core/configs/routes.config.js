@@ -197,7 +197,7 @@
     .state('app.vendor-tab.vendor-home', {
         url: '/vendor-home',
         views: {
-          'Dashboard': {
+          'Vendor-Dashboard': {
             templateUrl: 'views/main/vendor_home/vendor_home.html',
             controller: 'VendorHome.controller',
             controllerAs: 'VendorHome'
@@ -210,7 +210,7 @@
     .state('app.vendor-tab.vendor-inventory', {
         url: '/vendor-inventory',
         views: {
-          'Inventory': {
+          'Vendor-Inventory': {
             templateUrl: 'views/main/vendor_inventory/vendor_inventory.html',
             controller: 'VendorInventory.controller',
             controllerAs: 'VendorInventory'
@@ -220,10 +220,10 @@
         authorized: true
     })
 
-    .state('app.vendor-tab.vendor-settings', {
+    .state('app.vendor-tab.vendor-orders', {
         url: '/vendor-orders',
         views: {
-          'Orders': {
+          'Vendor-Orders': {
             templateUrl: 'views/main/vendor_orders/vendor_orders.html',
             controller: 'VendorOrders.controller',
             controllerAs: 'VendorOrders'
@@ -236,7 +236,7 @@
     .state('app.vendor-tab.vendor-settings', {
         url: '/vendor-settings',
         views: {
-          'Settings': {
+          'Vendor-Settings': {
             templateUrl: 'views/main/vendor_settings/vendor_settings.html',
             controller: 'VendorSettings.controller',
             controllerAs: 'VendorSettings'

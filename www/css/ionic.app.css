@@ -10272,3 +10272,25 @@ button {
   animation-name: opacity-out, left-out;
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+
+.vendor-settings-view * {
+  font-family: Avenir;
+  text-align: left; }
+
+.vendor-settings-view .user-avatar {
+  text-align: center; }
+  .vendor-settings-view .user-avatar img {
+    margin-top: 1em;
+    border-radius: 50%;
+    max-width: 40%; }
+
+.vendor-settings-view .container .shop-member-container .row .shop-member-avatar img {
+  margin-top: 1em;
+  border-radius: 50%;
+  max-width: 100%; }
+
+.vendor-settings-view .container .shop-member-container .row .shop-member-info {
+  padding-top: 2em;
+  padding-left: 1em; }
+  .vendor-settings-view .container .shop-member-container .row .shop-member-info .valign-container * {
+    display: block; }
