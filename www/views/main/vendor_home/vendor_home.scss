@@ -1,7 +1,4 @@
 .vendor-home-view {
-  animation-name: opacity;
-  animation-duration: 2s;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
   .item-divider {
     background-color: rgba(23, 119, 158, 0.4);
@@ -46,7 +43,9 @@
   .activity-stats-bar {
     border-top: 1px solid rgba(140, 140, 140, 0.5);
     border-bottom: 1px solid rgba(140, 140, 140, 0.5);
-    
+      animation-name: opacity;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
     * {
       font-family: Avenir;
       // font-weight: bold;
