@@ -13,8 +13,10 @@
     // INSTANTIATIONS
     $log.instantiate('Vendor Home', 'Controller');
     var vm = this;
-    
+
     // LOCAL VARS
+    vm.clicked = true;
+    vm.passive = 'statistics';
 
     // BOUND FUNCTIONS
 

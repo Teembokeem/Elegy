@@ -18,6 +18,9 @@
     }
 
     // LOCAL VARS
+    vm.data = {
+      text: "VERIFYING CODE"
+    }
 
     // BOUND FUNCTIONS
 

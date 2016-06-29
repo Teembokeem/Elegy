@@ -4,6 +4,41 @@
       <img src="../../img/ben.png" alt="">
     </div>
     <h4>{{VendorHome.user.email}}</h4>
-    fdsafadsfdfafdsfsafsfdsasd
+    <div class="container">
+      <div class="activity-stats-bar">
+        <div class="row">
+          <div ng-class="{passive: VendorHome.passive === 'activity'}" class="col col-50" ng-click="VendorHome.passive = 'statistics'">
+              <span>ACTIVITY</span>
+          </div>
+          <div ng-class="{passive: VendorHome.passive === 'statistics'}" class="col" ng-click=" VendorHome.passive = 'activity'">
+              <span>STATISTICS</span>
+          </div>
+        </div>
+      </div>
+      <div ng-show="VendorHome.passive !== 'activity'" class="activity-container">
+        <div class="row activity-tldr-bar">
+          <div class="activity-tldr col col-80">
+            {{'Jarvis has requested an order.'}}
+          </div>
+          <div class="activity-inception col">
+            {{'2h'}}
+          </div>
+        </div>
+        <div class="row activity-details">
+          <div class="col activity-item-image">
+            <img src="../../img/casket.jpg" alt="">
+          </div>
+          <div class="col activity-item-description">
+            <span class="activity-item-name">{{'ADAMANTIUM'}}</span>
+            <br>
+            <span class="activity-item-price">{{'$4999.00'}}</span>
+          </div>
+        </div>
+
+      </div>
+      <div ng-show="VendorHome.passive !== 'statistics'" class="statistics-container">
+        hello
+      </div>
+    </div>
   </ion-content>
 </ion-view>
