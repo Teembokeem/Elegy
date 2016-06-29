@@ -24,8 +24,8 @@
   }
 
   .container {
-    animation-name: left-content;
-    animation-duration: 1.5s;
+    animation-name: left-content, opacity;
+    animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
     .col {
