@@ -219,6 +219,32 @@
         controllerId: 'VendorInventory',
         authorized: true
     })
+
+    .state('app.vendor-tab.vendor-settings', {
+        url: '/vendor-orders',
+        views: {
+          'Orders': {
+            templateUrl: 'views/main/vendor_orders/vendor_orders.html',
+            controller: 'VendorOrders.controller',
+            controllerAs: 'VendorOrders'
+          }
+        },
+        controllerId: 'VendorOrders',
+        authorized: true
+    })
+
+    .state('app.vendor-tab.vendor-settings', {
+        url: '/vendor-settings',
+        views: {
+          'Settings': {
+            templateUrl: 'views/main/vendor_settings/vendor_settings.html',
+            controller: 'VendorSettings.controller',
+            controllerAs: 'VendorSettings'
+          }
+        },
+        controllerId: 'VendorSettings',
+        authorized: true
+    })
     
     
     
