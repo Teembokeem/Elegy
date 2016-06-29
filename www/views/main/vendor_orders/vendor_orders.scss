@@ -1,0 +1,114 @@
+.vendor-orders-view {
+
+  * {
+    font-family: Avenir;
+  }
+
+  .user-avatar {
+    text-align: center;
+
+    img {
+      margin-top: 1em;
+      border-radius: 50%;
+      max-width: 20%;
+    }
+  }
+
+  .orders-bar {
+    border-top: 1px solid rgba(140, 140, 140, 0.5);
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+    animation-name: opacity;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    
+    * {
+      font-family: Avenir;
+      // font-weight: bold;
+      font-size: 1em;
+    }
+
+    .row {
+      padding: 0 0;
+
+      .col {
+        border-bottom: 2px solid black;
+        height: 3em;
+        padding-top: 0.7em;
+
+      }
+      .passive {
+        font-color: rgba(160, 160, 160, 0.8);
+        border-style: none !important;
+      }
+    }
+
+    .col-50 {
+    }
+
+  }
+
+  .open-orders-container {
+    margin-left: 2em;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.5);
+    animation-name: opacity, right-in;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+    * {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    .orders-tldr-bar {
+      margin-bottom: 0.2em;
+      font-size: 1.2em;
+    }
+
+    .orders-details {
+      margin-bottom: 0.2em;
+      
+      * {
+        font-family: Avenir;
+      }
+
+      .orders-item-image {
+        max-width: 20%;
+
+        img {
+          max-width: 100%;
+          border-radius: 10%;
+        }
+      }
+
+      .orders-item-description {
+        padding-left: 1em;
+
+        .orders-item-name {
+          font-weight: bold;
+        }
+
+        .orders-item-price {
+          // color: green;
+        }
+      }
+
+    }
+  }
+
+  .completed-orders-container {
+    @extend .open-orders-container
+}
+
+  .open-orders-container.ng-hide {
+  animation-name: opacity-out, left-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .completed-orders-container.ng-hide {
+  animation-name: opacity-out, left-out;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+}

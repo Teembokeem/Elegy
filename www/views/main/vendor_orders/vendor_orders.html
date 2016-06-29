@@ -1,0 +1,61 @@
+<ion-view view-title="V E N D O R">
+  <ion-content class="vendor-orders-view">
+    <div class="user-avatar">
+      <img src="../../img/ben.png" alt="">
+    </div>
+    <div class="container">
+      <div class="orders-bar">
+        <div class="row">
+          <div ng-class="{passive: VendorOrders.passive === 'openOrders'}" class="col col-50" ng-click="VendorOrders.passive = 'completedOrders'">
+              <span>OPEN ORDERS</span>
+          </div>
+          <div ng-class="{passive: VendorOrders.passive === 'completedOrders'}" class="col" ng-click=" VendorOrders.passive = 'openOrders'">
+              <span>COMPLETED ORDERS</span>
+          </div>
+        </div>
+      </div>
+      <div ng-show="VendorOrders.passive !== 'openOrders'" class="open-orders-container">
+        <div class="row orders-tldr-bar">
+          <div class="orders-tldr col col-80">
+            {{'maybelline has requested an order.'}}
+          </div>
+          <div class="orders-inception col">
+            {{'2h'}}
+          </div>
+        </div>
+        <div class="row orders-details">
+          <div class="col orders-item-image">
+            <img src="../../img/casket.jpg" alt="">
+          </div>
+          <div class="col orders-item-description">
+            <span class="orders-item-name">{{'ADAMANTIUM'}}</span>
+            <br>
+            <span class="orders-item-price">{{'$4999.00'}}</span>
+          </div>
+        </div>
+
+      </div>
+      <div ng-show="VendorOrders.passive !== 'completedOrders'" class="completed-orders-container">
+        <div class="row orders-tldr-bar">
+          <div class="orders-tldr col col-80">
+            {{'Jarvis has requested an order.'}}
+          </div>
+          <div class="orders-inception col">
+            {{'2h'}}
+          </div>
+        </div>
+        <div class="row orders-details">
+          <div class="col orders-item-image">
+            <img src="../../img/casket.jpg" alt="">
+          </div>
+          <div class="col orders-item-description">
+            <span class="orders-item-name">{{'ADAMANTIUM'}}</span>
+            <br>
+            <span class="orders-item-price">{{'$4999.00'}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
