@@ -127,18 +127,20 @@
       vm.val = vm.testObj[(((dir === 'left') ? setter ++ : setter = setter + 5)) % vm.testObj.length]
       var el = document.getElementsByClassName('step-container')[0];
   
-  // -> triggering reflow /* The actual magic */
-  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
-        // el.offsetWidth = el.offsetWidth;
-  
-  // -> and re-adding the class
-        el.classList.add("step-title-out");
-        el.classList.remove("step-title-in");
-       setTimeout(function() {
-         el.classList.add("step-title-in");
-         el.classList.remove("step-title-out");
-       }, 1000)
+      // -> triggering reflow /* The actual magic */
+      // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+            // el.offsetWidth = el.offsetWidth;
+      
+      // -> and re-adding the class
+      el.classList.add("step-title-out");
+      el.classList.remove("step-title-in");
+      setTimeout(function() {
+        el.classList.add("step-title-in");
+        el.classList.remove("step-title-out");
+      }, 1000)
     }
+
+
     // HELPERS
 
 
