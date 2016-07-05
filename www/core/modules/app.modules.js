@@ -2,7 +2,7 @@
   'use strict'
   
   angular
-    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives'])
+    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
