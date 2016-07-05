@@ -10007,23 +10007,23 @@ button {
       border-radius: 50%;
       max-width: 20%;
       margin-bottom: 2em; }
-  .event-view .step-container .step-title-in {
+  .event-view .step-container {
     animation-name: left-content;
     animation-duration: 1.5s;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
-  .event-view .step-container .step-title-out {
-    animation-name: opacity-out;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
-  .event-view .step-container h2 {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-    margin: 10px 0 20px; }
-  .event-view .step-container h2 span {
-    background: #fff;
-    padding: 0 10px; }
+    .event-view .step-container .col-10 {
+      padding-top: 0.5em;
+      font-size: 2em;
+      font-style: bold;
+      font-family: Avenir; }
+    .event-view .step-container h2 {
+      width: 100%;
+      text-align: center; }
+    .event-view .step-container h2 span {
+      background: #fff;
+      padding: 0 10px; }
+  .event-view .part-nav .col-30 {
+    width: 100%; }
   .event-view .part-container {
     text-align: center; }
     .event-view .part-container .part-content, .event-view .part-container .part-checker {

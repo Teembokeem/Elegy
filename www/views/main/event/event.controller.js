@@ -18,13 +18,19 @@
 
     $log.instantiate('Event Data Template', 'constants')
     $log.instantiate('Event Static Info', 'constants')
+
     // LOCAL VARS
-        vm.val = vm.EventStaticInfo[setter];
+    vm.val = vm.EventStaticInfo[setter];
 
     // BOUND FUNCTIONS
     vm.slideStep = function(dir) {
-      vm.val = vm.testObj[(((dir === 'left') ? setter ++ : setter = setter + 5)) % vm.testObj.length]
+      $log.info(dir === 'right', vm.EventStaticInfo.length - 1 )
+      vm.val = vm.EventStaticInfo[(((dir === 'right') ? setter = (setter + 1) % vm.EventStaticInfo.length : setter = (Math.abs((setter + vm.EventStaticInfo.length - 1)) % vm.EventStaticInfo.length)))]
+      $log.info("setter", setter)
+      $log.info("chosen val", vm.val)
       var el = document.getElementsByClassName('step-container')[0];
+      $log.info("what is val", vm.EventStaticInfo)
+      vm.openModal(vm.val)
       el.classList.add("step-title-out");
       el.classList.remove("step-title-in");
       setTimeout(function() {
@@ -38,15 +44,17 @@
     };
 
 
+
     // HELPERS
-
-
     $ionicModal.fromTemplateUrl('views/templates/modal.html', {
       scope: $scope,
       animation: 'slide-in-up'
     })
     .then(function( modal ) {
-      vm.modal = modal;
+      return vm.modal = modal;
+    })
+    .then(function(cool) {
+      vm.openModal(vm.val)
     });
 
     vm.openModal = function(input) {
@@ -71,8 +79,6 @@
     $scope.$on('modal.removed', function() {
       // Execute action
     });
-
-    
   }
 
 })();

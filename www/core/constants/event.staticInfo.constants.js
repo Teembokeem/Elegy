@@ -4,7 +4,6 @@
   angular
     .module('Constants')
     .constant('EventStaticInfo', 
-      
       [
       {
         title: "Find A Venue",
@@ -20,7 +19,9 @@
             description: "Reach out to a funeral home director",
             test: "The director holds a lot of power, so make sure you find one you like. He or she will help guide you through the process."
           }
-        ]
+        ],
+        description: "Step 1",
+        test: "What to consider when choosing a funeral home and director. Make sure to speak with more than one funeral home and compare any associated services."
       },
       {
         title: "Major Decisions",
@@ -40,7 +41,9 @@
             description: "artsy stuff",
             test: "FUCK YOUUUUUUUUUUU"
           }
-        ]
+        ],
+        description: "Step 2",
+        test: "FUCK YOUUUUUUUUUUU"
       },
       {
         title: "Keepsake Setup",
@@ -60,7 +63,9 @@
             description: "Lorem ipsum",
             test: "FUCK YOUUUUUUUUUUU"
           }
-        ]
+        ],
+        description: "Step 3",
+        test: "FUCK YOUUUUUUUUUUU"
       },
       {
         title: "General Preparations",
@@ -75,7 +80,9 @@
             description: "Hallo",
             test: "FUCK YOUUUUUUUUUUU"
           }
-        ]
+        ],
+        description: "Step 4",
+        test: "FUCK YOUUUUUUUUUUU"
       },
       {
         title: "Purchasables",
@@ -90,7 +97,9 @@
             description: "Hallo",
             test: "FUCK YOUUUUUUUUUUU"
           }
-        ]
+        ],
+        description: "Step 5",
+        test: "FUCK YOUUUUUUUUUUU"
       },
       {
         title: "Invitations",
@@ -105,7 +114,9 @@
             description: "Hallo",
             test: "FUCK YOUUUUUUUUUUU"
           }
-        ]
+        ],
+        description: "Step 6",
+        test: "FUCK YOUUUUUUUUUUU"
       },
 
       
