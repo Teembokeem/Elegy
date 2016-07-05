@@ -18,33 +18,33 @@
     }
   }
   .step-container {
-    .step-title-in {
       animation-name: left-content;
       animation-duration: 1.5s;
-     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-    }
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
-    .step-title-out {
-      animation-name: opacity-out;
-      animation-duration: 1s;
-     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-    }
-    h2 {
-      width: 100%; 
-      text-align: center; 
-      border-bottom: 1px solid #000; 
-      line-height: 0.1em;
-      margin: 10px 0 20px; 
-    } 
+      .col-10 {
+        padding-top: 0.5em;
+        font-size: 2em;
+        font-style: bold;
+        font-family: Avenir;
+      }
+     
+      h2 {
+        width: 100%; 
+        text-align: center; 
+      } 
 
     h2 span { 
         background:#fff; 
         padding:0 10px; 
     }
   }
-  // .part-nav {
-  //   border-bottom: 1px solid rgba(100, 100, 100, 0.5)
-  // }
+
+  .part-nav {
+    .col-30 {
+      width: 100%;
+    }
+  }
   .part-container {
     text-align: center;
     
