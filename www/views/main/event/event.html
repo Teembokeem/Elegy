@@ -3,14 +3,24 @@
     <div class="user-avatar">
       <img src="../../img/ben.png" alt="">
     </div>
-    <div an-swipe="true" class="ng-repeat-chamber" on-swipe-left="Event.slideStep('left')" on-swipe-right="Event.slideStep('right')">
+    <div an-swipe="true" class="ng-repeat-chamber">
       <!--1-->
-      <div class="step-title-in step-container">
-        <h2><span >{{Event.val.title}}</span></h2>
+      <div class=" step-container container">
+        <div class="row">
+          <div ng-click="Event.slideStep('left')" class="col col-10">
+           	<
+          </div>
+          <div class="col col-80">
+            <h2><span >{{Event.val.title}}</span></h2>
+          </div>
+          <div ng-click="Event.slideStep('right')" class="col col-10">
+             >
+          </div>
+        </div>
       </div>
       
       <!--2-->
-      <div ng-repeat="parts in Event.val.parts" class="part-container">
+      <div ng-repeat="part in Event.val.parts" class="part-container">
         <div class="row">
           <!--2.1-->
           <div class="col col-10"></div>
@@ -22,16 +32,22 @@
           <!--2.2-->
           <div class="part-content col">
             <!--2.2.1-->
-            <div class="part-nav col">
-              <h4 ng-click="Event.displayMarketplace(parts.category)">{{parts.title | uppercase}}   
-                <span ng-click="Event.openModal( parts )"><i class="icon ion-ios-information-outline"></i></span>
-              </h4>
+            <div class="part-nav col container">
+              <div class="row">
+                <div class="col col-70">
+                  <h4 ng-click=" part.category ? Event.displayMarketplace(part.category) : null">{{part.title | uppercase}}   
+                  </h4>
+                </div>
+                <div class="col col-30">
+                  <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
+                </div>
+              </div>
 
             </div>
            
             <!--2.2.2-->
             <div class="part-description-container col">
-              <p>{{parts.description}}</p>
+              <p>{{part.description}}</p>
             </div>
           </div>
         
