@@ -6,120 +6,21 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', 'EventDataTemplates', 'EventStaticInfo'];
 
-  function EventController($log, dataService, $scope, $ionicModal) {
+  function EventController($log, dataService, $scope, $ionicModal, EventDataTemplates, EventStaticInfo) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
+    vm.EventDataTemplates = EventDataTemplates;
+    $log.instantiate('Event Data Template', 'constants')
+    vm.EventStaticInfo = EventStaticInfo;
+    $log.instantiate('Event Static Info', 'constants')
+    $log.info('stuff', EventStaticInfo)
 
     // LOCAL VARS
-    vm.testObj = [
-      {
-        title: "Find A Venue",
-        parts: [
-          {
-            title: "Location",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Price',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-      {
-        title: "Major Decisions",
-        parts: [
-          {
-            title: "State Laws",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Licensing',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Meeting with the Funeral Director',
-            description: "artsy stuff",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-      {
-        title: "Keepsake Setup",
-        parts: [
-          {
-            title: "Confirm Payment Accounts",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Add A Main Photo',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: "Write A Memorandum",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-      {
-        title: "General Preparations",
-        parts: [
-          {
-            title: "Create A Schedule",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Plan the Day Of Program',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-      {
-        title: "Purchasables",
-        parts: [
-          {
-            title: "Flowers, Wreaths",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Program Assets',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-      {
-        title: "Invitations",
-        parts: [
-          {
-            title: "Review Profile & items",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Invite Friends and Family',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ]
-      },
-
-      
-    ]
-        vm.val = vm.testObj[setter];
+        vm.val = vm.EventStaticInfo[setter];
 
     // BOUND FUNCTIONS
     vm.slideStep = function(dir) {
