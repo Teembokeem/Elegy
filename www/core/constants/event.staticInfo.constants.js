@@ -11,13 +11,13 @@
         parts: [
           {
             title: "Location",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
+            description: "Compare funeral homes near you",
+            test: "Browse through locally listed funeral homes."
           },
           {
-            title: 'Price',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
+            title: 'Funeral Director',
+            description: "Reach out to a funeral home director",
+            test: "The director holds a lot of power, so make sure you find one you like. He or she will help guide you through the process."
           }
         ]
       },
