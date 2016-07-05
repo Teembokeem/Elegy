@@ -12,7 +12,8 @@
           {
             title: "Location",
             description: "Compare funeral homes near you",
-            test: "Browse through locally listed funeral homes."
+            test: "Browse through locally listed funeral homes.",
+            category: 'Venues'
           },
           {
             title: 'Funeral Director',
