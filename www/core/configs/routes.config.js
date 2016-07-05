@@ -121,7 +121,6 @@
         authorized: true
     })
     
-    
     .state('app.departed-tab.event', {
         url: '/event',
         views: {
@@ -137,6 +136,27 @@
         },
         cache: false,
         controllerId: 'Event',
+        authorized: true
+    })
+    
+    .state('app.departed-tab.marketplace', {
+        url: '/marketplace/:category',
+        views: {
+          'event': {
+            templateUrl: 'views/main/marketplace/marketplace.html',
+            controller: 'Marketplace.controller',
+            controllerAs: 'Marketplace'
+            // resolve: {
+            //   Marketplace: function(dataService) {
+            //   }
+            // }
+          }
+        },
+        cache: false,
+        params: {
+          category: null
+        },
+        controllerId: 'Marketplace',
         authorized: true
     })
     
