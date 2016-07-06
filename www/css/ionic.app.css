@@ -10092,6 +10092,78 @@ button {
 .spinner svg {
   stroke: white; }
 
+.feed-view .banner {
+  background: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  height: 300px; }
+
+.feed-view .banner header {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: inherit;
+  background-attachment: fixed; }
+
+.feed-view .banner header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: inherit;
+  background-attachment: fixed;
+  -webkit-filter: blur(12px);
+  filter: blur(12px);
+  transform: scale(2) translateY(20px); }
+
+.feed-view .banner header h1 {
+  margin: 0;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  font-size: 2em; }
+
+.feed-view textarea {
+  width: 100%;
+  height: 75px;
+  text-align: left;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-color: grey;
+  border-style: solid;
+  padding: 10px; }
+
+.feed-view .feed {
+  padding: 10px;
+  color: blue; }
+  .feed-view .feed .row {
+    margin-top: 0px; }
+  .feed-view .feed h3 {
+    padding-top: 5px;
+    color: blue;
+    text-align: left; }
+  .feed-view .feed h4 {
+    padding-top: 0px;
+    color: blue;
+    text-align: left; }
+
+.feed-view .feed-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; }
+
 .vendor-signup-view h3 {
   margin-top: 20%;
   text-align: center; }

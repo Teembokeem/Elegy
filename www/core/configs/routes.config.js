@@ -75,6 +75,15 @@
         controllerId: 'Overview',
         authorized: true
     })
+
+    .state('app.feed', {
+        url: '/feed',
+        templateUrl: 'views/main/feed/feed.html',
+        controller: 'Feed.controller',
+        controllerAs: 'Feed',
+        controllerId: 'Feed'
+        // authorized: true
+    })
     
     .state('app.departed-tab', {
       abstract: true, 
@@ -160,19 +169,19 @@
         authorized: true
     })
     
-    .state('app.feed', {
-        url: '/feed',
-        views: {
-          'feed': {
-            templateUrl: 'views/main/feed/feed.html',
-            controller: 'Feed.controller',
-            controllerAs: 'Feed'
-          }
-        },
-        cache: false,
-        controllerId: 'Feed',
-        authorized: true
-    })
+    // .state('app.feed', {
+    //     url: '/feed',
+    //     views: {
+    //       'feed': {
+    //         templateUrl: 'views/main/feed/feed.html',
+    //         controller: 'Feed.controller',
+    //         controllerAs: 'Feed'
+    //       }
+    //     },
+    //     cache: false,
+    //     controllerId: 'Feed',
+    //     authorized: true
+    // })
     
     .state('app.program', {
         url: '/program',
