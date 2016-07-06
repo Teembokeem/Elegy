@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', 'EventDataTemplates', 'EventStaticInfo', '$state'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService'];
 
-  function EventController($log, dataService, $scope, $ionicModal, EventDataTemplates, EventStaticInfo, $state) {
+  function EventController($log, dataService, $scope, $ionicModal, EventDataTemplates, EventStaticInfo, $state, marketplaceService) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
@@ -24,13 +24,12 @@
 
     // BOUND FUNCTIONS
     vm.slideStep = function(dir) {
-      $log.info(dir === 'right', vm.EventStaticInfo.length - 1 )
       vm.val = vm.EventStaticInfo[(((dir === 'right') ? setter = (setter + 1) % vm.EventStaticInfo.length : setter = (Math.abs((setter + vm.EventStaticInfo.length - 1)) % vm.EventStaticInfo.length)))]
-      $log.info("setter", setter)
-      $log.info("chosen val", vm.val)
+      
       var el = document.getElementsByClassName('step-container')[0];
-      $log.info("what is val", vm.EventStaticInfo)
+      
       vm.openModal(vm.val)
+      
       el.classList.add("step-title-out");
       el.classList.remove("step-title-in");
       setTimeout(function() {
@@ -40,6 +39,7 @@
     };
 
     vm.displayMarketplace = function(param) {
+      marketplaceService.grabMarketplaceListings(param)
       $state.go('app.departed-tab.marketplace', {category: param})
     };
 
