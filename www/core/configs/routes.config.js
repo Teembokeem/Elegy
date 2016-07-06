@@ -91,7 +91,7 @@
             resolve: {
               events: function(dataService) {
                 console.log("resolving dependencies")
-                return dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event'])
+                return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
               }
             }
           }
@@ -111,7 +111,7 @@
             resolve: {
               event: function(dataService) {
                 console.log("resolving dependencies")
-                return dataService.getData(['event'], ['event'])
+                return dataService.parseData(['event'], ['event'])
               }
             }
           }
@@ -145,15 +145,35 @@
           'event': {
             templateUrl: 'views/main/marketplace/marketplace.html',
             controller: 'Marketplace.controller',
-            controllerAs: 'Marketplace'
-            // resolve: {
-            //   Marketplace: function(dataService) {
-            //   }
-            // }
+            controllerAs: 'Marketplace',
+            resolve: {
+              Marketplace: function(dataService) {
+                return dataService.parseData(['listings'], ['marketplace']);
+              }
+            }
           }
         },
         cache: false,
         controllerId: 'Marketplace',
+        authorized: true
+    })
+    
+    .state('app.departed-tab.marketplace.listing', {
+        url: '/:venueName',
+        views: {
+          'event': {
+            templateUrl: 'views/main/listing/listing.html',
+            controller: 'Listing.controller',
+            controllerAs: 'Listing',
+            resolve: {
+              Listing: function(dataService) {
+                return dataService.parseData(['listing'], ['marketplace']);
+              }
+            }
+          }
+        },
+        cache: false,
+        controllerId: 'Listing',
         authorized: true
     })
     
