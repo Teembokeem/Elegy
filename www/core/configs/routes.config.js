@@ -153,9 +153,6 @@
           }
         },
         cache: false,
-        params: {
-          category: null
-        },
         controllerId: 'Marketplace',
         authorized: true
     })
