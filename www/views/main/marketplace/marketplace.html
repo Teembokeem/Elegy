@@ -1,9 +1,9 @@
-<ion-view view-title="/marketplace/{{Marketplace.params}}">
+<ion-view view-title="{{Marketplace.params}}">
   <ion-content class="marketplace-view">
     <h1>THE MARKETPLACE</h1>
 
     <div class="container">
-      <div ng-repeat="listing in Marketplace.testObj" class="listing-container">
+      <div ng-repeat="listing in Marketplace.listings" ng-click ="Marketplace.displayListing(listing)" class="listing-container">
         <div class="row listing-row">
           <div class="col-25">
             <img src="{{listing.image}}" alt="">
