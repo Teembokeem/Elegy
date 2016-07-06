@@ -39,7 +39,8 @@
     };
 
     vm.displayMarketplace = function(param) {
-      marketplaceService.grabMarketplaceListings(param)
+      var listings = marketplaceService.grabMarketplaceListings(param);
+      dataService.setData(['listings'], [listings])
       $state.go('app.departed-tab.marketplace', {category: param})
     };
 
