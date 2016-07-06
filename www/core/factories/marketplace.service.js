@@ -5,24 +5,9 @@
     .module('Services')
     .factory('marketplaceService', marketplaceService);
   
-  marketplaceService.$inject = ['$log', '$http', 'urlFactory', 'dataService'];
+  marketplaceService.$inject = ['$log', '$http', 'urlFactory', '$q'];
 
-  function marketplaceService($log, $http, urlFactory, dataService) {
-    var service = {
-      grabMarketplaceListings: grabMarketplaceListings
-    }
-
-    function grabMarketplaceListings(param) {
-      // $http({
-      //   method: 'GET',
-      //   url: urlFactory + '/products' + param
-      // })
-      // .then(function(listings) {
-      //   return dataService.setData(['listings'], [listings])
-      // })
-      dataService.setData(['listings'], [testObj])
-    }
-
+  function marketplaceService($log, $http, urlFactory, $q) {
     // TEMP
     var testObj = [
       {
@@ -107,6 +92,40 @@
         ]
       }
     ]
+    var service = {
+      grabMarketplaceListings: grabMarketplaceListings,
+      parseListings: parseListings
+    }
+
+
+    function grabMarketplaceListings(param) {
+      // $http({
+      //   method: 'GET',
+      //   url: urlFactory + '/products' + param
+      // })
+      // .then(function(listings) {
+      //   return dataService.setData(['listings'], [listings])
+      // })
+      return testObj;
+    }
+
+    function parseListings(input, key) {
+      console.log("hallo")
+      var deferred = $q.defer();
+
+      if (input) {
+        console.log("hallo")
+        deferred.resolve(process(input))
+      } else {
+        deferred.reject("transform went wrong :(")
+      }
+
+      return deferred.promise;
+    }
+
+    function process(input) {
+      return input;
+    }
 
     return service;
   }
