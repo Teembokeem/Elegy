@@ -127,11 +127,12 @@
           'event': {
             templateUrl: 'views/main/event/event.html',
             controller: 'Event.controller',
-            controllerAs: 'Event'
-            // resolve: {
-            //   event: function(dataService) {
-            //   }
-            // }
+            controllerAs: 'Event',
+            resolve: {
+              event: function(dataService) {
+
+              }
+            }
           }
         },
         cache: false,
@@ -159,7 +160,7 @@
     })
   
     .state('app.departed-tab.listing', {
-        url: '/:venueName',
+        url: 'listing/:venueName',
         views: {
           'event': {
             templateUrl: 'views/main/listing/listing.html',
@@ -254,6 +255,19 @@
           }
         },
         controllerId: 'VendorInventory',
+        authorized: true
+    })
+
+    .state('app.vendor-tab.vendor-product', {
+        url: '/vendor-product',
+        views: {
+          'Vendor-Inventory': {
+            templateUrl: 'views/main/vendor_product/vendor_product.html',
+            controller: 'VendorProduct.controller',
+            controllerAs: 'VendorProduct'
+          }
+        },
+        controllerId: 'VendorProduct',
         authorized: true
     })
 
