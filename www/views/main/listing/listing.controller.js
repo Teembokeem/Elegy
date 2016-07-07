@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Listing.controller', ListingController)
   
-  ListingController.$inject = ['$log', '$stateParams', 'Listing'];
+  ListingController.$inject = ['$log', '$stateParams', 'Listing', 'eventService', '$state'];
 
-  function ListingController($log, $stateParams, Listing) {
+  function ListingController($log, $stateParams, Listing, eventService, $state) {
     // INSTANTIATIONS
     $log.instantiate('Listing', 'controller');
     var vm = this;
@@ -20,6 +20,10 @@
     // LOCAL VARS
 
     // BOUND FUNCTIONS
+    vm.selectVenue = function() {
+      eventService.updateEvent(vm.data)
+      $state.go('app.departed-tab.event');
+    }
 
     // HELPERS
   }
