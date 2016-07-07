@@ -14,26 +14,23 @@
         venueName: "Fernwood Memorial Site",
         address: "301 Tennessee Valley Road Mill Valley, CA 94941",
         categories: ['funeral home', 'cemetery', 'reception'],
-        image: '../../img/funeral1.jpeg',
+        image: '../../img/funeral1.jpg',
         rating: 4,
         reviews: [
           {
             user: "Jim",
             rating: 3,
-            review: `Line1
-            line2`
+            review: `fdasfdsafdsafdsafdsafdsaf fdsa fdas fdsa fd afdsa`
           },
           {
             user: "Ben",
             rating: 5,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           },
           {
             user: "Janice",
             rating: 4,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           }
         ]
       },
@@ -47,20 +44,17 @@
           {
             user: "Annie",
             rating: 4,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           },
           {
             user: "Chris",
             rating: 5,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           },
           {
             user: "Zennyatta",
             rating: 4,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           }
         ]
       },
@@ -74,20 +68,17 @@
           {
             user: "Yael",
             rating: 3,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           },
           {
             user: "Jerry",
             rating: 5,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           },
           {
             user: "Keith",
             rating: 4,
-            review: `Line1
-            line2`
+            review: `fdsafdsafdafasfdafdsasfasfsdafasfsda`
           }
         ]
       }

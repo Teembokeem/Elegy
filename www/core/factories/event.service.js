@@ -30,7 +30,7 @@
             obj.admin = true;
           })
         } 
-        return data;
+        return input;
       }
 
     return transform
