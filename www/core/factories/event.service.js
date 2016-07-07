@@ -5,12 +5,31 @@
     .module('Services')
     .factory('eventService', eventService)
   
-  eventService.$inject = ['$log','$q', '$window'];
+  eventService.$inject = ['$log','$q', '$window', '$http', 'urlFactory'];
 
-  function eventService($log, $q, $window) {
+  function eventService($log, $q, $window, $http, urlFactory) {
     $log.instantiate('Event', 'service');
 
-    function transform(input, key) {
+    var service = {
+      updateEvent: updateEvent,
+      parseEvents: parseEvents
+    }
+
+    function updateEvent(module) {
+      $http({
+        method: 'PUT',
+        url: urlFactory + '/events',
+        data: module
+      })
+      .then(function(res) {
+        $log.info("yes response", res);
+      })
+      .catch(function(err) {
+        $log.info("hey err", err)
+      })
+    }
+
+    function parseEvents(input, key) {
       var deferred = $q.defer();
 
       if (input) {
@@ -33,7 +52,7 @@
         return input;
       }
 
-    return transform
+    return service
   }
 
 })();

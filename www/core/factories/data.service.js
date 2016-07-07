@@ -26,12 +26,8 @@
       console.log('apply options', data, parameter);
         var deferredArr = [];
         data.forEach(function(datum, idx) {
-          console.log("datum", data)
           datum = retrieveData(datum);
-          console.log("datum", datum)
-          console.log("datum", transformer[parameter[idx]])
           deferredArr.push(transformer[parameter[idx]](datum, parameter[idx]))
-          console.log(deferredArr)
         });
         return $q.all(deferredArr)
           .then(
@@ -64,7 +60,7 @@
     // HELPERS
       // getData STACK
       var transformer = {
-        event: eventService,
+        event: eventService.parseEvents,
         marketplace: marketplaceService.parseListings
 
       }
