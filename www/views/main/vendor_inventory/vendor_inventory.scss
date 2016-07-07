@@ -55,4 +55,14 @@
       }
     }
   }
+  .add-button-container {
+    border: 1px dashed rgba(40, 40, 40, 0.3);
+
+    .add-button {
+
+      .plus {
+        font-size: 7em;
+      }
+    }
+  }
 }
