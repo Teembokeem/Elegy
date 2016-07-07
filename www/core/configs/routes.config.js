@@ -75,15 +75,6 @@
         controllerId: 'Overview',
         authorized: true
     })
-
-    .state('app.feed', {
-        url: '/feed',
-        templateUrl: 'views/main/feed/feed.html',
-        controller: 'Feed.controller',
-        controllerAs: 'Feed',
-        controllerId: 'Feed'
-        // authorized: true
-    })
     
     .state('app.departed-tab', {
       abstract: true, 
@@ -166,8 +157,7 @@
         controllerId: 'Marketplace',
         authorized: true
     })
-    
-<<<<<<< HEAD
+  
     .state('app.departed-tab.listing', {
         url: '/:venueName',
         views: {
