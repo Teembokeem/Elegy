@@ -6,7 +6,7 @@
       <div ng-repeat="listing in Marketplace.listings" ng-click ="Marketplace.displayListing(listing)" class="listing-container">
         <div class="row listing-row">
           <div class="col-25">
-            <img src="{{listing.image}}" alt="">
+            <img ng-src="{{listing.image}}" alt="">
           </div>
           <div class="col listing-box">
             <div class="container listing-description">

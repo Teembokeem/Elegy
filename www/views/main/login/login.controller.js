@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log', 'authService', '$state', 'userService', '$ionicPopup'];
+  LoginController.$inject = ['$log', 'authService', '$state', 'userService', '$ionicPopup', '$ionicHistory'];
   
-  function LoginController($log, authService, $state, userService, $ionicPopup) {
+  function LoginController($log, authService, $state, userService, $ionicPopup, $ionicHistory) {
     // INSTANTIATIONS
     $log.instantiate('Login', 'controller')
     var vm = this;
@@ -66,6 +66,9 @@
         })
     };
 
+      $ionicHistory.clearHistory()
+      $ionicHistory.clearCache()
+      console.log("clearing caches.")
     // vm.authenticate = function() {
     //   $log.info("Sending Credentials, ", vm.credentials);
       
