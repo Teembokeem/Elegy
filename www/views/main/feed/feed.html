@@ -1,6 +1,53 @@
 <ion-view view-title="F E E D">
-  <ion-content>
-    <h1>F E E D</h1>
+  <ion-content class="feed-view">
+    <div class="holding">
+      <div class="banner">
+        <header>
+          <h1>
+            Some Persons Name
+          </h1>
+        </header>
+      </div>
 
+    </div>
+    <div class="container">
+
+        <textarea placeholder="Care to share something?">
+        </textarea>
+
+      <div class="row">
+        <div class="col">
+          tab 1
+        </div>
+        <div class="col">
+          tab 2
+        </div>
+      </div>
+
+      <ion-item ng-repeat="item in Feed.items" class="feed">
+        <div class="row">
+          {{item.comment}}
+        </div>
+        <div class="row">
+          <div class="col-20">
+            <div class="feed-avatar">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-50">
+            <h3>{{item.name}}</h3>
+            <h4>Some Date Here</h4>
+          </div>
+          <div class="col">
+            <i class="icon ion-ios-heart-outline"></i>
+            {{item.likes}}
+          </div>
+          <div class="col">
+            <i class="icon ion-ios-chatbubble-outline"></i>
+            {{item.commentCount}}
+          </div>
+        </div>
+      </ion-item>
+    </div>
   </ion-content>
 </ion-view>
