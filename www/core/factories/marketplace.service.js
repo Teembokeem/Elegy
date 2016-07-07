@@ -82,13 +82,15 @@
           }
         ]
       }
-    ]
+    ];
+
+
     var service = {
       grabMarketplaceListings: grabMarketplaceListings,
       parseListings: parseListings
     }
 
-
+    // GET METHOD TO DATABASE
     function grabMarketplaceListings(param) {
       // $http({
       //   method: 'GET',
@@ -100,6 +102,9 @@
       return testObj;
     }
 
+    // BASI
+
+    // PARSE DATA METHOD
     function parseListings(input, key) {
       console.log("hallo")
       var deferred = $q.defer();
