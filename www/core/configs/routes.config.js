@@ -11,7 +11,7 @@
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: '/index.html',
+      templateUrl: 'index.html',
       controller: 'Static.controller',
       controllerAs: 'Static'
     })
@@ -158,7 +158,7 @@
         authorized: true
     })
     
-    .state('app.departed-tab.marketplace.listing', {
+    .state('app.departed-tab.listing', {
         url: '/:venueName',
         views: {
           'event': {

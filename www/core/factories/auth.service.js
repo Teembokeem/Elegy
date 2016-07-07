@@ -32,6 +32,10 @@
         $log.info("Auth Service login vendor success");
         return res
       })
+      .catch(function(err) {
+        $log.info("yo wtf", err)
+        throw err;
+      })
 
       return promise;
     }
