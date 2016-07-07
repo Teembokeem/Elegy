@@ -1,11 +1,27 @@
 <ion-view view-title="{{Listing.venue}}">
   <ion-content class="listing-view">
-    <div class="background-image">
-      <img src="{{Listing.data.image}}" alt="">
+    <div class="list card">
+
+      <div class="item">
+        <h2>{{Listing.data.venueName | uppercase}}</h2>
+      </div>
+
+      <div class="item item-image">
+        <img ng-src="{{Listing.data.image}}">
+      </div>
+
+      <p ng-click="Listing.selectVenue()" class="item assertive">
+        BOOK A RESERVATION
+      </p>
+
     </div>
-    <h1>{{Listing.data.venueName}}</h1>
-    <h5 class="separator">{{Listing.data.address | uppercase}}</h5>
-    <div ng-repeat="review in Listing.data.reviews" class="container review-container">
+    
+    <div class="card address-container">
+      <span>{{Listing.data.address | uppercase}}</span>
+    </div>
+
+    <h2 CLASS="review-header">REVIEWS</h2>
+    <div ng-repeat="review in Listing.data.reviews" class="card container review-container">
       <div class="row">
         <div class="col">
           <h5>{{review.review}}</h5>

@@ -28,7 +28,7 @@
       
       var el = document.getElementsByClassName('step-container')[0];
       
-      vm.openModal(vm.val)
+      // vm.openModal(vm.val)
       
       el.classList.add("step-title-out");
       el.classList.remove("step-title-in");
@@ -55,7 +55,7 @@
       return vm.modal = modal;
     })
     .then(function(cool) {
-      vm.openModal(vm.val)
+      // vm.openModal(vm.val)
     });
 
     vm.openModal = function(input) {
