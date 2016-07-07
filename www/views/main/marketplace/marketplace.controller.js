@@ -21,7 +21,7 @@
     // BOUND FUNCTIONS
     vm.displayListing = function(data) {
       dataService.setData(['listing'], [data]);
-      $state.go('app.departed-tab.listing', {venueName: data.title})
+      $state.go('app.departed-tab.listing', {venueName: data.venueName})
     }
     // HELPERS
   }
