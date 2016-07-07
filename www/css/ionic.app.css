@@ -10054,6 +10054,8 @@ button {
       animation-name: opacity;
       animation-duration: 1.5s;
       animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .event-view .info-container {
+    padding-top: 1em !important; }
 
 .departed-view .user-avatar {
   text-align: center; }
@@ -10280,6 +10282,11 @@ button {
   padding: 0 auto;
   margin-top: -0.5em; }
 
+.vendor-inventory-view .add-button-container {
+  border: 1px dashed rgba(40, 40, 40, 0.3); }
+  .vendor-inventory-view .add-button-container .add-button .plus {
+    font-size: 7em; }
+
 .vendor-orders-view * {
   font-family: Avenir; }
 
@@ -10395,16 +10402,24 @@ button {
   padding-bottom: 0.1em;
   text-align: left; }
 
-.listing-view * {
-  font-family: Avenir; }
-
-.listing-view img {
-  width: 100vw;
-  height: 60vh; }
-
-.listing-view .separator {
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid rgba(140, 140, 140, 0.7); }
-
-.listing-view h1 {
-  font-family: Didot; }
+.listing-view {
+  text-align: center; }
+  .listing-view * {
+    font-family: Avenir; }
+  .listing-view img {
+    width: 100%; }
+  .listing-view .item h2 {
+    font-size: 2em;
+    white-space: normal;
+    font-family: Didot;
+    letter-spacing: 0.1em; }
+  .listing-view h1 {
+    font-family: Didot; }
+  .listing-view .address-container {
+    padding: 1em 0 !important; }
+    .listing-view .address-container span {
+      max-width: 80vw; }
+  .listing-view .review-header {
+    letter-spacing: 0.2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgba(70, 70, 70, 0.2); }

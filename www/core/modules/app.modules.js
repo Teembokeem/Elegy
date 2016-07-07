@@ -22,7 +22,6 @@
     
     .run(authorizeRoutes);
 
-    
     authorizeRoutes.$inject = ['$rootScope', '$log', 'authService', '$location', '$state'];
     function authorizeRoutes($rootScope, $log, authService, $location, $state) {
       $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
