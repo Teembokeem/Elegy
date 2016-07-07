@@ -10322,3 +10322,17 @@ button {
   padding: 0 0;
   padding-bottom: 0.1em;
   text-align: left; }
+
+.listing-view * {
+  font-family: Avenir; }
+
+.listing-view img {
+  width: 100vw;
+  height: 60vh; }
+
+.listing-view .separator {
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid rgba(140, 140, 140, 0.7); }
+
+.listing-view h1 {
+  font-family: Didot; }

@@ -1,0 +1,21 @@
+<ion-view view-title="{{Listing.venue}}">
+  <ion-content class="listing-view">
+    <div class="background-image">
+      <img src="{{Listing.data.image}}" alt="">
+    </div>
+    <h1>{{Listing.data.venueName}}</h1>
+    <h5 class="separator">{{Listing.data.address | uppercase}}</h5>
+    <div ng-repeat="review in Listing.data.reviews" class="container review-container">
+      <div class="row">
+        <div class="col">
+          <h5>{{review.review}}</h5>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col review-author-container">
+          {{review.rating}} <i class="icon ion-ios-infinite"></i> | {{review.user}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
