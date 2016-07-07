@@ -1,0 +1,27 @@
+.listing-view {
+  * {
+    font-family: Avenir;
+  }
+
+  .background-image {
+    // -webkit-filter: blur(5px);
+    // -moz-filter: blur(5px);
+    // -o-filter: blur(5px);
+    // -ms-filter: blur(5px);
+    // filter: blur(5px);
+  }
+  img {
+    // position: fixed;
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .separator {
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.7);
+  }
+
+  h1 {
+    font-family: Didot;
+  }
+}
