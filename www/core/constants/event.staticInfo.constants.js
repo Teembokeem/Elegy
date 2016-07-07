@@ -24,25 +24,37 @@
         test: "What to consider when choosing a funeral home and director. Make sure to speak with more than one funeral home and compare any associated services."
       },
       {
-        title: "Major Decisions",
+        title: "Invitations",
         parts: [
           {
-            title: "State Laws",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Licensing',
+            title: 'Invite Friends and Family',
             description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Meeting with the Funeral Director',
-            description: "artsy stuff",
             test: "FUCK YOUUUUUUUUUUU"
           }
         ],
         description: "Step 2",
+        test: "FUCK YOUUUUUUUUUUU"
+      },
+      {
+        title: "Major Decisions",
+        parts: [
+          {
+            title: "Interment Arrangements",
+            description: "Lorem ipsum",
+            test: "FUCK YOUUUUUUUUUUU"
+          },
+          {
+            title: 'Funeral Services',
+            description: "Hallo",
+            test: "FUCK YOUUUUUUUUUUU"
+          },
+          {
+            title: 'Schedule Date & Time',
+            description: "artsy stuff",
+            test: "FUCK YOUUUUUUUUUUU"
+          }
+        ],
+        description: "Step 3",
         test: "FUCK YOUUUUUUUUUUU"
       },
       {
@@ -64,7 +76,7 @@
             test: "FUCK YOUUUUUUUUUUU"
           }
         ],
-        description: "Step 3",
+        description: "Step 4",
         test: "FUCK YOUUUUUUUUUUU"
       },
       {
@@ -81,7 +93,7 @@
             test: "FUCK YOUUUUUUUUUUU"
           }
         ],
-        description: "Step 4",
+        description: "Step 5",
         test: "FUCK YOUUUUUUUUUUU"
       },
       {
@@ -100,24 +112,7 @@
         ],
         description: "Step 5",
         test: "FUCK YOUUUUUUUUUUU"
-      },
-      {
-        title: "Invitations",
-        parts: [
-          {
-            title: "Review Profile & items",
-            description: "Lorem ipsum",
-            test: "FUCK YOUUUUUUUUUUU"
-          },
-          {
-            title: 'Invite Friends and Family',
-            description: "Hallo",
-            test: "FUCK YOUUUUUUUUUUU"
-          }
-        ],
-        description: "Step 6",
-        test: "FUCK YOUUUUUUUUUUU"
-      },
+      }
 
       
     ])
