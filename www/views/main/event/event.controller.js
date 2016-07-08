@@ -21,6 +21,7 @@
 
     // LOCAL VARS
     vm.val = vm.EventStaticInfo[setter];
+    
 
     // BOUND FUNCTIONS
     vm.slideStep = function(dir) {

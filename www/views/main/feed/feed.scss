@@ -62,7 +62,7 @@
         text-align: left;
         border-top-width: 2px;
         border-bottom-width: 2px;
-        border-color: grey;
+        border-color: #ddd;
         border-style: solid;
         padding: 10px;
 
@@ -89,5 +89,16 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+    }
+
+    .passive {
+        color: rgba(160, 160, 160, 0.8);
+        border-style: none !important;
+    }
+    hr {
+        border-top: 1px solid #ddd;
+    }
+    .item {
+        border-bottom-width: 5px;
     }
 }

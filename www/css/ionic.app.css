@@ -10141,7 +10141,7 @@ button {
   text-align: left;
   border-top-width: 2px;
   border-bottom-width: 2px;
-  border-color: grey;
+  border-color: #ddd;
   border-style: solid;
   padding: 10px; }
 
@@ -10163,6 +10163,16 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%; }
+
+.feed-view .passive {
+  color: rgba(160, 160, 160, 0.8);
+  border-style: none !important; }
+
+.feed-view hr {
+  border-top: 1px solid #ddd; }
+
+.feed-view .item {
+  border-bottom-width: 5px; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

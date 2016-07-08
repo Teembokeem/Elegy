@@ -12,42 +12,45 @@
     </div>
     <div class="container">
 
-        <textarea placeholder="Care to share something?">
+        <textarea placeholder="Care to share something?" ng-model="Feed.share">
         </textarea>
 
       <div class="row">
-        <div class="col">
-          tab 1
+          <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50" ng-click="Feed.passive = 'feed'">
+              <span>FEED</span>
+          </div>
+          <div ng-class="{passive: Feed.passive === 'feed'}" class="col" ng-click=" Feed.passive = 'media'">
+              <span>MEDIA</span>
+          </div>
         </div>
-        <div class="col">
-          tab 2
-        </div>
-      </div>
-
-      <ion-item ng-repeat="item in Feed.items" class="feed">
-        <div class="row">
-          {{item.comment}}
-        </div>
-        <div class="row">
-          <div class="col-20">
-            <div class="feed-avatar">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg" alt="">
+      
+      <div ng-if="Feed.passive == 'feed'">
+        <ion-item  ng-repeat="item in Feed.items" class="feed">
+          <div class="row">
+            {{item.comment}}
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-20">
+              <div class="feed-avatar">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg" alt="">
+              </div>
             </div>
+            <div class="col-70">
+              <h3>{{item.name}}</h3>
+              <h4>Some Date Here</h4>
+            </div>
+            <div class="col text-right">
+              <i class="icon ion-ios-heart-outline"></i>
+              {{item.likes}}
+            </div>
+
           </div>
-          <div class="col-50">
-            <h3>{{item.name}}</h3>
-            <h4>Some Date Here</h4>
-          </div>
-          <div class="col">
-            <i class="icon ion-ios-heart-outline"></i>
-            {{item.likes}}
-          </div>
-          <div class="col">
-            <i class="icon ion-ios-chatbubble-outline"></i>
-            {{item.commentCount}}
-          </div>
-        </div>
-      </ion-item>
+        </ion-item>
+      </div>
+      <div ng-if="Feed.passive == 'media'">
+
+      </div>
     </div>
   </ion-content>
 </ion-view>

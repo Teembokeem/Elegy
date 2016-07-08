@@ -6,14 +6,23 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log'];
+  FeedController.$inject = ['$log', 'dataService', '$http'];
 
-  function FeedController($log) {
+  function FeedController($log, $dataService) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
 
-    console.log("FUCK YOU")
+    $http({
+      method: "GET", 
+      url: urlFactory + "/blog/" + dataService.retrieveData(['event']).blog
+    }).then( function( response ) {
+      console.log(response)
+    }) 
+
+    vm.clicked = true;
+    vm.passive = 'feed';
+    vm.share;
 
     // LOCAL VARS
     vm.items = [ 

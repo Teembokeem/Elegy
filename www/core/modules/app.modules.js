@@ -2,7 +2,7 @@
   'use strict'
   
   angular
-    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants'])
+    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants', 'ngFileUpload'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -17,6 +17,7 @@
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
+        console.log("RUNNING")
       });
     })
     
