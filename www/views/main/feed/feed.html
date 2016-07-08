@@ -49,7 +49,15 @@
         </ion-item>
       </div>
       <div ng-if="Feed.passive == 'media'">
-
+          <form name="myForm" ng-submit="FeedCtrl.uploadMedia()">
+              <input type="file" ngf-select ng-model="FeedCtrl.media" name="file" class="comfy-padding"
+              accept="image/*" ngf-max-size="2MB" required
+              ngf-model-invalid="errorFiles">
+              <i ng-show="myForm.file.$error.maxSize">File too large
+              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+              <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="FeedCtrl.media" class="thumb">
+              <input type="submit" class="center">
+          </form>
       </div>
     </div>
   </ion-content>
