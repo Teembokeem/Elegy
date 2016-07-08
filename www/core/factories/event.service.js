@@ -38,9 +38,9 @@
       })
       .then(function(res) {
         $log.info('User Service grabEventPackage method success.');
-        dataService.removeData(['planningEvents', 'attendingEvents']);
-        $log.info("removing items", $window.localStorage.getItem('planningEvents'))
-        dataService.setData(['planningEvents', 'attendingEvents'], [res.data.user.planningEvents, res.data.user.attendingEvents]);
+        // dataService.removeData(['planningEvents', 'attendingEvents']);
+        // $log.info("removing items", $window.localStorage.getItem('planningEvents'))
+        // dataService.setData(['planningEvents', 'attendingEvents'], [res.data.user.planningEvents, res.data.user.attendingEvents]);
         return res.data.user;
       })
     

@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory'];
 
-  function FeedController($log, $dataService) {
+  function FeedController($log, dataService, $http, urlFactory) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
@@ -53,6 +53,8 @@
     // BOUND FUNCTIONS
 
     // HELPERS
-  }
 
+    function uploadFiles(){
+  }
+  }
 })();

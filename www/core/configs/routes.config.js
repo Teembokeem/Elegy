@@ -75,6 +75,14 @@
         controllerId: 'Overview',
         authorized: true
     })
+
+    // .state('app.feed', {
+    //     url: '/feed',
+    //     templateUrl: 'views/main/feed/feed.html',
+    //     controller: 'Feed.controller',
+    //     controllerAs: 'Feed',
+    //     controllerId: 'Feed'
+    // })
     
     .state('app.departed-tab', {
       abstract: true, 
@@ -178,7 +186,7 @@
         authorized: true
     })
     
-    .state('app.feed', {
+    .state('app.departed-tab.feed', {
         url: '/feed',
         views: {
           'feed': {
@@ -188,8 +196,8 @@
           }
         },
         cache: false,
-        controllerId: 'Feed',
-        authorized: true
+        controllerId: 'Feed'
+        // authorized: true
     })
     
     .state('app.program', {
