@@ -238,7 +238,13 @@
           'Vendor-Dashboard': {
             templateUrl: 'views/main/vendor_home/vendor_home.html',
             controller: 'VendorHome.controller',
-            controllerAs: 'VendorHome'
+            controllerAs: 'VendorHome',
+            resolve: {
+              VendorAssets: function(dataService) {
+                console.log("resolving dependencies for vendor-home.")
+                return dataService.parseData(['vendor'], ['vendor']);
+              }
+            }
           }
         },
         controllerId: 'VendorHome',
@@ -251,7 +257,13 @@
           'Vendor-Inventory': {
             templateUrl: 'views/main/vendor_inventory/vendor_inventory.html',
             controller: 'VendorInventory.controller',
-            controllerAs: 'VendorInventory'
+            controllerAs: 'VendorInventory',
+            resolve: {
+              VendorProducts: function(dataService) {
+                console.log("resolving dependencies for vendor-inventory.")
+                return dataService.parseData(['vendorProducts'], ['vendor']);
+              }
+            }
           }
         },
         controllerId: 'VendorInventory',
@@ -268,10 +280,10 @@
             resolve: {
               productType: function(ProductDataTemplates, $stateParams) {
                 console.log($stateParams, Object.keys(ProductDataTemplates.productTypes))
-                return Object.keys(ProductDataTemplates.productTypes).filter(function(key) {
-                  console.log(key === $stateParams.product)
-                  return (key === $stateParams.product) ? ProductDataTemplates.productTypes.key : null;
+                var type = Object.keys(ProductDataTemplates.productTypes).filter(function(key) {
+                return key === $stateParams.product
                 })
+                return ProductDataTemplates.productTypes[type]
               }
             }
           }

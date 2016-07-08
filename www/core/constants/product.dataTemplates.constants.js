@@ -7,7 +7,6 @@
   {
     productBoiler: [
       "name", 
-      "image", 
       "price", 
       "stock", 
       "description", 
