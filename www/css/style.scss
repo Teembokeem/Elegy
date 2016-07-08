@@ -1,10 +1,12 @@
 /* Empty. Add your own CSS if you like */
 
-
 body * {
   font-family: Didot;
   text-align: center;
   
+  input, button {
+    font-family: Avenir;
+  }
   .tab-title {
     font-family: Avenir !important;
   }
@@ -23,7 +25,7 @@ button {
   .popup {
 
   }
-  
+
   * {
     // border-radius: 0.8em !important;
     font-family: Avenir;
