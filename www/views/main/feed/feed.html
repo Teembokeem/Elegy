@@ -12,42 +12,53 @@
     </div>
     <div class="container">
 
-        <textarea placeholder="Care to share something?">
+        <textarea placeholder="Care to share something?" ng-model="Feed.share">
         </textarea>
 
       <div class="row">
-        <div class="col">
-          tab 1
+          <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50" ng-click="Feed.passive = 'feed'">
+              <span>FEED</span>
+          </div>
+          <div ng-class="{passive: Feed.passive === 'feed'}" class="col" ng-click=" Feed.passive = 'media'">
+              <span>MEDIA</span>
+          </div>
         </div>
-        <div class="col">
-          tab 2
-        </div>
-      </div>
-
-      <ion-item ng-repeat="item in Feed.items" class="feed">
-        <div class="row">
-          {{item.comment}}
-        </div>
-        <div class="row">
-          <div class="col-20">
-            <div class="feed-avatar">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg" alt="">
+      
+      <div ng-if="Feed.passive == 'feed'">
+        <ion-item  ng-repeat="item in Feed.items" class="feed">
+          <div class="row">
+            {{item.comment}}
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-20">
+              <div class="feed-avatar">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/skyscrapers.jpg" alt="">
+              </div>
             </div>
+            <div class="col-70">
+              <h3>{{item.name}}</h3>
+              <h4>Some Date Here</h4>
+            </div>
+            <div class="col text-right">
+              <i class="icon ion-ios-heart-outline"></i>
+              {{item.likes}}
+            </div>
+
           </div>
-          <div class="col-50">
-            <h3>{{item.name}}</h3>
-            <h4>Some Date Here</h4>
-          </div>
-          <div class="col">
-            <i class="icon ion-ios-heart-outline"></i>
-            {{item.likes}}
-          </div>
-          <div class="col">
-            <i class="icon ion-ios-chatbubble-outline"></i>
-            {{item.commentCount}}
-          </div>
-        </div>
-      </ion-item>
+        </ion-item>
+      </div>
+      <div ng-if="Feed.passive == 'media'">
+          <form name="myForm" ng-submit="FeedCtrl.uploadMedia()">
+              <input type="file" ngf-select ng-model="FeedCtrl.media" name="file" class="comfy-padding"
+              accept="image/*" ngf-max-size="2MB" required
+              ngf-model-invalid="errorFiles">
+              <i ng-show="myForm.file.$error.maxSize">File too large
+              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+              <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="FeedCtrl.media" class="thumb">
+              <input type="submit" class="center">
+          </form>
+      </div>
     </div>
   </ion-content>
 </ion-view>

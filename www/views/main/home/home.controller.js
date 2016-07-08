@@ -13,6 +13,7 @@
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
+    vm.media;
 
     // LOCAL VARS
     vm.user = authService.currentUser();
@@ -30,6 +31,11 @@
       $state.go('app.departed-tab.departed', {name: data.first })
     }
     // HELPERS
+
+    vm.uploadMedia = function() {
+      console.log("TESTING", vm.media)
+
+    }
 
   }
 
