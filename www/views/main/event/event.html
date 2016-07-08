@@ -12,6 +12,9 @@
           </div>
           <div class="col col-80">
             <h2><span >{{Event.val.title}}</span></h2>
+            <div class="col col-30 info-container">
+              <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
+            </div>
           </div>
           <div ng-click="Event.slideStep('right')" class="col col-10">
              >
@@ -27,6 +30,7 @@
           <div class="part-checker col col-20">
             <i class="icon ion-ios-close-outline"></i>
   <!--<i class="icon ion-ios-checkmark-outline"></i>	 for reference: success-->
+            <!--<img src="../../img/progress.png" alt="">-->
           </div>
 
           <!--2.2-->
@@ -38,7 +42,7 @@
                   <h4 ng-click=" part.category ? Event.displayMarketplace(part.category) : null">{{part.title | uppercase}}   
                   </h4>
                 </div>
-                <div class="col col-30">
+                <div class="col col-30 info-container">
                   <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
                 </div>
               </div>
@@ -47,7 +51,7 @@
            
             <!--2.2.2-->
             <div class="part-description-container col">
-              <p>{{part.description}}</p>
+              <!--<p>{{part.description}}</p>-->
             </div>
           </div>
         

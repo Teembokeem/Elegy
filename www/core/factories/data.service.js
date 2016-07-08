@@ -9,24 +9,25 @@
 
     var data = {}
 
-  dataService.$inject = ['$log', 'eventService', '$q'];
+  dataService.$inject = ['$log', 'eventService', 'marketplaceService', '$q'];
 
-  function dataService($log, eventService, $q) {
+  function dataService($log, eventService, marketplaceService, $q) {
     $log.instantiate('Data', 'service');
 
     var service = {
-      getData: getData,
+      parseData: parseData,
+      retrieveData: retrieveData,
       setData: setData,
       removeData: removeData
     };
 
     // EXPORTED FUNCTIONS
-    function getData(data, parameter) {
+    function parseData(data, parameter) {
       console.log('apply options', data, parameter);
         var deferredArr = [];
         data.forEach(function(datum, idx) {
-          deferredArr.push(transformer[parameter[idx]](datum))
-          console.log(deferredArr)
+          datum = retrieveData(datum);
+          deferredArr.push(transformer[parameter[idx]](datum, parameter[idx]))
         });
         return $q.all(deferredArr)
           .then(
@@ -39,6 +40,10 @@
               return err
             })
     };
+
+    function retrieveData(key) {
+        return JSON.parse(localStorage.getItem(key));
+    }
 
     function setData(keys, values) {
       values.forEach(function(value, idx) {
@@ -55,7 +60,9 @@
     // HELPERS
       // getData STACK
       var transformer = {
-        event: eventService
+        event: eventService.parseEvents,
+        marketplace: marketplaceService.parseListings
+
       }
 
     return service;

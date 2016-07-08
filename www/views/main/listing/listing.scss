@@ -1,0 +1,48 @@
+.listing-view {
+  text-align: center;
+  
+  * {
+    font-family: Avenir;
+  }
+
+  .background-image {
+    // -webkit-filter: blur(5px);
+    // -moz-filter: blur(5px);
+    // -o-filter: blur(5px);
+    // -ms-filter: blur(5px);
+    // filter: blur(5px);
+  }
+  img {
+    // position: fixed;
+    width: 100%;
+    // height: 60vh;
+  }
+
+  .item {
+    h2 {
+      font-size: 2em;
+      white-space: normal;
+      font-family: Didot;
+      letter-spacing: 0.1em; 
+    }
+  }
+
+  h1 {
+    font-family: Didot;
+  }
+  .address-container {
+    padding: 1em 0 !important;
+    
+    span {
+      max-width: 80vw;
+    }
+  }
+
+  .review-header {
+    letter-spacing: 0.2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgba(70, 70, 70, 0.2);
+  }
+
+
+}

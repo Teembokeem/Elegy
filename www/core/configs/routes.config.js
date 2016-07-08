@@ -11,7 +11,7 @@
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: '/index.html',
+      templateUrl: 'index.html',
       controller: 'Static.controller',
       controllerAs: 'Static'
     })
@@ -75,15 +75,6 @@
         controllerId: 'Overview',
         authorized: true
     })
-
-    .state('app.feed', {
-        url: '/feed',
-        templateUrl: 'views/main/feed/feed.html',
-        controller: 'Feed.controller',
-        controllerAs: 'Feed',
-        controllerId: 'Feed'
-        // authorized: true
-    })
     
     .state('app.departed-tab', {
       abstract: true, 
@@ -100,7 +91,7 @@
             resolve: {
               events: function(dataService) {
                 console.log("resolving dependencies")
-                return dataService.getData(['planningEvents', 'attendingEvents'], ['event', 'event'])
+                return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
               }
             }
           }
@@ -120,7 +111,7 @@
             resolve: {
               event: function(dataService) {
                 console.log("resolving dependencies")
-                return dataService.getData(['event'], ['event'])
+                return dataService.parseData(['event'], ['event'])
               }
             }
           }
@@ -136,11 +127,12 @@
           'event': {
             templateUrl: 'views/main/event/event.html',
             controller: 'Event.controller',
-            controllerAs: 'Event'
-            // resolve: {
-            //   event: function(dataService) {
-            //   }
-            // }
+            controllerAs: 'Event',
+            resolve: {
+              event: function(dataService) {
+
+              }
+            }
           }
         },
         cache: false,
@@ -154,34 +146,51 @@
           'event': {
             templateUrl: 'views/main/marketplace/marketplace.html',
             controller: 'Marketplace.controller',
-            controllerAs: 'Marketplace'
-            // resolve: {
-            //   Marketplace: function(dataService) {
-            //   }
-            // }
+            controllerAs: 'Marketplace',
+            resolve: {
+              Marketplace: function(dataService) {
+                return dataService.parseData(['listings'], ['marketplace']);
+              }
+            }
           }
         },
         cache: false,
-        params: {
-          category: null
-        },
         controllerId: 'Marketplace',
         authorized: true
     })
+  
+    .state('app.departed-tab.listing', {
+        url: 'listing/:venueName',
+        views: {
+          'event': {
+            templateUrl: 'views/main/listing/listing.html',
+            controller: 'Listing.controller',
+            controllerAs: 'Listing',
+            resolve: {
+              Listing: function(dataService) {
+                return dataService.parseData(['listing'], ['marketplace']);
+              }
+            }
+          }
+        },
+        cache: false,
+        controllerId: 'Listing',
+        authorized: true
+    })
     
-    // .state('app.feed', {
-    //     url: '/feed',
-    //     views: {
-    //       'feed': {
-    //         templateUrl: 'views/main/feed/feed.html',
-    //         controller: 'Feed.controller',
-    //         controllerAs: 'Feed'
-    //       }
-    //     },
-    //     cache: false,
-    //     controllerId: 'Feed',
-    //     authorized: true
-    // })
+    .state('app.feed', {
+        url: '/feed',
+        views: {
+          'feed': {
+            templateUrl: 'views/main/feed/feed.html',
+            controller: 'Feed.controller',
+            controllerAs: 'Feed'
+          }
+        },
+        cache: false,
+        controllerId: 'Feed',
+        authorized: true
+    })
     
     .state('app.program', {
         url: '/program',
@@ -246,6 +255,28 @@
           }
         },
         controllerId: 'VendorInventory',
+        authorized: true
+    })
+
+    .state('app.vendor-tab.vendor-product', {
+        url: '/vendor-product/:product',
+        views: {
+          'Vendor-Inventory': {
+            templateUrl: 'views/main/vendor_product/vendor_product.html',
+            controller: 'VendorProduct.controller',
+            controllerAs: 'VendorProduct',
+            resolve: {
+              productType: function(ProductDataTemplates, $stateParams) {
+                console.log($stateParams, Object.keys(ProductDataTemplates.productTypes))
+                return Object.keys(ProductDataTemplates.productTypes).filter(function(key) {
+                  console.log(key === $stateParams.product)
+                  return (key === $stateParams.product) ? ProductDataTemplates.productTypes.key : null;
+                })
+              }
+            }
+          }
+        },
+        controllerId: 'VendorProduct',
         authorized: true
     })
 
