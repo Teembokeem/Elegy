@@ -1,3 +1,36 @@
-
 .vendor-product-view {
+  h1, p, span, input, button {
+    font-family: Avenir;
+
+  }
+
+  h1 {
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+  }
+
+  .image-container {
+    background-color: rgba(140, 140, 140, 0.1);
+
+    .img-full-width {
+
+      img {
+        width: 100vw;
+      }
+
+      .ion-camera {
+        font-size: 5em !important;
+      }
+    }
+  }
+
+  span {
+    letter-spacing: 0.1em;
+  }
+
+  label {
+    * {
+      text-align: left;
+    }
+  }
 }
