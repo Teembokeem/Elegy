@@ -5,9 +5,9 @@
       <div class="image-container container">
         <div class="row">
           <div class="col img-full-width">
-            <img src="" alt="">
-            <i class="icon ion-camera"></i>
-            <p>ADD PHOTO</p>
+            <img ngf-src="VendorProduct.cloud.image" alt="">
+            <i ng-show="!VendorProduct.cloud.image" ngf-select ng-model="VendorProduct.cloud.image" accept="image/*" class="icon ion-camera"></i>
+            <p ngf-select ng-model="VendorProduct.cloud.image" accept="image/*" >{{!VendorProduct.product.image ? 'ADD PHOTO' : 'UPLOAD A DIFFERENT PHOTO' }}</p>
           </div>
         </div>
       </div>
@@ -15,7 +15,7 @@
         <div class="list">
           <label ng-repeat="formItem in VendorProduct.productBoiler" class="item item-input">
             <span class="input-label">{{formItem | uppercase}}</span>
-            <input type="text">
+            <input ng-model="VendorProduct.product[formItem]" type="text">
           </label>
         </div>
       </div>
@@ -23,7 +23,7 @@
         <div class="list">
           <label ng-repeat="formItem in VendorProduct.productTemplate" class="item item-input">
             <span class="input-label">{{formItem | uppercase}}</span>
-            <input type="text">
+            <input ng-model="VendorProduct.product[formItem]" type="text">
           </label>
         </div>
       </div>

@@ -10449,8 +10449,10 @@ button {
 
 .vendor-product-view .image-container {
   background-color: rgba(140, 140, 140, 0.1); }
+  .vendor-product-view .image-container * {
+    padding: 0 0; }
   .vendor-product-view .image-container .img-full-width img {
-    width: 100vw; }
+    width: 100%; }
   .vendor-product-view .image-container .img-full-width .ion-camera {
     font-size: 5em !important; }
 

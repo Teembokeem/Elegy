@@ -12,12 +12,10 @@
       "description", 
       "category", 
       "subCategory", 
-      "dateUploaded",
-      "dateUpdated",  
       "id"
     ],
     productTypes: {
-      caskets: [
+      casket: [
         "color", 
         "brand", 
         "dimensions",
