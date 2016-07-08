@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('VendorInventory.controller', VendorInventoryController);
   
-  VendorInventoryController.$inject = ['$log', '$state'];
+  VendorInventoryController.$inject = ['$log', '$state', '$ionicModal'];
 
-  function VendorInventoryController($log, $state) {
+  function VendorInventoryController($log, $state, $ionicModal) {
     // INSTANTIATIONS
     $log.instantiate('Vendor Inventory', 'Controller');
     var vm = this;
@@ -24,7 +24,7 @@
 
 
     // HELPERS
-
+    
 
   };
 
