@@ -9832,7 +9832,6 @@ button {
 .popup-container {
   background-color: rgba(70, 70, 70, 0.5); }
   .popup-container * {
-    border-radius: 1em !important;
     font-family: Avenir; }
 
 @keyframes opacity {

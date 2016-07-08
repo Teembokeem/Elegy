@@ -7,25 +7,22 @@
     .module('Controllers')
     .controller('VendorProduct.controller', VendorProductController);
   
-  VendorProductController.$inject = ['$log', 'ProductDataTemplates', '$ionicPopup', '$scope'];
+  VendorProductController.$inject = ['$log', 'productType'];
 
-  function VendorProductController($log, ProductDataTemplates, $ionicPopup, $scope) {
+  function VendorProductController($log, productType) {
     // INSTANTIATIONS
     $log.instantiate('Vendor Product', 'controller');
     var vm = this;
     vm.type;
-    vm.productDataTemplates = ProductDataTemplates;
-    $log.info(ProductDataTemplates);
+    vm.productDataTemplates = productType;
+    $log.info(productType);
 
     // LOCAL VARS
 
     // BOUND FUNCTIONS
 
     // HELPERS
-    var productTypePopup = $ionicPopup.show({
-      templateUrl: 'views/templates/loading.html',
-      scope: $scope
-    })
+
   }
 
 })();

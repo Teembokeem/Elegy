@@ -18,7 +18,7 @@
       "id"
     ],
     productTypes: {
-      casketBoiler: [
+      caskets: [
         "color", 
         "brand", 
         "dimensions",

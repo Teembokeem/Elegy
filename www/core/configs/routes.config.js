@@ -259,12 +259,21 @@
     })
 
     .state('app.vendor-tab.vendor-product', {
-        url: '/vendor-product',
+        url: '/vendor-product/:product',
         views: {
           'Vendor-Inventory': {
             templateUrl: 'views/main/vendor_product/vendor_product.html',
             controller: 'VendorProduct.controller',
-            controllerAs: 'VendorProduct'
+            controllerAs: 'VendorProduct',
+            resolve: {
+              productType: function(ProductDataTemplates, $stateParams) {
+                console.log($stateParams, Object.keys(ProductDataTemplates.productTypes))
+                return Object.keys(ProductDataTemplates.productTypes).filter(function(key) {
+                  console.log(key === $stateParams.product)
+                  return (key === $stateParams.product) ? ProductDataTemplates.productTypes.key : null;
+                })
+              }
+            }
           }
         },
         controllerId: 'VendorProduct',
