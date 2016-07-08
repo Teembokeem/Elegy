@@ -9,9 +9,9 @@
 
     var data = {}
 
-  dataService.$inject = ['$log', 'eventService', 'marketplaceService', '$q'];
+  dataService.$inject = ['$log', 'eventService', 'marketplaceService', 'vendorService', '$q'];
 
-  function dataService($log, eventService, marketplaceService, $q) {
+  function dataService($log, eventService, marketplaceService, vendorService, $q) {
     $log.instantiate('Data', 'service');
 
     var service = {
@@ -47,6 +47,7 @@
 
     function setData(keys, values) {
       values.forEach(function(value, idx) {
+        localStorage.removeItem(keys[idx])
         localStorage.setItem(keys[idx], JSON.stringify(value))
       })
     }
@@ -61,8 +62,8 @@
       // getData STACK
       var transformer = {
         event: eventService.parseEvents,
-        marketplace: marketplaceService.parseListings
-
+        marketplace: marketplaceService.parseListings,
+        vendor: vendorService.parseVendorItems
       }
 
     return service;
