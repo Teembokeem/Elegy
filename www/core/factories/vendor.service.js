@@ -5,13 +5,14 @@
     .module('Services')
     .factory('vendorService', vendorService);
   
-  vendorService.$inject = ['$log', '$http', 'urlFactory', 'tokenService', '$q'];
+  vendorService.$inject = ['$log', '$http', 'urlFactory', 'tokenService', 'uploadService', '$q'];
 
-  function vendorService($log, $http, urlFactory, tokenService, $q) {
+  function vendorService($log, $http, urlFactory, tokenService, uploadService, $q) {
     $log.instantiate('Vendor', 'Service');
 
     var service = {
       grabVendorData: grabVendorData,
+      createProduct: createProduct,
       parseVendorItems: parseVendorItems
     }
 
@@ -32,6 +33,23 @@
       .catch(function(err) {
         $log.info("error", err)
         return err
+      })
+    }
+
+    function createProduct(data, img) {
+      $log.info("Vendor Service createProduct method")
+      return $http({
+        method: 'POST',
+        url: urlFactory + '/products',
+        data: data
+      })
+      .then(function(res) {
+        $log.info("success", res.data);
+        return uploadService.uploadFile(img, "/products/" + res.data.data._id, "Something")
+      })
+      .catch(function(err) {
+        $log.info("error", err)
+        return err;
       })
     }
 

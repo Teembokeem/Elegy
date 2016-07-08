@@ -34,11 +34,11 @@
                 method: "PUT",
                 url: urlFactory + path,
                 data: {
-                    photoURL: response.data.secure_url
+                    image: response.data.secure_url
                 }
             })
             .then(function( response ) {
-
+             $log.info("yes", response)
             })
         } else if (imageType == "Product Image") {
             $http({
@@ -56,7 +56,7 @@
                 method: "PUT",
                 url: urlFactory + path,
                 data: {
-                    photoURL: response.data.secure_url
+                    image: response.data.secure_url
                 }
             })
             .then(function( response ) {
