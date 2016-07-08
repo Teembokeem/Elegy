@@ -7,13 +7,15 @@
     .module('Controllers')
     .controller('VendorInventory.controller', VendorInventoryController);
   
-  VendorInventoryController.$inject = ['$log', '$state', '$ionicPopup', '$scope'];
+  VendorInventoryController.$inject = ['$log', '$state', '$ionicPopup', '$scope', 'VendorProducts'];
 
-  function VendorInventoryController($log, $state, $ionicPopup, $scope) {
+  function VendorInventoryController($log, $state, $ionicPopup, $scope, VendorProducts) {
     // INSTANTIATIONS
     $log.instantiate('Vendor Inventory', 'Controller');
+    $log.info("resolve dependencies", VendorProducts)
     var vm = this;
     $scope.data = {};
+    vm.products = VendorProducts;
 
     // LOCAL VARS
 
