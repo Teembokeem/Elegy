@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log', 'authService', '$state', 'userService', '$ionicPopup', '$ionicHistory'];
+  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory'];
   
-  function LoginController($log, authService, $state, userService, $ionicPopup, $ionicHistory) {
+  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory) {
     // INSTANTIATIONS
     $log.instantiate('Login', 'controller')
     var vm = this;
@@ -52,7 +52,7 @@
               .then(function(decodedToken) {
                 $log.info("Credentials approved, ", decodedToken);
                 
-                return userService.grabEventPackage(decodedToken._id)
+                return eventService.grabEventPackage(decodedToken._id)
               })
               .then(function(events) {
                 $log.info("event package?!?!?!!?!", events)
@@ -76,7 +76,7 @@
     //     .then(function(decodedToken) {
     //       $log.info("Credentials approved, ", decodedToken);
           
-    //       return userService.grabEventPackage(decodedToken._id)
+    //       return eventService.grabEventPackage(decodedToken._id)
     //     })
     //     .then(function(events) {
     //       $log.info("event package?!?!?!!?!", events)
