@@ -9819,6 +9819,8 @@ a.button {
 body * {
   font-family: Didot;
   text-align: center; }
+  body * input, body * button {
+    font-family: Avenir; }
   body * .tab-title {
     font-family: Avenir !important; }
 
@@ -10221,6 +10223,9 @@ button {
 .vendor-signup-view .checkbox-icon {
   margin-left: 30%; }
 
+.vendor-signup-view .item-toggle span {
+  font-family: Avenir; }
+
 .vendor-home-view .item-divider {
   background-color: rgba(23, 119, 158, 0.4);
   color: rgba(40, 40, 40, 0.8); }
@@ -10471,3 +10476,25 @@ button {
     letter-spacing: 0.2em;
     padding-bottom: 0.3em;
     border-bottom: 1px solid rgba(70, 70, 70, 0.2); }
+
+.vendor-product-view h1, .vendor-product-view p, .vendor-product-view span, .vendor-product-view input, .vendor-product-view button {
+  font-family: Avenir; }
+
+.vendor-product-view h1 {
+  font-weight: lighter;
+  letter-spacing: 0.1em; }
+
+.vendor-product-view .image-container {
+  background-color: rgba(140, 140, 140, 0.1); }
+  .vendor-product-view .image-container * {
+    padding: 0 0; }
+  .vendor-product-view .image-container .img-full-width img {
+    width: 100%; }
+  .vendor-product-view .image-container .img-full-width .ion-camera {
+    font-size: 5em !important; }
+
+.vendor-product-view span {
+  letter-spacing: 0.1em; }
+
+.vendor-product-view label * {
+  text-align: left; }

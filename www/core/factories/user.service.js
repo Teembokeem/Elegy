@@ -50,7 +50,6 @@
       }).then(function(res) {
         $log.info("User service Setup Vendor success, storing vals.")
         tokenService.store(res.data.token);
-        return grabEventPackage(tokenService.decode(res.data.token)._id)
       }).catch(function(err) {
         $log.info("ehoh.", err)
       })

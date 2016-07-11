@@ -7,20 +7,20 @@
     <div class="container">
       <div class="listing-container">
         <div class="row listing-row">
-          <div class="col col-50 listing-box card">
-              <img src="../../img/casket.jpg" alt="">
+          <div ng-repeat="product in VendorInventory.products" class="col col-50 listing-box card">
+              <img ng-src="{{product.image}}" alt="">
               <div class="container listing-description">
                 <div class="row">
                   <div class="col col-100 listing-title">
-                    <span>{{'Wood Casket' | uppercase}}</span>
+                    <span>{{product.name | uppercase}}</span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col col-50 listing-quantity">
-                    <span> {{'(' + '20' + ')' | uppercase}}</span>
+                    <span> {{product.quantity | uppercase}}</span>
                   </div>
                   <div class="col col-50 listing-price">
-                    <span>{{'$230.00' | uppercase}}</span>
+                    <span>{{product.price | uppercase}}</span>
                   </div>
                 </div>
               </div>
@@ -35,6 +35,7 @@
                 <span>Add a new product</span>
               </div>
             </div>
+            <br>
             <div class="row">
               <div class="col add-button">
                 <span class="plus">+</span>

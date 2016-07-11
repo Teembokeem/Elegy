@@ -1,20 +1,38 @@
 <ion-view view-title="hello">
   <ion-content class="vendor-product-view">
-   
+    <h1>PRODUCT ENTRY: CASKET</h1>
     <div class="form-container">
       <div class="image-container container">
         <div class="row">
-          <img src="" alt="">
+          <div class="col img-full-width">
+            <img ngf-src="VendorProduct.cloud.image" alt="">
+            <i ng-show="!VendorProduct.cloud.image" ngf-select ng-model="VendorProduct.cloud.image" accept="image/*" class="icon ion-camera"></i>
+            <p ngf-select ng-model="VendorProduct.cloud.image" accept="image/*" >{{!VendorProduct.product.image ? 'ADD PHOTO' : 'UPLOAD A DIFFERENT PHOTO' }}</p>
+          </div>
         </div>
       </div>
       <div class="form-content-container container">
-        <div class="row">
-
+        <div class="list">
+          <label ng-repeat="formItem in VendorProduct.productBoiler" class="item item-input">
+            <span class="input-label">{{formItem | uppercase}}</span>
+            <input ng-model="VendorProduct.product[formItem]" type="text">
+          </label>
         </div>
       </div>
       <div class="submit-sub-container container">
-        <div class="row">
-
+        <div class="list">
+          <label ng-repeat="formItem in VendorProduct.productTemplate" class="item item-input">
+            <span class="input-label">{{formItem | uppercase}}</span>
+            <input ng-model="VendorProduct.product[formItem]" type="text">
+          </label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ng-click="VendorProduct.submitProduct()" class="button button-light ">
+              S U B M I T
+          </button>
         </div>
       </div>
     </div>

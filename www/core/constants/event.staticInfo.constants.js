@@ -16,6 +16,11 @@
             category: 'Venues'
           },
           {
+            title: "Additional Information",
+            description: "",
+            test: "",
+          },
+          {
             title: 'Funeral Director',
             description: "Reach out to a funeral home director",
             test: "The director holds a lot of power, so make sure you find one you like. He or she will help guide you through the process."

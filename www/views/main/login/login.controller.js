@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory'];
+  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory', 'dataService', 'vendorService'];
   
-  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory) {
+  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory, dataService, vendorService) {
     // INSTANTIATIONS
     $log.instantiate('Login', 'controller')
     var vm = this;
@@ -30,6 +30,12 @@
               .logIn(vm.credentials)
               .then(function(decodedToken) {
                 $log.info("Credentials approved, ", decodedToken);
+                return vendorService.grabVendorData(decodedToken._id)
+              })
+              .then(function(vendorData) {
+                $log.info("event package?!?!?!!?!", vendorData)
+                dataService.setData(['vendor', 'vendorOrders', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.orders, vendorData.vendor.products]);
+              
                 $state.go('app.vendor-tab.vendor-home')
               })
           } else {
@@ -56,6 +62,8 @@
               })
               .then(function(events) {
                 $log.info("event package?!?!?!!?!", events)
+                dataService.removeData(['planningEvents', 'attendingEvents']);
+                dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               
                 $state.go('app.departed-tab.home');
               })

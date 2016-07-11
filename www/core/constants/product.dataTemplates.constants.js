@@ -7,18 +7,15 @@
   {
     productBoiler: [
       "name", 
-      "image", 
       "price", 
       "stock", 
       "description", 
       "category", 
       "subCategory", 
-      "dateUploaded",
-      "dateUpdated",  
       "id"
     ],
     productTypes: {
-      caskets: [
+      casket: [
         "color", 
         "brand", 
         "dimensions",
