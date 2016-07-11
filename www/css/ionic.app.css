@@ -9878,6 +9878,30 @@ button {
     right: 0;
     position: relative; } }
 
+.cancelIcon {
+  position: absolute;
+  right: 10px;
+  top: 8px; }
+
+.ion-close-round:before {
+  font-size: 2em; }
+
+.slide-in-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
+
 .login-view .login-form {
   font-family: Gotham !important;
   margin-bottom: 0; }
@@ -10007,7 +10031,8 @@ button {
       margin-top: 1em;
       border-radius: 50%;
       max-width: 20%;
-      margin-bottom: 2em; }
+      margin-bottom: 2em;
+      max-height: 100px; }
   .event-view .step-container {
     animation-name: left-content;
     animation-duration: 1.5s;
@@ -10057,6 +10082,18 @@ button {
       animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .event-view .info-container {
     padding-top: 1em !important; }
+  .event-view .row-100 {
+    height: 100%; }
+  .event-view .row-30 {
+    height: 32%; }
+  .event-view .row-10 {
+    height: 12%;
+    text-align: center;
+    display: block;
+    padding-top: 2em;
+    background-color: lightgrey; }
+  .event-view .row-10:hover {
+    background-color: gray; }
 
 .departed-view .user-avatar {
   text-align: center; }

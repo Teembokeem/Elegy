@@ -130,7 +130,7 @@
     })
     
     .state('app.departed-tab.event', {
-        url: '/event',
+        url: '/event/:stage',
         views: {
           'event': {
             templateUrl: 'views/main/event/event.html',
@@ -144,8 +144,27 @@
           }
         },
         cache: false,
-        controllerId: 'Event',
-        authorized: true
+        controllerId: 'Event'
+        // authorized: true
+    })
+
+    .state('app.departed-tab.index', {
+        url: '/event',
+        views: {
+          'event': {
+            templateUrl: 'views/main/event/index.html',
+            controller: 'Event.controller',
+            controllerAs: 'Event',
+            resolve: {
+              event: function(dataService) {
+
+              }
+            }
+          }
+        },
+        cache: false,
+        controllerId: 'Event'
+        // authorized: true
     })
     
     .state('app.departed-tab.marketplace', {
