@@ -2,7 +2,7 @@
   'use strict'
   
   angular
-    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants', 'ngFileUpload'])
+    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants', 'ngFileUpload', 'ngCordova'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {

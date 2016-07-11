@@ -7,6 +7,7 @@
       [
       {
         title: "Find A Venue",
+        step: 1,
         parts: [
           {
             title: "Location",
@@ -30,6 +31,7 @@
       },
       {
         title: "Invitations",
+        step: 2,
         parts: [
           {
             title: 'Invite Friends and Family',
@@ -42,6 +44,7 @@
       },
       {
         title: "Major Decisions",
+        step: 3,
         parts: [
           {
             title: "Interment Arrangements",
@@ -64,6 +67,7 @@
       },
       {
         title: "Keepsake Setup",
+        step: 4,
         parts: [
           {
             title: "Confirm Payment Accounts",
@@ -86,6 +90,7 @@
       },
       {
         title: "General Preparations",
+        step: 5,
         parts: [
           {
             title: "Create A Schedule",
@@ -103,6 +108,7 @@
       },
       {
         title: "Purchasables",
+        step: 6,
         parts: [
           {
             title: "Flowers, Wreaths",
