@@ -10327,6 +10327,8 @@ button {
   .vendor-inventory-view .container .col img {
     width: 100% !important;
     height: 10em !important; }
+  .vendor-inventory-view .container .col-50 {
+    max-width: 45%; }
   .vendor-inventory-view .container .listing-row {
     flex-wrap: wrap; }
 
@@ -10339,6 +10341,9 @@ button {
   border: 1px dashed rgba(40, 40, 40, 0.3); }
   .vendor-inventory-view .add-button-container .add-button .plus {
     font-size: 7em; }
+
+.vendor-inventory-view .listing-box {
+  margin: 1em auto; }
 
 .vendor-orders-view * {
   font-family: Avenir; }

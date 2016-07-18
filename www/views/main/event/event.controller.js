@@ -40,9 +40,12 @@
     // };
 
     vm.displayMarketplace = function(param) {
+      $log.info("Event Controller display Marketplace method")
       var listings = marketplaceService.grabMarketplaceListings(param);
-      dataService.setData(['listings'], [listings])
-      $state.go('app.departed-tab.marketplace', {category: param})
+      listings.then(function(listings) {
+        dataService.setData(['listings'], [listings])
+        $state.go('app.departed-tab.marketplace', {category: param})
+      })
     };
 
     vm.moveTo = function( part ) {
