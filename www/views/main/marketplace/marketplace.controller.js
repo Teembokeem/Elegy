@@ -15,13 +15,13 @@
     var vm = this;
     vm.params = $stateParams.category
     $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace)
-    vm.listings = Marketplace[0]
+    vm.listings = Marketplace[0].data.data
     // LOCAL VARS
 
     // BOUND FUNCTIONS
-    vm.displayListing = function(data) {
+    vm.displayListing = function(data, param) {
       dataService.setData(['listing'], [data]);
-      $state.go('app.departed-tab.listing', {venueName: data.venueName})
+      $state.go('app.departed-tab.listing', {venueName: param})
     }
     // HELPERS
   }

@@ -3,7 +3,8 @@
     <h1>THE MARKETPLACE</h1>
 
     <div class="container">
-      <div ng-repeat="listing in Marketplace.listings" ng-click ="Marketplace.displayListing(listing)" class="listing-container">
+      <marketplace-casket ng-repeat="listing in Marketplace.listings" class="listing-container"></marketplace-casket>
+      <div>
         <div class="row listing-row">
           <div class="col-25">
             <img ng-src="{{listing.image}}" alt="">
