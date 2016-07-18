@@ -1,0 +1,27 @@
+<div ng-repeat="listing in data" ng-click ="listing.method(listing, listing.name)">
+  <div class="row listing-row">
+    <div class="col-25">
+      <img ng-src="{{listing.image}}" alt="">
+    </div>
+    <div class="col listing-box">
+      <div class="container listing-description">
+        <div class="row">
+          <div class="col listing-title">
+            <span>{{listing.name | uppercase}}</span>
+            {{listing.price}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col listing-Vendor">
+            <span>{{listing.vendor.businessName | uppercase}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col listing-price">
+            <span>$ {{listing.price}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
