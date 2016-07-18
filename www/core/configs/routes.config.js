@@ -187,7 +187,7 @@
     })
   
     .state('app.departed-tab.listing', {
-        url: 'listing/:venueName',
+        url: 'listing/:listingName',
         views: {
           'event': {
             templateUrl: 'views/main/listing/listing.html',
