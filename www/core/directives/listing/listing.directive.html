@@ -1,0 +1,52 @@
+<div class="list card">
+<div class="row">
+  <div class="col item listing-header">
+    <div class="col-70 listing-names">
+      <h2>{{data.name | uppercase}}</h2>
+      <h6>{{data.vendor.businessName | uppercase}}</h6>
+    </div>
+    <div class="col listing-price">
+      $ {{data.price | uppercase}}
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col item listing-image">
+    <img ng-src="{{data.image}}">
+  </div>
+</div>
+<div class="row">
+  <div class="col item listing-description">
+    <p>{{data.description}}</p>
+  </div>
+</div>
+
+
+  <!--<p ng-click="Listing.selectVenue()" class="item assertive">
+    SELECT THIS VENUE
+  </p>
+
+  <p ng-click="Listing.selectVenue()" class="item assertive">
+    CALL TO BOOK
+  </p>
+
+</div>
+
+<div class="card address-container">
+  <span>{{data.address | uppercase}}</span>
+</div>
+
+<h2 CLASS="review-header">REVIEWS</h2>
+<div ng-repeat="review in data.reviews" class="card container review-container">
+  <div class="row">
+    <div class="col">
+      <h5>{{review.review}}</h5>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col review-author-container">
+      {{review.rating}} <i class="icon ion-ios-infinite"></i> | {{review.user}}
+    </div>
+  </div>
+</div>-->
