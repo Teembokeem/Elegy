@@ -43,7 +43,7 @@
       $log.info("Event Controller display Marketplace method")
       var listings = marketplaceService.grabMarketplaceListings(param);
       listings.then(function(listings) {
-        dataService.setData(['listings'], [listings])
+        dataService.setData(['listings'], [listings.data.data])
         $state.go('app.departed-tab.marketplace', {category: param})
       })
     };
