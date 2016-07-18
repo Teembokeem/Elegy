@@ -15,7 +15,7 @@
     $log.info("resolve dependencies", VendorProducts)
     var vm = this;
     $scope.data = {};
-    vm.products = VendorProducts;
+    vm.products = VendorProducts[0];
 
     // LOCAL VARS
 

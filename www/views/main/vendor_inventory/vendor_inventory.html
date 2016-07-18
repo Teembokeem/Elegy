@@ -5,6 +5,23 @@
     </div>
     <h4>{{VendorHome.user.email}}</h4>
     <div class="container">
+      <div ng-click="VendorInventory.createProduct()" class="listing-container">
+        <div class="row listing-row">
+          <div class="col-50 add-button-container card">
+            <div class="row listing-row">
+              <div class="col add-button listing-box">
+                <span>Add a new product</span>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col add-button">
+                <span class="plus">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="listing-container">
         <div class="row listing-row">
           <div ng-repeat="product in VendorInventory.products" class="col col-50 listing-box card">
@@ -24,23 +41,6 @@
                   </div>
                 </div>
               </div>
-          </div>
-        </div>
-      </div>
-      <div ng-click="VendorInventory.createProduct()" class="listing-container">
-        <div class="row listing-row">
-          <div class="col-50 add-button-container card">
-            <div class="row listing-row">
-              <div class="col add-button listing-box">
-                <span>Add a new product</span>
-              </div>
-            </div>
-            <br>
-            <div class="row">
-              <div class="col add-button">
-                <span class="plus">+</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

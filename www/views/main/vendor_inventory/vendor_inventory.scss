@@ -33,7 +33,12 @@
         width: 100% !important;
         height: 10em !important;
       }
+      
     }
+
+    .col-50 {
+        max-width: 45%;
+      }
 
     .listing-row {
       flex-wrap: wrap;
@@ -50,9 +55,9 @@
 
     .row {
 
-      .col {
-
-      }
+      // .col-50 {
+      //   max-width: 45%;
+      // }
     }
   }
   .add-button-container {
@@ -64,5 +69,9 @@
         font-size: 7em;
       }
     }
+  }
+
+  .listing-box {
+    margin: 1em auto;
   }
 }
