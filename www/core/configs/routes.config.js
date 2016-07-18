@@ -293,6 +293,7 @@
             }
           }
         },
+        cache: false,
         controllerId: 'VendorInventory',
         authorized: true
     })
@@ -315,6 +316,7 @@
             }
           }
         },
+        cache: false,
         controllerId: 'VendorProduct',
         authorized: true
     })

@@ -6,24 +6,14 @@
     .constant('EventStaticInfo', 
       [
       {
-        title: "Find A Venue",
+        title: "Interment",
         step: 1,
         parts: [
           {
-            title: "Location",
+            title: "Traditional Burial",
             description: "Compare funeral homes near you",
             test: "Browse through locally listed funeral homes.",
-            category: 'Venues'
-          },
-          {
-            title: "Additional Information",
-            description: "",
-            test: "",
-          },
-          {
-            title: 'Funeral Director',
-            description: "Reach out to a funeral home director",
-            test: "The director holds a lot of power, so make sure you find one you like. He or she will help guide you through the process."
+            category: 'Casket'
           }
         ],
         description: "Step 1",
