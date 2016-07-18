@@ -10481,6 +10481,20 @@ button {
     letter-spacing: 0.2em;
     padding-bottom: 0.3em;
     border-bottom: 1px solid rgba(70, 70, 70, 0.2); }
+  .listing-view .card {
+    border-radius: 0.5em; }
+    .listing-view .card .listing-header * {
+      text-align: left;
+      font-family: Avenir; }
+    .listing-view .card h6 {
+      font-weight: lighter; }
+    .listing-view .card .listing-price {
+      border: none;
+      padding: 16px; }
+      .listing-view .card .listing-price * {
+        font-family: Avenir; }
+    .listing-view .card .listing-description * {
+      white-space: normal; }
 
 .vendor-product-view h1, .vendor-product-view p, .vendor-product-view span, .vendor-product-view input, .vendor-product-view button {
   font-family: Avenir; }
