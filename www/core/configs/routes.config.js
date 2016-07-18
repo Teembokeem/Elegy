@@ -105,8 +105,8 @@
           }
         },
         cache: false,
-        controllerId: 'Home',
-        authorized: true
+        controllerId: 'Home'
+        // authorized: true
     })
     
     .state('app.departed-tab.departed', {
