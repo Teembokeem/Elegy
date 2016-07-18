@@ -44,5 +44,50 @@
     border-bottom: 1px solid rgba(70, 70, 70, 0.2);
   }
 
+  .card {
+    border-radius: 0.5em;
+
+    .listing-header {
+
+      * {
+        text-align: left;
+          font-family: Avenir;
+      }
+
+      .listing-names  { 
+        * {
+        // max-width: 50%;
+
+        }
+      }
+    
+      .listing-business-name {
+    
+      }
+    }
+
+    h6 {
+      font-weight: lighter;
+    }
+
+    .listing-price {
+      border: none;
+      padding: 16px;
+
+      * {
+        font-family: Avenir;
+      }
+    }
+
+    .listing-description {
+      * {
+        white-space: normal;
+      }
+    }
+    
+
+
+  }
+
 
 }
