@@ -14,14 +14,19 @@
     $log.instantiate('Marketplace', 'controller');
     var vm = this;
     vm.params = $stateParams.category
-    $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace)
-    vm.listings = Marketplace[0].data.data
+    $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace[0])
+    vm.listings = Marketplace[0];
+    $log.info("vm listings", Marketplace[0].length)
+    
+    vm.listings.forEach(function(listing) {
+      listing.method = displayListing
+    });
     // LOCAL VARS
 
     // BOUND FUNCTIONS
-    vm.displayListing = function(data, param) {
+    function displayListing(data, param) {
       dataService.setData(['listing'], [data]);
-      $state.go('app.departed-tab.listing', {venueName: param})
+      $state.go('app.departed-tab.listing', {listingName: param})
     }
     // HELPERS
   }

@@ -1,9 +1,8 @@
 <ion-view view-title="{{Marketplace.params}}">
   <ion-content class="marketplace-view">
     <h1>THE MARKETPLACE</h1>
-
     <div class="container">
-      <marketplace-casket ng-repeat="listing in Marketplace.listings" class="listing-container"></marketplace-casket>
+      <marketplace data="Marketplace.listings" class="listing-container"></marketplace>
       <div>
         <div class="row listing-row">
           <div class="col-25">
