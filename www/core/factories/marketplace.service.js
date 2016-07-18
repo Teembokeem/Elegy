@@ -92,14 +92,17 @@
 
     // GET METHOD TO DATABASE
     function grabMarketplaceListings(param) {
-      // $http({
-      //   method: 'GET',
-      //   url: urlFactory + '/products' + param
-      // })
-      // .then(function(listings) {
-      //   return dataService.setData(['listings'], [listings])
-      // })
-      return testObj;
+      return $http({
+        method: 'GET',
+        url: urlFactory + '/products/' + param
+      })
+      .then(function(listings) {
+        return listings
+      })
+      .catch(function(err) {
+        if (err) console.log("err")
+      })
+      // return testObj;
     }
 
     // BASI
