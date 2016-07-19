@@ -10483,9 +10483,14 @@ button {
     border-bottom: 1px solid rgba(70, 70, 70, 0.2); }
   .listing-view .card {
     border-radius: 0.5em; }
+    .listing-view .card .listing-header > {
+      display: inline-block; }
     .listing-view .card .listing-header * {
       text-align: left;
-      font-family: Avenir; }
+      font-family: Avenir;
+      margin: 0 0; }
+    .listing-view .card .listing-header .listing-names * {
+      max-width: 80%; }
     .listing-view .card h6 {
       font-weight: lighter; }
     .listing-view .card .listing-price {
