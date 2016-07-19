@@ -48,15 +48,20 @@
     border-radius: 0.5em;
 
     .listing-header {
-
+      > {
+        display: inline-block;
+      }
+      
       * {
         text-align: left;
-          font-family: Avenir;
+        font-family: Avenir;
+        // display: inline-block;
+        margin: 0 0;
       }
 
       .listing-names  { 
         * {
-        // max-width: 50%;
+        max-width: 80%;
 
         }
       }
