@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Listing.controller', ListingController)
   
-  ListingController.$inject = ['$log', '$stateParams', 'Listing', 'eventService', '$state', 'ProductDataTemplates'];
+  ListingController.$inject = ['$log', '$stateParams', 'Listing', 'eventService', '$state', 'ProductDataTemplates', 'dataService'];
 
-  function ListingController($log, $stateParams, Listing, eventService, $state, ProductDataTemplates) {
+  function ListingController($log, $stateParams, Listing, eventService, $state, ProductDataTemplates, dataService) {
     // INSTANTIATIONS
     $log.instantiate('Listing', 'controller');
     var vm = this;
