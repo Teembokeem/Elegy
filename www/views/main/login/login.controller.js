@@ -39,20 +39,6 @@
                 $state.go('app.vendor-tab.vendor-home')
               })
           } else {
-            // $ionicPopup.confirm({
-            //   templateUrl: 'views/templates/login_vendor_query.html',
-            //   buttons: [{
-            //     text: 'OK',
-            //     type: 'button-dark',
-            //     onTap: function(e) {
-            //       // Returning a value will cause the promise to resolve with the given value.
-            //       return;
-            //     }
-            //   }]
-            // })
-            // .then(function(res) {
-            //   vm.vendor = !vm.vendor
-            // })
             authService
               .logIn(vm.credentials)
               .then(function(decodedToken) {
