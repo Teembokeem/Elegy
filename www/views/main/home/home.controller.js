@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -27,8 +27,14 @@
     }
     
     vm.travel = function(data) {
-      dataService.setData(['event'], [data]);
+      $log.info("your evenfdsafdasfdsafasfsdat", data)
+      var apiEvent = eventService.retrieveEvent(data.event)
+      dataService.setData(['event'], [apiEvent]);
       $state.go('app.departed-tab.departed', {name: data.first })
+    }
+
+    vm.createDeparted = function() {
+      $state.go('app.departed-signup');
     }
     // HELPERS
 

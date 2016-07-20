@@ -6,14 +6,17 @@
     </div>
     <h4>{{Home.user.email}}</h4>
     <div class="list">
+      <p>
+        <button ng-click="Home.createDeparted()" class="item button">PLAN A FUNERAL</button>
+      </p>
       <div class="item item-divider">
         {{('UPCOMING EVENTS').split('').join(' ')}}
       </div>
-      <a ng-repeat="event in Home.assets" class="item item-avatar" ng-click="Home.travel(event)">
+      <a ng-repeat="departed in Home.assets" class="item item-avatar" ng-click="Home.travel(departed)">
         <img src="../../img/adam.jpg" alt="">
         <div class="col col-60">
-          <h2>{{event.first.split("").join(" ") | uppercase}} &nbsp; {{event.last.split("").join(" ") | uppercase}}</h2>
-          <p>{{event.admin ? "Admin" : "Guest" | uppercase}}</p>
+          <h2>{{departed.first.split("").join(" ") | uppercase}} &nbsp; {{departed.last.split("").join(" ") | uppercase}}</h2>
+          <p>{{departed.admin ? "Admin" : "Guest" | uppercase}}</p>
         </div>
         <div class="col pull-right swipe">
           <i class="icon ion-ios-arrow-thin-right"></i>
