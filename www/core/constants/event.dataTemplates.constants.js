@@ -12,11 +12,12 @@
                       item: {}
                   },
                   burialVault: {
-                      details: {}  
+                      item: {},
                   },
-                  marker: {
+                  markers: {
                       item: {}
                   }
+
               },
               mausoleum: {
                   casket: {
