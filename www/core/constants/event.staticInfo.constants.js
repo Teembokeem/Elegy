@@ -8,14 +8,30 @@
       {
         title: "Interment",
         step: 1,
-        parts: [
-          {
-            title: "Traditional Burial",
-            description: "Compare funeral homes near you",
-            test: "Browse through locally listed funeral homes.",
-            category: 'Casket'
+        types: {
+          traditional: {
+            parts: [
+              {
+                title: "Casket",
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                category: 'Casket'
+              },
+              {
+                title: "Burial Vault",
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                category: 'BurialVaults'
+              },
+              {
+                title: "Burial Marker",
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                category: 'Markers'
+              }
+            ],
           }
-        ],
+        },
         description: "Step 1",
         test: "What to consider when choosing a funeral home and director. Make sure to speak with more than one funeral home and compare any associated services."
       },
