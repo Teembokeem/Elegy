@@ -17,6 +17,20 @@
     vm.EventStaticInfo = EventStaticInfo;
     vm.part = {}
 
+    // TODO: ON EVENT GRAB, USE CHOSEN INTERMENT TYPE:
+    var testobj = {
+      interment: {
+        traditional: {
+          casket: 'stuff'
+        }
+      }
+    }
+    var stateparamsStepNumber = 0;
+    vm.stepNumber = stateparamsStepNumber
+    vm.chosenVal = Object.keys(testobj.interment)[0]
+    vm.steps = vm['EventStaticInfo'][0]['types'][vm.chosenVal]['parts']
+
+    $log.info('Event Data Template', vm['EventStaticInfo'][0]['types'][vm.chosenVal]['parts'])
     $log.instantiate('Event Data Template', 'constants')
     $log.instantiate('Event Static Info', 'constants')
 

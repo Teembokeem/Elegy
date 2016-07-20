@@ -7,17 +7,20 @@
       <!--1-->
       <div class=" step-container container">
         <div class="row">
+          <div class="center-col col">
+            <span >{{Event.val.title}}</span>
+            <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
+          </div>
+        </div>
+        <div class="row">
           <div class="col">
-            <h2><span >{{Event.val.title}}</span></h2>
-            <div class="col col-30 info-container">
-              <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
-            </div>
+            <p>{{Event.chosenVal}} Service</p>
           </div>
         </div>
       </div>
       
       <!--2-->
-      <div ng-repeat="part in Event.val.parts" class="part-container">
+      <div ng-repeat="part in Event.steps" class="part-container">
         <div class="row">
           <!--2.1-->
           <div class="col col-10"></div>

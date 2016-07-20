@@ -35,9 +35,10 @@
         text-align: center; 
       } 
 
-    h2 span { 
+    span { 
         background:#fff; 
         padding:0 10px; 
+        font-size: 2em;
     }
   }
 
@@ -109,10 +110,13 @@
     text-align: center;
     display: block;
     padding-top: 2em;
-    background-color: lightgrey;
+    background-color: white;
+    font-family: Avenir;
+    font-size: 2em;
+    letter-spacing: 0.2em;
   }
   .row-10:hover {
-    background-color: gray;
+    background-color: red;
   }
 }
 
