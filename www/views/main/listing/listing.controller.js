@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Listing.controller', ListingController)
   
-  ListingController.$inject = ['$log', '$stateParams', 'Listing', 'eventService', '$state', 'ProductDataTemplates', 'dataService'];
+  ListingController.$inject = ['$log', '$stateParams', 'Listing', 'eventService', '$state', 'ProductDataTemplates', 'EventDataTemplates', 'dataService'];
 
-  function ListingController($log, $stateParams, Listing, eventService, $state, ProductDataTemplates, dataService) {
+  function ListingController($log, $stateParams, Listing, eventService, $state, ProductDataTemplates, EventDataTemplates, dataService) {
     // INSTANTIATIONS
     $log.instantiate('Listing', 'controller');
     var vm = this;
@@ -23,7 +23,7 @@
 
     // BOUND FUNCTIONS
     vm.selectVenue = function() {
-      eventService.updateEvent(vm.listing)
+      eventService.updateEvent(vm.listing._id, dataService.retrieveData('event')._id)
       $state.go('app.departed-tab.event');
     }
 
