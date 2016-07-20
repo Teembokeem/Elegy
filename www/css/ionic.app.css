@@ -10047,9 +10047,10 @@ button {
     .event-view .step-container h2 {
       width: 100%;
       text-align: center; }
-    .event-view .step-container h2 span {
+    .event-view .step-container span {
       background: #fff;
-      padding: 0 10px; }
+      padding: 0 10px;
+      font-size: 2em; }
   .event-view .part-nav .col-30 {
     width: 100%; }
   .event-view .part-container {
@@ -10093,9 +10094,12 @@ button {
     text-align: center;
     display: block;
     padding-top: 2em;
-    background-color: lightgrey; }
+    background-color: white;
+    font-family: Avenir;
+    font-size: 2em;
+    letter-spacing: 0.2em; }
   .event-view .row-10:hover {
-    background-color: gray; }
+    background-color: red; }
 
 .departed-view .user-avatar {
   text-align: center; }
