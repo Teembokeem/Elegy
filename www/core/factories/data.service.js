@@ -27,7 +27,7 @@
         var deferredArr = [];
         data.forEach(function(datum, idx) {
           datum = retrieveData(datum);
-          deferredArr.push(transformer[parameter[idx]](datum, parameter[idx]))
+          deferredArr.push(transformer[parameter[idx]](datum, data[idx]))
         });
         return $q.all(deferredArr)
           .then(

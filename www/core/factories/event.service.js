@@ -13,13 +13,14 @@
     var service = {
       updateEvent: updateEvent,
       grabEventPackage: grabEventPackage,
+      retrieveEvent: retrieveEvent,
       parseEvents: parseEvents,
     }
 
-    function updateEvent(module) {
+    function updateEvent(module, eventId) {
       $http({
         method: 'PUT',
-        url: urlFactory + '/events',
+        url: urlFactory + '/events/' + eventId,
         data: module
       })
       .then(function(res) {
@@ -47,7 +48,17 @@
       .catch(function(err) {
         return err;
       })
-    
+    }
+
+    function retrieveEvent(data) {
+      return $http({
+        method: 'GET',
+        url: urlFactory + '/events/' + data
+      })
+      .then(function(res) {
+        $log.info('Event Service retrieve Event method', res.data);
+        return res.data.data
+      })
     }
 
     function parseEvents(input, key) {
@@ -65,7 +76,9 @@
 
     // helpers
       function process(input, key) {
+        $log.info("yas plas", key)
         if (key === 'planningEvents') {
+          $log.info("yas plas", key, input)
           input.forEach(function(obj) {
             obj.admin = true;
           })
