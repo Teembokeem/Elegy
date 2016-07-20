@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('DepartedSignup.controller', DepartedSignupController);
   
-  DepartedSignupController.$inject = ['$log', 'eventService', 'dataService', '$state', 'tokenService'];
+  DepartedSignupController.$inject = ['$log', 'eventService', 'dataService', '$state', 'tokenService', 'userService'];
 
-  function DepartedSignupController($log, eventService, dataService, $state, tokenService) {
+  function DepartedSignupController($log, eventService, dataService, $state, tokenService, userService) {
     // INSTANTIATIONS
     $log.instantiate('Departed Signup', 'controller');
     var vm = this;
@@ -24,13 +24,13 @@
     // BOUND FUNCTIONS
     vm.submitDepartedForm = function() {
       $log.info("Sending Departed Form, ", vm.newDeparted);
-      eventService
+      userService
         .setupEvent(vm.newDeparted)
         .then(function(event) {
           return eventService.grabEventPackage(tokenService.decode()._id)
         })
         .then(function(events) {
-          $state.go('^.tab.home');
+          $state.go('^.departed-tab.home');
         })
         .catch(function(err) {
           if (err) console.log(err);
