@@ -4,73 +4,49 @@
   angular
     .module('Constants')
     .constant('EventDataTemplates', {
-      
-      decisions: {
-          interment: {
-              cemetery: {
-                  casket: {
-                      item: {}
-                  },
-                  burialVault: {
-                      item: {},
-                  },
-                  markers: {
-                      item: {}
-                  }
+    
+        interment: {
+            traditional: {
+                Casket: {
+                    item: {}
+                },
+                BurialVault: {
+                    item: {},
+                },
+                Marker: {
+                    item: {}
+                }
 
-              },
-              mausoleum: {
-                  casket: {
-                      item: {}
-                  },
-                  marker: {
-                      item: {}
-                  }
-              },
-              cremation: {
-                  cremation_cemeteryEntombment: {
-                      cremationMarker: {
-                          item: {}
-                      },
-                      urn: {
-                          item: {}
-                      }
-                  },
-                  cremation_cemeteryBurial: {
-                      burialVault: {
-                          details: {}  
-                      },
-                      cremationMarker: {
-                          item: {}
-                      },
-                      urn: {
-                          item: {}
-                      }
-                  },
-                  cremation_scatteringCemetery: {
-                      temporaryUrn: {
-                          item: {}
-                      }
-                  },
-                  cremation_returnToFamily: {
-                      urn: {
-                          item: {}
-                      }
-                  },
-                  cremation_scatteringSea: {
-                      temporaryUrn: {
-                          item: {}
-                      }
-                  }
-              },
-              donation: {
-                  recipient: {}
-          },
-          services: {
+            },
+            cremation: {
+                Urn: {
+                    item: {}
+                },
+            },
+            graveside: {
+                something: {}
+            },
+            bodyDonation: {
+                Donation: {
+                    item: {}
+                }
+            }
+        },
+    funeralHome: {
+        Venue: {
+            item: {}
+        }    
+    },
+    options: {
 
-          }
-      }
+    },
+    inviteGuests: {
+
+    },
+    keepSake: {
+
     }
+    
   })
 
 })();

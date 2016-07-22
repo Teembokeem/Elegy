@@ -130,7 +130,7 @@
     })
     
     .state('app.departed-tab.event', {
-        url: '/event/:stage',
+        url: '/event/:step',
         views: {
           'event': {
             templateUrl: 'views/main/event/event.html',
@@ -149,7 +149,7 @@
     })
 
     .state('app.departed-tab.index', {
-        url: '/event',
+        url: '/events',
         views: {
           'event': {
             templateUrl: 'views/main/event/index.html',
