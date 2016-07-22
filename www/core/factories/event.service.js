@@ -15,19 +15,28 @@
       grabEventPackage: grabEventPackage,
       retrieveEvent: retrieveEvent,
       parseEvents: parseEvents,
+      setupModelOptions: setupModelOptions
     }
 
-    function updateEvent(module, eventId) {
-      $http({
+    function updateEvent(mod, Id, detailModule, itemPath) {
+      $log.info("Event Service Update Event Method", mod, Id, detailModule, itemPath);
+
+      return $http({
         method: 'PUT',
-        url: urlFactory + '/events/' + eventId,
-        data: module
+        url: urlFactory + '/events/' + Id,
+        data: {
+          detail: detailModule,
+          itemPath: itemPath,
+          asset: mod
+        }
       })
       .then(function(res) {
         $log.info("yes response", res);
+        return res.data.data;
       })
       .catch(function(err) {
         $log.info("hey err", err)
+        return err;
       })
     }
 
@@ -51,12 +60,13 @@
     }
 
     function retrieveEvent(data) {
+      $log.instantiate('Event Service retrieve Event', 'Method')
       return $http({
         method: 'GET',
         url: urlFactory + '/events/' + data
       })
       .then(function(res) {
-        $log.info('Event Service retrieve Event method', res.data);
+        $log.info('success', res.data);
         return res.data.data
       })
     }
@@ -72,6 +82,28 @@
       }
 
       return deferred.promise;
+    }
+
+    function setupModelOptions(id, option, insertion) {
+      $log.instantiate('Event Service setupModelOptions', 'Method')
+      var sanitizedInsertion = insertion.toLowerCase();
+      return $http({
+        method: 'PUT',
+        url: urlFactory + '/events/' + id,
+        data: {
+          option: option,
+          insertion: sanitizedInsertion
+        }
+      })
+      .then(function(res) {
+        $log.info("success", res.data);
+        res.data.data.details[sanitizedInsertion] = res.data.option
+        return res.data.data
+      })
+      .catch(function(err) {
+        $log.info("ehoh", err)
+        return err
+      })
     }
 
     // helpers
