@@ -9904,6 +9904,12 @@ button {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
 
+.popup-container .popup {
+  border-radius: 1em; }
+
+.popup-container * {
+  border-radius: 0.5em; }
+
 .login-view .login-form {
   font-family: Gotham !important;
   margin-bottom: 0; }
@@ -10076,8 +10082,13 @@ button {
     .event-view .part-container .part-checker {
       text-align: center;
       padding-top: 0.7em;
-      color: red;
       font-size: 2.3em; }
+      .event-view .part-container .part-checker .ion-ios-close-outline {
+        color: red; }
+      .event-view .part-container .part-checker .ion-ios-checkmark-outline {
+        color: green; }
+      .event-view .part-container .part-checker .ion-ios-minus-outline {
+        color: goldenrod; }
     .event-view .part-container .divider {
       border-bottom: 1px solid rgba(75, 75, 75, 0.7);
       animation-name: opacity;
@@ -10100,6 +10111,9 @@ button {
     letter-spacing: 0.2em; }
   .event-view .row-10:hover {
     background-color: red; }
+  .event-view .event-data-instantiator * {
+    font-family: Avenir;
+    text-align: middle; }
 
 .departed-view .user-avatar {
   text-align: center; }
@@ -10504,6 +10518,8 @@ button {
         font-family: Avenir; }
     .listing-view .card .listing-description * {
       white-space: normal; }
+  .listing-view .container {
+    width: 100%; }
 
 .vendor-product-view h1, .vendor-product-view p, .vendor-product-view span, .vendor-product-view input, .vendor-product-view button {
   font-family: Avenir; }
