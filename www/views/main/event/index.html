@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        <div class="row-10 row text-center" ng-repeat="part in Event.EventStaticInfo" ng-click="Event.moveTo(part)">
+        <div class="row-10 row text-center" ng-repeat="part in Event.EventStaticInfo" ng-click="Event.moveTo(part, $index)">
                 {{part.title | uppercase}}
         </div>
     </div>

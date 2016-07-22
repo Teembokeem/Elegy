@@ -28,8 +28,11 @@
     
     vm.travel = function(data) {
       $log.info("your evenfdsafdasfdsafasfsdat", data)
-      var apiEvent = eventService.retrieveEvent(data.event)
-      dataService.setData(['event'], [apiEvent]);
+      eventService
+        .retrieveEvent(data.event)
+        .then(function(retrievedData) {
+          dataService.setData(['event'], [retrievedData]);
+        })
       $state.go('app.departed-tab.departed', {name: data.first })
     }
 
