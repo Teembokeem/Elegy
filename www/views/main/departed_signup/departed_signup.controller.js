@@ -30,6 +30,7 @@
           return eventService.grabEventPackage(tokenService.decode()._id)
         })
         .then(function(events) {
+          dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
           $state.go('^.departed-tab.home');
         })
         .catch(function(err) {
