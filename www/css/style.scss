@@ -88,3 +88,15 @@ button {
 .slide-in-right.ng-leave, .slide-in-right > .ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
+
+.popup-container {
+    .popup {
+      border-radius: 1em;
+      // background-color: white;
+    }
+
+    * {
+      border-radius: 0.5em;
+            // background-color: white;
+    }
+  }
