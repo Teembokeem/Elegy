@@ -22,10 +22,29 @@
     // LOCAL VARS
 
     // BOUND FUNCTIONS
-    vm.selectVenue = function() {
-      eventService.updateEvent(vm.listing._id, dataService.retrieveData('event')._id)
+    vm.bookmarkItem = function() {
+      $log.info("Listing Controller select item method")
+      eventService
+        .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'))
+        .then(function(res) {
+          eventService
+            .retrieveEvent(dataService.retrieveData('event')._id)
+            .then(function(res) {
+              dataService.setData(['event'], [res]);
+            })
+            .catch(function(err){
+              $log.info("ehoh", err)
+              return err
+            })
+        })
+        .catch(function(err) {
+          $log.info("err", err)
+        })
       $state.go('app.departed-tab.event');
     }
+
+    vm.purchaseItem = function() {}
+    // TODO order service to inject.
 
     // HELPERS
   }

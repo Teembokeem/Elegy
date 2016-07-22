@@ -1,11 +1,16 @@
 <ion-view view-title="{{Listing.venue}}">
   <ion-content class="listing-view">
     <listing data="Listing.listing"></listing>
-    
-    <div class="item card">
-      <p ng-click="Listing.selectVenue()" class="item assertive">
-        SELECT THIS ITEM
-      </p>
+    <div class="card">
+
+          <p ng-click="Listing.bookmarkItem()" class=" assertive">
+            BOOKMARK THIS ITEM
+          </p>
+          <br>
+          <p ng-click="Listing.purchaseItem()" class=" assertive">
+            PURCHASE THIS ITEM
+          </p>
+      </div>
     </div>
   </ion-content>
 </ion-view>
