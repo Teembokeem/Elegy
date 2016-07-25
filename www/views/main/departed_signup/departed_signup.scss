@@ -9,4 +9,22 @@
     padding-right: 0px;
   }
 
+  .image-container {
+    background-color: rgba(140, 140, 140, 0.1);
+
+    * {
+      padding: 0 0;
+    }
+
+    .img-full-width {
+
+      img {
+        width: 100%;
+      }
+
+      .ion-camera {
+        font-size: 5em !important;
+      }
+    }
+  }
 }
