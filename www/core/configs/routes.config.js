@@ -105,25 +105,25 @@
     })
     
     
-    .state('app.departed-tab.departed', {
-        url: '/departed/:name',
-        views: {
-          'home': {
-            templateUrl: 'views/main/departed/departed.html',
-            controller: 'Departed.controller',
-            controllerAs: 'Departed',
-            resolve: {
-              event: function(dataService) {
-                console.log("resolving dependencies")
-                return dataService.parseData(['event'], ['event'])
-              }
-            }
-          }
-        },
-        cache: false,
-        controllerId: 'Departed',
-        authorized: true
-    })
+    // .state('app.departed-tab.departed', {
+    //     url: '/departed/:name',
+    //     views: {
+    //       'event': {
+    //         templateUrl: 'views/main/departed/departed.html',
+    //         controller: 'Departed.controller',
+    //         controllerAs: 'Departed',
+    //         resolve: {
+    //           event: function(dataService) {
+    //             console.log("resolving dependencies")
+
+    //           }
+    //         }
+    //       }
+    //     },
+    //     cache: false,
+    //     controllerId: 'Departed',
+    //     authorized: true
+    // })
     
     .state('app.departed-tab.event', {
         url: '/event/:step',
@@ -153,7 +153,7 @@
             controllerAs: 'Event',
             resolve: {
               event: function(dataService) {
-
+                return dataService.parseData(['event'], ['event'])
               }
             }
           }
