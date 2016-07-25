@@ -9998,6 +9998,15 @@ button {
 .departed-signup-view .item-i.to input {
   padding-right: 0px; }
 
+.departed-signup-view .image-container {
+  background-color: rgba(140, 140, 140, 0.1); }
+  .departed-signup-view .image-container * {
+    padding: 0 0; }
+  .departed-signup-view .image-container .img-full-width img {
+    width: 100%; }
+  .departed-signup-view .image-container .img-full-width .ion-camera {
+    font-size: 5em !important; }
+
 .home-view {
   animation-name: left-content;
   animation-duration: 1.5s;
