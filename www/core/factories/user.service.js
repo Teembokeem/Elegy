@@ -5,9 +5,9 @@
     .module('Services')
     .factory('userService', userService);
   
-  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService', '$window', 'tokenService'];
+  userService.$inject = ['$log', '$http', 'urlFactory', 'dataService', '$window', 'tokenService', 'uploadService'];
 
-  function userService($log, $http, urlFactory, dataService, $window, tokenService) {
+  function userService($log, $http, urlFactory, dataService, $window, tokenService, uploadService) {
     $log.instantiate('User', 'service');
 
     var service = {
@@ -30,15 +30,17 @@
       return promise;
     }
 
-    function setupEvent(data) {
+    function setupEvent(data, img) {
       $log.info("User Service setup event.")
-      var promise = $http({
+      return $http({
         method: 'POST',
         url: urlFactory + '/departed',
         data: data
+      })
+      .then(function(done){
+        return uploadService.uploadFile(img, "/departed/" + done.data.data, "departed")
       });
 
-      return promise;
     }
 
     function setupVendor(data) {
