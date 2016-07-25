@@ -204,6 +204,25 @@
         controllerId: 'Listing',
         authorized: true
     })
+
+    .state('app.departed-tab.transaction', {
+        url: '/transaction',
+        views: {
+          'event': {
+            templateUrl: 'views/main/transaction/transaction.html',
+            controller: 'Transaction.controller',
+            controllerAs: 'Transaction',
+            resolve: {
+              brainTree: function(transactionService) {
+                return transactionService.initializeBraintree()
+              }
+            }
+          }
+        },
+        cache: false,
+        controllerId: 'Transaction',
+        authorized: true
+    })
     
     .state('app.departed-tab.feed', {
         url: '/feed',
