@@ -33,10 +33,11 @@
         .then(function(retrievedData) {
           dataService.setData(['event'], [retrievedData]);
         })
-      $state.go('app.departed-tab.departed', {name: data.first })
+      $state.go('app.departed-tab.index', {name: data.first })
     }
 
     vm.createDeparted = function() {
+      dataService.setData(['beforeState'], [true])
       $state.go('app.departed-signup');
     }
     // HELPERS
