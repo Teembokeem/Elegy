@@ -34,9 +34,11 @@
         .then(function(events) {
           dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
           if (dataService.retrieveData('beforeState')) {
-            $log.info("retrieve", dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1])
-            eventService.retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
-            dataService.setData(['event'], [event])
+            eventService
+              .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
+              .then(function(event) {
+                dataService.setData(['event'], [event])
+              })
             $state.go('app.departed-tab.index', {name: event.first })
           } else {
             $state.go('^.home');
