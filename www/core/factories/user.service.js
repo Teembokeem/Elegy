@@ -37,9 +37,9 @@
         url: urlFactory + '/departed',
         data: data
       })
-      .then(function(done){
-        return uploadService.uploadFile(img, "/departed/" + done.data.data, "departed")
-      });
+      // .then(function(done){
+      //   return uploadService.uploadFile(img, "/departed/" + done.data.data, "departed")
+      // });
 
     }
 
