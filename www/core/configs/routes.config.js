@@ -83,31 +83,27 @@
     //     controllerAs: 'Feed',
     //     controllerId: 'Feed'
     // })
-    
-    .state('app.departed-tab', {
-      abstract: true, 
-      templateUrl: "views/main/tabs/departed_tabs.html"
-    })
-    
-    .state('app.departed-tab.home', {
+    .state('app.home', {
         url: '/home',
-        views: {
-          'home': {
-             templateUrl: 'views/main/home/home.html',
-            controller: 'Home.controller',
-            controllerAs: 'Home',
-            resolve: {
-              events: function(dataService) {
-                console.log("resolving dependencies")
-                return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
-              }
-            }
+        templateUrl: 'views/main/home/home.html',
+        controller: 'Home.controller',
+        controllerAs: 'Home',
+        resolve: {
+          events: function(dataService) {
+            console.log("resolving dependencies")
+            return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
           }
         },
         cache: false,
         controllerId: 'Home'
         // authorized: true
     })
+    
+    .state('app.departed-tab', {
+      abstract: true, 
+      templateUrl: "views/main/tabs/departed_tabs.html"
+    })
+    
     
     .state('app.departed-tab.departed', {
         url: '/departed/:name',
