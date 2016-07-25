@@ -45,7 +45,7 @@
       })
       .then(function(res) {
         $log.info("success", res.data);
-        return uploadService.uploadFile(img, "/products/" + res.data.data, "Something")
+        return uploadService.uploadFile(img, "/products/" + res.data.data, "product")
       })
       .catch(function(err) {
         $log.info("error", err)
