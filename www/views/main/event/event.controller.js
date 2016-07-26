@@ -23,9 +23,10 @@
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
 
-    if ($state.is('app.departed-tab.event')) {
+    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != null) {
       switch(vm.eventStep.eventKey) {
         case 'interment':
+        $log.info("this is event")
           vm.eventStep ? vm.eventItems = vm.eventStep['types'].filter(function(type) {
             return type.type === vm.eventModel['details'][vm.eventStep.eventKey.toLowerCase()]['__t'].toLowerCase()
           })[0]['parts'] : null;
@@ -43,6 +44,8 @@
     $log.info("your event:", vm.eventModel)
     $log.info("did it work?", vm.eventItems)
     $log.info("did it work?", vm.trackers)
+    $log.info("did it work?", vm.eventStep.title === 'Interment')
+    $log.info("did it work?", vm.eventStep['types'])
     
 
     // BOUND FUNCTIONS
@@ -71,7 +74,6 @@
 
     vm.setupModelOptions = function(option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
-      
       return eventService
               .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
               .then(function(res) {
