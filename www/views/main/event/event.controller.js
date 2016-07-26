@@ -23,13 +23,13 @@
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
 
-    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != null) {
+    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != {}) {
       switch(vm.eventStep.eventKey) {
         case 'interment':
-        $log.info("this is event")
-          vm.eventStep ? vm.eventItems = vm.eventStep['types'].filter(function(type) {
-            return type.type === vm.eventModel['details'][vm.eventStep.eventKey.toLowerCase()]['__t'].toLowerCase()
-          })[0]['parts'] : null;
+        $log.info("this is event", vm.eventStep['types'])
+          vm.eventItems = vm.eventStep['types'].filter(function(type) {
+            return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+          })[0]['parts']
         case 'funeralHome':
         case 'options':
         case 'inviteGuests':
