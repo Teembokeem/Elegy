@@ -10,7 +10,7 @@
 
   function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService) {
     // INSTANTIATIONS
-    $log.instantiate('Event', 'controller');
+    // $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
     vm.EventDataTemplates = EventDataTemplates;

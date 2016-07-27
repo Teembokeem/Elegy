@@ -10097,19 +10097,22 @@ button {
   .event-view .info-container {
     padding-top: 1em !important; }
   .event-view .row-100 {
-    height: 100%; }
+    height: 100vh; }
   .event-view .row-30 {
-    height: 32%; }
-  .event-view .row-10 {
-    height: 12%;
+    height: 30%; }
+  .event-view .row-70 {
+    height: 70%; }
+  .event-view .row-fill {
+    height: auto;
     text-align: center;
     display: block;
-    padding-top: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     background-color: white;
     font-family: Avenir;
     font-size: 2em;
     letter-spacing: 0.2em; }
-  .event-view .row-10:hover {
+  .event-view .row-fill:hover {
     background-color: red; }
   .event-view .event-data-instantiator * {
     font-family: Avenir;
