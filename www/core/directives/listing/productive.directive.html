@@ -1,0 +1,23 @@
+<div class="list card">
+<div class="row">
+  <div class="col item listing-header">
+    <div class="col-60 listing-names">
+      <h2>{{data.name | uppercase}}</h2>
+      <h6>{{data.vendor.businessName | uppercase}}</h6>
+    </div>
+    <div class="col listing-price">
+      $ {{data.price | uppercase}}
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col item listing-image">
+    <img ng-src="{{data.image}}">
+  </div>
+</div>
+<div class="row">
+  <div class="col item listing-description">
+    <p>{{data.description}}</p>
+  </div>
+</div>

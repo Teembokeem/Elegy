@@ -11,6 +11,7 @@
   function StaticController($log, $state, $ionicHistory, $window) {
     // INSTANTIATIONS
     $log.instantiate("Static", 'controller');
+    console.log("CHECK 1")
     var vm = this;
   
     vm.logOut = function() {
@@ -20,6 +21,7 @@
       $window.localStorage.clear()
       console.log("clearing caches.")
     }
+    console.log("CHECK 2")
   }
     
 })();

@@ -6,9 +6,10 @@
                 <img src="../../img/ben.png" alt="">
             </div>
         </div>
-
-        <div class="row-10 row text-center" ng-repeat="part in Event.EventStaticInfo" ng-click="Event.moveTo(part, $index)">
-                {{part.title | uppercase}}
+        <div class="row-70">
+            <div class="row text-center row-fill" ng-repeat="part in Event.EventStaticInfo" ng-click="Event.moveTo(part, $index)">
+                    {{part.title | uppercase}}
+            </div>
         </div>
     </div>
   </ion-content>
