@@ -20,18 +20,29 @@
       dob: '',
       dod: ''
     }
+    
+    vm.cloud = {};
 
     // BOUND FUNCTIONS
     vm.submitDepartedForm = function() {
       $log.info("Sending Departed Form, ", vm.newDeparted);
       userService
-        .setupEvent(vm.newDeparted)
+        .setupEvent(vm.newDeparted, vm.cloud)
         .then(function(event) {
-          return eventService.grabEventPackage(tokenService.decode()._id)
+            return eventService.grabEventPackage(tokenService.decode()._id)
         })
         .then(function(events) {
           dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-          $state.go('^.departed-tab.home');
+          if (dataService.retrieveData('beforeState')) {
+            eventService
+              .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
+              .then(function(event) {
+                dataService.setData(['event'], [event])
+              })
+            $state.go('app.departed-tab.index', {name: event.first })
+          } else {
+            $state.go('^.home');
+          }
         })
         .catch(function(err) {
           if (err) console.log(err);

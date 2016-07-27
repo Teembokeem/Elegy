@@ -51,7 +51,7 @@
                 dataService.removeData(['planningEvents', 'attendingEvents']);
                 dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               
-                $state.go('app.departed-tab.home');
+                $state.go('app.home');
               })
           }
         })

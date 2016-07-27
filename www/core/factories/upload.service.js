@@ -29,7 +29,7 @@
       })
       .then(function (response){
         $log.log(response.data.secure_url)
-        if (imageType == "Something") {
+        if (imageType == "product") {
             $http({
                 method: "PUT",
                 url: urlFactory + path,
@@ -40,16 +40,17 @@
             .then(function( response ) {
              $log.info("yes", response)
             })
-        } else if (imageType == "Product Image") {
+        } else if (imageType == "departed") {
             $http({
                 method: "POST",
                 url: urlFactory + path,
                 data: {
-                    photoURL: response.data.secure_url
+                    image: response.data.secure_url
                 }
             })
             .then(function( response ) {
-
+                $log.info("fdsafdsafdsafdasfdasfa", response)
+                return response
             })
         } else if (imageType == "Something Else") {
             $http({

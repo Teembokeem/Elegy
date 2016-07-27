@@ -83,25 +83,15 @@
     //     controllerAs: 'Feed',
     //     controllerId: 'Feed'
     // })
-    
-    .state('app.departed-tab', {
-      abstract: true, 
-      templateUrl: "views/main/tabs/departed_tabs.html"
-    })
-    
-    .state('app.departed-tab.home', {
+    .state('app.home', {
         url: '/home',
-        views: {
-          'home': {
-             templateUrl: 'views/main/home/home.html',
-            controller: 'Home.controller',
-            controllerAs: 'Home',
-            resolve: {
-              events: function(dataService) {
-                console.log("resolving dependencies")
-                return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
-              }
-            }
+        templateUrl: 'views/main/home/home.html',
+        controller: 'Home.controller',
+        controllerAs: 'Home',
+        resolve: {
+          events: function(dataService) {
+            console.log("resolving dependencies")
+            return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
           }
         },
         cache: false,
@@ -109,25 +99,31 @@
         // authorized: true
     })
     
-    .state('app.departed-tab.departed', {
-        url: '/departed/:name',
-        views: {
-          'home': {
-            templateUrl: 'views/main/departed/departed.html',
-            controller: 'Departed.controller',
-            controllerAs: 'Departed',
-            resolve: {
-              event: function(dataService) {
-                console.log("resolving dependencies")
-                return dataService.parseData(['event'], ['event'])
-              }
-            }
-          }
-        },
-        cache: false,
-        controllerId: 'Departed',
-        authorized: true
+    .state('app.departed-tab', {
+      abstract: true, 
+      templateUrl: "views/main/tabs/departed_tabs.html"
     })
+    
+    
+    // .state('app.departed-tab.departed', {
+    //     url: '/departed/:name',
+    //     views: {
+    //       'event': {
+    //         templateUrl: 'views/main/departed/departed.html',
+    //         controller: 'Departed.controller',
+    //         controllerAs: 'Departed',
+    //         resolve: {
+    //           event: function(dataService) {
+    //             console.log("resolving dependencies")
+
+    //           }
+    //         }
+    //       }
+    //     },
+    //     cache: false,
+    //     controllerId: 'Departed',
+    //     authorized: true
+    // })
     
     .state('app.departed-tab.event', {
         url: '/event/:step',
@@ -157,7 +153,7 @@
             controllerAs: 'Event',
             resolve: {
               event: function(dataService) {
-
+                return dataService.parseData(['event'], ['event'])
               }
             }
           }
@@ -202,6 +198,25 @@
         },
         cache: false,
         controllerId: 'Listing',
+        authorized: true
+    })
+
+    .state('app.departed-tab.transaction', {
+        url: '/transaction',
+        views: {
+          'event': {
+            templateUrl: 'views/main/transaction/transaction.html',
+            controller: 'Transaction.controller',
+            controllerAs: 'Transaction',
+            resolve: {
+              brainTree: function(transactionService) {
+                return transactionService.initializeBraintree()
+              }
+            }
+          }
+        },
+        cache: false,
+        controllerId: 'Transaction',
         authorized: true
     })
     

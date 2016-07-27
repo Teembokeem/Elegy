@@ -13,31 +13,45 @@
     // $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
+    
+    
+    // LOCAL VARS
     vm.EventDataTemplates = EventDataTemplates;
     vm.EventStaticInfo = EventStaticInfo;
-    $scope.eventStaticInfo = EventStaticInfo;
     vm.eventModel = dataService.retrieveData('event');
     vm.part = {}
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
-    vm.eventStep ? vm.eventItems = vm.eventStep['types'].filter(function(type) {
-      return type.type === vm.eventModel['details'][vm.eventStep.title.toLowerCase()]['__t'].toLowerCase()
-    })[0]['parts'] : null;
-    
-    // setCompatibility(vm.eventItems);
+
+    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != {}) {
+      switch(vm.eventStep.eventKey) {
+        case 'interment':
+        $log.info("this is event", vm.eventStep['types'])
+          vm.eventItems = vm.eventStep['types'].filter(function(type) {
+            return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+          })[0]['parts']
+        case 'funeralHome':
+        case 'options':
+        case 'inviteGuests':
+        case 'keepSake':
+          vm.eventItems = vm.eventStep['types'][0]['parts']
+      }
+      
+
+    }
 
     // LOGS FOR DATA CONFIRMS
     $log.info("your event:", vm.eventModel)
     $log.info("did it work?", vm.eventItems)
     $log.info("did it work?", vm.trackers)
-    
-    // LOCAL VARS
+    $log.info("did it work?", vm.eventStep.title === 'Interment')
+    $log.info("did it work?", vm.eventStep['types'])
     
 
     // BOUND FUNCTIONS
 
     vm.displayMarketplace = function(param) {
-      $log.info("Event Controller display Marketplace method")
+      $log.info("Event Controller display Marketplace method", param)
       var listings = marketplaceService.grabMarketplaceListings(param);
       listings.then(function(listings) {
         dataService.setData(['listings', 'stepItem'], [listings.data.data, param.toLowerCase()])
@@ -60,7 +74,6 @@
 
     vm.setupModelOptions = function(option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
-      
       return eventService
               .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
               .then(function(res) {
