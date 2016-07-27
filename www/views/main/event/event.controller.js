@@ -23,7 +23,7 @@
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
 
-    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != {}) {
+    if ($state.is('app.departed-tab.event') && vm.eventModel.details.interment != undefined) {
       switch(vm.eventStep.eventKey) {
         case 'interment':
         $log.info("this is event", vm.eventStep['types'])
@@ -43,9 +43,9 @@
     // LOGS FOR DATA CONFIRMS
     $log.info("your event:", vm.eventModel)
     $log.info("did it work?", vm.eventItems)
-    $log.info("did it work?", vm.trackers)
-    $log.info("did it work?", vm.eventStep.title === 'Interment')
-    $log.info("did it work?", vm.eventStep['types'])
+    // $log.info("did it work?", vm.trackers)
+    // $log.info("did it work?", vm.eventStep.title === 'Interment')
+    // $log.info("did it work?", vm.eventStep['types'])
     
 
     // BOUND FUNCTIONS
@@ -62,7 +62,7 @@
     vm.moveTo = function( part, index ) {
       dataService.setData(['eventStep', 'stepIndex'], [part, index])
       $state.go('app.departed-tab.event', { step: part.title})
-      setStepParameters(part.title);
+      // setStepParameters(part.title);
     }
 
     function setStepParameters(prop) {
