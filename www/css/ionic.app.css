@@ -10246,6 +10246,9 @@ button {
 .feed-view .item {
   border-bottom-width: 5px; }
 
+.feed-view textarea {
+  resize: none; }
+
 .vendor-signup-view h3 {
   margin-top: 20%;
   text-align: center; }

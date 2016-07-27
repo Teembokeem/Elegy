@@ -5,15 +5,38 @@
         <header>
           <h1>
             Some Persons Name
+            <i ng-if="Feed.expandEul == false" ng-click="Feed.expandEul = true" style="padding: 10px;" class="icon ion-chevron-down"></i>
+            <i ng-if="Feed.expandEul == true" ng-click="Feed.expandEul = false" style="padding: 10px;" class="icon ion-chevron-up"></i>
           </h1>
         </header>
+      </div>
+      <div ng-if="Feed.expandEul == true" class="container">
+        <p>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
       </div>
 
     </div>
     <div class="container">
 
-        <textarea placeholder="Care to share something?" ng-model="Feed.share">
+        <textarea placeholder="Care to share something?" ng-focus="Feed.expanded = true" ng-blur="Feed.expanded = false" ng-model="Feed.share">
         </textarea>
+        <div class="row" ng-if="Feed.expanded == true">
+          <div class="col">
+            <i></i>
+              <input type="file" ngf-select ng-model="FeedCtrl.media" name="file" class="comfy-padding"
+              accept="image/*" ngf-max-size="2MB" required
+              ngf-model-invalid="errorFiles">
+              <i ng-show="myForm.file.$error.maxSize">File too large
+              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
+              <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="FeedCtrl.media" class="thumb">
+              <input type="submit" class="center" ng-click="FeedCtrl.uploadMedia()">
+          </div>
+          <div class="col-25">
+            <input type="submit" value="Submit" ng-click="FeedCtrl.share()">
+          </div>
+        </div>
+        <hr>
 
       <div class="row">
           <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50" ng-click="Feed.passive = 'feed'">
@@ -25,7 +48,7 @@
         </div>
       
       <div ng-if="Feed.passive == 'feed'">
-        <ion-item  ng-repeat="item in Feed.items" class="feed">
+        <ion-item ng-repeat="item in Feed.items" class="feed">
           <div class="row">
             {{item.comment}}
           </div>
@@ -49,15 +72,7 @@
         </ion-item>
       </div>
       <div ng-if="Feed.passive == 'media'">
-          <form name="myForm" ng-submit="FeedCtrl.uploadMedia()">
-              <input type="file" ngf-select ng-model="FeedCtrl.media" name="file" class="comfy-padding"
-              accept="image/*" ngf-max-size="2MB" required
-              ngf-model-invalid="errorFiles">
-              <i ng-show="myForm.file.$error.maxSize">File too large
-              {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
-              <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="FeedCtrl.media" class="thumb">
-              <input type="submit" class="center">
-          </form>
+          
       </div>
     </div>
   </ion-content>

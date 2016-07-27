@@ -23,6 +23,8 @@
     vm.clicked = true;
     vm.passive = 'feed';
     vm.share;
+    vm.expandEul = false;
+    
 
     // LOCAL VARS
     vm.items = [ 
@@ -54,7 +56,8 @@
 
     // HELPERS
 
-    function uploadFiles(){
-  }
+    vm.expandShare = function() {
+      vm.expanded = true;
+    }
   }
 })();
