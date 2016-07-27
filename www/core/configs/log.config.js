@@ -10,8 +10,7 @@ angular.module('Configs', [])
          * time stamp to the message that will be logged.
          */
         $delegate.instantiate = function(arg, entity) {
-        //    console.log("> " + arg + " " + entity + " activated. <")
-            console.log("CHECK ", arg)
+           console.log("> " + arg + " " + entity + " activated. <")
             // Send on our enhanced message to the original debug method.
          
         }
