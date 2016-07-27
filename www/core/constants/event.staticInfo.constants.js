@@ -27,7 +27,7 @@
                   description: "Compare funeral homes near you",
                   test: "Browse through locally listed funeral homes.",
                   category: 'BurialVault',
-                  tracker: 'burialVault'
+                  tracker: 'burialvault'
                 },
                 {
                   title: "Burial Marker",
@@ -83,7 +83,14 @@
           {
             parts: [
               {
-                title: 'Funeral Home',
+                title: 'Pick a Date',
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                date: true,
+                tracker: 'funeralHome'
+              },
+              {
+                title: 'Find a Funeral Home',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 category: 'FuneralHome',

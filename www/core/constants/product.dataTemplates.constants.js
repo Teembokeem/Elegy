@@ -21,6 +21,10 @@
         "dimensions",
         "weight",
         "material"
+      ],
+      burialVault: [
+        "material", 
+        "dimensions"
       ]
     }
   })
