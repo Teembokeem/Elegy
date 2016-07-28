@@ -1,7 +1,13 @@
 .login-view {
   
+  img.logo {
+    margin-top: 15vh;
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
   .login-form {
-    font-family: Gotham !important;
+    font-family: 'Gotham' !important;
     margin-bottom: 0;
   }
 

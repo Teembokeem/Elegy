@@ -1,25 +1,165 @@
 /* Empty. Add your own CSS if you like */
 
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/Gotham-Light.eot');
+	src: url('../fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Gotham-Light.woff') format('woff'),
+		url('../fonts/Gotham-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham-Book';
+	src: url('../fonts/GothamBook.eot');
+	src: url('../fonts/GothamBook.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GothamBook.woff') format('woff'),
+		url('../fonts/GothamBook.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham-Medium';
+	src: url('../fonts/GothamMedium.eot');
+	src: url('../fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GothamMedium.woff') format('woff'),
+		url('../fonts/GothamMedium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bodoni-Regular';
+	src: url('../fonts/BodoniFLF-Roman.eot');
+	src: url('../fonts/BodoniFLF-Roman.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BodoniFLF-Roman.woff') format('woff'),
+		url('../fonts/BodoniFLF-Roman.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bodoni-BoldItalic';
+	src: url('../fonts/BodoniFLF-BoldItalic.eot');
+	src: url('../fonts/BodoniFLF-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BodoniFLF-BoldItalic.woff') format('woff'),
+		url('../fonts/BodoniFLF-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Bodoni-Italic';
+	src: url('../fonts/BodoniFLF-Italic.eot');
+	src: url('../fonts/BodoniFLF-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BodoniFLF-Italic.woff') format('woff'),
+		url('../fonts/BodoniFLF-Italic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Bodoni-Bold';
+	src: url('../fonts/BodoniFLF-Bold.eot');
+	src: url('../fonts/BodoniFLF-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BodoniFLF-Bold.woff') format('woff'),
+		url('../fonts/BodoniFLF-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
 body * {
-  font-family: Didot;
+  font-family: 'Gotham-Book';
   text-align: center;
+  font-size:12px;
   
-  input, button {
-    font-family: Avenir;
+  input {
+    font-family: 'Gotham-Book';
   }
   .tab-title {
-    font-family: Avenir !important;
+    font-family: 'Bodoni-Regular' !important;
+  }
+}
+
+.bar.bar-stable .title {
+    font-family: 'Bodoni-Regular' !important;
+}
+
+.nopad {
+  padding: 0;
+}
+
+.noborder {
+  border: 0;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+.item.item-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.item.item-input-short {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  padding: 0;
+  input[type="text"] {
+    width: 100%;
   }
 }
 
 button {
-  /*font-family: verdana;*/
+  font-family: 'Gotham-Medium';
   width: 11em;
   height: 2em;
-  border-color: black !important;
-  border: 1px solid black;
 }
 
+button:hover {
+  color: black;
+}
+
+button.blue {
+  color: white;
+  width: 16em;
+  height: 2em;
+  border-radius: 5px;
+  background-color: rgb(15,65,106);
+}
+
+button.light-blue {
+  color: white;
+  width: 16em;
+  height: 2em;
+  border-radius: 5px;
+  background-color: rgb(23, 119,158);
+}
+
+button.clear {
+  color: rgb(119, 124, 134);
+  background-color: transparent;
+  font-family: 'Gotham-Book';
+}
+
+button.white {
+  color: rgb(23, 119, 158);
+  width: 16em;
+  height: 2em;
+  border-radius: 5px;
+  border-color: rgb(23, 119, 158);
+  background-color: white;
+}
 .popup-container {
   background-color: rgba(70, 70, 70, 0.5);
   .popup {
@@ -28,7 +168,7 @@ button {
 
   * {
     // border-radius: 0.8em !important;
-    font-family: Avenir;
+    font-family: 'Gotham-Book';
   }
 }
 
@@ -100,3 +240,23 @@ button {
             // background-color: white;
     }
   }
+
+.user-nav {
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 5px;
+  .user-avatar {
+    img {
+      border-radius: 50%;
+      width: 33px;
+      height: 33px;
+    }
+  }
+
+}
+
+h2.or {
+  font-weight: 700;
+  font-size: 14px;
+}

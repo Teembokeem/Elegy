@@ -85,7 +85,13 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
+    <ion-nav-bar ng-if="logged" class="bar-stable">
+      <div class="user-nav">
+        <div class="user-avatar">
+            <img src="../../img/ben.png" alt="">
+        </div>
+      </div>
+      
     </ion-nav-bar>
     
     <!--
