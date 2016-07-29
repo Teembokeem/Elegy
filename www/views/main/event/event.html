@@ -55,8 +55,8 @@
             </div>
            
             <!--2.2.2-->
-            <div class="part-description-container col">
-              <!--<p>{{part.description}}</p>-->
+            <div ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1' || part.date" class="part-description-container col">
+                <button ng-click="Event.selectDate()" ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['date'] == false">Click to choose a Date</button>
             </div>
           </div>
         
