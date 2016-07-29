@@ -14,28 +14,38 @@
                 <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
+        <div ng-show="Event.eventStep.title === 'Interment'" class="row">
+          <div class="col-center">
+            <span>{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="center-align">
+            <p>Edit Interment Option</p>
+          </div>
+        </div>
     </ion-item>
     <div an-swipe="true" class="ng-repeat-chamber">
       <!--1-->
-      <div class=" step-container container">
+      <!--<div class=" step-container container">
         <div class="row">
           <div class="center-col col">
             <span >{{Event.eventStep.title}}</span>
             <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
           </div>
         </div>
-        <!--<div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="row">
+        <div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="row">
           <div class="col">
             <p>{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t']}} Service</p>
           </div>
-        </div>-->
-      </div>
+        </div>
+      </div>-->
       <!--2-->
       <div ng-hide="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="container event-data-instantiator">
         <h4>CHOOSE AN OPTION</h4>
         <div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">
             <div class="col">
-              <h5 ng-click="Event.setupModelOptions(option.type)">{{option.type | uppercase}}</h5>
+              <h3 ng-click="Event.setupModelOptions(option.type)">{{option.type | uppercase}}</h3>
             </div>
         </div>
       </div>
@@ -43,7 +53,7 @@
       <ion-item ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
-          <div class="col">
+          <div class="col text-left">
             <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
@@ -51,11 +61,17 @@
             <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction()">{{part.title | uppercase}} </h2>
           </div>
           <!--{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']}}-->
-
+          {{Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['item']}}
+          <div class="col-10">
+            <i ng-click="Event.showItem( $index )" class="icon ion-ios-arrow-down"></i>
+          </div>
           <div class="col-10">
             <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
           </div>
-
+        </div>
+        <div ng-show="Event.itemBlock === $index">
+          <marketplace data="Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['part.title']['item']" class="listing-container"></marketplace>
+        </div>
           <!--CHECK MEEEEEEEEE-->
           <div class="row">
             <div ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1' || part.date" class="part-description-container col">
