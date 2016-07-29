@@ -2,7 +2,7 @@
   'use strict'
   
   angular
-    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants', 'ngFileUpload', 'ngCordova'])
+    .module('Elegy', ['ionic', 'Controllers', 'Services', 'Configs', 'Directives', 'Constants', 'ngFileUpload', 'ngCordova', 'ionic-datepicker'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -32,6 +32,12 @@
         //   cnt++;
         //   $state.go('app.intro');
         // }
+
+        $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+          event.preventDefault();
+          console.log("your state error", error)
+        })
+        
         if (toState.url === '/guest-signup' && toParams.invCode === undefined) {
           $log.debug(`Attempted to go to ${toState.url} but could not find invite code parameters.`);
           evt.preventDefault();

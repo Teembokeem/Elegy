@@ -1,6 +1,8 @@
 <ion-view view-title="{{Listing.venue}}">
   <ion-content class="listing-view">
-    <div listing data="Listing.listing"></div>
+    <listing data="Listing.listing"></listing>
+    <div {{Listing.category}}-directive></div>
+
     <div class="card">
 
           <p ng-click="Listing.bookmarkItem()" class=" assertive">

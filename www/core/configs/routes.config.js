@@ -225,8 +225,9 @@
             controller: 'Transaction.controller',
             controllerAs: 'Transaction',
             resolve: {
-              brainTree: function(transactionService) {
-                return transactionService.initializeBraintree()
+              brainTree: function($log, transactionService) {
+                $log.info("resolving dependencies")
+                return transactionService.initializeBrainTree();
               }
             }
           }

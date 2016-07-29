@@ -23,7 +23,7 @@
 
     // BOUND FUNCTIONS
     vm.bookmarkItem = function() {
-      $log.info("Listing Controller select item method")
+      $log.instantiate("Listing Controller select item",  "method")
       eventService
         .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'))
         .then(function(res) {
@@ -43,7 +43,11 @@
       $state.go('app.departed-tab.event');
     }
 
-    vm.purchaseItem = function() {}
+    vm.purchaseItem = function() {
+      $log.instantiate("Listing Controller Purchase Item", "method");
+      $state.go('app.departed-tab.transaction')
+
+    }
     // TODO order service to inject.
 
     // HELPERS

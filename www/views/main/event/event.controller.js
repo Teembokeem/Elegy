@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'ionicDatePicker'];
 
-  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService) {
+  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, ionicDatePicker) {
     // INSTANTIATIONS
     // $log.instantiate('Event', 'controller');
     var vm = this;
@@ -23,13 +23,17 @@
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
 
-    if ($state.is('app.departed-tab.event') && vm.eventModel.interment != {}) {
+    if ($state.is('app.departed-tab.event')) {
       switch(vm.eventStep.eventKey) {
         case 'interment':
-        $log.info("this is event", vm.eventStep['types'])
-          vm.eventItems = vm.eventStep['types'].filter(function(type) {
-            return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
-          })[0]['parts']
+        if (vm.eventModel.details.interment != undefined) {
+          $log.info("this is event", vm.eventStep['types'])
+            vm.eventItems = vm.eventStep['types'].filter(function(type) {
+              return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+            })[0]['parts']
+        } else {
+          break
+        }
         case 'funeralHome':
         case 'options':
         case 'inviteGuests':
@@ -43,7 +47,6 @@
     // LOGS FOR DATA CONFIRMS
     $log.info("your event:", vm.eventModel)
     $log.info("did it work?", vm.eventItems)
-    $log.info("did it work?", vm.trackers)
     // $log.info("did it work?", vm.eventStep.title === 'Interment')
     // $log.info("did it work?", vm.eventStep['types'])
     
@@ -59,10 +62,20 @@
       })
     };
 
+    vm.selectDates = function() {
+      var ipObj1 = {
+        callback: function (val) {  //Mandatory
+          console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+        }
+      }
+      ionicDatePicker.openDatePicker(ipObj1);
+        
+    }
+
     vm.moveTo = function( part, index ) {
       dataService.setData(['eventStep', 'stepIndex'], [part, index])
       $state.go('app.departed-tab.event', { step: part.title})
-      setStepParameters(part.title);
+      // setStepParameters(part.title);
     }
 
     function setStepParameters(prop) {
@@ -119,9 +132,6 @@
     $scope.$on('modal.removed', function() {
       // Execute action
     });
-
-
-    
   }
 
 })();
