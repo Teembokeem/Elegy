@@ -13,7 +13,8 @@
     $log.instantiate('Product', 'service');
 
     var service = {
-      createProduct: createProduct
+      createProduct: createProduct,
+      grabProduct: grabProduct
     };
 
     function createProduct(formData) {
@@ -30,6 +31,22 @@
       })
       .catch(function(err) {
         $log.info("failure", res);
+      })
+    }
+
+    function grabProduct(id) {
+      $log.instantiate('Product Service Grab Product', 'method');
+      return $http({
+        method: 'GET',
+        url: urlFactory + '/product/' + id
+      })
+      .then(function(res) {
+        $log.info("Succcess", res);
+        return res.data.data[0]
+      })
+      .catch(function(err) {
+        $log.info("failure", err)
+        return err
       })
     }
 
