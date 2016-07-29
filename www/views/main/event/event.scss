@@ -130,10 +130,6 @@
 
   }
 
-  .popup-container {
-    * {
-
-    border-radius: 0 !important;
   .index {
     .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before  {
       font-size: 2.5em;
@@ -145,7 +141,8 @@
       font-weight: 700;
       color: rgb(23, 119, 158);
       margin-top: 2px;
-      font-size: 1.8em
+      font-size: 1.8em;
+      display: inline !important;
     }
     .ion-ios-information-outline:before {
       font-size: 1.5em;
