@@ -22,6 +22,27 @@
     vm.part = {}
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
+    vm.stepCompletion = [];
+
+    // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
+    //   var numCompleted;
+    //   var totalItems;
+    //     EventStaticInfo.forEach(function(step) {
+    //       if (step.types.type) {
+
+    //       } else {
+    //         step.types[0].parts.forEach(function(obj) {
+    //           if (vm.eventModel['details'][step.eventKey][obj.tracker]) {
+    //             numCompleted += vm.eventModel['details'][step.eventKey][obj.tracker]['status']
+    //           }
+    //         })
+    //         totalItems = step.types[0].parts.length;
+    //       }
+    //       vm.stepCompletion.push([numCompleted, totalItems]);
+    //     })
+    //   vm.stepCompletion.push(numCompleted, totalItems);
+    //   $log.info("your array!!!!", vm.stepCompletion)
+    // }
 
     if ($state.is('app.departed-tab.event')) {
       switch(vm.eventStep.eventKey) {
@@ -34,10 +55,10 @@
         } else {
           break
         }
-        case 'funeralHome':
+        case 'funeralhome':
         case 'options':
-        case 'inviteGuests':
-        case 'keepSake':
+        case 'inviteguests':
+        case 'keepsake':
           vm.eventItems = vm.eventStep['types'][0]['parts']
       }
       
@@ -52,6 +73,11 @@
     
 
     // BOUND FUNCTIONS
+    vm.moveTo = function( part, index ) {
+      dataService.setData(['eventStep', 'stepIndex'], [part, index])
+      $state.go('app.departed-tab.event', { step: part.title})
+      // setStepParameters(part.title);
+    }
 
     vm.displayMarketplace = function(param) {
       $log.info("Event Controller display Marketplace method", param)
@@ -62,21 +88,22 @@
       })
     };
 
-    vm.processAction = function() {
-      var ipObj1 = {
-        callback: function (val) {  //Mandatory
-          console.log('Return value from the datepicker popup is : ' + val, new Date(val));
-        }
+    vm.processAction = function(title ) {
+      switch(title) {
+        case "Contact Upload":
+          $log.info("title", title);
+          $state.go('app.departed-tab.guest-invite');
+
       }
-      ionicDatePicker.openDatePicker(ipObj1);
-        
+      // var ipObj1 = {
+      //   callback: function (val) {  //Mandatory
+      //     console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+      //   }
+      // }
+      // ionicDatePicker.openDatePicker(ipObj1);
+      
     }
 
-    vm.moveTo = function( part, index ) {
-      dataService.setData(['eventStep', 'stepIndex'], [part, index])
-      $state.go('app.departed-tab.event', { step: part.title})
-      // setStepParameters(part.title);
-    }
 
     function setStepParameters(prop) {
       if (vm.eventModel[prop]) {
@@ -123,6 +150,10 @@
   }
 
     // HELPER
+
+    function loadProducts() {
+
+    }
 
     $ionicModal.fromTemplateUrl('views/templates/modal.html', {
       scope: $scope,
