@@ -1,25 +1,17 @@
 .referral-view {
-  h4 {
-    margin-top: 30%;
-    font-family: Avenir;
-    letter-spacing: 4px;
+  img.logo {
+    margin-top: 15vh;
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 20px;
   }
-
-  .item-input {
-    margin-top: 30%;
-    border-style: none;
-    border-bottom: 1px solid rgba(70, 70, 70, 0.7);
-    width: 70%;
-    
-    input {
-      font-size: 40px;
-      letter-spacing: 5px;
-    }
+  .login-form {
+    font-family: 'Gotham' !important;
+    margin-bottom: 0;
   }
-
-  .col {
-    display: flex;
-    justify-content: center;
+ h3 {
+    margin-top: 20%;
+    text-align: center;
   }
 
 }

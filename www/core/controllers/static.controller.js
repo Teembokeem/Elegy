@@ -7,8 +7,8 @@
     .module('Controllers')
     .controller('Static.controller', StaticController)
   
-  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window'];
-  function StaticController($log, $state, $ionicHistory, $window) {
+  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window', '$scope'];
+  function StaticController($log, $state, $ionicHistory, $window, $scope) {
     // INSTANTIATIONS
     $log.instantiate("Static", 'controller');
     console.log("CHECK 1")
@@ -21,7 +21,13 @@
       $window.localStorage.clear()
       console.log("clearing caches.")
     }
-    console.log("CHECK 2")
+    
+    $scope.$watch(function () { 
+      return window.localStorage.elegy_token
+    },function(token){
+      token ? $scope.logged = true : $scope.logged = false
+      console.log("User is logged? ", $scope.logged)
+      })
   }
     
 })();

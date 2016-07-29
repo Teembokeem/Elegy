@@ -9816,25 +9816,131 @@ a.button {
   transition-duration: 0s; }
 
 /* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'Gotham';
+  src: url("../fonts/Gotham-Light.eot");
+  src: url("../fonts/Gotham-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Light.woff") format("woff"), url("../fonts/Gotham-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url("../fonts/GothamBook.eot");
+  src: url("../fonts/GothamBook.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamBook.woff") format("woff"), url("../fonts/GothamBook.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url("../fonts/GothamMedium.eot");
+  src: url("../fonts/GothamMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamMedium.woff") format("woff"), url("../fonts/GothamMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bodoni-Regular';
+  src: url("../fonts/BodoniFLF-Roman.eot");
+  src: url("../fonts/BodoniFLF-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/BodoniFLF-Roman.woff") format("woff"), url("../fonts/BodoniFLF-Roman.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Bodoni-BoldItalic';
+  src: url("../fonts/BodoniFLF-BoldItalic.eot");
+  src: url("../fonts/BodoniFLF-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/BodoniFLF-BoldItalic.woff") format("woff"), url("../fonts/BodoniFLF-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Bodoni-Italic';
+  src: url("../fonts/BodoniFLF-Italic.eot");
+  src: url("../fonts/BodoniFLF-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/BodoniFLF-Italic.woff") format("woff"), url("../fonts/BodoniFLF-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Bodoni-Bold';
+  src: url("../fonts/BodoniFLF-Bold.eot");
+  src: url("../fonts/BodoniFLF-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/BodoniFLF-Bold.woff") format("woff"), url("../fonts/BodoniFLF-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 body * {
-  font-family: Didot;
-  text-align: center; }
-  body * input, body * button {
-    font-family: Avenir; }
+  font-family: 'Gotham-Book';
+  text-align: center;
+  font-size: 12px; }
+  body * input {
+    font-family: 'Gotham-Book'; }
   body * .tab-title {
-    font-family: Avenir !important; }
+    font-family: 'Bodoni-Regular' !important; }
+
+.bar.bar-stable .title {
+  font-family: 'Bodoni-Regular' !important; }
+
+.nopad {
+  padding: 0; }
+
+.noborder {
+  border: 0; }
+
+.capitalize {
+  text-transform: capitalize; }
+
+.item.item-input {
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.item.item-input-short {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  padding: 0; }
+  .item.item-input-short input[type="text"] {
+    width: 100%; }
 
 button {
-  /*font-family: verdana;*/
+  font-family: 'Gotham-Medium';
   width: 11em;
+  height: 2em; }
+
+button:hover {
+  color: black; }
+
+button.blue {
+  color: white;
+  width: 16em;
   height: 2em;
-  border-color: black !important;
-  border: 1px solid black; }
+  border-radius: 5px;
+  background-color: #0f416a; }
+
+button.light-blue {
+  color: white;
+  width: 16em;
+  height: 2em;
+  border-radius: 5px;
+  background-color: #17779e; }
+
+button.clear {
+  color: #777c86;
+  background-color: transparent;
+  font-family: 'Gotham-Book'; }
+
+button.white {
+  color: #17779e;
+  width: 16em;
+  height: 2em;
+  border-radius: 5px;
+  border-color: #17779e;
+  background-color: white; }
 
 .popup-container {
   background-color: rgba(70, 70, 70, 0.5); }
   .popup-container * {
-    font-family: Avenir; }
+    font-family: 'Gotham-Book'; }
 
 @keyframes opacity {
   0% {
@@ -9910,8 +10016,28 @@ button {
 .popup-container * {
   border-radius: 0.5em; }
 
+.user-nav {
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 5px; }
+  .user-nav .user-avatar img {
+    border-radius: 50%;
+    width: 33px;
+    height: 33px; }
+
+h2.or {
+  font-weight: 700;
+  font-size: 14px; }
+
+.login-view img.logo {
+  margin-top: 15vh;
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 20px; }
+
 .login-view .login-form {
-  font-family: Gotham !important;
+  font-family: 'Gotham' !important;
   margin-bottom: 0; }
 
 .login-view h3 {
@@ -9984,12 +10110,22 @@ button {
 .intro-view .swiper-pagination {
   bottom: 4em !important; }
 
+.user-signup-view img.logo {
+  margin-top: 15vh;
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 20px; }
+
+.user-signup-view .login-form {
+  font-family: 'Gotham' !important;
+  margin-bottom: 0; }
+
 .user-signup-view h3 {
   margin-top: 20%;
   text-align: center; }
 
 .user-signup-view .checkbox-icon {
-  margin-left: 30%; }
+  margin-left: 40%; }
 
 .departed-signup-view h3 {
   margin-top: 20%;
@@ -10007,39 +10143,60 @@ button {
   .departed-signup-view .image-container .img-full-width .ion-camera {
     font-size: 5em !important; }
 
+.departed-signup-view input[type="date"]:before, .departed-signup-view input[type="text"]:before {
+  content: attr(placeholder) !important;
+  color: #aaa;
+  margin-right: 0.5em; }
+
+.departed-signup-view input[type="date"]:focus:before,
+.departed-signup-view input[type="date"]:valid:before,
+.departed-signup-view input[type="text"]:focus:before,
+.departed-signup-view input[type="text"]:valid:before {
+  content: ""; }
+
 .home-view {
   animation-name: left-content;
   animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .home-view .item-divider {
-    background-color: rgba(23, 119, 158, 0.4);
-    color: white;
-    font-family: Avenir; }
-  .home-view .item-avatar {
-    padding-bottom: 0; }
-    .home-view .item-avatar * {
-      text-align: left; }
-    .home-view .item-avatar h2, .home-view .item-avatar p {
-      font-family: avenir; }
-    .home-view .item-avatar .col {
-      display: inline-block; }
-    .home-view .item-avatar .swipe {
-      vertical-align: top;
-      text-align: right;
-      width: 30%; }
+    background-color: #f1f1f2;
+    color: #777c86; }
+  .home-view h2.name {
+    margin-top: 18px;
+    text-align: left;
+    margin-left: 2em;
+    color: #777c86;
+    font-family: 'Gotham-Medium'; }
   .home-view .user-avatar {
-    text-align: center; }
+    text-align: right;
+    border: none;
+    background-color: transparent; }
+    .home-view .user-avatar .item-avatar {
+      min-height: 55px;
+      background-color: transparent; }
     .home-view .user-avatar img {
-      margin-top: 1em;
       border-radius: 50%;
-      max-width: 35%; }
+      margin-top: -8px;
+      left: unset;
+      right: 0;
+      background-color: transparent; }
   .home-view .list {
     margin-bottom: 0 !important; }
+  .home-view .row.item {
+    border-right: none; }
+  .home-view .ion-chevron-right:before {
+    margin-top: 14px;
+    font-size: 2em;
+    color: #0f416a; }
 
 .event-view {
   animation-name: left-content;
   animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .event-view h2 {
+    text-align: left; }
+  .event-view p {
+    text-align: left; }
   .event-view h4 {
     letter-spacing: 5px; }
   .event-view .user-avatar {
@@ -10047,9 +10204,11 @@ button {
     .event-view .user-avatar img {
       margin-top: 1em;
       border-radius: 50%;
-      max-width: 20%;
-      margin-bottom: 2em;
-      max-height: 100px; }
+      width: 58px;
+      height: 58px; }
+  .event-view .item p {
+    overflow: visible;
+    white-space: normal; }
   .event-view .step-container {
     animation-name: left-content;
     animation-duration: 1.5s;
@@ -10105,29 +10264,28 @@ button {
       animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .event-view .info-container {
     padding-top: 1em !important; }
-  .event-view .row-100 {
-    height: 100vh; }
-  .event-view .row-30 {
-    height: 30%; }
-  .event-view .row-70 {
-    height: 70%; }
-  .event-view .row-fill {
-    height: auto;
-    text-align: center;
-    display: block;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: white;
-    font-family: Avenir;
-    font-size: 2em;
-    letter-spacing: 0.2em; }
-  .event-view .row-fill:hover {
-    background-color: red; }
   .event-view .event-data-instantiator * {
     font-family: Avenir;
     text-align: middle; }
+
   .event-view .popup-container * {
     border-radius: 0 !important; }
+
+  .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
+    font-size: 2.5em;
+    float: left;
+    margin-right: 10px; }
+  .event-view .index h2 {
+    font-family: 'Gotham-Medium';
+    font-weight: 700;
+    color: #17779e;
+    margin-top: 2px;
+    font-size: 1.8em; }
+  .event-view .index .ion-ios-information-outline:before {
+    font-size: 1.5em;
+    float: right;
+    color: #17779e;
+    margin-top: 10px; }
 
 .departed-view .user-avatar {
   text-align: center; }
@@ -10135,23 +10293,19 @@ button {
     border-radius: 50%;
     max-width: 35%; }
 
-.referral-view h4 {
-  margin-top: 30%;
-  font-family: Avenir;
-  letter-spacing: 4px; }
+.referral-view img.logo {
+  margin-top: 15vh;
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 20px; }
 
-.referral-view .item-input {
-  margin-top: 30%;
-  border-style: none;
-  border-bottom: 1px solid rgba(70, 70, 70, 0.7);
-  width: 70%; }
-  .referral-view .item-input input {
-    font-size: 40px;
-    letter-spacing: 5px; }
+.referral-view .login-form {
+  font-family: 'Gotham' !important;
+  margin-bottom: 0; }
 
-.referral-view .col {
-  display: flex;
-  justify-content: center; }
+.referral-view h3 {
+  margin-top: 20%;
+  text-align: center; }
 
 .loading {
   border-radius: 10px;
@@ -10166,18 +10320,78 @@ button {
 .spinner svg {
   stroke: white; }
 
+.guest-invite-view p {
+  text-align: left;
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-invite-view strong {
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-invite-view input[type="text"] {
+  text-align: left; }
+
+.guest-invite-view .item {
+  padding: 5px 20px; }
+
+.guest-invite-view .checkbox input:checked:before, .guest-invite-view .checkbox input:checked + .checkbox-icon:before {
+  background: #9ec6cd;
+  border-color: #9ec6cd; }
+
+.guest-invite-view button.invite-button {
+  background-color: #0f416a;
+  color: white;
+  width: 100%;
+  height: 45px;
+  font-size: 1.5em;
+  border: none;
+  position: absolute;
+  left: 0;
+  z-index: 99; }
+
+.guest-invite-view .list {
+  height: 85vh; }
+
+.guest-invite-view .search-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-invite-view .search-input .ion-search:before {
+  font-size: 1.7em; }
+
+.guest-invite-view .email-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-invite-view .email-input .ion-ios-email-outline:before {
+  font-size: 2.2em;
+  color: #0f416a; }
+
+.guest-invite-view .email-input input[type="text"] {
+  padding-left: 20px;
+  font-size: 20px; }
+
+.guest-invite-view .email-input .button-small {
+  max-width: 60px;
+  background-color: #9ec6cd;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
 .feed-view .banner {
-  background: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150") no-repeat center center fixed;
+  margin-top: 30px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   width: 100%;
   height: 300px;
   position: relative;
-  overflow: hidden;
-  height: 300px; }
+  overflow: hidden; }
 
 .feed-view .banner header {
   position: absolute;
@@ -10185,24 +10399,11 @@ button {
   left: 0;
   width: 100%;
   padding: 20px 10px;
-  background: inherit;
-  background-attachment: fixed; }
-
-.feed-view .banner header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: inherit;
-  background-attachment: fixed;
-  -webkit-filter: blur(12px);
-  filter: blur(12px);
-  transform: scale(2) translateY(20px); }
+  background-color: rgba(15, 64, 105, 0.9); }
 
 .feed-view .banner header h1 {
-  margin: 0;
+  font-family: 'Bodoni-Regular';
+  margin: 0 22px;
   color: white;
   position: relative;
   z-index: 1;
@@ -10220,23 +10421,32 @@ button {
   padding: 10px; }
 
 .feed-view .feed {
-  padding: 10px;
-  color: blue; }
+  padding: 5px 10px;
+  color: #0f416a; }
   .feed-view .feed .row {
     margin-top: 0px; }
   .feed-view .feed h3 {
-    padding-top: 5px;
     color: blue;
     text-align: left; }
   .feed-view .feed h4 {
     padding-top: 0px;
     color: blue;
     text-align: left; }
+  .feed-view .feed p {
+    text-align: left;
+    white-space: normal;
+    color: #333333; }
 
 .feed-view .feed-avatar img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%; }
+
+.feed-view .blue-border {
+  padding: 4px 0;
+  border-style: solid;
+  border-bottom-width: 5px;
+  border-color: #17779e; }
 
 .feed-view .passive {
   color: rgba(160, 160, 160, 0.8);
@@ -10247,6 +10457,30 @@ button {
 
 .feed-view .item {
   border-bottom-width: 5px; }
+
+.feed-view textarea {
+  resize: none; }
+
+.feed-view .eulogy-container {
+  margin: 1em; }
+
+.user-profile-view .profilePic {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.user-profile-view .user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

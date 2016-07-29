@@ -1,47 +1,65 @@
 <ion-view view-title="U S E R S I G N U P">
   <ion-content class="user-signup-view">
-    <h3>S I G N U P</h3>
-    <div class="list signup-form container">
+    <img class="logo" src="img/logo.png" alt="">
+
+
+    <div class="list login-form container">
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="F I R S T N A M E" ng-model="UserSignup.newUser.first">
+            <input type="text" placeholder="First Name" ng-model="UserSignup.newUser.first">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="L A S T N A M E" ng-model="UserSignup.newUser.last">
+            <input type="text" placeholder="Last Name" ng-model="UserSignup.newUser.last">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="E M A I L" ng-model="UserSignup.newUser.email">
+            <input type="text" placeholder="Email" ng-model="UserSignup.newUser.email">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="password" placeholder="P A S S W O R D" ng-model="UserSignup.newUser.password">
+            <input type="password" placeholder="Password" ng-model="UserSignup.newUser.password">
           </label>
         </div>
       </div>
-
-
-          <ion-checkbox ng-model="UserSignup.vendor">Vendor</ion-checkbox>
-
-
       <br>
       <div class="row">
         <div class="col">
-          <button ng-click="UserSignup.submitUserForm()" class="button button-light ">
-              S I G N U P
+          <ion-checkbox class="noborder" ng-model="UserSignup.vendor">Vendor</ion-checkbox>
+        </div>
+      </div>
+      
+      <div class="row nopad">
+        <div class="col">
+          <button ng-click="UserSignup.submitUserForm()" class="button blue ">
+              Register
           </button>
         </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ui-sref="app.login" class="button clear ">
+              Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col">
+        <a> {{"Terms & Service" | uppercase}} </a>
       </div>
     </div>
   </ion-content>
