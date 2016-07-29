@@ -9,18 +9,16 @@
     // }
 
     .banner {
-        background: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150") no-repeat center center fixed; 
+        margin-top: 30px;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
+        background-position: center;
         background-size: cover;
-        background-attachment: fixed;
         width: 100%;
         height: 300px;
         position: relative;
         overflow: hidden;
-        height: 300px;
-
     }
 
     .banner header {
@@ -29,26 +27,12 @@
         left: 0;
         width: 100%;
         padding: 20px 10px;
-        background: inherit;
-        background-attachment: fixed;
-    }
-    
-    .banner header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: inherit;
-        background-attachment: fixed;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        transform: scale(2) translateY(20px);
+        background-color: rgba( 15, 64, 105, 0.9);
     }
     
     .banner header h1 {
-        margin: 0;
+        font-family: 'Bodoni-Regular';
+        margin: 0 22px;
         color: white;
         position: relative;
         z-index: 1;
@@ -72,7 +56,6 @@
             margin-top: 0px;
         }
         h3 {
-            padding-top: 5px;
             color: blue;
             text-align: left;
         }
@@ -81,16 +64,29 @@
             color: blue;
             text-align: left;
         }
-        padding: 10px;
-        color: blue;
+        p {
+            text-align: left;
+            white-space: normal;
+            color: rgb(51, 51, 51);
+        }
+        padding: 5px 10px;
+        color: rgb(15, 65, 106)
     }
 
-    .feed-avatar img{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+    .feed-avatar {
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
     }
 
+    .blue-border {
+        padding:4px 0;
+        border-style: solid;
+        border-bottom-width:5px;
+        border-color: rgb(23, 119, 158);
+    }
     .passive {
         color: rgba(160, 160, 160, 0.8);
         border-style: none !important;
@@ -104,5 +100,9 @@
 
     textarea {
         resize: none;
+    }
+
+    .eulogy-container {
+        margin: 1em;
     }
 }

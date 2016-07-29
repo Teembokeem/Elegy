@@ -27,4 +27,16 @@
       }
     }
   }
+
+  input[type="date"]:before, input[type="text"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before,
+  input[type="text"]:focus:before,
+  input[type="text"]:valid:before  {
+    content: "";
+  }
 }

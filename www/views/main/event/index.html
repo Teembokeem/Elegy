@@ -3,28 +3,28 @@
     <br>
     <br>
     <ion-item>
-
-    
-    <div class="row nopad">
-        <div class="col nopad">
-            <div class="user-avatar">
-                <img src="../../img/ben.png" alt="">
+        <div class="row nopad">
+            <div class="col nopad">
+                <div class="user-avatar">
+                    <img src="../../img/ben.png" alt="">
+                </div>
+            </div>
+            <div class="col-75 text-left" style="margin-top: 4px;">
+                <h2>Immediate Decisions</h2>
+                <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
-        <div class="col-75 text-left" style="margin-top: 4px;">
-            <h2>Immediate Decisions</h2>
-            <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
-        </div>
-    </div>
     </ion-item>
+
     <ion-item class="text-center index" ng-repeat="part in Event.EventStaticInfo">
         <div class="row">
             <div class="col" ng-click="Event.moveTo(part, $index)">
-                <i class="icon ion-ios-close-outline"></i>
+                <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
                 <h2>{{part.title | uppercase}}</h2>
+
             </div>
             <div class="col-10">
                 <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>

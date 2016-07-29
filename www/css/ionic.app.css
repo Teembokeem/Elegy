@@ -10143,6 +10143,17 @@ h2.or {
   .departed-signup-view .image-container .img-full-width .ion-camera {
     font-size: 5em !important; }
 
+.departed-signup-view input[type="date"]:before, .departed-signup-view input[type="text"]:before {
+  content: attr(placeholder) !important;
+  color: #aaa;
+  margin-right: 0.5em; }
+
+.departed-signup-view input[type="date"]:focus:before,
+.departed-signup-view input[type="date"]:valid:before,
+.departed-signup-view input[type="text"]:focus:before,
+.departed-signup-view input[type="text"]:valid:before {
+  content: ""; }
+
 .home-view {
   animation-name: left-content;
   animation-duration: 1.5s;
@@ -10256,7 +10267,7 @@ h2.or {
   .event-view .event-data-instantiator * {
     font-family: Avenir;
     text-align: middle; }
-  .event-view .index .ion-ios-close-outline:before {
+  .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
     font-size: 2.5em;
     float: left;
     margin-right: 10px; }
@@ -10305,18 +10316,78 @@ h2.or {
 .spinner svg {
   stroke: white; }
 
+.guest-invite-view p {
+  text-align: left;
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-invite-view strong {
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-invite-view input[type="text"] {
+  text-align: left; }
+
+.guest-invite-view .item {
+  padding: 5px 20px; }
+
+.guest-invite-view .checkbox input:checked:before, .guest-invite-view .checkbox input:checked + .checkbox-icon:before {
+  background: #9ec6cd;
+  border-color: #9ec6cd; }
+
+.guest-invite-view button.invite-button {
+  background-color: #0f416a;
+  color: white;
+  width: 100%;
+  height: 45px;
+  font-size: 1.5em;
+  border: none;
+  position: absolute;
+  left: 0;
+  z-index: 99; }
+
+.guest-invite-view .list {
+  height: 85vh; }
+
+.guest-invite-view .search-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-invite-view .search-input .ion-search:before {
+  font-size: 1.7em; }
+
+.guest-invite-view .email-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-invite-view .email-input .ion-ios-email-outline:before {
+  font-size: 2.2em;
+  color: #0f416a; }
+
+.guest-invite-view .email-input input[type="text"] {
+  padding-left: 20px;
+  font-size: 20px; }
+
+.guest-invite-view .email-input .button-small {
+  max-width: 60px;
+  background-color: #9ec6cd;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
 .feed-view .banner {
-  background: url("https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150") no-repeat center center fixed;
+  margin-top: 30px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   width: 100%;
   height: 300px;
   position: relative;
-  overflow: hidden;
-  height: 300px; }
+  overflow: hidden; }
 
 .feed-view .banner header {
   position: absolute;
@@ -10324,24 +10395,11 @@ h2.or {
   left: 0;
   width: 100%;
   padding: 20px 10px;
-  background: inherit;
-  background-attachment: fixed; }
-
-.feed-view .banner header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: inherit;
-  background-attachment: fixed;
-  -webkit-filter: blur(12px);
-  filter: blur(12px);
-  transform: scale(2) translateY(20px); }
+  background-color: rgba(15, 64, 105, 0.9); }
 
 .feed-view .banner header h1 {
-  margin: 0;
+  font-family: 'Bodoni-Regular';
+  margin: 0 22px;
   color: white;
   position: relative;
   z-index: 1;
@@ -10359,23 +10417,32 @@ h2.or {
   padding: 10px; }
 
 .feed-view .feed {
-  padding: 10px;
-  color: blue; }
+  padding: 5px 10px;
+  color: #0f416a; }
   .feed-view .feed .row {
     margin-top: 0px; }
   .feed-view .feed h3 {
-    padding-top: 5px;
     color: blue;
     text-align: left; }
   .feed-view .feed h4 {
     padding-top: 0px;
     color: blue;
     text-align: left; }
+  .feed-view .feed p {
+    text-align: left;
+    white-space: normal;
+    color: #333333; }
 
 .feed-view .feed-avatar img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%; }
+
+.feed-view .blue-border {
+  padding: 4px 0;
+  border-style: solid;
+  border-bottom-width: 5px;
+  border-color: #17779e; }
 
 .feed-view .passive {
   color: rgba(160, 160, 160, 0.8);
@@ -10389,6 +10456,27 @@ h2.or {
 
 .feed-view textarea {
   resize: none; }
+
+.feed-view .eulogy-container {
+  margin: 1em; }
+
+.user-profile-view .profilePic {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.user-profile-view .user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

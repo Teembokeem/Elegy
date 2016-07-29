@@ -1,7 +1,7 @@
 <ion-view view-title="F E E D">
   <ion-content class="feed-view">
     <div class="holding">
-      <div class="banner">
+      <div class="banner" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Feed.departed.photo + ')'}">
         <header>
           <h1>
             Some Persons Name
@@ -10,9 +10,9 @@
           </h1>
         </header>
       </div>
-      <div ng-if="Feed.expandEul == true" class="container">
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      <div ng-if="Feed.expandEul == true" class="eulogy-container">
+        <p class="text-left">
+          {{Feed.departed.eulogy}}
         </p>
       </div>
 
@@ -36,13 +36,12 @@
             <input type="submit" value="Submit" ng-click="FeedCtrl.share()">
           </div>
         </div>
-        <hr>
 
-      <div class="row">
-          <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50" ng-click="Feed.passive = 'feed'">
-              <span>FEED</span>
+      <div class="row nopad">
+          <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50 blue-border" ng-click="Feed.passive = 'feed'">
+              <span>ALL</span>
           </div>
-          <div ng-class="{passive: Feed.passive === 'feed'}" class="col" ng-click=" Feed.passive = 'media'">
+          <div ng-class="{passive: Feed.passive === 'feed'}" class="col blue-border" ng-click=" Feed.passive = 'media'">
               <span>MEDIA</span>
           </div>
         </div>
@@ -50,7 +49,7 @@
       <div ng-if="Feed.passive == 'feed'">
         <ion-item ng-repeat="item in Feed.items" class="feed">
           <div class="row">
-            {{item.comment}}
+            <p>{{item.comment}}</p>
           </div>
           <hr>
           <div class="row">
@@ -72,7 +71,9 @@
         </ion-item>
       </div>
       <div ng-if="Feed.passive == 'media'">
+        <ion-item ng-repeat="item in Feed.items" class="feed">
           
+        </ion-item>
       </div>
     </div>
   </ion-content>

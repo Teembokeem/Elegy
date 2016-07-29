@@ -1,5 +1,3 @@
-<!--<link rel="stylesheet" href="../views/main/login/login.css">-->
-
 <ion-view view-title="Login">
   <ion-content class="login-view">
     <img class="logo" src="img/logo.png" alt="">
@@ -7,16 +5,16 @@
     <div ng-if="!Login.trying" class="list login-form container">
       <div class="row nopad">
         <div class="col">
-          <button ui-sref="app.user-signup" class="button blue ">
-              Join
+          <button ng-click="Login.trying = true" class="button white ">
+              Login
           </button>
         </div>
       </div>
       <span></span>
       <div class="row nopad">
         <div class="col">
-          <button ng-click="Login.trying = true" class="button white ">
-              Login
+          <button ui-sref="app.user-signup" class="button blue ">
+              Join
           </button>
         </div>
       </div>

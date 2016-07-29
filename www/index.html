@@ -5,6 +5,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Elegy</title>
 
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -17,7 +19,6 @@
     <!--angular file upload -->
 
     <!-- compiled css output -->
-    <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- your app's js -->
     <script src="core/modules/app.modules.js"></script>
@@ -32,6 +33,7 @@
     <script src="views/main/intro/intro.controller.js"></script>
     <script src="views/main/login/login.controller.js"></script>
     <script src="views/main/user_signup/user_signup.controller.js"></script>
+    <script src="views/main/user_profile/user_profile.controller.js"></script>
     <script src="views/main/departed_signup/departed_signup.controller.js"></script>
     <script src="views/main/vendor_signup/vendor_signup.controller.js"></script>
     <script src="views/main/overview/overview.controller.js"></script>
@@ -43,6 +45,8 @@
     <script src="views/main/transaction/transaction.controller.js"></script>
     <script src="views/main/referral/referral.controller.js"></script>
     <script src="views/main/guest_signup/guest_signup.controller.js"></script>
+    <script src="views/main/guest_list/guest_list.controller.js"></script>
+    <script src="views/main/guest_invite/guest_invite.controller.js"></script>
     <script src="views/main/feed/feed.controller.js"></script>
     <script src="views/main/program/program.controller.js"></script>
     <script src="views/main/schedule/schedule.controller.js"></script>
@@ -84,16 +88,7 @@
   <body ng-app="Elegy">
     <!--
       The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar ng-if="logged" class="bar-stable">
-      <div class="user-nav">
-        <div class="user-avatar">
-            <img src="../../img/ben.png" alt="">
-        </div>
-      </div>
-      
-    </ion-nav-bar>
-    
+    -->    
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
