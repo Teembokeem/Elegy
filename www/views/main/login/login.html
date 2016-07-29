@@ -5,16 +5,15 @@
     <div ng-if="!Login.trying" class="list login-form container">
       <div class="row nopad">
         <div class="col">
-          <button ng-click="Login.trying = true" class="button white ">
-              Login
+          <button ui-sref="app.user-signup" class="button blue ">
+              Join
           </button>
         </div>
       </div>
-      <span></span>
       <div class="row nopad">
         <div class="col">
-          <button ui-sref="app.user-signup" class="button blue ">
-              Join
+          <button ng-click="Login.trying = true" class="button white ">
+              Login
           </button>
         </div>
       </div>
