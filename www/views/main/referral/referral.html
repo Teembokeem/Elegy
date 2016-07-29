@@ -1,11 +1,9 @@
 <ion-view view-title="E L E G Y">
   <ion-content class="referral-view">
-    <div class="container">
-      <div class="row">
-        <h4 class="col">{{"input your Invite Code Here" | uppercase}}</h4>
-        <br>
-        <br>
-      </div>
+    <img class="logo" src="img/logo.png" alt="">
+
+
+    <div class="list login-form container">
       <div class="row">
         <div class="col">
           <label class="item item-input">
@@ -13,7 +11,6 @@
           </label>
         </div>
       </div>
-      <br>
       <div class="row">
         <div class="col">
           <label class="item item-input">
@@ -21,7 +18,29 @@
           </label>
         </div>
       </div>
-
+      <br>
+      <div class="row nopad">
+        <div class="col">
+          <button ng-click="UserSignup.submitUserForm()" class="button blue ">
+              Register
+          </button>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button ui-sref="app.login" class="button clear ">
+              Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col">
+        <a> {{"Terms & Service" | uppercase}} </a>
+      </div>
     </div>
     
 

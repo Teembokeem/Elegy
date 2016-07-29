@@ -11,39 +11,42 @@
           </div>
         </div>
       </div>
+      <div class="list login-form container">
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="F I R S T N A M E" ng-model="DepartedSignup.newDeparted.first">
+            <input type="text" placeholder="First Name" ng-model="DepartedSignup.newDeparted.first">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="L A S T N A M E" ng-model="DepartedSignup.newDeparted.last">
+            <input type="text" placeholder="Last Name" ng-model="DepartedSignup.newDeparted.last">
           </label>
         </div>
       </div>
       <div class="row">
-
-        <div class="col col-10">
-
-        </div>
-        <div class="col col-50">
-            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dob">
-        </div>
-        <div class="col ">
-            <input class="date" type="date" ng-model="DepartedSignup.newDeparted.dod">
+        <div class="col">
+          <label class="item item-input">
+            <!--<input type="date" placeholder="First Name" ng-model="DepartedSignup.newDeparted.dob">-->
+            <input required="" type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" ng-model="DepartedSignup.newDeparted.dob"/>
+          </label>
         </div>
       </div>
-      <div class="row">
-      </div>
-      <br>
       <div class="row">
         <div class="col">
-          <button ng-click="DepartedSignup.submitDepartedForm()" class="button button-light ">
-              S U B M I T
+          <label class="item item-input">
+            <input required="" type="text" class="form-control" placeholder="Date of Death" onfocus="(this.type='date')" ng-model="DepartedSignup.newDeparted.dod"/>
+            <!--<input type="date" placeholder="Last Name" ng-model="DepartedSignup.newDeparted.dod">-->
+          </label>
+        </div>
+      </div>
+      <br
+      <div class="row">
+        <div class="col">
+          <button ng-click="DepartedSignup.submitDepartedForm()" class="button blue ">
+             Confirm
           </button>
         </div>
       </div>

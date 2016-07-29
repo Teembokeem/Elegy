@@ -11,7 +11,7 @@
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'index.html',
+      templateUrl: 'views/templates/nav.html',
       controller: 'Static.controller',
       controllerAs: 'Static'
     })
@@ -42,7 +42,7 @@
         controllerId: 'UserSignup'
     })
     
-    .state('app.departed-signup', {
+    .state('app.departed-tab.departed-signup', {
         url: '/departed-signup',
         templateUrl: 'views/main/departed_signup/departed_signup.html',
         controller: 'DepartedSignup.controller',
@@ -65,6 +65,22 @@
         controller: 'GuestSignup.controller',
         controllerAs: 'GuestSignup',
         controllerId: 'GuestSignup'
+    })
+
+    .state('app.guest-list', {
+        url: '/guest-list',
+        templateUrl: 'views/main/guest_list/guest_list.html',
+        controller: 'GuestList.controller',
+        controllerAs: 'GuestList',
+        controllerId: 'GuestList'
+    })
+
+    .state('app.guest-invite', {
+        url: '/guest-invite',
+        templateUrl: 'views/main/guest_invite/guest_invite.html',
+        controller: 'GuestInvite.controller',
+        controllerAs: 'GuestInvite',
+        controllerId: 'GuestInvite'
     })
     
     .state('app.overview', {
@@ -233,6 +249,19 @@
         cache: false,
         controllerId: 'Feed'
         // authorized: true
+    })
+
+    .state('app.profile', {
+        url: '/profile/:id',
+        views: {
+          'app-user': {
+            templateUrl: 'views/main/user_profile/user_profile.html',
+            controller: 'UserProfile.controller',
+            controllerAs: 'Profile'
+          }
+        },
+        controllerId: 'Profile',
+        authorized: true
     })
     
     .state('app.program', {

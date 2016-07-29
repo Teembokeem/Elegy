@@ -1,16 +1,36 @@
 <ion-view view-title="E V E N T">
   <ion-content class="event-view" scroll="false">
-      <div class="row-100">
-        <div class="row-30">
-            <div class="user-avatar">
-                <img src="../../img/ben.png" alt="">
+    <br>
+    <br>
+    <ion-item>
+        <div class="row nopad">
+            <div class="col nopad">
+                <div class="user-avatar">
+                    <img src="../../img/ben.png" alt="">
+                </div>
+            </div>
+            <div class="col-75 text-left" style="margin-top: 4px;">
+                <h2>Immediate Decisions</h2>
+                <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
-        <div class="row-70">
-            <div class="row text-center row-fill" ng-repeat="part in Event.EventStaticInfo" ng-click="Event.moveTo(part, $index)">
-                    {{part.title | uppercase}}
+    </ion-item>
+
+    <ion-item class="text-center index" ng-repeat="part in Event.EventStaticInfo">
+        <div class="row">
+            <div class="col" ng-click="Event.moveTo(part, $index)">
+                <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
+                <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
+                <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
+                <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
+                <h2>{{part.title | uppercase}}</h2>
+
+            </div>
+            <div class="col-10">
+                <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
             </div>
         </div>
-    </div>
+    </ion-item>
+
   </ion-content>
 </ion-view>

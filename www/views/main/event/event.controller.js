@@ -47,7 +47,6 @@
     // LOGS FOR DATA CONFIRMS
     $log.info("your event:", vm.eventModel)
     $log.info("did it work?", vm.eventItems)
-    // $log.info("did it work?", vm.trackers)
     // $log.info("did it work?", vm.eventStep.title === 'Interment')
     // $log.info("did it work?", vm.eventStep['types'])
     

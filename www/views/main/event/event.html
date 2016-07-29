@@ -1,8 +1,20 @@
-<ion-view view-title="E V E N T">
+<ion-view view-title="{{Event.eventStep.title}}">
   <ion-content class="event-view">
-    <div class="user-avatar">
-      <img src="../../img/ben.png" alt="">
-    </div>
+    <br>
+    <br>
+    <ion-item>
+        <div class="row nopad">
+            <div class="col nopad">
+                <div class="user-avatar">
+                    <img src="../../img/ben.png" alt="">
+                </div>
+            </div>
+            <div class="col-75 text-left" style="margin-top: 4px;">
+                <h2>Immediate Decisions</h2>
+                <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
+            </div>
+        </div>
+    </ion-item>
     <div an-swipe="true" class="ng-repeat-chamber">
       <!--1-->
       <div class=" step-container container">
@@ -12,11 +24,11 @@
             <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
           </div>
         </div>
-        <div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="row">
+        <!--<div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="row">
           <div class="col">
             <p>{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t']}} Service</p>
           </div>
-        </div>
+        </div>-->
       </div>
       <!--2-->
       <div ng-hide="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="container event-data-instantiator">
@@ -27,46 +39,29 @@
             </div>
         </div>
       </div>
-      <div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="part-container">
+      <ion-item ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
-          {{Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']}}
-          <div class="col col-10"></div>
-          <div class="part-checker col col-20">
+          <div class="col">
+            <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
+            <h2 >{{part.title | uppercase }}</h2>
           </div>
+          <!--{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']}}-->
 
-          <!--2.2-->
-          <div class="part-content col">
-            <!--2.2.1-->
-            <div class="part-nav col container">
-              <div class="row">
-                <div class="col col-70">
-                  <h4 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction()">{{part.title | uppercase}}   
-                  </h4>
-                </div>
-                <div class="col col-30 info-container">
-                  <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
-                </div>
-              </div>
-
-            </div>
-           
-            <!--2.2.2-->
-            <div class="part-description-container col">
-              <!--<p>{{part.description}}</p>-->
-            </div>
+          <div class="col-10">
+            <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
           </div>
-        
         </div>
-        <div class="row">
-          <div class="col col-10"></div>
-          <div class="col col-80 divider"></div>
-          <div class="col col-10"></div>
-        </div>
-      </div>
+        <!--2.2.1-->
+        <!--<div class="row">
+          <div ng-click=" part.category ? Event.displayMarketplace(part.category) : null" class="col">
+          </div>
+        </div>-->
+
+      </ion-item>
 
     </div>
   </ion-content>

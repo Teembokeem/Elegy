@@ -3,6 +3,12 @@
   animation-duration: 1.5s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
+  h2 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
   h4 {
     letter-spacing: 5px;
   }
@@ -13,10 +19,14 @@
     img {
       margin-top: 1em;
       border-radius: 50%;
-      max-width: 20%;
-      margin-bottom: 2em;
-      max-height: 100px;
+      width: 58px;
+      height: 58px;
     }
+  }
+
+  .item p {
+    overflow:visible;
+    white-space: normal;
   }
   .step-container {
       animation-name: left-content;
@@ -109,30 +119,6 @@
     padding-top: 1em !important;
   }
 
-  .row-100 {
-    height: 100vh;
-  }
-  .row-30 {
-    height: 30%;
-  }
-  .row-70 {
-    height: 70%;
-  }
-  .row-fill {
-    height: auto;
-    text-align: center;
-    display: block;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: white;
-    font-family: Avenir;
-    font-size: 2em;
-    letter-spacing: 0.2em;
-  }
-  .row-fill:hover {
-    background-color: red;
-  }
-
   .event-data-instantiator {
     * {
       font-family: Avenir;
@@ -142,6 +128,27 @@
 
   .in-progress {
 
+  }
+
+  .index {
+    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before  {
+      font-size: 2.5em;
+      float: left;
+      margin-right: 10px;
+    }
+    h2 {
+      font-family: 'Gotham-Medium';
+      font-weight: 700;
+      color: rgb(23, 119, 158);
+      margin-top: 2px;
+      font-size: 1.8em
+    }
+    .ion-ios-information-outline:before {
+      font-size: 1.5em;
+      float: right;
+      color: rgb(23, 119, 158); 
+      margin-top: 10px;
+    }
   }
 }
 

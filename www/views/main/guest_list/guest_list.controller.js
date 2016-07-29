@@ -4,11 +4,11 @@
 
   angular
     .module('Controllers')
-    .controller('Feed.controller', FeedController);
+    .controller('GuestList.controller', GuestListController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory'];
+  GuestListController.$inject = ['$log', 'dataService', '$http', 'urlFactory'];
 
-  function FeedController($log, dataService, $http, urlFactory) {
+  function GuestListController($log, dataService, $http, urlFactory) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
