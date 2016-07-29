@@ -70,14 +70,6 @@
         controllerAs: 'Referral',
         controllerId: 'Referral'
     })
-    
-    .state('app.guest-signup', {
-        url: '/guest-signup',
-        templateUrl: 'views/main/guest_signup/guest_signup.html',
-        controller: 'GuestSignup.controller',
-        controllerAs: 'GuestSignup',
-        controllerId: 'GuestSignup'
-    })
 
     .state('app.guest-list', {
         url: '/guest-list',
@@ -91,11 +83,15 @@
         controllerId: 'GuestList'
     })
 
-    .state('app.guest-invite', {
+    .state('app.departed-tab.guest-invite', {
         url: '/guest-invite',
-        templateUrl: 'views/main/guest_invite/guest_invite.html',
-        controller: 'GuestInvite.controller',
-        controllerAs: 'GuestInvite',
+        views: {
+          'checklist': {
+            templateUrl: 'views/main/guest_invite/guest_invite.html',
+            controller: 'GuestInvite.controller',
+            controllerAs: 'GuestInvite',
+          }
+        },
         controllerId: 'GuestInvite'
     })
     

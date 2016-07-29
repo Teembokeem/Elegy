@@ -75,7 +75,7 @@
       },
       {
         title: "Find Funeral Home",
-        eventKey: 'funeralHome',
+        eventKey: 'funeralhome',
         step: 2,
         description: "Step 2",
         test: "What to consider when choosing a funeral home and director. Make sure to speak with more than one funeral home and compare any associated services.",
@@ -94,7 +94,7 @@
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 category: 'FuneralHome',
-                tracker: 'funeralHome'
+                tracker: 'funeralhome'
               }
             ]
           }
@@ -141,38 +141,26 @@
       },
       {
         title: "Invitations",
-        eventKey: 'inviteGuests',
+        eventKey: 'inviteguests',
         step: 4,
         description: "Step 2",
         test: "FUCK YOUUUUUUUUUUU",
         types: [
           {
             parts: [
-                {
-                title: 'Email entry',
-                description: "Compare funeral homes near you",
-                test: "Browse through locally listed funeral homes.",
-                tracker: 'attendees'
-              },
               {
                 title: 'Contact Upload',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 tracker: 'attendees'
-              },
-              {
-                title: 'Text Message',
-                description: "Compare funeral homes near you",
-                test: "Browse through locally listed funeral homes.",
-                tracker: 'attendees'
-              },
+              }
             ]
           }
         ]
       },
       {
         title: "Keepsake Setup",
-        eventKey: 'keepSake',
+        eventKey: 'keepsake',
         step: 5,
         description: "Step 4",
         test: "FUCK YOUUUUUUUUUUU",
