@@ -42,7 +42,7 @@
         controllerId: 'UserSignup'
     })
     
-    .state('app.departed-tab.departed-signup', {
+    .state('app.departed-signup', {
         url: '/departed-signup',
         templateUrl: 'views/main/departed_signup/departed_signup.html',
         controller: 'DepartedSignup.controller',
@@ -69,9 +69,13 @@
 
     .state('app.guest-list', {
         url: '/guest-list',
-        templateUrl: 'views/main/guest_list/guest_list.html',
-        controller: 'GuestList.controller',
-        controllerAs: 'GuestList',
+        views: {
+          'guests': {
+            templateUrl: 'views/main/guest_list/guest_list.html',
+            controller: 'GuestList.controller',
+            controllerAs: 'GuestList',
+          }
+        },
         controllerId: 'GuestList'
     })
 
@@ -264,10 +268,10 @@
         authorized: true
     })
     
-    .state('app.program', {
+    .state('app.departed-tab.program', {
         url: '/program',
         views: {
-          'app-user': {
+          'program': {
             templateUrl: 'views/main/program/program.html',
             controller: 'Program.controller',
             controllerAs: 'Program'
@@ -277,10 +281,10 @@
         authorized: true
     })
     
-    .state('app.schedule', {
+    .state('app.departed-tab.schedule', {
         url: '/schedule',
         views: {
-          'app-user': {
+          'schedule': {
             templateUrl: 'views/main/schedule/schedule.html',
             controller: 'Schedule.controller',
             controllerAs: 'Schedule'
