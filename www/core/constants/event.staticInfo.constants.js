@@ -87,7 +87,7 @@
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 date: true,
-                tracker: 'funeralHome'
+                tracker: 'date'
               },
               {
                 title: 'Find a Funeral Home',

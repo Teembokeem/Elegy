@@ -25,16 +25,8 @@
         url: urlFactory + '/client_token'
       })
       .then(function(response) {
-        $log.debug("success", response.data);
-        // braintree.setup(
-        //   response.data,
-        //   "dropin",
-        //   { container: "payment-form",
-        //     paymentMethodNonceReceived: function(event, nonce) {
-        //       $log.debug("what", nonce, event)
-        //     }
-        //   }
-        // )
+        $log.debug("success", response);
+        return response.data.clientToken
       })
     }
 

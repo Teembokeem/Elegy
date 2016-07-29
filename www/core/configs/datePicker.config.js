@@ -12,7 +12,7 @@
       mondayFirst: false,
       weeksList: ["S", "M", "T", "W", "T", "F", "S"],
       monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
-      templateType: 'popup',
+      templateType: 'modal',
       from: new Date(),
       to: new Date(2016, 12, 31),
       showTodayButton: true,
