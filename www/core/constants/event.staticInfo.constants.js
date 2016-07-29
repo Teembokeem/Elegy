@@ -180,22 +180,22 @@
           {
             parts: [
               {
-                title: "Confirm Payment Accounts",
+                title: "Link PayPal",
                 description: "Lorem ipsum",
                 test: "FUCK YOUUUUUUUUUUU"
               },
               {
-                title: "Write A Memorandum",
+                title: "Write Eulogy",
                 description: "Lorem ipsum",
                 test: "FUCK YOUUUUUUUUUUU"
               },
               {
-                title: 'Plan the Day Of Program',
+                title: 'Make Program',
                 description: "Hallo",
                 test: "FUCK YOUUUUUUUUUUU"
               },
               {
-                title: "Flowers, Wreaths",
+                title: "Order Flowers",
                 description: "Lorem ipsum",
                 test: "FUCK YOUUUUUUUUUUU",
                 category: 'Flower',
