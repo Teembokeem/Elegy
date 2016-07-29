@@ -10030,6 +10030,12 @@ h2.or {
   font-weight: 700;
   font-size: 14px; }
 
+.has-tabs, .bar-footer.has-tabs {
+  top: 20px; }
+
+.tabs {
+  margin-bottom: 20px; }
+
 .login-view img.logo {
   margin-top: 15vh;
   max-width: 200px;
@@ -10393,7 +10399,6 @@ h2.or {
   top: 10px; }
 
 .feed-view .banner {
-  margin-top: 30px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
