@@ -131,7 +131,13 @@
   }
 
   .index {
-    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before  {
+
+    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
+      font-size: 2.5em;
+      float: left;
+      margin-right: 10px;
+    }
+    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
       font-size: 2.5em;
       float: left;
       margin-right: 10px;
@@ -144,12 +150,28 @@
       font-size: 1.8em;
       display: inline !important;
     }
-    .ion-ios-information-outline:before {
+    .ion-ios-information-outline:before, .ion-ios-arrow-down:before {
       font-size: 1.5em;
       float: right;
       color: rgb(23, 119, 158); 
       margin-top: 10px;
     }
+  }
+
+  .col-center {
+    padding-top: 2em;
+    border-bottom: 2px solid grey;
+    margin: 0 auto;
+
+    span {
+      font-size: 2em;
+      color: grey;
+      width: 10em;
+    }
+  }
+
+  .center-align {
+    margin: 0 auto;
   }
 }
 

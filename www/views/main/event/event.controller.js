@@ -85,6 +85,15 @@
       }
     }
 
+    vm.showItem = function(idx) {
+      $log.instantiate('Event Controller Show Item', 'method');
+      if (vm.itemBlock === idx) {
+        vm.itemBlock = '';
+      } else {
+        vm.itemBlock = idx;
+      }
+    }
+
     vm.setupModelOptions = function(option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
       return eventService
@@ -93,6 +102,9 @@
                 $log.info("success", res)
                 dataService.setData(['event'], [res]);
                 vm.eventModel = dataService.retrieveData('event');
+                vm.eventItems = vm.eventStep['types'].filter(function(type) {
+                  return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+                })[0]['parts']
                 $log.info(vm.eventModel)
               })
   }
