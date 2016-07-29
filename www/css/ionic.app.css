@@ -10271,6 +10271,10 @@ h2.or {
     font-size: 2.5em;
     float: left;
     margin-right: 10px; }
+  .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
+    font-size: 2.5em;
+    float: left;
+    margin-right: 10px; }
   .event-view .index h2 {
     font-family: 'Gotham-Medium';
     font-weight: 700;
@@ -10278,11 +10282,21 @@ h2.or {
     margin-top: 2px;
     font-size: 1.8em;
     display: inline !important; }
-  .event-view .index .ion-ios-information-outline:before {
+  .event-view .index .ion-ios-information-outline:before, .event-view .index .ion-ios-arrow-down:before {
     font-size: 1.5em;
     float: right;
     color: #17779e;
     margin-top: 10px; }
+  .event-view .col-center {
+    padding-top: 2em;
+    border-bottom: 2px solid grey;
+    margin: 0 auto; }
+    .event-view .col-center span {
+      font-size: 2em;
+      color: grey;
+      width: 10em; }
+  .event-view .center-align {
+    margin: 0 auto; }
 
 .departed-view .user-avatar {
   text-align: center; }
