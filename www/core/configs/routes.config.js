@@ -42,6 +42,14 @@
         controllerId: 'UserSignup'
     })
     
+    .state('app.user-profile', {
+        url: '/user-profile',
+        templateUrl: 'views/main/user_profile/user_profile.html',
+        controller: 'UserProfile.controller',
+        controllerAs: 'UserProfile',
+        controllerId: 'UserProfile'
+    })
+    
     .state('app.departed-signup', {
         url: '/departed-signup',
         templateUrl: 'views/main/departed_signup/departed_signup.html',
