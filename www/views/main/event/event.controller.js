@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'ionicDatePicker'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'ionicDatePicker', 'productService'];
 
-  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, ionicDatePicker) {
+  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, ionicDatePicker, productService) {
     // INSTANTIATIONS
     // $log.instantiate('Event', 'controller');
     var vm = this;
@@ -85,12 +85,17 @@
       }
     }
 
-    vm.showItem = function(idx) {
+    vm.showItem = function(idx, id) {
       $log.instantiate('Event Controller Show Item', 'method');
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
       } else {
-        vm.itemBlock = idx;
+        productService
+          .grabProduct(id)
+          .then(function(serviceData) {
+            vm.Item = serviceData
+            vm.itemBlock = idx;
+          })
       }
     }
 
