@@ -10126,6 +10126,8 @@ button {
   .event-view .event-data-instantiator * {
     font-family: Avenir;
     text-align: middle; }
+  .event-view .popup-container * {
+    border-radius: 0 !important; }
 
 .departed-view .user-avatar {
   text-align: center; }

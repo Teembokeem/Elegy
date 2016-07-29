@@ -63,7 +63,7 @@
       })
     };
 
-    vm.selectDates = function() {
+    vm.processAction = function() {
       var ipObj1 = {
         callback: function (val) {  //Mandatory
           console.log('Return value from the datepicker popup is : ' + val, new Date(val));
