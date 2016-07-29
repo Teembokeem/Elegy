@@ -18,7 +18,7 @@
 
     <ion-item class="text-center index" ng-repeat="part in Event.EventStaticInfo">
         <div class="row">
-            <div class="col" ng-click="Event.moveTo(part, $index)">
+            <div class="col text-left" ng-click="Event.moveTo(part, $index)">
                 <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
