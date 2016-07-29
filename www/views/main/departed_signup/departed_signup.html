@@ -1,13 +1,15 @@
 <ion-view view-title="D E P A R T E D S I G N U P">
   <ion-content class="departed-signup-view">
-    <h3>ON BEHALF OF</h3>
     <div class="list signup-form container">
       <div class="image-container container">
         <div class="row">
           <div class="col img-full-width">
+            <div style="padding-bottom: 5vh;">
+              <h3>ON BEHALF OF</h3>
+              <i ng-show="!DepartedSignup.newDeparted.cloud.image" ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" class="icon ion-camera"></i>
+              <p ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" >{{!DepartedSignup.newDeparted.product.image ? 'ADD PHOTO' : 'UPLOAD A DIFFERENT PHOTO' }}</p>
+            </div>
             <img ngf-src="DepartedSignup.newDeparted.cloud.image" alt="">
-            <i ng-show="!DepartedSignup.newDeparted.cloud.image" ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" class="icon ion-camera"></i>
-            <p ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" >{{!DepartedSignup.newDeparted.product.image ? 'ADD PHOTO' : 'UPLOAD A DIFFERENT PHOTO' }}</p>
           </div>
         </div>
       </div>
