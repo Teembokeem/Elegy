@@ -90,12 +90,20 @@
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
       } else {
-        productService
-          .grabProduct(id)
-          .then(function(serviceData) {
-            vm.Item = serviceData
-            vm.itemBlock = idx;
-          })
+          var items = dataService.retrieveData('items')[idx]
+        if (dataService.retrieveData('items')[idx]) {
+          vm.Item = dataService.retrieveData('items')[idx]
+          vm.itemBlock = idx;
+        } else {
+          productService
+            .grabProduct(id)
+            .then(function(serviceData) {
+              vm.Item = serviceData
+              vm.itemBlock = idx;
+              dataService.setData(['items'], [[serviceData]])
+            })
+
+        }
       }
     }
 
