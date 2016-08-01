@@ -10769,21 +10769,32 @@ h2.or {
       display: inline-block; }
     .listing-view .card .listing-header * {
       text-align: left;
-      font-family: Avenir;
-      margin: 0 0; }
-    .listing-view .card .listing-header .listing-names * {
-      max-width: 80%; }
+      font-family: Avenir; }
+    .listing-view .card .listing-header .listing-names .listing-name {
+      font-weight: 200;
+      font-size: 3em;
+      color: black; }
+    .listing-view .card .listing-header .listing-names .listing-brand {
+      font-size: 0.5em; }
+    .listing-view .card .listing-header .listing-names .listing-vendor {
+      font-weight: bold !important;
+      font-size: 2em; }
     .listing-view .card h6 {
       font-weight: lighter; }
     .listing-view .card .listing-price {
       border: none;
-      padding: 16px; }
+      font-size: 1.5em;
+      color: #0f416a; }
       .listing-view .card .listing-price * {
         font-family: Avenir; }
     .listing-view .card .listing-description * {
       white-space: normal; }
   .listing-view .container {
     width: 100%; }
+    .listing-view .container .button {
+      width: 20em !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      background-color: white !important; }
 
 .vendor-product-view h1, .vendor-product-view p, .vendor-product-view span, .vendor-product-view input, .vendor-product-view button {
   font-family: Avenir; }
@@ -10809,3 +10820,38 @@ h2.or {
 
 .transaction-view * {
   font-family: Avenir; }
+
+.transaction-view h1 {
+  font-size: 2em; }
+
+.transaction-view .listing-container {
+  border-top: 1px solid rgba(140, 140, 140, 0.6); }
+
+.transaction-view .col-25 {
+  padding: 5px;
+  height: 91.25px !important; }
+
+.transaction-view img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em; }
+
+.transaction-view .listing-title {
+  font-weight: bolder;
+  letter-spacing: 1px; }
+
+.transaction-view .listing-box * {
+  padding: 0 0;
+  padding-bottom: 0.1em;
+  text-align: left; }
+
+.transaction-view .transaction-container .transaction-shipping {
+  background-color: white !important;
+  border-top: 1px solid #c8c8c8; }
+  .transaction-view .transaction-container .transaction-shipping .transaction-shipping-title {
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+    font-weight: bold; }
+  .transaction-view .transaction-container .transaction-shipping .shipping-titles {
+    text-align: left;
+    margin-left: 1.5em; }
