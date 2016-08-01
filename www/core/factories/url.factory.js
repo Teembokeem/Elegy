@@ -9,7 +9,7 @@
 
   function urlFactory() {
     return 'http://localhost:3000'
-    // return 'http://52.41.209.93:3000'
+    // return 'http://138.68.6.43'
 
   }
 
