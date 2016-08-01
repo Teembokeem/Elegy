@@ -1,8 +1,42 @@
 <ion-view view-title="T R A N S A C T I O N">
   <ion-content class="transaction-view">
-    <h1>TRANSACTIONS</h1>
-      {{Transaction.val}}
-       <form id="payment-form" class="payment-form">
-        </form>
+    <br>
+    <h1>TRANSACTION</h1>
+    <div class="transaction-container card list">
+      <div class="row">
+          <div class="col">
+            <marketplace data="Transaction.item" class="listing-container"></marketplace>
+          </div>
+      </div>
+      <div class="transaction-shipping">
+        <div class="row">
+          <div class="col transaction-shipping-title">
+            {{'Shipping Information' | uppercase}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col shipping-titles shipping-start-title">
+            {{'Ships From' | uppercase}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col shipping-start-address">
+            {{Transaction.vendor.address}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col shipping-titles shipping-destination-title">
+            {{'Ships To' | uppercase}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col shipping-destination-address">
+            address
+          </div>
+        </div>
+      </div>
+    </div>
+      <form id="payment-form" class="payment-form">
+      </form>
   </ion-content>
 </ion-view>
