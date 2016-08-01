@@ -10845,6 +10845,9 @@ h2.or {
   padding-bottom: 0.1em;
   text-align: left; }
 
+.transaction-view .transaction-container h1 {
+  padding-top: 1em; }
+
 .transaction-view .transaction-container .transaction-shipping {
   background-color: white !important;
   border-top: 1px solid #c8c8c8; }
@@ -10855,3 +10858,26 @@ h2.or {
   .transaction-view .transaction-container .transaction-shipping .shipping-titles {
     text-align: left;
     margin-left: 1.5em; }
+
+.transaction-view .transaction-container .transaction-subtotal {
+  background-color: white !important;
+  border-top: 1px solid #c8c8c8; }
+  .transaction-view .transaction-container .transaction-subtotal .transaction-subtotal-title {
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+    font-weight: bold; }
+  .transaction-view .transaction-container .transaction-subtotal .subtotal-titles {
+    text-align: left;
+    margin-left: 1.5em; }
+  .transaction-view .transaction-container .transaction-subtotal .transaction-subtotals {
+    text-align: right; }
+  .transaction-view .transaction-container .transaction-subtotal .transaction-total {
+    padding-top: 1em;
+    border-top: 1px solid #c8c8c8;
+    font-weight: bold; }
+  .transaction-view .transaction-container .transaction-subtotal .checkout-button {
+    padding-top: 2em; }
+  .transaction-view .transaction-container .transaction-subtotal .button {
+    background-color: #17779e;
+    color: white;
+    width: 15em !important; }
