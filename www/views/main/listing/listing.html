@@ -2,17 +2,23 @@
   <ion-content class="listing-view">
     <listing data="Listing.listing"></listing>
     <div {{Listing.category}}-directive></div>
-
-    <div class="card">
-
-          <p ng-click="Listing.bookmarkItem()" class=" assertive">
+    <div class="container">
+      <div class="row nopad">
+        <div class="col">
+          <button ng-click="Listing.bookmarkItem()" class=" button assertive">
             BOOKMARK THIS ITEM
-          </p>
-          <br>
-          <p ng-click="Listing.purchaseItem()" class=" assertive">
-            PURCHASE THIS ITEM
-          </p>
+          </button>
+        </div>
       </div>
+      <div class="row nopad">
+        <div class="col">
+          <button ng-click="Listing.purchaseItem()" class=" button assertive">
+            PURCHASE THIS ITEM
+          </button>
+        </div>
+      </div>
+
+    </div>
     </div>
   </ion-content>
 </ion-view>
