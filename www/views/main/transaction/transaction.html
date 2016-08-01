@@ -1,8 +1,7 @@
 <ion-view view-title="T R A N S A C T I O N">
   <ion-content class="transaction-view">
-    <br>
-    <h1>TRANSACTION</h1>
     <div class="transaction-container card list">
+    <h1>TRANSACTION</h1>
       <div class="row">
           <div class="col">
             <marketplace data="Transaction.item" class="listing-container"></marketplace>
@@ -31,12 +30,54 @@
         </div>
         <div class="row">
           <div class="col shipping-destination-address">
-            address
+            <select>
+              <option>Blue</option>
+              <option selected>Green</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="transaction-subtotal">
+        <div class="row">
+          <div class="col transaction-subtotal-title">
+            {{'Totals' | uppercase}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-33 subtotal-titles transaction-item-subtotal">
+            {{'Item Total' | uppercase}}
+          </div>
+          <div class="col transaction-subtotals">
+            {{Transaction.itemPrice}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-33 subtotal-titles transaction-item-subtotal">
+            {{'Shipping' | uppercase}}
+          </div>
+          <div class="col transaction-subtotals">
+            {{Transaction.serviceFee.toFixed(2)}}
+          </div>
+        </div>
+        <div class="row transaction-total">
+          <div class="col-33 subtotal-titles transaction-item-subtotal">
+            {{'Total' | uppercase}}
+          </div>
+          <div class="col transaction-subtotals">
+            {{Transaction.itemPrice + Transaction.serviceFee}}
+          </div>
+        </div>
+        <div class="row nopad checkout-button">
+          <div class="col">
+            <button ng-click="vm.checkout ? null : Transaction.checkOut()" class="button">
+              CHECK OUT
+            </button>
           </div>
         </div>
       </div>
     </div>
-      <form id="payment-form" class="payment-form">
-      </form>
+    <form id="payment-form" class="payment-form">
+    </form>
   </ion-content>
 </ion-view>
