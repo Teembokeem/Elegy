@@ -38,6 +38,10 @@
   }
 
   .transaction-container {
+    h1 {
+      padding-top: 1em;
+    }
+
     .transaction-shipping {
       background-color: white !important;
       border-top: 1px solid rgb(200, 200, 200);
@@ -51,6 +55,41 @@
       .shipping-titles {
         text-align: left;
         margin-left: 1.5em;
+      }
+    }
+
+    .transaction-subtotal {
+      background-color: white !important;
+      border-top: 1px solid rgb(200, 200, 200);
+
+      .transaction-subtotal-title {
+        font-size: 1.3em;
+        letter-spacing: 0.2em;
+        font-weight: bold;
+      }
+
+      .subtotal-titles {
+        text-align: left;
+        margin-left: 1.5em;
+      }
+
+      .transaction-subtotals {
+        text-align: right;
+      }
+
+      .transaction-total {
+        padding-top: 1em;
+        border-top: 1px solid rgb(200, 200, 200);
+        font-weight: bold;
+      }
+      .checkout-button {
+        padding-top: 2em;
+      }
+
+      .button {
+        background-color: rgb(23, 119, 158);
+        color: white;
+        width: 15em !important;
       }
     }
   }
