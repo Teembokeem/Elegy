@@ -76,11 +76,11 @@
         <div class="row date-container" ng-show="Event.itemBlock === $index && part.date">
           <div class="col-70">
             <div class="date-box">
-              <input type="date" ng-model="Event.stagedDate">
+              <input type="date" ng-model="Event.Item">
             </div>
           </div>
           <div class="col">
-              <button ng-click="Event.stageDate(Event.stagedDate)" class="button button-balanced">Confirm</button>
+              <button ng-click="Event.stageDate(Event.stagedDate, $index)" class="button button-balanced">Confirm {{$index}}</button>
           </div>
         </div>
           <!--CHECK MEEEEEEEEE-->
