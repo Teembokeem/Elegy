@@ -113,6 +113,7 @@
                 title: 'Visitation',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
+                date: true,
                 tracker: 'visitation'
               },
               {
@@ -120,20 +121,35 @@
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 category: 'Churches',
-                tracker: 'church'
+                tracker: 'ceremony'
+              },
+              {
+                title: 'Ceremony Date',
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                date: true,
+                tracker: 'ceremonydate'
               },
               {
                 title: 'Burial',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
+                date: true,
                 tracker: 'burial'
+              },
+              {
+                title: 'Reception Date',
+                description: "Compare funeral homes near you",
+                test: "Browse through locally listed funeral homes.",
+                date: true,
+                tracker: 'receptiondate'
               },
               {
                 title: 'Reception',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 category: 'Venue',
-                tracker: 'venue'
+                tracker: 'reception'
               },
             ]
           }
