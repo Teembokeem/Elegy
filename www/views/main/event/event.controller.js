@@ -160,20 +160,21 @@
       } else {
           // var items = dataService.retrieveData('items')[idx]
           dataService.setData(['items'], [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems[idx]['tracker']]]])
-          vm.Item = [dataService.retrieveData('items')[0]['date']]
+          vm.Item = new Date(dataService.retrieveData('items')[0]['date'])
           vm.itemBlock = idx;
-          vm.thisDate = [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems['tracker']]]]
+          vm.stagedDate = [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems['tracker']]]]
+          $log.info(vm.Item, "fdlsafdsalfsdal")
         }
     }
 
-    vm.stageDate = function(date) {
+    vm.stageDate = function(date, idx) {
       $log.instantiate("Event Controller Stage Date", 'method');
       $log.info("arguments: ", date);
       return eventService 
-        .updateEvent(date, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'date')
+        .updateEvent(date, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep')['eventKey'].toLowerCase(), dataService.retrieveData('eventStep')['types'][0]['parts'][idx]['tracker'], 'date')
         .then(function(response) {
           $log.info("hello res!, ", response)
-        })  
+      })  
   }
 
     vm.setupModelOptions = function(option) {
