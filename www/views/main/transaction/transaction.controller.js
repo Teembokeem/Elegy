@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Transaction.controller', TransactionController);
   
-  TransactionController.$inject = ['$log', 'transactionService', 'brainTree', 'dataService'];
+  TransactionController.$inject = ['$log', 'transactionService', 'brainTree', 'dataService', 'authService', 'eventService'];
 
-  function TransactionController($log, transactionService, brainTree, dataService) {
+  function TransactionController($log, transactionService, brainTree, dataService, authService, eventService) {
     // INSTANTIATIONS
     $log.instantiate('Transaction', 'Controller');
     var vm = this;
@@ -19,11 +19,17 @@
     }
 
     // LOCAL VARS
-    vm.item = [dataService.retrieveData('listing')]
+    var item = dataService.retrieveData('listing');
+    vm.item = [item]
     vm.vendor = dataService.retrieveData('vendor');
     vm.itemPrice = parseFloat(vm.item[0].price);
     vm.serviceFee = 3.00;
-    vm.total = vm.itemPrice + vm.serviceFee
+    vm.transaction = {
+      vendor: vm.vendor._id,
+      user: authService.currentUser(),
+      product: item._id,
+      total: vm.itemPrice + vm.serviceFee
+    }
 
     // LOGS
     $log.info("vm.item:", vm.item, parseFloat(3.00));
@@ -38,7 +44,28 @@
       { container: "payment-form",
         paymentMethodNonceReceived: function(event, nonce) {
           $log.debug("nonce received", nonce, event)
-          transactionService.queryBraintreeTransaction(nonce, vm.total)
+          transactionService
+            .queryBraintreeTransaction(nonce, vm.transaction)
+            .then(function(done) {
+              $log.info("success", done)
+              eventService
+                .updateEvent(done.data._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'))
+                .then(function(res) {
+                  eventService
+                    .retrieveEvent(dataService.retrieveData('event')._id)
+                    .then(function(res) {
+                      dataService.setData(['event'], [res]);
+                    })
+                    .catch(function(err){
+                      $log.info("ehoh", err)
+                      return err
+                    })
+                })
+                .catch(function(err) {
+                  $log.info("err", err)
+                })
+              $state.go('app.departed-tab.event');
+            })
         }
       }
     )
