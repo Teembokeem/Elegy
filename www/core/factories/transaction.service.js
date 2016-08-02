@@ -13,7 +13,8 @@
     $log.instantiate('Transaction', 'Service');
 
     var service = {
-      initializeBrainTree: initializeBrainTree
+      initializeBrainTree: initializeBrainTree,
+      queryBraintreeTransaction: queryBraintreeTransaction
     }
     return service;
 
@@ -30,6 +31,21 @@
       })
     }
 
+    function queryBraintreeTransaction(nonce, amount) {
+      $log.instantiate('Transaction Service Query Braintree Transaction', 'method');
+      return $http({
+        method: 'POST',
+        url: urlFactory + '/transactions/checkout',
+        data: {
+          payment_method_nonce: nonce,
+          amount: amount
+        }
+      })
+      .then(function(response) {
+        $log.info("Success", response)
+        return response
+      })
+    }
   } 
 
 })();
