@@ -1,0 +1,42 @@
+.departed-signup-view {
+  
+  h3 {
+    margin-top: 20%;
+    text-align: center;
+  }
+
+  .item-i.to input {
+    padding-right: 0px;
+  }
+
+  .image-container {
+    background-color: rgba(140, 140, 140, 0.1);
+
+    * {
+      padding: 0 0;
+    }
+
+    .img-full-width {
+
+      img {
+        width: 100%;
+      }
+
+      .ion-camera {
+        font-size: 5em !important;
+      }
+    }
+  }
+
+  input[type="date"]:before, input[type="text"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before,
+  input[type="text"]:focus:before,
+  input[type="text"]:valid:before  {
+    content: "";
+  }
+}
