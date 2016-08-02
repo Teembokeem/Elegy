@@ -6,18 +6,19 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService'];
 
-  function FeedController($log, dataService, $http, urlFactory) {
+  function FeedController($log, dataService, $http, urlFactory, uploadService) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
+    var blogURL = "/blog/" + dataService.retrieveData(['planningEvents']).blog
 
     $http({
       method: "GET", 
-      url: urlFactory + "/blog/" + dataService.retrieveData(['event']).blog
+      url: urlFactory + blogURL
     }).then( function( response ) {
-      console.log(response)
+      console.log("HERE", response)
     }) 
 
     vm.clicked = true;
@@ -57,6 +58,12 @@
     // BOUND FUNCTIONS
 
     // HELPERS
+
+    vm.uploadMedia = function() {
+      console.log("HERE")
+      uploadService.uploadFile( vm.media, urlFactory + blogURL, "departed" )
+      console.log("TOuch")
+    }
 
     vm.expandShare = function() {
       vm.expanded = true;

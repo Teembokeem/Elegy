@@ -12,6 +12,7 @@
     // INSTANTIATIONS
     $log.instantiate('Schedule', 'controller');
     var vm = this;
+    vm.passive = 'schedule';
 
     // LOCAL VARS
 

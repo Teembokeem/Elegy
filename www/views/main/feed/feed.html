@@ -18,8 +18,8 @@
 
     </div>
     <div class="container">
-
-        <textarea placeholder="Care to share something?" ng-focus="Feed.expanded = true" ng-blur="Feed.expanded = false" ng-model="Feed.share">
+      <div ng-blur="Feed.expanded = false">
+        <textarea placeholder="Care to share something?" ng-focus="Feed.expanded = true" ng-model="Feed.share">
         </textarea>
         <div class="row" ng-if="Feed.expanded == true">
           <div class="col">
@@ -29,13 +29,13 @@
               ngf-model-invalid="errorFiles">
               <i ng-show="myForm.file.$error.maxSize">File too large
               {{errorFiles[0].size / 1000000|number:1}}MB: max 2M</i>
-              <img id="testImage" width="400px" height="auto" ng-show="myForm.file.$valid" ngf-thumbnail="FeedCtrl.media" class="thumb">
-              <input type="submit" class="center" ng-click="FeedCtrl.uploadMedia()">
+              <input type="submit" class="center" ng-click="Feed.uploadMedia()">
           </div>
           <div class="col-25">
             <input type="submit" value="Submit" ng-click="FeedCtrl.share()">
           </div>
         </div>
+      </div>
 
       <div class="row nopad">
           <div ng-class="{passive: Feed.passive === 'media'}" class="col col-50 blue-border" ng-click="Feed.passive = 'feed'">
