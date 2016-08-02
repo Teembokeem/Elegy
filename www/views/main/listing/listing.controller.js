@@ -25,7 +25,7 @@
     vm.bookmarkItem = function() {
       $log.instantiate("Listing Controller select item",  "method")
       eventService
-        .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'))
+        .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
         .then(function(res) {
           eventService
             .retrieveEvent(dataService.retrieveData('event')._id)

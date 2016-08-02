@@ -18,8 +18,8 @@
       setupModelOptions: setupModelOptions
     }
 
-    function updateEvent(mod, Id, detailModule, itemPath) {
-      $log.info("Event Service Update Event Method", mod, Id, detailModule, itemPath);
+    function updateEvent(mod, Id, detailModule, itemPath, item) {
+      $log.info("Event Service Update Event Method", mod, Id, detailModule, itemPath, item);
 
       return $http({
         method: 'PUT',
@@ -27,6 +27,7 @@
         data: {
           detail: detailModule,
           itemPath: itemPath,
+          item: item,
           asset: mod
         }
       })
