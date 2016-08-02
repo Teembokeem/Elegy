@@ -61,7 +61,7 @@
 
       $ionicHistory.clearHistory()
       $ionicHistory.clearCache()
-      console.log("clearing caches.")
+      // console.log("clearing caches.")
     // vm.authenticate = function() {
     //   $log.info("Sending Credentials, ", vm.credentials);
       

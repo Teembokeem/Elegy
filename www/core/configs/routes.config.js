@@ -31,7 +31,13 @@
         templateUrl: 'views/main/login/login.html',
         controller: 'Login.controller',
         controllerAs: 'Login',
-        controllerId: 'Login'
+        controllerId: 'Login',
+        resolve: {
+          localClear: function($window, $log) {
+            $log.info("clearing caches");
+            $window.localStorage.clear();
+          }
+        }
     })
     
     .state('app.user-signup', {
@@ -71,7 +77,7 @@
         controllerId: 'Referral'
     })
 
-    .state('app.guest-list', {
+    .state('app.departed-tab.guest-list', {
         url: '/guest-list',
         views: {
           'guests': {
@@ -86,7 +92,7 @@
     .state('app.departed-tab.guest-invite', {
         url: '/guest-invite',
         views: {
-          'checklist': {
+          'event': {
             templateUrl: 'views/main/guest_invite/guest_invite.html',
             controller: 'GuestInvite.controller',
             controllerAs: 'GuestInvite',
@@ -242,7 +248,7 @@
                 return transactionService.initializeBrainTree();
               }
             }
-          }
+          } 
         },
         cache: false,
         controllerId: 'Transaction',

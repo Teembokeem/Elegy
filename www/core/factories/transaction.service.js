@@ -31,14 +31,15 @@
       })
     }
 
-    function queryBraintreeTransaction(nonce, amount) {
+    function queryBraintreeTransaction(nonce, transaction) {
       $log.instantiate('Transaction Service Query Braintree Transaction', 'method');
       return $http({
         method: 'POST',
         url: urlFactory + '/transactions/checkout',
         data: {
           payment_method_nonce: nonce,
-          amount: amount
+          amount: transaction.total,
+          transaction: transaction
         }
       })
       .then(function(response) {

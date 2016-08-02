@@ -16,7 +16,7 @@
     vm.params = $stateParams.category
     $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace[0])
     vm.listings = Marketplace[0];
-    $log.info("vm listings", Marketplace[0].length)
+    $log.info("vm listings", Marketplace[0].length);
     
     vm.listings.forEach(function(listing) {
       listing.method = displayListing
@@ -26,7 +26,8 @@
     // BOUND FUNCTIONS
     function displayListing(data, param) {
       dataService.setData(['listing'], [data]);
-      $state.go('app.departed-tab.listing', {listingName: param})
+      dataService.setData(['vendor'], [data.vendor]);
+      $state.go('app.departed-tab.listing', {listingName: param});
     }
     // HELPERS
   }
