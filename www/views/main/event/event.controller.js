@@ -93,7 +93,26 @@
         case "Contact Upload":
           $log.info("title", title);
           $state.go('app.departed-tab.guest-invite');
-
+        case "Pick a Date": 
+           $ionicPopup.show({
+            templateUrl: 'views/templates/event_date_picker.html',
+            title: 'Select a Date',
+            scope: $scope,
+            buttons: [
+              { text: 'OK', 
+                onTap: function(e) {
+                  console.log("your date", $scope.date);
+                  $scope.date
+                  this.hide();  
+              }
+              },
+              {text: 'CANCEL', 
+                onTap: function(e) {
+                  console.log("ok :(")
+                  this.hide();
+                }}
+            ]
+          })
       }
       // var ipObj1 = {
       //   callback: function (val) {  //Mandatory
