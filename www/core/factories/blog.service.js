@@ -23,7 +23,7 @@
         url: urlFactory + '/blog/' + blogId
       })
       .then(function(response) {
-        $log.info("Success", response)
+        $log.info("Success from /blog", response)
         return response.data
       })
       .catch(function(err) {
