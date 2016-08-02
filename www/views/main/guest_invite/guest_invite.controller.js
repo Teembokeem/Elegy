@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('GuestInvite.controller', GuestInviteController);
   
-  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts'];
+  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts', '$scope', '$ionicPlatform'];
 
-  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts) {
+  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts, $scope, $ionicPlatform) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
@@ -31,14 +31,22 @@
       console.log("Final Guest List", vm.guestList)
     }
 
-    vm.getAllContacts = function() {
-        $cordovaContacts.find()
-          .then(function(allContacts) { 
-          vm.contacts = allContacts;
-        })
-      }
+    
 
-    // vm.getAllContacts()
+    if (ionic.Platform.isAndroid()) {
+      opts.hasPhoneNumber = true;
+    } 
+
+  $ionicPlatform.ready(function(){
+      $cordovaContacts.find({})
+          .then(function(allContacts){
+              // Do yo thang with all the contacts!
+              vm.all = allContacts
+              console.log(vm.all)
+          });
+   });
+
+    // $scope.getContactList()
 
     // LOCAL VARS
     vm.all = [ 

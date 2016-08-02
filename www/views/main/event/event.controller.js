@@ -93,6 +93,7 @@
         case "Contact Upload":
           $log.info("title", title);
           $state.go('app.departed-tab.guest-invite');
+          break
         case "Pick a Date": 
            $ionicPopup.show({
             templateUrl: 'views/templates/event_date_picker.html',
@@ -113,6 +114,7 @@
                 }}
             ]
           })
+          break
       }
       // var ipObj1 = {
       //   callback: function (val) {  //Mandatory

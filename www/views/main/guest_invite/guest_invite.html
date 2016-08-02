@@ -4,6 +4,7 @@
             <div class="list">
                 <br>
                 <br>
+                <button ng-click="getContactList()">touch</button>
                 <ion-item class="search-input">
                     <label class="item item-input">
                         <i class="icon ion-search placeholder-icon"></i>
@@ -18,11 +19,10 @@
                     <button class="button button-small" ng-if="GuestInvite.enterEmail" ng-click="GuestInvite.addEmail()">
                         Submit
                         </button>
-                </ion-item>
-                    
-                <ion-checkbox ng-repeat="guest in GuestInvite.all" class="item-checkbox-right" ng-click="GuestInvite.addPerson(guest.email)">
-                    <p><strong>{{guest.firstname}} {{guest.firstname}}</strong></p>
-                    <p>{{guest.email}}</p>
+                </ion-item>   
+                <ion-checkbox ng-repeat="guest in GuestInvite.all" class="item-checkbox-right" ng-click="GuestInvite.addPerson({first:guest.name.givenName, last: guest.name.familyName, email: guest.emails[0].value })">
+                    <p><strong>{{guest.name.givenName}} {{guest.name.familyName}}</strong></p>
+                    <p>{{guest.emails[0].value}}</p>
                 </ion-checkbox>
             </div>
         </ion-scroll>

@@ -241,21 +241,6 @@ button.white {
     }
   }
 
-.user-nav {
-  position: absolute;
-  z-index: 999;
-  right: 10px;
-  top: 5px;
-  
-  .user-avatar {
-    img {
-      border-radius: 50%;
-      width: 33px;
-      height: 33px;
-    }
-  }
-}
-
 h2.or {
   font-weight: 700;
   font-size: 14px;
@@ -369,9 +354,24 @@ h2.or {
   position: absolute;
   z-index: 999;
   left: 10px;
-  top: 5px;
+  top: 20px;
   
   .home-button {
+    img {
+      border-radius: 50%;
+      width: 33px;
+      height: 33px;
+    }
+  }
+}
+
+.user-nav {
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 20px;
+  
+  .user-avatar {
     img {
       border-radius: 50%;
       width: 33px;

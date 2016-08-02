@@ -10016,16 +10016,6 @@ button.white {
 .popup-container * {
   border-radius: 0.5em; }
 
-.user-nav {
-  position: absolute;
-  z-index: 999;
-  right: 10px;
-  top: 5px; }
-  .user-nav .user-avatar img {
-    border-radius: 50%;
-    width: 33px;
-    height: 33px; }
-
 h2.or {
   font-weight: 700;
   font-size: 14px; }
@@ -10124,8 +10114,18 @@ h2.or {
   position: absolute;
   z-index: 999;
   left: 10px;
-  top: 5px; }
+  top: 20px; }
   .home-nav .home-button img {
+    border-radius: 50%;
+    width: 33px;
+    height: 33px; }
+
+.user-nav {
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 20px; }
+  .user-nav .user-avatar img {
     border-radius: 50%;
     width: 33px;
     height: 33px; }
@@ -10450,6 +10450,9 @@ h2.or {
 
 .guest-invite-view .item {
   padding: 5px 20px; }
+  .guest-invite-view .item p {
+    overflow: visible;
+    white-space: normal; }
 
 .guest-invite-view .checkbox input:checked:before, .guest-invite-view .checkbox input:checked + .checkbox-icon:before {
   background: #9ec6cd;
