@@ -174,6 +174,43 @@
   .center-align {
     margin: 0 auto;
   }
+
+  .event-listing-container {
+    // border-bottom: 1px solid rgba(140, 140, 140, 0.6);
+    border-top: 1px solid rgba(140, 140, 140, 0.6);
+   
+    .col-25 {
+      // overflow: hidden;
+      padding: 5px;
+      height: 91.25px !important;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5em;
+    }
+
+    .listing-title {
+      font-weight: bolder;
+      letter-spacing: 1px;
+    }
+
+    .listing-box {
+      * {
+        padding: 0 0;
+        padding-bottom: 0.1em;
+        text-align: left;
+      }
+    }
+  }
+
+  .date-container {
+    button {
+      background-color: rgb(23, 119, 158); 
+    }
+  }
 }
+
 
 
