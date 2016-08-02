@@ -1,18 +1,102 @@
 <ion-view>
     <ion-content class="user-profile-view">
-       hi
-       {{UserProfile.hello}}fdsafsdafsaasfsfdsafasfsafsafsa
-       sdfa
-       fsd
-       fsa
-       fas
-       fsda
-       fsad
-       fs
-       sd
-       fasf
-       dsa
-       sa
+    <backbutton>
+        dsfkjdslf
+    </backbutton>
+    <div class="top-right" ng-click="UserProfile.default = !UserProfile.default">
+        <i class="icon ion-gear-a"></i>
+    </div>
+    <br>
+    <br>
+    <div class="list login-form container" ng-if="UserProfile.default">
+        <div class="row nopad">
+            <div class="col">
+                <img class="profilePic" src="../../img/ben.png" alt="">
+            </div>
+        </div>
+        <div class="row nopad">
+            <div class="col">
+            <label class="item item-input">
+                <input type="text" placeholder="First Name" ng-model="UserProfile.user.first">
+            </label>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <label class="item item-input">
+                <input type="text" placeholder="Last Name" ng-model="UserProfile.user.last">
+            </label>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <label class="item item-input">
+                <input type="text" placeholder="Email" ng-model="UserProfile.user.email">
+            </label>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <label class="item item-input">
+                <input type="password" placeholder="Last Name" ng-model="UserProfile.user.last">
+            </label>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <button class="button clear" ng-click="UserProfile.logout()">
+                Logout
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="list login-form container" ng-if="!UserProfile.default">
+        <div class="row nopad">
+            <div class="col">
+            <button class="button clear ">
+                Logout
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <button class="button clear ">
+                Logout
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <button class="button clear ">
+                Logout
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row nopad">
+            <div class="col">
+            <button class="button clear" ng-click="UserProfile.logout()">
+                Logout
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row" ng-click="UserProfile.default = !UserProfile.default">
+            <div class="col">
+                <button class="button clear">
+                Cancel
+                </button>
+            </div>
+        </div>
+    </div>
        
     </ion-content>
 </ion-view>

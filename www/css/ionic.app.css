@@ -10036,6 +10036,13 @@ h2.or {
 .tabs {
   margin-bottom: 20px; }
 
+.button-clear.button-clear.back-directive {
+  color: black;
+  width: auto;
+  float: left; }
+  .button-clear.button-clear.back-directive .icon {
+    vertical-align: bottom; }
+
 .login-view img.logo {
   margin-top: 15vh;
   max-width: 200px;
@@ -10489,14 +10496,26 @@ h2.or {
   background-position: center center;
   background-size: cover; }
 
-.user-profile-view .user {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
+.user-profile-view .top-right {
+  float: right;
+  margin: 10px; }
+  .user-profile-view .top-right .ion-gear-a:before {
+    font-size: 2em; }
+
+.schedule-view .switch .passive {
+  color: rgba(160, 160, 160, 0.8);
+  border-style: none !important; }
+
+.schedule-view .switch .row {
+  margin-top: 0px;
+  padding: 5px 10px;
+  color: #0f416a; }
+
+.schedule-view .switch .blue-border {
+  padding: 4px 0;
+  border-style: solid;
+  border-bottom-width: 5px;
+  border-color: #17779e; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

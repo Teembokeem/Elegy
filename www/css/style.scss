@@ -268,3 +268,12 @@ h2.or {
 .tabs {
   margin-bottom: 20px;
 }
+
+.button-clear.button-clear.back-directive {
+  color: black;
+  width: auto;
+  float: left;
+  .icon {
+    vertical-align: bottom;
+  }
+}

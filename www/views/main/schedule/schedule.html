@@ -1,6 +1,20 @@
 <ion-view view-title="S C H E D U L E">
-  <ion-content>
-    <h1>S C H E D U L E</h1>
+  <ion-content class="schedule-view">
+    <br>
+    <br>
+    <div class="switch">
+      <div class="row nopad">
+          <div ng-class="{passive: Schedule.passive === 'program'}" class="col col-50 blue-border" ng-click="Schedule.passive = 'schedule'">
+              <span>Schedule</span>
+          </div>
+          <div ng-class="{passive: Schedule.passive === 'schedule'}" class="col blue-border" ng-click=" Schedule.passive = 'program'">
+              <span>Program</span>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        something
+      </div>
 
   </ion-content>
 </ion-view>

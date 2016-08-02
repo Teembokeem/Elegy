@@ -1,0 +1,19 @@
+.schedule-view {
+    .switch {
+        .passive {
+            color: rgba(160, 160, 160, 0.8);
+            border-style: none !important;
+        }
+        .row {
+            margin-top: 0px;
+            padding: 5px 10px;
+            color: rgb(15, 65, 106);
+        }
+        .blue-border {
+            padding:4px 0;
+            border-style: solid;
+            border-bottom-width:5px;
+            border-color: rgb(23, 119, 158);
+        }
+    }
+}

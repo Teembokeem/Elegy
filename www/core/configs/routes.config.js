@@ -276,19 +276,6 @@
         authorized: true
     })
     
-    .state('app.departed-tab.program', {
-        url: '/program',
-        views: {
-          'program': {
-            templateUrl: 'views/main/program/program.html',
-            controller: 'Program.controller',
-            controllerAs: 'Program'
-          }
-        },
-        controllerId: 'Program',
-        authorized: true
-    })
-    
     .state('app.departed-tab.schedule', {
         url: '/schedule',
         views: {
