@@ -24,7 +24,7 @@
         <div class="row" ng-if="Feed.expanded == true">
           <div class="col">
             <i></i>
-              <input type="file" ngf-select ng-model="FeedCtrl.media" name="file" class="comfy-padding"
+              <input type="file" ngf-select ng-model="Feed.media" name="file" class="comfy-padding"
               accept="image/*" ngf-max-size="2MB" required
               ngf-model-invalid="errorFiles">
               <i ng-show="myForm.file.$error.maxSize">File too large
@@ -32,7 +32,7 @@
               <input type="submit" class="center" ng-click="Feed.uploadMedia()">
           </div>
           <div class="col-25">
-            <input type="submit" value="Submit" ng-click="FeedCtrl.share()">
+            <input type="submit" value="Submit" ng-click="Feed.share()">
           </div>
         </div>
       </div>
