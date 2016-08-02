@@ -20,11 +20,11 @@
     
 
     
-      var vendorProduct = dataService.retrieveData('vendorProducts').filter(function(product) {
-        return product.__t === 'Venue'
-      })
-      if (vendorProduct) {
-        vm.activeListing = vendorProduct[0]['activeListing'];
-      }
+      // var vendorProduct = dataService.retrieveData('vendorProducts').filter(function(product) {
+      //   return product.__t == true
+      // })
+      // if (vendorProduct) {
+      //   vm.activeListing = vendorProduct[0]['activeListing'];
+      // }
   }
 })();
