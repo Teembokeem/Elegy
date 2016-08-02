@@ -23,28 +23,25 @@
     vm.vendor = dataService.retrieveData('vendor');
     vm.itemPrice = parseFloat(vm.item[0].price);
     vm.serviceFee = 3.00;
-    vm.checkout = false;
+    vm.total = vm.itemPrice + vm.serviceFee
 
     // LOGS
     $log.info("vm.item:", vm.item, parseFloat(3.00));
     $log.info("vm.vendor:", vm.vendor);
 
     // BOUND FUNCTIONS
-    vm.checkOut = function() {
-      $log.instantiate('Transaction Controller CheckOut', 'Method');
-      vm.checkout = true;
-      braintree.setup(
-            brainTree,
-            "dropin",
-            { container: "payment-form",
-              paymentMethodNonceReceived: function(event, nonce) {
-                $log.debug("nonce received", nonce, event)
-              }
-            }
-          )
-    }
 
     // HELPERS
+    braintree.setup(
+      brainTree,
+      "dropin",
+      { container: "payment-form",
+        paymentMethodNonceReceived: function(event, nonce) {
+          $log.debug("nonce received", nonce, event)
+          transactionService.queryBraintreeTransaction(nonce, vm.total)
+        }
+      }
+    )
 
   }
 
