@@ -65,19 +65,23 @@
             {{'Total' | uppercase}}
           </div>
           <div class="col transaction-subtotals">
-            {{Transaction.itemPrice + Transaction.serviceFee}}
+            {{Transaction.total}}
           </div>
         </div>
-        <div class="row nopad checkout-button">
+        <div class="row">
           <div class="col">
-            <button ng-click="vm.checkout ? null : Transaction.checkOut()" class="button">
-              CHECK OUT
-            </button>
-          </div>
+            <form ng-submit="Transaction.checkOut()">
+              <div id="payment-form" class="payment-form">
+              </div>
+              <div class="row nopad checkout-button">
+                <div class="col">
+                  <button type="submit" class="button">CHECK OUT</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-    <form id="payment-form" class="payment-form">
-    </form>
   </ion-content>
 </ion-view>
