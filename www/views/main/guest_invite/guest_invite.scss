@@ -12,6 +12,10 @@
         text-align: left;
     }
     .item {
+        p {
+            overflow:visible;
+            white-space: normal;
+        }
         padding: 5px 20px;
     }
 
