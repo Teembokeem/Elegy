@@ -23,6 +23,7 @@
     vm.eventStep = dataService.retrieveData('eventStep');
     vm.stepIndex = dataService.retrieveData('stepIndex');
     vm.stepCompletion = [];
+    vm.showDateBool = false;
 
     // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
     //   var numCompleted;
@@ -88,31 +89,18 @@
       })
     };
 
-    vm.processAction = function(title ) {
+    vm.processAction = function(title ,idx, id ) {
+      $log.info("hello", title)
       switch(title) {
-        case "Contact Upload":
+        case ("Contact Upload"):
           $log.info("title", title);
           $state.go('app.departed-tab.guest-invite');
-        case "Pick a Date": 
-           $ionicPopup.show({
-            templateUrl: 'views/templates/event_date_picker.html',
-            title: 'Select a Date',
-            scope: $scope,
-            buttons: [
-              { text: 'OK', 
-                onTap: function(e) {
-                  console.log("your date", $scope.date);
-                  $scope.date
-                  this.hide();  
-              }
-              },
-              {text: 'CANCEL', 
-                onTap: function(e) {
-                  console.log("ok :(")
-                  this.hide();
-                }}
-            ]
-          })
+          break;
+        case ("Pick a Date"): 
+          $log.info("date picker");
+          vm.showDateBool = true;
+          showDate(idx, id)
+          break;
       }
       // var ipObj1 = {
       //   callback: function (val) {  //Mandatory
@@ -135,17 +123,27 @@
       $log.instantiate('Event Controller Show Item', 'method');
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
+        localStorage.removeItem('items');
+
       } else {
-          var items = dataService.retrieveData('items')[idx]
-        if (dataService.retrieveData('items')[idx]) {
-          vm.Item = dataService.retrieveData('items')[idx]
+          // var items = dataService.retrieveData('items')[idx]
+        if (dataService.retrieveData('items')) {
+          vm.Item = [dataService.retrieveData('items')[idx]]
+          vm.Item[0].method = function displayListing(data, param) {
+            dataService.setData(['listing'], [data]);
+            dataService.setData(['vendor'], [data.vendor]);
+            $state.go('app.departed-tab.listing', {listingName: param});
+          }
+          $log.info("your item:", vm.Item)
           vm.itemBlock = idx;
         } else {
+          $log.info("hi")
           productService
             .grabProduct(id)
             .then(function(serviceData) {
               vm.Item = serviceData
               vm.itemBlock = idx;
+              localStorage.removeItem('items')
               dataService.setData(['items'], [[serviceData]])
             })
 
@@ -153,19 +151,44 @@
       }
     }
 
+    vm.showDate = function(idx, id) {
+      $log.instantiate('Event Controller Show Date', 'method');
+      if (vm.itemBlock === idx) {
+        vm.itemBlock = '';
+        localStorage.removeItem('items');
+
+      } else {
+          // var items = dataService.retrieveData('items')[idx]
+          dataService.setData(['items'], [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems[idx]['tracker']]]])
+          vm.Item = [dataService.retrieveData('items')[0]['date']]
+          vm.itemBlock = idx;
+          vm.thisDate = [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems['tracker']]]]
+        }
+    }
+
+    vm.stageDate = function(date) {
+      $log.instantiate("Event Controller Stage Date", 'method');
+      $log.info("arguments: ", date);
+      return eventService 
+        .updateEvent(date, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'date')
+        .then(function(response) {
+          $log.info("hello res!, ", response)
+        })  
+  }
+
     vm.setupModelOptions = function(option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
       return eventService
-              .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
-              .then(function(res) {
-                $log.info("success", res)
-                dataService.setData(['event'], [res]);
-                vm.eventModel = dataService.retrieveData('event');
-                vm.eventItems = vm.eventStep['types'].filter(function(type) {
-                  return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
-                })[0]['parts']
-                $log.info(vm.eventModel)
-              })
+        .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
+        .then(function(res) {
+          $log.info("success", res)
+          dataService.setData(['event'], [res]);
+          vm.eventModel = dataService.retrieveData('event');
+          vm.eventItems = vm.eventStep['types'].filter(function(type) {
+            return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+          })[0]['parts']
+          $log.info(vm.eventModel)
+        })
   }
 
     // HELPER
