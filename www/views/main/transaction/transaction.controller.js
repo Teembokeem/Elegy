@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Transaction.controller', TransactionController);
   
-  TransactionController.$inject = ['$log', 'transactionService', 'brainTree', 'dataService', 'authService', 'eventService'];
+  TransactionController.$inject = ['$log', 'transactionService', 'brainTree', 'dataService', 'authService', 'eventService', '$state'];
 
-  function TransactionController($log, transactionService, brainTree, dataService, authService, eventService) {
+  function TransactionController($log, transactionService, brainTree, dataService, authService, eventService, $state) {
     // INSTANTIATIONS
     $log.instantiate('Transaction', 'Controller');
     var vm = this;
@@ -55,6 +55,7 @@
                     .retrieveEvent(dataService.retrieveData('event')._id)
                     .then(function(res) {
                       dataService.setData(['event'], [res]);
+                      $state.go('app.departed-tab.event');
                     })
                     .catch(function(err){
                       $log.info("ehoh", err)
@@ -64,7 +65,6 @@
                 .catch(function(err) {
                   $log.info("err", err)
                 })
-              $state.go('app.departed-tab.event');
             })
         }
       }
