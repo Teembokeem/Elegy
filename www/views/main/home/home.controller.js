@@ -32,6 +32,7 @@
         .grabBlog(data.blog)
         .then(function(done) {
           dataService.setData(['blog'], [done.data]);
+          console.log("THIS IS THE BLOG ", done.data)
           eventService
             .retrieveEvent(data.event)
             .then(function(retrievedData) {

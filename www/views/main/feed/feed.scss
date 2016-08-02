@@ -104,4 +104,21 @@
     .eulogy-container {
         margin: 1em;
     }
+
+    button.light-blue.post {
+        min-height: 15px;
+        line-height: unset;
+        width: 6em;
+        font-family: 'Gotham-Medium';
+        margin-top: 10px;
+    }
+    .ion-camera:before {
+        font-size: 2em;
+        float: left;
+        margin: 10px;
+    }
+    .addPhoto {
+        float: left;
+        margin-top: 13px;
+    }
 }

@@ -6,21 +6,16 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService'];
 
-  function FeedController($log, dataService, $http, urlFactory, uploadService) {
+  function FeedController($log, dataService, $http, urlFactory, uploadService, authService) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
-    var blogURL = "/blog/" + dataService.retrieveData(['planningEvents']).blog
-
-    $http({
-      method: "GET", 
-      url: urlFactory + blogURL
-    }).then( function( response ) {
-      console.log("HERE", response)
-    }) 
-
+    var blog = dataService.retrieveData(['blog'])
+    var userId = authService.currentUser()._id
+    console.log("THIS IS TEH BLOG", blog)
+    vm.items = blog.posts
     vm.clicked = true;
     vm.passive = 'feed';
     vm.share;
@@ -30,43 +25,42 @@
     vm.departed.eulogy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
     // LOCAL VARS
-    vm.items = [ 
-      { name: "Alex",
-        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-        likes: 50 ,
-        commentCount: 20  },
-      { name: "Time",
-        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-        likes: 6 ,
-        commentCount: 21  },
-      { name: "Poop",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 7 ,
-      commentCount: 22  },
-      { name: "Greg",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 8 ,
-      commentCount: 23  },
-      { name: "Blarg",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 9 ,
-      commentCount: 24  },
-      { name: "GAH",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 5 ,
-      commentCount: 25  }]
+  
     // BOUND FUNCTIONS
 
     // HELPERS
 
-    vm.uploadMedia = function() {
+    vm.submitMemory = function() {
+      var blogObj = {
+        text: vm.share,
+        refUser: userId
+      }
+      console.log("THROUGH THE WORMHOLE!" ,blogObj)
+      if( vm.media ) {
+        uploadMedia()
+      } else if (vm.share) {
+        $http( {
+          method: "PUT",
+          url: urlFactory + "/blog/" + blog._id,
+          data: blogObj
+        } ).then( function( response ) {
+          console.log( "REponse here :", response)
+          vm.share = ""
+          vm.media = ""
+          vm.items = response.data.data.posts
+        })
+      }
+    }
+
+     function uploadMedia() {
       console.log("HERE")
-      uploadService.uploadFile( vm.media, urlFactory + blogURL, "departed" )
+      uploadService.uploadFile( vm.media, urlFactory + blogURL, "departed", blogObj )
       console.log("TOuch")
     }
 
-    vm.expandShare = function() {
-      vm.expanded = true;
+    vm.offExpand = function() {
+      vm.expanded = false
     }
+
   }
 })();

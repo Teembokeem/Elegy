@@ -295,6 +295,19 @@
         authorized: true
     })
 
+    .state('app.departed-tab.donate', {
+        url: '/donate',
+        views: {
+          'donate': {
+            templateUrl: 'views/main/donate/donate.html',
+            controller: 'Donate.controller',
+            controllerAs: 'Donate'
+          }
+        },
+        controllerId: 'Schedule',
+        authorized: true
+    })
+
     .state('app.vendor-signup', {
         url: '/vendor-signup',
         templateUrl: 'views/main/vendor_signup/vendor_signup.html',

@@ -15,7 +15,7 @@
     vm.passive = 'schedule';
 
     // LOCAL VARS
-
+    
     // BOUND FUNCTIONS
 
     // HELPERS

@@ -10031,10 +10031,7 @@ h2.or {
   font-size: 14px; }
 
 .has-tabs, .bar-footer.has-tabs {
-  top: 20px; }
-
-.tabs {
-  margin-bottom: 20px; }
+  top: 40px; }
 
 .button-clear.button-clear.back-directive {
   color: black;
@@ -10042,6 +10039,96 @@ h2.or {
   float: left; }
   .button-clear.button-clear.back-directive .icon {
     vertical-align: bottom; }
+
+.tabs .tab-item .icon.checklist {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-checklist.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.checklist-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-checklist-on.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.memories {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-memories.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.memories-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-memories-on.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.schedule {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-schedule.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.schedule-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-schedule-on.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.guests {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-guests.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.guests-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-guests-on.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.donate {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-donate.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.donate-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-donate-on.png");
+  background-size: contain; }
+
+.home-nav {
+  position: absolute;
+  z-index: 999;
+  left: 10px;
+  top: 5px; }
+  .home-nav .home-button img {
+    border-radius: 50%;
+    width: 33px;
+    height: 33px; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10166,6 +10253,11 @@ h2.or {
 .departed-signup-view input[type="text"]:focus:before,
 .departed-signup-view input[type="text"]:valid:before {
   content: ""; }
+
+.departed-signup-view .small-container {
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 10vh; }
 
 .home-view {
   animation-name: left-content;
@@ -10486,6 +10578,22 @@ h2.or {
 
 .feed-view .eulogy-container {
   margin: 1em; }
+
+.feed-view button.light-blue.post {
+  min-height: 15px;
+  line-height: unset;
+  width: 6em;
+  font-family: 'Gotham-Medium';
+  margin-top: 10px; }
+
+.feed-view .ion-camera:before {
+  font-size: 2em;
+  float: left;
+  margin: 10px; }
+
+.feed-view .addPhoto {
+  float: left;
+  margin-top: 13px; }
 
 .user-profile-view .profilePic {
   display: inline-block;
