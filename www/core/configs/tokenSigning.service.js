@@ -13,10 +13,8 @@
     };
 
     function signWithToken(request) {
-      console.log('SENDING', request);
-      var isCloud = request.url.indexOf( 'api.cloudinary' )
-      if (tokenService.retrieve() && isCloud < 0) {
-        // $log.debug('Token exists: signing request.');
+      if (tokenService.retrieve()) {
+        // $log.debug('Token exists: signing request.', tokenService.retrieve());
         request.headers['Authorization'] = `Bearer ${tokenService.retrieve()}`;
       }
 
