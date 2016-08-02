@@ -168,7 +168,7 @@
           {
             parts: [
               {
-                title: "Link PayPal",
+                title: "Link Braintree",
                 description: "Lorem ipsum",
                 test: "FUCK YOUUUUUUUUUUU"
               },
