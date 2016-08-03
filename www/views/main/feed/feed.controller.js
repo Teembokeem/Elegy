@@ -35,7 +35,7 @@
         text: vm.share,
         refUser: userId
       }
-      console.log("THROUGH THE WORMHOLE!" ,blogObj)
+      console.log(blog._id, "THROUGH THE WORMHOLE!" ,blogObj)
       if( vm.media ) {
         uploadMedia()
       } else if (vm.share) {
@@ -58,8 +58,15 @@
       console.log("TOuch")
     }
 
-    vm.offExpand = function() {
-      vm.expanded = false
+    vm.likeThis = function(id) {
+      $http( {
+          method: "PUT",
+          url: urlFactory + "/blog/" + blog._id,
+          data: blogObj
+        } ).then( function( response ) {
+          console.log( "REponse here :", response)
+          vm.items = response.data.data.posts
+        })
     }
 
   }

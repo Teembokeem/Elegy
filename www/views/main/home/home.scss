@@ -22,8 +22,18 @@
     background-color: transparent;
     
     .item-avatar {
-      min-height: 55px;
-      background-color: transparent;
+       -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        min-height: 45px;
+        padding-left: 45px;
     }
 
     img {

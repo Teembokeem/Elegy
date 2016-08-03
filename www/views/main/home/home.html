@@ -27,8 +27,7 @@
 
         </div>
         <div class="col text-right item user-avatar">
-          <div class="item-avatar ">
-            <img src="../../img/adam.jpg" alt="">
+          <div class="item-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + departed.image + ')'}">
           </div>
         </div>
         <div class="col-10 pull-right swipe">
@@ -40,16 +39,7 @@
       <div class="item item-divider">
         Past Events
       </div>
-      <a class="item item-avatar" href="#">
-        <img src="../../img/ben.png" alt="">
-        <div class="col col-60">
-          <h2>{{("Venkman").split("").join(" ") | uppercase}}</h2>
-        <p>{{"Back off, man. I'm a scientist."}}</p>
-        </div>
-        <div class="col pull-right swipe">
-          <i class="icon ion-ios-arrow-thin-right"></i>
-        </div>
-      </a>
+      
     </div>
   </ion-content>
 </ion-view>

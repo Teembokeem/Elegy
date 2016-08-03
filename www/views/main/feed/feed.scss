@@ -44,12 +44,19 @@
         height: 75px;
         text-align: left;
         border-top-width: 2px;
-        border-bottom-width: 2px;
         border-color: #ddd;
         border-style: solid;
         padding: 10px;
 
     }
+
+    .top-border {
+        border-top-width: 2px;
+        border-color: #ddd;
+        border-style: solid;
+        padding: 0px;
+    }
+    
     .feed {
         .row {
             margin-top: 0px;
@@ -73,11 +80,16 @@
     }
 
     .feed-avatar {
-        img{
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-position: center;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
     }
 
     .blue-border {
