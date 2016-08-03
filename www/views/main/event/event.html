@@ -14,7 +14,7 @@
         </div>
         <div ng-show="Event.eventStep.title === 'Interment'" class="row">
           <div class="col-center">
-            <span>{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
+            <span ng-click="Event.reviewingOptions()">{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
           </div>
         </div>
         <div ng-show="Event.eventStep.title === 'Interment'" class="row">
