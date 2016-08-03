@@ -18,6 +18,7 @@
 
     function grabBlog(blogId) {
       $log.instantiate('Blog Service Grab Blog', 'method')
+      $log.info("your blogid", blogId)
       return $http({
         method: 'GET',
         url: urlFactory + '/blog/' + blogId

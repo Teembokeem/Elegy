@@ -9,9 +9,7 @@
                       'Directives', 
                       'Constants', 
                       'ngFileUpload', 
-                      'ngCordova', 
-                      'ionic-datepicker',
-                      'ngMaterial'])
+                      'ngCordova'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
