@@ -8,10 +8,9 @@
               <div class="small-container">
                 <h3>Find your favorite picture of your loved one and add it here. This will be the first thing everyone sees.</h3>
               </div>
-              <i ng-show="!DepartedSignup.newDeparted.cloud.image" ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" class="icon ion-camera"></i>
-              <p ngf-select ng-model="DepartedSignup.newDeparted.cloud.image" accept="image/*" >{{!DepartedSignup.newDeparted.product.image ? '' : 'UPLOAD A DIFFERENT PHOTO' }}</p>
+              <i ng-show="!DepartedSignup.cloud.image" ngf-select ng-model="DepartedSignup.cloud.image" accept="image/*" class="icon ion-camera"></i>
             </div>
-            <img ngf-src="DepartedSignup.newDeparted.cloud.image" alt="">
+            <img ngf-src="DepartedSignup.cloud.image" alt="">
           </div>
         </div>
       </div>
@@ -46,7 +45,7 @@
           </label>
         </div>
       </div>
-      <br
+      <br>
       <div class="row">
         <div class="col">
           <button ng-click="DepartedSignup.submitDepartedForm()" class="button blue ">
