@@ -11031,3 +11031,13 @@ h2.or {
     background-color: #17779e;
     color: white;
     width: 15em !important; }
+
+.forms-view .program-container .form-item {
+  font-size: 1.5em !important; }
+
+.forms-view .program-container .add-member {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 1em;
+  max-width: 28%;
+  margin-right: 2em; }
