@@ -1,15 +1,44 @@
 .forms-view {
+
+  
   .program-container {
     .form-item {
       font-size: 1.5em !important;
     }
 
+    h3 {
+      font-weight: 300;
+    }
     .add-member {
       border: 1px solid black;
       background-color: white;
       border-radius: 1em;
-      max-width: 28%;
+      max-width: 35%;
       margin-right: 2em;
+    }
+
+    textarea {
+      text-align: left;
+      resize: none;
+    }
+
+    .textarea-stuff  {
+        display: block;
+    }
+
+    .members-row {
+      margin-left: auto;
+    margin-right: auto;
+    display: block;
+    }
+
+    label {
+      border-style: none;
+    }
+
+    .members-container {
+      padding-bottom: 1em;
+      border-bottom: 1px solid rgb(140, 140, 140);
     }
   }
 }
