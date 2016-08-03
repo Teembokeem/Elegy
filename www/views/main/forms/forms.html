@@ -1,0 +1,73 @@
+<ion-view view-title="F O R M S">
+  <ion-content class="forms-view">
+    <div ng-switch="Forms.formType">
+      <div ng-switch-when="paypal">
+          paypal
+      </div>
+      <div ng-switch-when="eulogy">
+          eulogy
+      </div>
+      <div ng-switch-when="program">
+        <br>
+          <div class=" container program-container">
+            <div class="row nopad">
+              <div class="col">
+                <h3 class="form-item">Surviving Family Members</h3>
+                  <label class="item item-input">
+                      <input type="text" placeholder="Members" ng-model="UserProfile.user.first">
+                    <button outline light class="add-member">Add to List</button>
+                  </label>
+              </div>
+            </div>
+            <br>
+            <div class="row nopad">
+                <div class="col">
+                  <h3 class="form-item">Pallbearers</h3>
+                  <label class="item item-input">
+                      <input type="text" placeholder="Pallbearers" ng-model="UserProfile.user.last">
+                  </label>
+                </div>
+            </div>
+            <br>
+            <div class="row nopad">
+                <div class="col">
+                  <h3 class="form-item">Officiant</h3>
+                  <label class="item item-input">
+                      <input type="text" placeholder="Officiant" ng-model="UserProfile.user.email">
+                  </label>
+                </div>
+            </div>
+            <br>
+            <div class="row nopad">
+                <div class="col">
+                  <h3 class="form-item">Eulogy</h3>
+                  <label class="item item-input">
+                      <input type="password" placeholder="Eulogy" ng-model="UserProfile.user.last">
+                  </label>
+                </div>
+            </div>
+            <div class="row nopad">
+                <div class="col">
+                  <h3 class="form-item">Songs</h3>
+                  <label class="item item-input">
+                      <input type="password" placeholder="Songs" ng-model="UserProfile.user.last">
+                  </label>
+                </div>
+            </div>
+            <div class="row nopad">
+                <div class="col">
+                  <h3 class="form-item">Readings</h3>
+                  <label class="item item-input">
+                      <input type="password" placeholder="Readings" ng-model="UserProfile.user.last">
+                  </label>
+                </div>
+            </div>
+            <br>
+        </div>
+    
+
+    
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
