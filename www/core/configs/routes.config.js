@@ -254,6 +254,28 @@
         controllerId: 'Transaction',
         authorized: true
     })
+
+    .state('app.departed-tab.forms', {
+        url: '/forms/:tracker',
+        views: {
+          'event': {
+            templateUrl: 'views/main/forms/forms.html',
+            controller: 'Forms.controller',
+            controllerAs: 'Forms',
+            // resolve: {
+            //   brainTree: function($log, transactionService) {
+            //     $log.info("resolving dependencies")
+            //     return transactionService.initializeBrainTree();
+            //   }
+            // }
+          } 
+        },
+        cache: false,
+        controllerId: 'Forms',
+        authorized: true
+    })
+
+
     
     .state('app.departed-tab.feed', {
         url: '/feed',
