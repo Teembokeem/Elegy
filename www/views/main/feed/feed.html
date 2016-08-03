@@ -1,10 +1,10 @@
 <ion-view view-title="F E E D">
   <ion-content class="feed-view">
     <div class="holding">
-      <div class="banner" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Feed.departed.photo + ')'}">
+      <div class="banner" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Feed.departed.image + ')'}">
         <header>
           <h1>
-            Some Persons Name
+            {{Feed.departed.first}} {{Feed.departed.last}}
             <i ng-if="Feed.expandEul == false" ng-click="Feed.expandEul = true" style="padding: 10px;" class="icon ion-chevron-down"></i>
             <i ng-if="Feed.expandEul == true" ng-click="Feed.expandEul = false" style="padding: 10px;" class="icon ion-chevron-up"></i>
           </h1>
