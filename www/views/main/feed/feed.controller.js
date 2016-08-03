@@ -6,23 +6,23 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService', 'blogService'];
 
-  function FeedController($log, dataService, $http, urlFactory, uploadService, authService) {
+  function FeedController($log, dataService, $http, urlFactory, uploadService, authService, blogService) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
     var blog = dataService.retrieveData(['blog'])
+    var departed = dataService.retrieveData('departed');
     var userId = authService.currentUser()._id
     console.log("THIS IS TEH BLOG", blog)
+    console.log("THIS IS TEH departed", departed)
+    vm.departed = departed;
     vm.items = blog.posts
     vm.clicked = true;
     vm.passive = 'feed';
     vm.share;
     vm.expandEul = false;
-    vm.departed = {}
-    vm.departed.photo = "https://i.ytimg.com/vi/H9w1rLhn1uU/maxresdefault.jpg"
-    vm.departed.eulogy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
     // LOCAL VARS
   
@@ -47,7 +47,16 @@
           console.log( "REponse here :", response)
           vm.share = ""
           vm.media = ""
-          vm.items = response.data.data.posts
+          blogService
+            .grabBlog(blog._id)
+            .then(function(done) {
+              dataService.setData(['blog'], [done.data]);
+              blog = dataService.retrieveData('blog');
+              vm.items = response.data.data.posts
+            })
+            .catch(function(err) {
+              $log.info("error", err);
+            })
         })
       }
     }
