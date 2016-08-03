@@ -24,6 +24,12 @@
     vm.stepIndex = dataService.retrieveData('stepIndex');
     vm.stepCompletion = [];
     vm.showDateBool = false;
+    vm.departed = dataService.retrieveData('departed');
+    vm.reviewItems = false
+    vm.reviewingOptions = function() {
+      $log.info("hello", vm.reviewItems)
+      vm.reviewItems = !vm.reviewItems
+    }
 
     // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
     //   var numCompleted;
@@ -89,7 +95,7 @@
       })
     };
 
-    vm.processAction = function(title ,idx, id ) {
+    vm.processAction = function(title ,idx, id, tracker) {
       $log.info("hello", title)
       switch(title) {
         case ("Contact Upload"):
@@ -97,9 +103,18 @@
           $state.go('app.departed-tab.guest-invite');
           break;
         case ("Pick a Date"): 
+        case ("Ceremony Date"): 
+        case ("Burial"): 
+        case ("Reception Date"): 
           $log.info("date picker");
           vm.showDateBool = true;
-          showDate(idx, id)
+          vm.showDate(idx, id);
+          break;
+        case ('Link Braintree'):
+        case ('Write Eulogy'):
+        case ('Make Program'):
+          $log.info("heading to forms.")
+          $state.go('app.departed-tab.forms', {tracker: tracker});
           break;
       }
 

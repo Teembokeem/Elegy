@@ -31,7 +31,7 @@
       blogService
         .grabBlog(data.blog)
         .then(function(done) {
-          dataService.setData(['blog'], [done.data]);
+          dataService.setData(['blog', 'departed'], [done.data, data]);
           console.log("THIS IS THE BLOG ", done.data)
           eventService
             .retrieveEvent(data.event)

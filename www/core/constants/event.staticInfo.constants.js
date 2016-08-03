@@ -186,17 +186,20 @@
               {
                 title: "Link Braintree",
                 description: "Lorem ipsum",
-                test: "FUCK YOUUUUUUUUUUU"
+                test: "FUCK YOUUUUUUUUUUU",
+                tracker: 'paypal'
               },
               {
                 title: "Write Eulogy",
                 description: "Lorem ipsum",
-                test: "FUCK YOUUUUUUUUUUU"
+                test: "FUCK YOUUUUUUUUUUU",
+                tracker: 'eulogy'
               },
               {
                 title: 'Make Program',
                 description: "Hallo",
-                test: "FUCK YOUUUUUUUUUUU"
+                test: "FUCK YOUUUUUUUUUUU",
+                tracker: 'program'
               },
               {
                 title: "Order Flowers",
