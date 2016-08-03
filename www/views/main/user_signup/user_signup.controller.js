@@ -18,7 +18,8 @@
       first: '',
       last: '',
       email: '',
-      password: ''
+      password: '',
+      image: '/img/default.png'
     }
     
     //  BOUND FUNCTIONS
