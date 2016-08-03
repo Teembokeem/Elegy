@@ -51,6 +51,7 @@
               </div>
             </div>
             <br>
+
             <div class="members-container container">
               <h3 class="form-item">{{'Pallbearers' | uppercase}}</h3>
               <div class="row container" ng-repeat="bearer in Forms.program.pallbearers">
@@ -72,6 +73,7 @@
               </div>
             </div>
             <br>
+
             <div class="members-container container">
               <h3 class="form-item">{{'Officiant' | uppercase}}</h3>
               <div class="row container">
@@ -82,7 +84,7 @@
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input  ng-hide="Forms.program.officiant ? Forms.editingOfficiant : false" type="text" placeholder="Members" ng-model="Forms.newOfficiant">
+                    <input  ng-hide="Forms.program.officiant ? Forms.editingOfficiant : false" type="text" placeholder="Officiant" ng-model="Forms.newOfficiant">
                   </label>
                 </div>
               </div>
@@ -93,41 +95,80 @@
               </div>
             </div>
             <br>
-            <div class="row nopad">
+            
+            <div class="members-container container">
+              <h3 class="form-item">{{'Eulogizer' | uppercase}}</h3>
+              <div class="row container">
+                <div class="row members-row">
+                  <span ng-show="Forms.program.eulogizer ? Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col">
-                  <h3 class="form-item">{{'Eulogizer' | uppercase}}</h3>
                   <label class="item item-input">
-                      <input type="text" placeholder="Eulogizer" ng-model="UserProfile.user.first">
-                      <button class="add-member">Add Eulogizer</button>
+                    <input  ng-hide="Forms.program.eulogizer ? Forms.editingEulogizer : false" type="text" placeholder="Eulogizer" ng-model="Forms.newEulogizer">
                   </label>
                 </div>
-            </div>
-            <div class="row nopad">
+              </div>
+              <div class="row">
                 <div class="col">
-                  <h3 class="form-item">{{'Songs' | uppercase}}</h3>
-                 <div ng-repeat="members in Forms.program.songs">
-
-                 </div>
-                  <label class="item item-input">
-                      <input type="text" placeholder="Song" ng-model="UserProfile.user.first">
-                    <button class="add-member">Add to Songs</button>
-                  </label>
+                  <button class="add-member" ng-click="Forms.processAction('eulogizer', Forms.newEulogizer)">{{Forms.program.eulogizer ? 'Edit Eulogizer' : 'Add Eulogizer'}}</button>
                 </div>
-            </div>
-            <div class="row nopad">
-                <div class="col">
-                  <h3 class="form-item">{{'Readings' | uppercase}}</h3>
-                  <div ng-repeat="members in Forms.program.readings"></div>
-                  <label class="item item-input">
-                      <input type="text" placeholder="Reading" ng-model="UserProfile.user.first">
-                    <button class="add-member">Add to Readings</button>
-                  </label>
-                </div>
+              </div>
             </div>
             <br>
-        </div>
-    
 
+            <div class="members-container container">
+              <h3 class="form-item">{{'Songs' | uppercase}}</h3>
+              <div class="row container" ng-repeat="song in Forms.program.songs">
+                <div class="row members-row">
+                  <span>{{song}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input">
+                    <input type="text" placeholder="Song" ng-model="Forms.newSong">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                <button class="add-member" ng-click="Forms.processAction('songs', Forms.newSong)">Add to Songs</button>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div class="members-container container">
+              <h3 class="form-item">{{'Readings' | uppercase}}</h3>
+              <div class="row container" ng-repeat="song in Forms.program.readings">
+                <div class="row members-row">
+                  <span>{{song}}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input">
+                    <input type="text" placeholder="Reading" ng-model="Forms.newReading">
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                <button class="add-member" ng-click="Forms.processAction('readings', Forms.newReading)">Add to Readings</button>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div class="row nopad">
+              <div class="col">
+                <button ng-click="Forms.updateProgram()" class="button blue ">
+                    Submit
+                </button>
+              </div>
+            </div>
     
       </div>
     </div>
