@@ -19,7 +19,8 @@
 
     // EXPORTED FUNCTIONS
     function uploadFile( file, path, imageType, data ) {
-      Upload.upload({
+      $log.instantiate("Upload Service Upload File", "method")
+      return Upload.upload({
       url: "https://api.cloudinary.com/v1_1/dtzbpdvnm/image/upload",
       data: {
       upload_preset: "nufgdp6b",
@@ -41,17 +42,7 @@
              $log.info("yes", response)
             })
         } else if (imageType == "departed") {
-            $http({
-                method: "POST",
-                url: urlFactory + path,
-                data: {
-                    image: response.data.secure_url
-                }
-            })
-            .then(function( response ) {
-                $log.info("fdsafdsafdsafdasfdasfa", response)
-                return response
-            })
+            return response.data.secure_url
         } else if (imageType == "Something Else") {
             $http({
                 method: "PUT",
@@ -66,8 +57,9 @@
         } else {
             $log.debug( "Something happened", response )
         }
-      }, function (error){
-        $log.debug(error)
+      })
+      .catch(function(err) {
+          $log.info("ehoh eror", err)
       })
     }
   
