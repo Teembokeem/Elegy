@@ -95,7 +95,7 @@
       })
     };
 
-    vm.processAction = function(title ,idx, id ) {
+    vm.processAction = function(title ,idx, id, tracker) {
       $log.info("hello", title)
       switch(title) {
         case ("Contact Upload"):
@@ -108,7 +108,13 @@
         case ("Reception Date"): 
           $log.info("date picker");
           vm.showDateBool = true;
-          vm.showDate(idx, id)
+          vm.showDate(idx, id);
+          break;
+        case ('Link Braintree'):
+        case ('Write Eulogy'):
+        case ('Make Program'):
+          $log.info("heading to forms.")
+          $state.go('app.departed-tab.forms', {tracker: tracker});
           break;
       }
 
