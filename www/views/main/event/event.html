@@ -12,12 +12,12 @@
                 <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
-        <div ng-show="Event.eventStep.title === 'Interment'" class="row">
+        <div ng-show="Event.eventStep.eventKey === 'Interment'" class="row">
           <div class="col-center">
-            <span ng-click="Event.reviewingOptions()">{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
+            <span ng-click="Event.reviewingOptions()">{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
           </div>
         </div>
-        <div ng-show="Event.eventStep.title === 'Interment'" class="row">
+        <div ng-show="Event.eventStep.eventKey === 'Interment'" class="row">
           <div class="center-align">
             <p>Edit Interment Option</p>
           </div>
@@ -28,18 +28,18 @@
       <!--<div class=" step-container container">
         <div class="row">
           <div class="center-col col">
-            <span >{{Event.eventStep.title}}</span>
+            <span >{{Event.eventStep.eventKey}}</span>
             <i ng-click="Event.openModal( Event.val )" class="icon ion-ios-information-outline"></i>
           </div>
         </div>
-        <div ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="row">
+        <div ng-show="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" class="row">
           <div class="col">
-            <p>{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()]['__t']}} Service</p>
+            <p>{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t']}} Service</p>
           </div>
         </div>
       </div>-->
       <!--2-->
-      <div ng-hide="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" class="container event-data-instantiator">
+      <div ng-hide="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" class="container event-data-instantiator">
         <h4>CHOOSE AN OPTION</h4>
         <div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">
             <div class="col">
@@ -48,41 +48,74 @@
         </div>
       </div>
 
-      <ion-item ng-show="Event.eventStep.title === 'Interment' ? Event.eventModel['details'][Event.eventStep.title.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
+      <ion-item ng-show="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
           <div class="col text-left">
-            <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
-            <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
-            <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
-            <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
+            <i ng-show="!Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
+            <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
+            <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
+            <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
             
-            <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.title, $index, Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['item'], part.tracker)">{{part.title | uppercase}} </h2>
+            <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">{{part.title | uppercase}} </h2>
           </div>
-          <!--{{Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']}}-->
+          <!--{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']}}-->
           <div class="col-10">
-            <i ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['item'])" class="icon ion-ios-arrow-down"></i>
+            <i ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.eventKey][part.tracker]['item'] )" class="icon ion-ios-arrow-down"></i>
           </div>
           <div class="col-10">
             <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
           </div>
         </div>
-        <div class="row" ng-show="Event.itemBlock === $index && part.date">
-          <div class="col">
-            <div class="" >
-              <marketplace ng-hide="Event.showDateBool" data="Event.Item" class="listing-container"></marketplace>
+
+        <div class=" event-listing-container" ng-show="Event.itemBlock === $index" ng-click="Event.Item.method(Event.Item, Event.Item.vendor)">    
+          <!--<marketplace data="Event.item"></marketplace>-->
+          <div class="row listing-row">
+            <div class="col-33">
+              <img ng-src="{{Event.Item.image}}" alt="">
+            </div>
+            <div class="col listing-box">
+              <div class="container listing-description">
+                <div class="row">
+                  <div class="col listing-title">
+                    <span>{{Event.Item.name | uppercase}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col listing-price">
+                    <span>{{Event.Item.brand}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col listing-Vendor">
+                    <span>{{Event.Item.vendor.businessName | uppercase}}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row date-container" ng-show="Event.itemBlock === $index && part.date">
-          <div class="col-70">
-            <div class="date-box">
-              <input type="date" ng-model="Event.Item">
+          
+        </div>    
+
+        <div class="date-picker" ng-show="Event.itemBlock === $index && part.date">
+          <div class="row">
+            <div class="col">
+              <div class="" >
+                <marketplace ng-hide="Event.showDateBool" data="Event.Date" class="listing-container"></marketplace>
+              </div>
             </div>
           </div>
-          <div class="col">
-              <button ng-click="Event.stageDate(Event.stagedDate, $index)" class="button button-balanced">Confirm {{$index}}</button>
+          <div class="row date-container">
+            <div class="col-70">
+              <div class="date-box">
+                <input type="date" ng-model="Event.Date">
+              </div>
+            </div>
+            <div class="col">
+                <button ng-click="Event.stageDate(Event.stagedDate, $index)" class="button button-balanced">Confirm {{$index}}</button>
+            </div>
           </div>
+
         </div>
           <!--CHECK MEEEEEEEEE-->
         </div>

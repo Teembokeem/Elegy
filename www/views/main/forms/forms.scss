@@ -1,5 +1,20 @@
 .forms-view {
-
+  .form-title {
+    font-size: 3em;
+  }
+    textarea {
+      text-align: left;
+      resize: none;
+      border: 1px solid black;
+      padding: 1em;
+    }
+    
+    button {
+      border: 1px solid black;
+      background-color: white;
+      border-radius: 0.5em;
+      min-width: 50%;
+    }
   
   .program-container {
     .form-item {
@@ -17,10 +32,6 @@
       margin-right: 2em;
     }
 
-    textarea {
-      text-align: left;
-      resize: none;
-    }
 
     .textarea-stuff  {
         display: block;

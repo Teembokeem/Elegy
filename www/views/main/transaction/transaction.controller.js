@@ -49,7 +49,7 @@
             .then(function(done) {
               $log.info("success", done)
               eventService
-                .updateEvent(done.data._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
+                .updateEvent(done.data, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
                 .then(function(res) {
                   eventService
                     .retrieveEvent(dataService.retrieveData('event')._id)

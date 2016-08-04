@@ -10415,7 +10415,7 @@ h2.or {
   .event-view .center-align {
     margin: 0 auto; }
   .event-view .event-listing-container {
-    border-top: 1px solid rgba(140, 140, 140, 0.6); }
+    border-style: none; }
     .event-view .event-listing-container .col-25 {
       padding: 5px;
       height: 91.25px !important; }
@@ -10946,20 +10946,20 @@ h2.or {
       text-align: left;
       font-family: Avenir; }
     .listing-view .card .listing-header .listing-names .listing-name {
+      font-weight: bold !important;
       font-weight: 200;
-      font-size: 3em;
+      font-size: 2em;
       color: black; }
     .listing-view .card .listing-header .listing-names .listing-brand {
       font-size: 0.5em; }
     .listing-view .card .listing-header .listing-names .listing-vendor {
-      font-weight: bold !important;
-      font-size: 2em; }
+      font-size: 1.5em; }
     .listing-view .card h6 {
       font-weight: lighter; }
     .listing-view .card .listing-price {
       border: none;
       font-size: 1.5em;
-      color: #0f416a; }
+      color: #1e82d4; }
       .listing-view .card .listing-price * {
         font-family: Avenir; }
     .listing-view .card .listing-description * {
@@ -10976,7 +10976,8 @@ h2.or {
 
 .vendor-product-view h1 {
   font-weight: lighter;
-  letter-spacing: 0.1em; }
+  letter-spacing: 0.1em;
+  font-size: 2em; }
 
 .vendor-product-view .image-container {
   background-color: rgba(140, 140, 140, 0.1); }
@@ -11057,6 +11058,21 @@ h2.or {
     color: white;
     width: 15em !important; }
 
+.forms-view .form-title {
+  font-size: 3em; }
+
+.forms-view textarea {
+  text-align: left;
+  resize: none;
+  border: 1px solid black;
+  padding: 1em; }
+
+.forms-view button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.5em;
+  min-width: 50%; }
+
 .forms-view .program-container .form-item {
   font-size: 1.5em !important; }
 
@@ -11069,10 +11085,6 @@ h2.or {
   border-radius: 1em;
   max-width: 35%;
   margin-right: 2em; }
-
-.forms-view .program-container textarea {
-  text-align: left;
-  resize: none; }
 
 .forms-view .program-container .textarea-stuff {
   display: block; }

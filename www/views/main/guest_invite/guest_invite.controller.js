@@ -28,7 +28,16 @@
     }
 
     vm.sendInvitations = function() {
+      $log.instantiate("Guest Invite Controller Send Invitations", 'method')
       console.log("Final Guest List", vm.guestList)
+      eventService
+        .sendInvitations
+        .then(function(done) {
+          $log.info("success: ", done)
+        })
+        .catch(function(err) {
+          $log.info("ehoh error: ", err)
+        })
     }
 
     

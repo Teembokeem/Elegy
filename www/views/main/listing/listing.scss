@@ -58,8 +58,9 @@
       .listing-names  { 
        
         .listing-name {
+          font-weight: bold !important;
           font-weight: 200;
-          font-size: 3em;
+          font-size: 2em;
           color: black;
         }
 
@@ -68,8 +69,8 @@
         }
 
         .listing-vendor {
-          font-weight: bold !important;
-          font-size: 2em;
+          // font-weight: bold !important;
+          font-size: 1.5em;
         }
       }
     
@@ -85,7 +86,7 @@
     .listing-price {
       border: none;
       font-size: 1.5em;
-      color: rgb(15,65,106); 
+      color: rgb(30,130,212); 
 
       * {
         font-family: Avenir;
