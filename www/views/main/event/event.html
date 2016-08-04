@@ -57,7 +57,7 @@
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
             
-            <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">{{part.title | uppercase}} </h2>
+            <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">{{part.title | uppercase}} </h2>
           </div>
           <!--{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']}}-->
           <div class="col-10">
