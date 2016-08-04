@@ -130,35 +130,41 @@
 
     vm.showItem = function(idx, id) {
       $log.instantiate('Event Controller Show Item', 'method');
+      $log.info("your args", idx, id)
+
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
-        localStorage.removeItem('items');
+        // localStorage.removeItem('items')
 
       } else {
-          // var items = dataService.retrieveData('items')[idx]
-        if (dataService.retrieveData('items')) {
-          vm.Item = [dataService.retrieveData('items')[idx]]
-          vm.Item[0].method = function displayListing(data, param) {
-            dataService.setData(['listing'], [data]);
-            dataService.setData(['vendor'], [data.vendor]);
-            $state.go('app.departed-tab.listing', {listingName: param});
-          }
-          $log.info("your item:", vm.Item)
-          vm.itemBlock = idx;
-        } else {
-          $log.info("hi")
+        vm.itemBlock = idx;
+
+        // if (dataService.retrieveData('items') != null && dataService.retrieveData('items').index !== idx) {
+        //   vm.Item = dataService.retrieveData('items')
+        //   $log.info("your item:", vm.Item)
+        //   $log.info("hi")
+
+        // } else {
           productService
             .grabProduct(id)
             .then(function(serviceData) {
-              vm.Item = serviceData
+              $log.info("YES", serviceData)
               vm.itemBlock = idx;
-              localStorage.removeItem('items')
-              dataService.setData(['items'], [[serviceData]])
+              vm.Item = serviceData
+              vm.Item.index = idx;
+              vm.Item.method = function displayListing(data, param) {
+                dataService.setData(['listing'], [data]);
+                dataService.setData(['vendor'], [data.vendor]);
+                $state.go('app.departed-tab.listing', {listingName: param});
+              }
+        //       localStorage.removeItem('items')
+              dataService.setData(['items'], [vm.Item])
             })
+
+        // }
 
         }
       }
-    }
 
     vm.showDate = function(idx, id) {
       $log.instantiate('Event Controller Show Date', 'method');
@@ -169,10 +175,10 @@
       } else {
           // var items = dataService.retrieveData('items')[idx]
           dataService.setData(['items'], [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems[idx]['tracker']]]])
-          vm.Item = new Date(dataService.retrieveData('items')[0]['date'])
+          vm.Date = new Date(dataService.retrieveData('items')[0]['date'])
           vm.itemBlock = idx;
           vm.stagedDate = [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems['tracker']]]]
-          $log.info(vm.Item, "fdlsafdsalfsdal")
+          $log.info(vm.Date, "fdlsafdsalfsdal")
         }
     }
 
