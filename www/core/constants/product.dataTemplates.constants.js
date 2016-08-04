@@ -25,6 +25,11 @@
       burialVault: [
         "material", 
         "dimensions"
+      ],
+      marker: [
+        "material",
+        'brand',
+        'color'
       ]
     }
   })
