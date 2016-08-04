@@ -11057,6 +11057,21 @@ h2.or {
     color: white;
     width: 15em !important; }
 
+.forms-view .form-title {
+  font-size: 3em; }
+
+.forms-view textarea {
+  text-align: left;
+  resize: none;
+  border: 1px solid black;
+  padding: 1em; }
+
+.forms-view button {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.5em;
+  min-width: 50%; }
+
 .forms-view .program-container .form-item {
   font-size: 1.5em !important; }
 
@@ -11069,10 +11084,6 @@ h2.or {
   border-radius: 1em;
   max-width: 35%;
   margin-right: 2em; }
-
-.forms-view .program-container textarea {
-  text-align: left;
-  resize: none; }
 
 .forms-view .program-container .textarea-stuff {
   display: block; }
