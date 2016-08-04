@@ -82,7 +82,7 @@
     // BOUND FUNCTIONS
     vm.moveTo = function( part, index ) {
       dataService.setData(['eventStep', 'stepIndex'], [part, index])
-      $state.go('app.departed-tab.event', { step: part.tracker})
+      $state.go('app.departed-tab.event', { step: part.title})
       // setStepParameters(part.title);
     }
 
