@@ -25,7 +25,7 @@
     vm.departed.eulogy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
     // LOCAL VARS
-  
+    vm.hi ="Something"
     // BOUND FUNCTIONS
 
     // HELPERS
@@ -61,8 +61,8 @@
     vm.likeThis = function(id) {
       $http( {
           method: "PUT",
-          url: urlFactory + "/blog/" + blog._id,
-          data: blogObj
+          url: urlFactory + "/post/" + id,
+          data: userId
         } ).then( function( response ) {
           console.log( "REponse here :", response)
           vm.items = response.data.data.posts

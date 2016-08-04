@@ -47,7 +47,7 @@
         </div>
       
       <div ng-if="Feed.passive == 'feed'">
-        <ion-item ng-repeat="item in Feed.items" class="feed">
+        <ion-item ng-repeat="item in Feed.items | orderBy : 'item.createdAt':true"" class="feed">
           <div class="row">
             <p>{{item.text}}</p>
           </div>

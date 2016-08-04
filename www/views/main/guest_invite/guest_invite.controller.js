@@ -37,14 +37,14 @@
       opts.hasPhoneNumber = true;
     } 
 
-  $ionicPlatform.ready(function(){
-      $cordovaContacts.find({})
-          .then(function(allContacts){
-              // Do yo thang with all the contacts!
-              vm.all = allContacts
-              console.log(vm.all)
-          });
-   });
+  // $ionicPlatform.ready(function(){
+  //     $cordovaContacts.find({})
+  //         .then(function(allContacts){
+  //             // Do yo thang with all the contacts!
+  //             vm.all = allContacts
+  //             console.log(vm.all)
+  //         });
+  //  });
 
     // $scope.getContactList()
 
