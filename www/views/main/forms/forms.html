@@ -7,23 +7,30 @@
       </div>
 
       <div ng-switch-when="eulogy">
+          <br>
           <div class="row nopad">
-                <div class="col">
-                  <h3 class="form-item">Eulogizer</h3>
-                  <label class="item item-input textarea-stuff">
-                      <textarea ng-model="test" 
-                                ng-attr-rows="{{row || '2'}}" 
-                                ng-focus="row=4" 
-                                ng-blur="row=1"
-                                name="fdsafdsa" 
-                                id="fdsafsda" 
-                                cols="30" 
-                                rows="10"
-                                placeholder="Take some time to reflect and write a memento on behalf of your loved one"></textarea>
-                      <button outline Take some time to reflect and write a memento on behalf of your loved one class="add-member">Save</button>
-                  </label>
-                </div>
+            <div class="col nopad">
+            <h1 class="form-title">{{'Eulogy' | uppercase}}</h1>
+            <br>
+            <label class="nopad item item-input textarea-stuff">
+                <textarea ng-model="Forms.eulogy" 
+                          ng-attr-rows="{{row || '10'}}" 
+                          ng-focus="row=10" 
+                          ng-blur="row=10"
+                          name="fdsafdsa" 
+                          id="fdsafsda" 
+                          cols="30" 
+                          rows="10"
+                          placeholder="Take some time to reflect and write a memento on behalf of your loved one"></textarea>
+            </label>
             </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
+              <button ng-click="Forms.submitEulogy(Forms.eulogy)" class="add-member">Save</button>  
+            </div>  
+          </div>    
       </div>
 
       <div ng-switch-when="program">
@@ -78,19 +85,19 @@
               <h3 class="form-item">{{'Officiant' | uppercase}}</h3>
               <div class="row container">
                 <div class="row members-row">
-                  <span ng-show="Forms.program.officiant ? Forms.editingOfficiant : false">{{Forms.program.officiant}}</span>
+                  <span ng-show="Forms.program.officiant ? !Forms.editingOfficiant : false">{{Forms.program.officiant}}</span>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input  ng-hide="Forms.program.officiant ? Forms.editingOfficiant : false" type="text" placeholder="Officiant" ng-model="Forms.newOfficiant">
+                    <input  ng-hide="Forms.program.officiant ? !Forms.editingOfficiant : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newOfficiant">
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="add-member" ng-click="Forms.processAction('officiant', Forms.newOfficiant)">{{Forms.program.officiant ? 'Edit Officiant' : 'Add Officiant'}}</button>
+                  <button class="add-member" ng-click="Forms.processAction('officiant', Forms.newOfficiant)">{{Forms.editingOfficiant ? 'Confirm Officiant' : 'Edit Officiant'}}</button>
                 </div>
               </div>
             </div>
@@ -100,19 +107,19 @@
               <h3 class="form-item">{{'Eulogizer' | uppercase}}</h3>
               <div class="row container">
                 <div class="row members-row">
-                  <span ng-show="Forms.program.eulogizer ? Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
+                  <span ng-show="Forms.program.eulogizer ? !Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input  ng-hide="Forms.program.eulogizer ? Forms.editingEulogizer : false" type="text" placeholder="Eulogizer" ng-model="Forms.newEulogizer">
+                    <input  ng-hide="Forms.program.eulogizer ? !Forms.editingEulogizer : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newEulogizer">
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="add-member" ng-click="Forms.processAction('eulogizer', Forms.newEulogizer)">{{Forms.program.eulogizer ? 'Edit Eulogizer' : 'Add Eulogizer'}}</button>
+                  <button class="add-member" ng-click="Forms.processAction('eulogizer', Forms.newEulogizer)">{{Forms.editingEulogizer ? 'Confirm Eulogizer' : 'Edit Eulogizer'}}</button>
                 </div>
               </div>
             </div>
