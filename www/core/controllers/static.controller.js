@@ -7,8 +7,8 @@
     .module('Controllers')
     .controller('Static.controller', StaticController)
   
-  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window', '$scope', 'authService', '$http', 'urlFactory'];
-  function StaticController($log, $state, $ionicHistory, $window, $scope, authService, $http, urlFactory) {
+  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window', '$scope', 'tokenService', '$http', 'urlFactory'];
+  function StaticController($log, $state, $ionicHistory, $window, $scope, tokenService, $http, urlFactory) {
     // INSTANTIATIONS
     $log.instantiate("Static", 'controller');
     console.log("CHECK 1")
@@ -19,15 +19,10 @@
     
 
     function getUserInfo() {
-      var userId = authService.currentUser()._id
-      console.log("user id ", userId)
-      $http.get( urlFactory + '/users/' + userId)
-      .then( function( response ) {
-        $scope.user = response.data.data
-        console.log("THIS IS THE USER : ", vm.user)
-        $scope.logged = true
-      } )
+      var userId = tokenService.decode()
+      console.log("HATE", userId)
     }
+    getUserInfo()
   
     vm.logOut = function() {
       $state.go('app.login');
