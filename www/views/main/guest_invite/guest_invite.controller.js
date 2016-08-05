@@ -15,7 +15,13 @@
     var departed = dataService.retrieveData('departed');
     var event = dataService.retrieveData('event');
     var step = dataService.retrieveData('eventStep');
-    vm.guestList = []
+    var attendees = event.details.inviteguests.attendees;
+    vm.guestList = [];
+    attendees.forEach(function(attendee) {
+      vm.guestList.push(attendee.email)
+    })
+
+    $log.info("guest list,", vm.guestList)
     
 
 
@@ -38,19 +44,29 @@
         .createGuests(vm.guestList, departed.inviteHash)
         .then(function(done) {
           var newArr = [];
-          done.forEach(function(user) {
-              //  TODO: SET THIS PART UP TO PARSE AND CREATE THE OBJECT AS SEEN IN EVENT MODEL BACKEND. 
-              // BUTTTTTT THIS ALSO NEEDS TO CHECK FOR IF A USER WERE TO INVITE ADDITIONAL GUESTS AT A LATER TIME, MEANING THE ARRAY IN THE BACKEND EXISTS.....
-              // WHICH MEANS YOU SHOULD PROBABLY ADD IN A CHECK SOMEWHERE FOR GRABBING THAT ATTENDEES LIST, AND PUSHING IT TO THAT ARRAY. KBYE.
+          done.forEach(function(user, idx) {
+              var obj = {
+                item: user[0],
+                first: user[1],
+                last: user[2],
+                email: user[3],
+                status: "0"
+              }
+              newArr.push(obj)
+              if (idx === done.length - 1) {
+                $log.info("were doing this after we have both:", newArr)
+                eventService
+                  .updateEvent(newArr, event._id, step.eventKey, step.types[0]['parts'][0]['tracker'])
+                  .then(function(done) {
+                    $log.info("success: ", done)
+                    dataService.setData(['event'], [done])
+                  })
+                  .catch(function(err) {
+                    $log.info("ehoh error: ", err)
+                  })
+
+              }
           })
-          eventService
-            .updateEvent(done, event._id, step.eventKey, step.types[0]['parts'][0]['tracker'])
-            .then(function(done) {
-              $log.info("success: ", done)
-            })
-            .catch(function(err) {
-              $log.info("ehoh error: ", err)
-            })
         })
     }
 
@@ -73,47 +89,47 @@
 
     // LOCAL VARS
     vm.all = [ 
-      { firstname: "Alex",
+      { first: "Alex",
         email: "Alex",
         comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
         likes: 50 ,
         commentCount: 20  },
-      { firstname: "Time",
+      { first: "Time",
       email: "Alex",
         comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
         likes: 6 ,
         commentCount: 21  },
-      { firstname: "Poop",
+      { first: "Poop",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 7 ,
       commentCount: 22  },
-      { firstname: "Greg",
+      { first: "Greg",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 8 ,
       commentCount: 23  },
-      { firstname: "Blarg",
+      { first: "Blarg",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 9 ,
       commentCount: 24  },
-      { firstname: "GAH",
+      { first: "GAH",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 5 ,
       commentCount: 25  },
-      { firstname: "Greg",
+      { first: "Greg",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 8 ,
       commentCount: 23  },
-      { firstname: "Blarg",
+      { first: "Blarg",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 9 ,
       commentCount: 24  },
-      { firstname: "GAH",
+      { first: "GAH",
       email: "Alex",
       comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       likes: 5 ,

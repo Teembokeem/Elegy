@@ -7,21 +7,21 @@
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="C O D E" ng-model="Referral.newGuest.code" ng-change="Referral.validateCode()">
+            <input type="text" placeholder="C O D E" ng-model="Referral.newGuest.code">
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label class="item item-input">
-            <input type="text" placeholder="E M A I L" ng-model="Referral.newGuest.email" ng-change="Referral.validateCode()">
+            <input type="text" placeholder="E M A I L" ng-model="Referral.newGuest.email">
           </label>
         </div>
       </div>
       <br>
       <div class="row nopad">
         <div class="col">
-          <button ng-click="UserSignup.submitUserForm()" class="button blue ">
+          <button ng-click="Referral.validateCode()" class="button blue ">
               Register
           </button>
         </div>

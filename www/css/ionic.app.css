@@ -10550,6 +10550,76 @@ h2.or {
   right: 10px;
   top: 10px; }
 
+.guest-list-view h1 {
+  font-size: 2em; }
+
+.guest-list-view .search-input {
+  padding: 0; }
+
+.guest-list-view p {
+  text-align: left;
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-list-view strong {
+  font-size: 20px;
+  font-family: "Gotham-Book"; }
+
+.guest-list-view input[type="text"] {
+  text-align: left; }
+
+.guest-list-view .item {
+  padding: 5px 20px; }
+  .guest-list-view .item p {
+    overflow: visible;
+    white-space: normal; }
+
+.guest-list-view .checkbox input:checked:before, .guest-list-view .checkbox input:checked + .checkbox-icon:before {
+  background: #9ec6cd;
+  border-color: #9ec6cd; }
+
+.guest-list-view button.invite-button {
+  background-color: #0f416a;
+  color: white;
+  width: 100%;
+  height: 45px;
+  font-size: 1.5em;
+  border: none;
+  position: absolute;
+  left: 0;
+  z-index: 99; }
+
+.guest-list-view .list {
+  height: 85vh; }
+
+.guest-list-view .search-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-list-view .search-input .ion-search:before {
+  font-size: 1.7em; }
+
+.guest-list-view .email-input .item {
+  padding: 5px;
+  border: none; }
+
+.guest-list-view .email-input .ion-ios-email-outline:before {
+  font-size: 2.2em;
+  color: #0f416a; }
+
+.guest-list-view .email-input input[type="text"] {
+  padding-left: 20px;
+  font-size: 20px; }
+
+.guest-list-view .email-input .button-small {
+  max-width: 60px;
+  background-color: #9ec6cd;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
 .feed-view .banner {
   -webkit-background-size: cover;
   -moz-background-size: cover;

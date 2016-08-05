@@ -34,6 +34,8 @@
           userService
             .setupEvent(vm.newDeparted)
             .then(function(event) {
+              $log.info("your token", event)
+                dataService.setData(['departed'], [event.data.departed]);
                 return eventService.grabEventPackage(tokenService.decode()._id)
             })
             .then(function(events) {

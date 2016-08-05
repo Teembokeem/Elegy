@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Referral.controller', ReferralController);
   
-  ReferralController.$inject = ['$log', '$ionicLoading', 'userService'];
+  ReferralController.$inject = ['$log', '$ionicLoading', 'userService', 'authService'];
 
-  function ReferralController($log, $ionicLoading, userService) {
+  function ReferralController($log, $ionicLoading, userService, authService) {
     // INSTANTIATIONS
     $log.instantiate("Referral", 'controller');
     var vm = this;
@@ -29,6 +29,7 @@
         $ionicLoading.show({
           templateUrl: 'views/templates/loading.html'
         }).then(function() {
+
           userService
             .setupGuest(vm.newGuest)
             .then(function(done) {
