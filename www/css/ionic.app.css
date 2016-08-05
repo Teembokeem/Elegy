@@ -10114,7 +10114,7 @@ h2.or {
   position: absolute;
   z-index: 999;
   left: 10px;
-  top: 20px; }
+  top: 26px; }
   .home-nav .home-button img {
     border-radius: 50%;
     width: 33px;
@@ -10124,7 +10124,7 @@ h2.or {
   position: absolute;
   z-index: 999;
   right: 10px;
-  top: 20px; }
+  top: 26px; }
   .user-nav .user-avatar {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10136,6 +10136,12 @@ h2.or {
     position: relative;
     overflow: hidden;
     border-radius: 50%; }
+
+.view-container {
+  top: 12px; }
+
+.tab-nav.tabs {
+  margin-bottom: 25px; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10687,6 +10693,23 @@ h2.or {
   border-style: solid;
   border-bottom-width: 5px;
   border-color: #17779e; }
+
+.schedule-view h1.blue {
+  color: #17779e;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: 'Gotham-Medium'; }
+
+.schedule-view p {
+  font-size: 1.2em;
+  text-align: left; }
+
+.schedule-view .bold {
+  padding-left: 20px;
+  font-weight: 600; }
+
+.schedule-view .small-row {
+  padding: 10px; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

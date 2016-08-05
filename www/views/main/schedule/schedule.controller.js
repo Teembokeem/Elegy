@@ -49,6 +49,8 @@
         date: wholeSchedule.options.burial.date
       }
     }
+
+    console.log("THIS IS THE PROGRAM", vm.program)
  
 
     // BOUND FUNCTIONS

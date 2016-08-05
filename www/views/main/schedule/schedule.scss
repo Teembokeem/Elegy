@@ -16,4 +16,22 @@
             border-color: rgb(23, 119, 158);
         }
     }
+    h1.blue {
+        color: rgb(23, 119, 158);
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: 'Gotham-Medium'
+    }
+    p {
+        font-size: 1.2em;
+        text-align: left;
+    }
+    .bold {
+        padding-left: 20px;
+        font-weight: 600;
+    }
+
+    .small-row {
+        padding: 10px;
+    }
 }
