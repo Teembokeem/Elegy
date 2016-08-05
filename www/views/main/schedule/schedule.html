@@ -1,4 +1,4 @@
-<ion-view view-title="S C H E D U L E">
+<ion-view view-title="Schedule">
   <ion-content class="schedule-view">
     <div class="switch">
       <div class="row nopad">
@@ -10,8 +10,21 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        something
+      <div ng-if="Schedule.passive === 'schedule'" class="container schedule">
+        <div class="padding">
+          <ion-item ng-repeat="(key, value) in Schedule.schedule">
+            <h2>{{key}}</h2>
+            <div class="text-left">
+              <p ng-if="value.date">Date: {{value.date | date : 'short'}}</p>
+              <p ng-if="value.location">Location: {{value.location}}</p>
+            </div>
+          </ion-item>
+
+      </div>
+
+      <div ng-if="Schedule.passive === 'program'" class="container program">
+        
+
       </div>
 
   </ion-content>

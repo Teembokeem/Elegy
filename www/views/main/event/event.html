@@ -1,11 +1,12 @@
 <ion-view view-title="{{Event.eventStep.title}}">
   <ion-content class="event-view">
+    <div class="row nopad">
+      <backbutton></backbutton>
+    </div>
     <ion-item>
         <div class="row nopad">
             <div class="col nopad">
-                <div class="user-avatar">
-                    <img src="../../img/ben.png" alt="">
-                </div>
+                <div class="user-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Event.departed.image + ')'}"></div>
             </div>
             <div class="col-75 text-left" style="margin-top: 4px;">
                 <h2>Immediate Decisions</h2>

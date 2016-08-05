@@ -15,13 +15,17 @@
 
   .user-avatar {
     text-align: center;
-
-    img {
-      margin-top: 1em;
-      border-radius: 50%;
-      width: 58px;
-      height: 58px;
-    }
+    margin-top: 1em;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
+    width: 58px;
+    height: 58px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
   }
 
   .item p {

@@ -18,6 +18,7 @@
     console.log("THIS IS TEH BLOG", blog)
     console.log("THIS IS TEH departed", departed)
     vm.departed = departed;
+    vm.departed.eulogy = vm.departed.eulogy == undefined ? "No eulogy prepared yet." : vm.departed.eulogy  
     vm.items = blog.posts
     vm.clicked = true;
     vm.passive = 'feed';

@@ -10125,10 +10125,17 @@ h2.or {
   z-index: 999;
   right: 10px;
   top: 20px; }
-  .user-nav .user-avatar img {
-    border-radius: 50%;
+  .user-nav .user-avatar {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
     width: 33px;
-    height: 33px; }
+    height: 33px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10288,7 +10295,8 @@ h2.or {
       overflow: hidden;
       border-radius: 50%;
       min-height: 45px;
-      padding-left: 45px; }
+      padding-left: 45px;
+      float: right; }
     .home-view .user-avatar img {
       border-radius: 50%;
       margin-top: -8px;
@@ -10315,12 +10323,18 @@ h2.or {
   .event-view h4 {
     letter-spacing: 5px; }
   .event-view .user-avatar {
-    text-align: center; }
-    .event-view .user-avatar img {
-      margin-top: 1em;
-      border-radius: 50%;
-      width: 58px;
-      height: 58px; }
+    text-align: center;
+    margin-top: 1em;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
+    width: 58px;
+    height: 58px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
   .event-view .item p {
     overflow: visible;
     white-space: normal; }
@@ -10579,11 +10593,11 @@ h2.or {
   .feed-view .feed .row {
     margin-top: 0px; }
   .feed-view .feed h3 {
-    color: blue;
+    color: #0f416a;
     text-align: left; }
   .feed-view .feed h4 {
     padding-top: 0px;
-    color: blue;
+    color: #0f416a;
     text-align: left; }
   .feed-view .feed p {
     text-align: left;
@@ -10600,7 +10614,8 @@ h2.or {
   height: 30px;
   position: relative;
   overflow: hidden;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin-top: 3px; }
 
 .feed-view .blue-border {
   padding: 4px 0;

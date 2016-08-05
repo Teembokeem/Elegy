@@ -49,9 +49,7 @@
         date: wholeSchedule.options.burial.date
       }
     }
-
-
-    console.log(vm.schedule)    
+ 
 
     // BOUND FUNCTIONS
 
