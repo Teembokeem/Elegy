@@ -96,6 +96,20 @@
             templateUrl: 'views/main/guest_invite/guest_invite.html',
             controller: 'GuestInvite.controller',
             controllerAs: 'GuestInvite',
+            resolve: {
+              refreshEvent: function(eventService, dataService, $log) {
+                $log.info("resolving dependencies")
+                return eventService
+                  .retrieveEvent(dataService.retrieveData('event')._id)
+                  .then(function(event) {
+                    dataService.setData(['event'], [event]);
+                    return event
+                  })
+                  .catch(function(err) {
+                    return err;
+                  })
+              }
+            }
           }
         },
         controllerId: 'GuestInvite'
