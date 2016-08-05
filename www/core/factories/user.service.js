@@ -14,7 +14,8 @@
       signup: signup,
       setupEvent: setupEvent,
       setupVendor: setupVendor,
-      setupGuest: setupGuest
+      setupGuest: setupGuest,
+      createGuests: createGuests
     }
 
     return service;
@@ -76,6 +77,26 @@
       })
 
       return promise;
+    }
+
+    function createGuests(list) {
+      $log.instantiate("User Service Create Guests", "method")
+      return $http({
+        method: 'PUT',
+        url: urlFactory + '/users',
+        data: {
+          list: list
+        }
+      })
+      .then(function(done) {
+        $log.info("Success, ", done)
+        return done.data
+      })
+      .catch(function(err) {
+        $log.info("error, ", err)
+        return err
+      })
+
     }
 
 
