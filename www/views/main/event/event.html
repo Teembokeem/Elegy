@@ -13,12 +13,12 @@
                 <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
-        <div ng-show="Event.eventStep.eventKey === 'Interment'" class="row">
+        <div ng-show="Event.eventStep.eventKey === 'interment'" class="row">
           <div class="col-center">
             <span ng-click="Event.reviewingOptions()">{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
           </div>
         </div>
-        <div ng-show="Event.eventStep.eventKey === 'Interment'" class="row">
+        <div ng-show="Event.eventStep.eventKey === 'interment'" class="row">
           <div class="center-align">
             <p>Edit Interment Option</p>
           </div>
@@ -40,7 +40,7 @@
         </div>
       </div>-->
       <!--2-->
-      <div ng-hide="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" class="container event-data-instantiator">
+      <div ng-hide="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != undefined : true" class="container event-data-instantiator">
         <h4>CHOOSE AN OPTION</h4>
         <div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">
             <div class="col">
