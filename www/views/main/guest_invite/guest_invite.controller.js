@@ -16,11 +16,8 @@
     var event = dataService.retrieveData('event');
     var step = dataService.retrieveData('eventStep');
     var attendees = event.details.inviteguests.attendees;
-    vm.guestList = [];
-    attendees.forEach(function(attendee) {
-      vm.guestList.push(attendee.email)
-    })
-
+    vm.guestList = attendees
+$log.info('your attendees', attendees)
     $log.info("guest list,", vm.guestList)
     
 
