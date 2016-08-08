@@ -14,28 +14,29 @@
           </div>
         </div>
       </div>
-      <div ng-show="VendorOrders.passive !== 'openOrders'" class="open-orders-container">
+      <!--TODO: HAVE A PLACE FOR VENDORS TO EMIT STATUS 1/2/ETC-->
+      <div ng-if="order.status !== '0'" ng-repeat="order in VendorOrders.orders" class="open-orders-container">
         <div class="row orders-tldr-bar">
-          <div class="orders-tldr col col-80">
-            {{'maybelline has requested an order.'}}
+          <div class="orders-tldr col col-75">
+            {{order.user.first}} {{order.user.last}}  has requested an order.
           </div>
           <div class="orders-inception col">
-            {{'2h'}}
+             {{order.date | date: long}}
           </div>
         </div>
         <div class="row orders-details">
           <div class="col orders-item-image">
-            <img src="img/casket.jpg" alt="">
+            <img ng-src="{{order.product.image}}" alt="">
           </div>
           <div class="col orders-item-description">
-            <span class="orders-item-name">{{'ADAMANTIUM'}}</span>
+            <span class="orders-item-name">{{order.product.name}}</span>
             <br>
-            <span class="orders-item-price">{{'$4999.00'}}</span>
+            <span class="orders-item-price">{{order.total}}</span>
           </div>
         </div>
 
       </div>
-      <div ng-show="VendorOrders.passive !== 'completedOrders'" class="completed-orders-container">
+      <!--<div ng-show="VendorOrders.passive !== 'completedOrders'" class="completed-orders-container">
         <div class="row orders-tldr-bar">
           <div class="orders-tldr col col-80">
             {{'Jarvis has requested an order.'}}
@@ -55,7 +56,7 @@
           </div>
         </div>
 
-      </div>
+      </div>-->
     </div>
   </ion-content>
 </ion-view>
