@@ -37,7 +37,7 @@
             .retrieveEvent(data.event)
             .then(function(retrievedData) {
               dataService.setData(['event'], [retrievedData]);
-              $state.go('app.departed-tab.index', {name: data.first }, {reload: true})
+              $state.go('app.departed-tab.index', {name: data.first })
             })
         })
     }
