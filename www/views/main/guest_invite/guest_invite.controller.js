@@ -45,13 +45,7 @@
         .then(function(done) {
           var newArr = [];
           done.forEach(function(user, idx) {
-              var obj = {
-                item: user[0],
-                first: user[1],
-                last: user[2],
-                email: user[3],
-                status: "0"
-              }
+              user.status = '0'
               newArr.push(obj)
               if (idx === done.length - 1) {
                 $log.info("were doing this after we have both:", newArr)
@@ -83,7 +77,7 @@
               // Do yo thang with all the contacts!
               console.log("hi inside ready cordova contacts", allContacts)
               vm.all = allContacts.filter(function(contact) {
-                return contact.emails[0].value != null || undefined
+                return contact.emails != null || undefined
               })
               console.log(vm.all)
           });
