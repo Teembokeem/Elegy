@@ -1,4 +1,4 @@
-(functino() {
+(function() {
   'use strict';
 
   angular
