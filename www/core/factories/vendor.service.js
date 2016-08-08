@@ -11,9 +11,26 @@
     $log.instantiate('Vendor', 'Service');
 
     var service = {
+      grabVendorOrders : grabVendorOrders,
       grabVendorData: grabVendorData,
       createProduct: createProduct,
       parseVendorItems: parseVendorItems
+    }
+
+    function grabVendorOrders(refVendor) {
+      $log.info('Vendor Service Grab Vendor Orders', 'method');
+      return $http({
+        method: 'GET',
+        url: urlFactory + '/transactions/' + refVendor
+      })
+      .then(function(vendorOrders) {
+        $log.info("Success", vendorOrders);
+        return vendorOrders.data
+      })
+      .catch(function(err) {
+        $log.info('error', err);
+        return err;
+      })
     }
 
     function grabVendorData(data) {
