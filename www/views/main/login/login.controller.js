@@ -33,9 +33,13 @@
                 return vendorService.grabVendorData(decodedToken._id)
               })
               .then(function(vendorData) {
-                $log.info("event package?!?!?!!?!", vendorData)
-                dataService.setData(['vendor', 'vendorOrders', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.orders, vendorData.vendor.products]);
-              
+                $log.info("vendor data", vendorData)
+                dataService.setData(['vendor', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.products]);
+                return vendorService.grabVendorOrders(vendorData.vendor._id)
+              })
+              .then(function(vendorOrders) {
+                $log.info("vendor orders received", vendorOrders);
+                dataService.setData(['vendorOrders'], [vendorOrders]);
                 $state.go('app.vendor-tab.vendor-home')
               })
           } else {
