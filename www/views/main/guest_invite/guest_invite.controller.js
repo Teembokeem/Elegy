@@ -46,7 +46,7 @@
           var newArr = [];
           done.forEach(function(user, idx) {
               user.status = '0'
-              newArr.push(obj)
+              newArr.push(user)
               if (idx === done.length - 1) {
                 $log.info("were doing this after we have both:", newArr)
                 eventService
