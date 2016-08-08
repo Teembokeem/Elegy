@@ -77,9 +77,11 @@
     } 
 
   $ionicPlatform.ready(function(){
-      $cordovaContacts.find({})
+      $log.info("initializing cordova contacts...")
+        $cordovaContacts.find({})
           .then(function(allContacts){
               // Do yo thang with all the contacts!
+              console.log("hi inside ready cordova contacts", allContacts)
               vm.all = allContacts
               console.log(vm.all)
           });
