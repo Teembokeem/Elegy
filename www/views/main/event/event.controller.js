@@ -188,7 +188,9 @@
       return eventService 
         .updateEvent(date, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep')['eventKey'].toLowerCase(), dataService.retrieveData('eventStep')['types'][0]['parts'][idx]['tracker'], 'date')
         .then(function(response) {
+          dataService.setData(['event'], [response])
           $log.info("hello res!, ", response)
+          $state.reload();
       })  
   }
 
