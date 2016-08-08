@@ -15,6 +15,8 @@
     vm.passive = 'schedule';
     vm.schedule = {}
 
+    // $log.info("your schedule:", vm.schedule)
+
 
     // LOCAL VARS
     var wholeSchedule = dataService.retrieveData('event').details

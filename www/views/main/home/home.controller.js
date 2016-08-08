@@ -37,14 +37,14 @@
             .retrieveEvent(data.event)
             .then(function(retrievedData) {
               dataService.setData(['event'], [retrievedData]);
-              $state.go('app.departed-tab.index', {name: data.first })
+              $state.go('app.departed-tab.index', {name: data.first }, {reload: true})
             })
         })
     }
 
     vm.createDeparted = function() {
       dataService.setData(['beforeState'], [true])
-      $state.go('app.departed-signup');
+      $state.go('app.departed-signup', {reload: true});
     }
     // HELPERS
 
