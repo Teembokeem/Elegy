@@ -25,7 +25,7 @@
       })
       .then(function(vendorOrders) {
         $log.info("Success", vendorOrders);
-        return vendorOrders.data
+        return vendorOrders.data.data
       })
       .catch(function(err) {
         $log.info('error', err);
