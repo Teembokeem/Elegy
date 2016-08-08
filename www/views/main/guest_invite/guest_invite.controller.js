@@ -76,64 +76,16 @@
       opts.hasPhoneNumber = true;
     } 
 
-  // $ionicPlatform.ready(function(){
-  //     $cordovaContacts.find({})
-  //         .then(function(allContacts){
-  //             // Do yo thang with all the contacts!
-  //             vm.all = allContacts
-  //             console.log(vm.all)
-  //         });
-  //  });
+  $ionicPlatform.ready(function(){
+      $cordovaContacts.find({})
+          .then(function(allContacts){
+              // Do yo thang with all the contacts!
+              vm.all = allContacts
+              console.log(vm.all)
+          });
+   });
 
-    // $scope.getContactList()
 
-    // LOCAL VARS
-    vm.all = [ 
-      { first: "Alex",
-        email: "Alex",
-        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-        likes: 50 ,
-        commentCount: 20  },
-      { first: "Time",
-      email: "Alex",
-        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-        likes: 6 ,
-        commentCount: 21  },
-      { first: "Poop",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 7 ,
-      commentCount: 22  },
-      { first: "Greg",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 8 ,
-      commentCount: 23  },
-      { first: "Blarg",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 9 ,
-      commentCount: 24  },
-      { first: "GAH",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 5 ,
-      commentCount: 25  },
-      { first: "Greg",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 8 ,
-      commentCount: 23  },
-      { first: "Blarg",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 9 ,
-      commentCount: 24  },
-      { first: "GAH",
-      email: "Alex",
-      comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      likes: 5 ,
-      commentCount: 25  }]
     // BOUND FUNCTIONS
 
     // HELPERS

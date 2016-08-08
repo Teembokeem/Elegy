@@ -1,5 +1,6 @@
-<ion-view view-title="S C H E D U L E">
+<ion-view view-title="Schedule">
   <ion-content class="schedule-view">
+
     <div class="switch">
       <div class="row nopad">
           <div ng-class="{passive: Schedule.passive === 'program'}" class="col col-50 blue-border" ng-click="Schedule.passive = 'schedule'">
@@ -10,9 +11,125 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        something
+
+      <div ng-if="Schedule.passive === 'schedule'" class="container schedule">
+        <br>
+        <div class="padding">
+          <div class="small-row" ng-repeat="(key, value) in Schedule.schedule">
+            <h1 class="blue">{{key}}</h1>
+            <hr>
+            <div class="row" ng-if="value.location">
+              <div class="col-33">
+                <p class="bold">Location</p>
+              </div>
+              <div class="col-66">
+                <p>{{value.location}}</p>
+              </div>
+            </div>
+            <div class="row" ng-if="value.date">
+              <div class="col-33">
+                <p class="bold">Date</p>
+              </div>
+              <div class="col-66">
+                <p>{{value.date | date : 'fullDate'}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div ng-if="Schedule.passive === 'program'" class="container program">
+        <br>
+        <div class="padding">
+          <div class="small-row" ng-if="Schedule.program.officiant">
+            <h1 class="blue">Officiant</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Name: </p>
+              </div>
+              <div class="col-66">
+                <p>{{Schedule.program.officiant}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="small-row" ng-if="Schedule.program.members">
+            <h1 class="blue">Survived By</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Name: </p>
+              </div>
+              <div class="col-66">
+                <p ng-if="Schedule.program.members" ng-repeat="person in Schedule.program.members" class="capitalize">
+                  {{person}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="small-row" ng-if="Schedule.program.eulogizer">
+            <h1 class="blue">Eulogizer</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Name: </p>
+              </div>
+              <div class="col-66">
+                <p>{{Schedule.program.eulogizer}}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="small-row" ng-if="Schedule.program.pallbearers">
+            <h1 class="blue">Pallbearers</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Name: </p>
+              </div>
+              <div class="col-66">
+                <p ng-if="Schedule.program.pallbearers" ng-repeat="person in Schedule.program.pallbearers" class="capitalize">
+                  {{person}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="small-row" ng-if="Schedule.program.readings">
+            <h1 class="blue">Readings</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Reading: </p>
+              </div>
+              <div class="col-66">
+                <p ng-if="Schedule.program.readings" ng-repeat="person in Schedule.program.readings" class="capitalize">
+                  {{person}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="small-row" ng-if="Schedule.program.songs">
+            <h1 class="blue">Songs</h1>
+            <hr>
+            <div class="row">
+              <div class="col-33">
+                <p class="bold">Song: </p>
+              </div>
+              <div class="col-66">
+                <p ng-if="Schedule.program.songs" ng-repeat="person in Schedule.program.songs" class="capitalize">
+                  {{person}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
 
   </ion-content>
 </ion-view>

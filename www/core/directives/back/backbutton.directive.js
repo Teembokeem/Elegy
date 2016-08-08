@@ -3,9 +3,9 @@
     .module('Directives')
     .directive('backbutton', backbutton);
 
-  backbutton.$inject = ['$window' ];
+  backbutton.$inject = ['$ionicHistory' ];
 
-  function backbutton( $window ) {
+  function backbutton( $ionicHistory ) {
     return {
       templateUrl: 'core/directives/back/backbutton.directive.html',
       scope: {
@@ -14,7 +14,7 @@
       replace: true,
       link: function(scope, element, attrs) {
           element.on('click', function() {
-              $window.history.back();
+              $ionicHistory.goBack()
           });
       }
     };

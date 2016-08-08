@@ -18,6 +18,7 @@
     console.log("THIS IS TEH BLOG", blog)
     console.log("THIS IS TEH departed", departed)
     vm.departed = departed;
+    vm.departed.eulogy = vm.departed.eulogy == undefined ? "No eulogy prepared yet." : vm.departed.eulogy  
     vm.items = blog.posts
     vm.clicked = true;
     vm.passive = 'feed';
@@ -25,7 +26,7 @@
     vm.expandEul = false;
 
     // LOCAL VARS
-  
+    vm.hi ="Something"
     // BOUND FUNCTIONS
 
     // HELPERS
@@ -70,8 +71,8 @@
     vm.likeThis = function(id) {
       $http( {
           method: "PUT",
-          url: urlFactory + "/blog/" + blog._id,
-          data: blogObj
+          url: urlFactory + "/post/" + id,
+          data: userId
         } ).then( function( response ) {
           console.log( "REponse here :", response)
           vm.items = response.data.data.posts

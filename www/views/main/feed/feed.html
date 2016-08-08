@@ -1,4 +1,4 @@
-<ion-view view-title="F E E D">
+<ion-view view-title="Memories">
   <ion-content class="feed-view">
     <div class="holding">
       <div class="banner" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Feed.departed.image + ')'}">
@@ -47,17 +47,17 @@
         </div>
       
       <div ng-if="Feed.passive == 'feed'">
-        <ion-item ng-repeat="item in Feed.items" class="feed">
+        <ion-item ng-repeat="item in Feed.items | orderBy : 'item.createdAt':true"" class="feed">
           <div class="row">
             <p>{{item.text}}</p>
           </div>
           <hr>
           <div class="row">
             <div class="col-20">
-                <div class="feed-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + item.image + ')'}"></div>
+                <div class="feed-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + item.refUser.image + ')'}"></div>
             </div>
             <div class="col-70">
-              <h3>{{item.name}}</h3>
+              <h3 class="capitalize">{{item.refUser.first}} {{item.refUser.last}}</h3>
               <h4>{{item.createdAt | date : 'short'}}</h4>
             </div>
             <div class="col text-right">

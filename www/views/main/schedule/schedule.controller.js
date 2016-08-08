@@ -50,8 +50,8 @@
       }
     }
 
-
-    console.log(vm.schedule)    
+    console.log("THIS IS THE PROGRAM", vm.program)
+ 
 
     // BOUND FUNCTIONS
 

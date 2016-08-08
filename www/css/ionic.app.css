@@ -10114,7 +10114,7 @@ h2.or {
   position: absolute;
   z-index: 999;
   left: 10px;
-  top: 20px; }
+  top: 26px; }
   .home-nav .home-button img {
     border-radius: 50%;
     width: 33px;
@@ -10124,11 +10124,24 @@ h2.or {
   position: absolute;
   z-index: 999;
   right: 10px;
-  top: 20px; }
-  .user-nav .user-avatar img {
-    border-radius: 50%;
+  top: 26px; }
+  .user-nav .user-avatar {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
     width: 33px;
-    height: 33px; }
+    height: 33px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
+
+.view-container {
+  top: 12px; }
+
+.tab-nav.tabs {
+  margin-bottom: 25px; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10288,7 +10301,8 @@ h2.or {
       overflow: hidden;
       border-radius: 50%;
       min-height: 45px;
-      padding-left: 45px; }
+      padding-left: 45px;
+      float: right; }
     .home-view .user-avatar img {
       border-radius: 50%;
       margin-top: -8px;
@@ -10315,12 +10329,18 @@ h2.or {
   .event-view h4 {
     letter-spacing: 5px; }
   .event-view .user-avatar {
-    text-align: center; }
-    .event-view .user-avatar img {
-      margin-top: 1em;
-      border-radius: 50%;
-      width: 58px;
-      height: 58px; }
+    text-align: center;
+    margin-top: 1em;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
+    width: 58px;
+    height: 58px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; }
   .event-view .item p {
     overflow: visible;
     white-space: normal; }
@@ -10497,7 +10517,8 @@ h2.or {
   border: none;
   position: absolute;
   left: 0;
-  z-index: 99; }
+  z-index: 99;
+  bottom: 35px; }
 
 .guest-invite-view .list {
   height: 85vh; }
@@ -10649,11 +10670,11 @@ h2.or {
   .feed-view .feed .row {
     margin-top: 0px; }
   .feed-view .feed h3 {
-    color: blue;
+    color: #0f416a;
     text-align: left; }
   .feed-view .feed h4 {
     padding-top: 0px;
-    color: blue;
+    color: #0f416a;
     text-align: left; }
   .feed-view .feed p {
     text-align: left;
@@ -10670,7 +10691,8 @@ h2.or {
   height: 30px;
   position: relative;
   overflow: hidden;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin-top: 3px; }
 
 .feed-view .blue-border {
   padding: 4px 0;
@@ -10742,6 +10764,23 @@ h2.or {
   border-style: solid;
   border-bottom-width: 5px;
   border-color: #17779e; }
+
+.schedule-view h1.blue {
+  color: #17779e;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: 'Gotham-Medium'; }
+
+.schedule-view p {
+  font-size: 1.2em;
+  text-align: left; }
+
+.schedule-view .bold {
+  padding-left: 20px;
+  font-weight: 600; }
+
+.schedule-view .small-row {
+  padding: 10px; }
 
 .vendor-signup-view h3 {
   margin-top: 20%;

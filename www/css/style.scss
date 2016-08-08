@@ -354,7 +354,7 @@ h2.or {
   position: absolute;
   z-index: 999;
   left: 10px;
-  top: 20px;
+  top: 26px;
   
   .home-button {
     img {
@@ -369,13 +369,26 @@ h2.or {
   position: absolute;
   z-index: 999;
   right: 10px;
-  top: 20px;
+  top: 26px;
   
   .user-avatar {
-    img {
-      border-radius: 50%;
-      width: 33px;
-      height: 33px;
-    }
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-size: cover;
+    width: 33px;
+    height: 33px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
   }
+}
+
+.view-container {
+  top: 12px;
+}
+
+.tab-nav.tabs {
+  margin-bottom: 25px;
 }
