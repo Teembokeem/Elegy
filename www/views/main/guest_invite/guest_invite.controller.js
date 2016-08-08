@@ -82,7 +82,9 @@
           .then(function(allContacts){
               // Do yo thang with all the contacts!
               console.log("hi inside ready cordova contacts", allContacts)
-              vm.all = allContacts
+              vm.all = allContacts.filter(function(contact) {
+                return contact.emails[0].value != null || undefined
+              })
               console.log(vm.all)
           });
    });
