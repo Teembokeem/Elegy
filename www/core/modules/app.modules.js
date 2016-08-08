@@ -27,6 +27,10 @@
         console.log("RUNNING")
       });
     })
+
+    // .run(function($ionicConfigProvider) {
+    //   $ionicConfigProvider.views.swipeBackEnabled(false);
+    // })
     
     .run(authorizeRoutes);
 
