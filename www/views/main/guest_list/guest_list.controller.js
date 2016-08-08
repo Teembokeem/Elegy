@@ -15,7 +15,7 @@
     var event = dataService.retrieveData('event');
 
     vm.invitees = event.details.inviteguests.attendees;
-
+    console.log('these people were invited: ', vm.invitees)
 
     // LOCAL VARS
 

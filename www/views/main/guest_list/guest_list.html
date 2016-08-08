@@ -1,20 +1,25 @@
 <ion-view view-title="Contacts">
     <ion-content class="guest-list-view">
       <br>
-      <h1>INVITEES</h1>
-      <div class="list">
-          <!--<button ng-click="getContactList()">touch</button>-->
-          <ion-item class="search-input">
-              <label class="item item-input">
-                  <i class="icon ion-search placeholder-icon"></i>
-                  <input type="text" placeholder="Search">
-              </label>
-          </ion-item>
-          <div ng-repeat="guest in GuestList.invitees" class="item-checkbox-right">
-              <p ng-show="guest.first != null"> <strong>{{guest.first}} {{guest.name.last}}</strong></p>
-              <p ng-show="guest.email != null"> <strong>{{guest.email}} </strong></p>
-          </div>
+
+          
       </div>
+
+      <div class="list">
+                <br>
+                <br>
+                <!--<button ng-click="getContactList()">touch</button>-->
+                <ion-item class="search-input">
+                    <label class="item item-input">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="text" placeholder="Search">
+                    </label>
+                </ion-item>  
+                <ion-item ng-repeat="guest in GuestList.invitees">
+                    <p><strong>{{guest.first}} {{guest.last}}</strong></p>
+                    <p>{{guest.email}}</p>
+                </ion-item>
+            </div>
 
 
     </ion-content>
