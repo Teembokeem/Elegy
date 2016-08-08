@@ -11003,7 +11003,8 @@ h2.or {
 
 .marketplace-view h1 {
   font-family: Avenir;
-  letter-spacing: 5px; }
+  letter-spacing: 5px;
+  font-size: 1.5em; }
 
 .marketplace-view .listing-container {
   border-top: 1px solid rgba(140, 140, 140, 0.6); }
