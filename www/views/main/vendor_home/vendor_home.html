@@ -14,23 +14,23 @@
           </div>
         </div>
       </div>
-      <div ng-show="VendorHome.passive !== 'activity'" class="activity-container">
+      <div ng-repeat="order in VendorHome.orders | orderBy: '-date'" ng-show="VendorHome.passive !== 'activity'" class="activity-container">
         <div class="row activity-tldr-bar">
-          <div class="activity-tldr col col-80">
-            {{'Jarvis has requested an order.'}}
+          <div class="activity-tldr col col-75">
+            {{order.user.first}} {{order.user.last}} has requested an order.'
           </div>
           <div class="activity-inception col">
-            {{'2h'}}
+            {{order.date | date: long}}
           </div>
         </div>
         <div class="row activity-details">
           <div class="col activity-item-image">
-            <img src="img/casket.jpg" alt="">
+            <img src="{{order.product.image}}" alt="">
           </div>
           <div class="col activity-item-description">
-            <span class="activity-item-name">{{'ADAMANTIUM'}}</span>
+            <span class="activity-item-name">{{order.product.name}}</span>
             <br>
-            <span class="activity-item-price">{{'$4999.00'}}</span>
+            <span class="activity-item-price">{{order.total}}</span>
           </div>
         </div>
 
