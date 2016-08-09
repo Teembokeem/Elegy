@@ -10782,6 +10782,13 @@ h2.or {
 .schedule-view .small-row {
   padding: 10px; }
 
+.schedule-view .edit-program-details-title {
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 20em; }
+
 .vendor-signup-view h3 {
   margin-top: 20%;
   text-align: center; }
