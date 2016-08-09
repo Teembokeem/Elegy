@@ -15,8 +15,6 @@
     var blog = dataService.retrieveData(['blog'])
     var departed = dataService.retrieveData('departed');
     var userId = authService.currentUser()._id
-    console.log("THIS IS TEH BLOG", blog)
-    console.log("THIS IS TEH departed", departed)
     vm.departed = departed;
     vm.departed.eulogy = vm.departed.obituary === undefined ? "No eulogy prepared yet." : vm.departed.obituary  
     vm.items = blog.posts
@@ -26,19 +24,28 @@
     vm.expandEul = false;
 
     // LOCAL VARS
-    vm.hi ="Something"
     // BOUND FUNCTIONS
 
     // HELPERS
+    function getMedia( posts ) {
+      var media = []
+      for ( var i in posts ) {
+        if ( posts[i].media ) {
+          media.push( posts[i] )
+        }
+      }
+      return media
+    }
+
+    vm.media = getMedia( blog.posts )
 
     vm.submitMemory = function() {
       var blogObj = {
         text: vm.share,
         refUser: userId
       }
-      console.log(blog._id, "THROUGH THE WORMHOLE!" ,blogObj)
       if( vm.media ) {
-        uploadMedia()
+        uploadMedia( blogObj )
       } else if (vm.share) {
         $http( {
           method: "PUT",
@@ -62,20 +69,25 @@
       }
     }
 
-     function uploadMedia() {
-      console.log("HERE")
-      uploadService.uploadFile( vm.media, urlFactory + blogURL, "departed", blogObj )
-      console.log("TOuch")
+    function uploadMedia( blogObj ) {
+      uploadService.uploadFile( vm.media, "/blog/" + blog._id, "media feed", blogObj )
     }
 
     vm.likeThis = function(id) {
       $http( {
           method: "PUT",
-          url: urlFactory + "/post/" + id,
-          data: userId
+          url: urlFactory + "/like/" + blog._id,
+          data: {
+            postId: id,
+            userId: userId
+          }
         } ).then( function( response ) {
-          console.log( "REponse here :", response)
-          vm.items = response.data.data.posts
+          blogService
+            .grabBlog(response.data.data)
+            .then(function(done) {
+              dataService.setData(['blog'], [done.data]);
+              vm.items = done.data.posts
+            })
         })
     }
 

@@ -18,15 +18,15 @@
     };
 
     // EXPORTED FUNCTIONS
-    function uploadFile( file, path, imageType, data ) {
+    function uploadFile( file, path, imageType, extra ) {
       $log.instantiate("Upload Service Upload File", "method")
       return Upload.upload({
       url: "https://api.cloudinary.com/v1_1/dtzbpdvnm/image/upload",
-      data: {
-      upload_preset: "nufgdp6b",
-      tags: 'myphotoalbum',
-      file: file
-        }
+        data: {
+        upload_preset: "nufgdp6b",
+        tags: 'myphotoalbum',
+        file: file
+            }
       })
       .then(function (response){
         $log.log(response.data.secure_url)
@@ -43,16 +43,17 @@
             })
         } else if (imageType == "departed") {
             return response.data.secure_url
-        } else if (imageType == "Something Else") {
+        } else if (imageType == "media feed") {
             $http({
                 method: "PUT",
                 url: urlFactory + path,
                 data: {
-                    image: response.data.secure_url
+                    media: response.data.secure_url
                 }
             })
             .then(function( response ) {
-
+                console.log(response )
+                return response
             })
         } else {
             $log.debug( "Something happened", response )
