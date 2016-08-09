@@ -74,7 +74,15 @@ $log.info('your attendees', attendees)
               // Do yo thang with all the contacts!
               console.log("hi inside ready cordova contacts", allContacts)
               vm.all = allContacts.filter(function(contact) {
-                return contact.emails != null || undefined
+                return contact.emails != null || undefined 
+              })
+
+              vm.all.forEach(function(contact) {
+                vm.guestList.forEach(function(attendee, index) {
+                  if (contact.emails[0] === attendee.email) {
+                    vm.guestList.splice(index, 1);
+                  }
+                })
               })
               console.log(vm.all)
           });
