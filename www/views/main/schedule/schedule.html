@@ -34,6 +34,7 @@
                 <p>{{value.date | date : 'fullDate'}}</p>
               </div>
             </div>
+            <button class="edit-program-details-title button" ng-click="Schedule.travelToStep(value.matchKey)">Edit This Item</button>
           </div>
         </div>
       </div>
@@ -127,6 +128,8 @@
             </div>
           </div>
         </div>
+          <br>
+          <button ng-click="Schedule.travelToStep('keepsake')" class="edit-program-details-title button">{{'Edit Program Details' | uppercase}}</button>
       </div>
       <br>
       <br>
