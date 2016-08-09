@@ -77,8 +77,8 @@ $log.info('your attendees', attendees)
                 return contact.emails != null || undefined 
               })
 
-              vm.all.forEach(function(contact) {
-                vm.guestList.forEach(function(attendee, index) {
+              vm.guestList.forEach(function(attendee) {
+                vm.all.forEach(function(contact, index) {
                   if (contact.emails[0].value === attendee.email) {
                     vm.all.splice(index, 1);
                   }
