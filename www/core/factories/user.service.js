@@ -15,10 +15,28 @@
       setupEvent: setupEvent,
       setupVendor: setupVendor,
       setupGuest: setupGuest,
-      createGuests: createGuests
+      createGuests: createGuests,
+      updateRefGuest: updateRefGuest
     }
 
     return service;
+
+    function updateRefGuest(data) {
+      $log.instantiate('User Service Update Ref Guest', 'Method');
+      return $http({
+        method: 'PUT',
+        url: urlFactory + '/refGuest',
+        data: data
+      })
+      .then(function(done) {
+        $log.info('Success', done)
+        return done;
+      })
+      .catch(function(err) {
+        $log.info("err", err);
+        return err;
+      })
+    }
 
     function signup(data) {
       $log.info("User Service signup.")
