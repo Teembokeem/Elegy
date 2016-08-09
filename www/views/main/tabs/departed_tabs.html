@@ -7,7 +7,7 @@
       </ion-tab>-->
 
       <!-- Event Tab -->
-      <ion-tab icon-off="checklist" icon-on="checklist-on" href="#/app/events">
+      <ion-tab hidden="{{!admin}}" icon-off="checklist" icon-on="checklist-on" href="#/app/events">
         
         <ion-nav-view name="event"></ion-nav-view>
       </ion-tab>
@@ -28,14 +28,14 @@
       </ion-tab>
 
       <!-- Messages Tab -->
-      <!--<ion-tab icon-off="donate" icon-on="donate-on" href="#/app/donate">
+      <ion-tab hidden="{{admin}}" icon-off="donate" icon-on="donate-on" href="#/app/donate">
         <ion-nav-view name="donate"></ion-nav-view>
-      </ion-tab>-->
+      </ion-tab>
 
       <!-- Messages Tab -->
-      <ion-tab hidden='true' icon-off="checklist" icon-on="checklist-on" href="#/app/user-profile">
+      <!--<ion-tab hidden='true' icon-off="checklist" icon-on="checklist-on" href="#/app/user-profile">
         <ion-nav-view name="profile"></ion-nav-view>
-      </ion-tab>
+      </ion-tab>-->
 
     </ion-tabs>
  </ion-view>
