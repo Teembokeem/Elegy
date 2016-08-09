@@ -34,8 +34,14 @@
             .setupGuest(vm.newGuest)
             .then(function(done) {
               $log.info("user Service setupGuest done.", done);
-              dataService.setData(['refCodeUser'], [done])
-              $state.go('app.user-signup');
+              if (done.error) {
+                $state.go('app.login');
+                $log.info("YOU ALREADY EXIST")
+              } else {
+                dataService.setData(['refCodeUser'], [done])
+                $state.go('app.user-signup');
+
+              }
               setTimeout(function() {
                 $ionicLoading.hide()
               }, 3000)
