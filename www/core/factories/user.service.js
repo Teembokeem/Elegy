@@ -72,6 +72,7 @@
         }
       }).then(function(res) {
         $log.info("yo res", res);
+        return res.data
       }).catch(function(err) {
         $log.info("errrrrr", err)
       })
@@ -79,13 +80,14 @@
       return promise;
     }
 
-    function createGuests(list) {
+    function createGuests(list, code) {
       $log.instantiate("User Service Create Guests", "method")
       return $http({
         method: 'PUT',
         url: urlFactory + '/users',
         data: {
-          list: list
+          list: list,
+          code: code,
         }
       })
       .then(function(done) {
