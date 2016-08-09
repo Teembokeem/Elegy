@@ -8,8 +8,8 @@
   urlFactory.$inject = [];
 
   function urlFactory() {
-    return 'http://localhost:3000'
-    // return 'http://138.68.6.43'
+    // return 'http://localhost:3000'
+    return 'http://138.68.6.43'
 
   }
 
