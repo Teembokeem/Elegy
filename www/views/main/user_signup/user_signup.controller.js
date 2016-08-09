@@ -52,7 +52,7 @@
             if (vm.vendor) {
               $state.go('app.vendor-signup');
             } else {
-              $state.go('app.departed-tab.home');
+              $state.go('app.home');
             }
           })
           .catch(function(err) {
