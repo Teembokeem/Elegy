@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Referral.controller', ReferralController);
   
-  ReferralController.$inject = ['$log', '$ionicLoading', 'userService', 'authService'];
+  ReferralController.$inject = ['$log', '$ionicLoading', 'userService', 'authService', 'dataService', '$state'];
 
-  function ReferralController($log, $ionicLoading, userService, authService) {
+  function ReferralController($log, $ionicLoading, userService, authService, dataService, $state) {
     // INSTANTIATIONS
     $log.instantiate("Referral", 'controller');
     var vm = this;
@@ -34,11 +34,10 @@
             .setupGuest(vm.newGuest)
             .then(function(done) {
               $log.info("user Service setupGuest done.", done);
+              dataService.setData(['refCodeUser'], [done])
+              $state.go('app.user-signup');
               setTimeout(function() {
                 $ionicLoading.hide()
-                $ionicLoading.show({
-                  templateUrl: 'views/templates/done.html'
-                })
               }, 3000)
             })
         })
