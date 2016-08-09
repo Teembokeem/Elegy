@@ -44,7 +44,7 @@
         text: vm.share,
         refUser: userId
       }
-      if( vm.media ) {
+      if( vm.mediaUpload ) {
         uploadMedia( blogObj )
       } else if (vm.share) {
         $http( {
@@ -70,7 +70,7 @@
     }
 
     function uploadMedia( blogObj ) {
-      uploadService.uploadFile( vm.media, "/blog/" + blog._id, "media feed", blogObj )
+      uploadService.uploadFile( vm.mediaUpload, "/blog/" + blog._id, "media feed", blogObj )
     }
 
     vm.likeThis = function(id) {
