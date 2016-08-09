@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -37,7 +37,12 @@
             .retrieveEvent(data.event)
             .then(function(retrievedData) {
               dataService.setData(['event'], [retrievedData]);
-              $state.go('app.departed-tab.index', {name: data.first })
+              if (data.admin) {
+                $scope.$emit('issueAdmin',{});
+                $state.go('app.departed-tab.index', {name: data.first })
+              } else {
+                $state.go('app.departed-tab.feed')
+              }
             })
         })
     }
