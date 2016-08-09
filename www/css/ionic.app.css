@@ -10137,11 +10137,8 @@ h2.or {
     overflow: hidden;
     border-radius: 50%; }
 
-.view-container {
-  top: 12px; }
-
 .tab-nav.tabs {
-  margin-bottom: 25px; }
+  margin-bottom: 12px; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10167,6 +10164,9 @@ h2.or {
 
 .login-view .item-checkbox {
   border-style: none; }
+
+.login-view .extrapad {
+  margin: 5px; }
 
 .intro-view #intro-logo {
   font-size: 5em;
@@ -10258,8 +10258,7 @@ h2.or {
 
 .departed-signup-view input[type="date"]:before, .departed-signup-view input[type="text"]:before {
   content: attr(placeholder) !important;
-  color: #aaa;
-  margin-right: 0.5em; }
+  color: #aaa; }
 
 .departed-signup-view input[type="date"]:focus:before,
 .departed-signup-view input[type="date"]:valid:before,
@@ -10404,6 +10403,15 @@ h2.or {
     text-align: middle; }
   .event-view .event-data-instantiator h3 {
     font-size: 2em !important; }
+  .event-view input[type="date"]:before, .event-view input[type="text"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em; }
+  .event-view input[type="date"]:focus:before,
+  .event-view input[type="date"]:valid:before,
+  .event-view input[type="text"]:focus:before,
+  .event-view input[type="text"]:valid:before {
+    content: ""; }
   .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
     font-size: 2.5em;
     float: left;
@@ -10420,6 +10428,11 @@ h2.or {
     font-size: 1.8em;
     display: inline !important; }
   .event-view .index .ion-ios-information-outline:before, .event-view .index .ion-ios-arrow-down:before {
+    font-size: 1.5em;
+    float: right;
+    color: #17779e;
+    margin-top: 10px; }
+  .event-view .index .ion-ios-information-outline:before, .event-view .index .ion-ios-arrow-up:before {
     font-size: 1.5em;
     float: right;
     color: #17779e;
@@ -10680,6 +10693,8 @@ h2.or {
     text-align: left;
     white-space: normal;
     color: #333333; }
+  .feed-view .feed .feed-img {
+    max-height: 200px; }
 
 .feed-view .feed-avatar {
   -webkit-background-size: cover;

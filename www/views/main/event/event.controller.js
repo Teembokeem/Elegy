@@ -26,6 +26,7 @@
     vm.showDateBool = false;
     vm.departed = dataService.retrieveData('departed');
     vm.reviewItems = false
+    vm.toggleRow = false
     vm.reviewingOptions = function() {
       $log.info("hello", vm.reviewItems)
       vm.reviewItems = !vm.reviewItems
@@ -131,6 +132,8 @@
     vm.showItem = function(idx, id) {
       $log.instantiate('Event Controller Show Item', 'method');
       $log.info("your args", idx, id)
+      console.log("row being toggled :", vm.toggleRow)
+      vm.toggleRow = !vm.toggleRow
 
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
@@ -168,6 +171,8 @@
 
     vm.showDate = function(idx, id) {
       $log.instantiate('Event Controller Show Date', 'method');
+      vm.toggleRow = !vm.toggleRow
+      console.log("row being toggled :", vm.toggleRow)
       if (vm.itemBlock === idx) {
         vm.itemBlock = '';
         localStorage.removeItem('items');

@@ -18,9 +18,9 @@
 
     </div>
     <div class="container">
-        <textarea placeholder="Care to share something?" ng-focus="Feed.expanded = true" ng-blur="Feed.expanded = false" ng-model="Feed.share">
+        <textarea placeholder="Care to share something?" ng-focus="Feed.expanded = true" ng-model="Feed.share">
         </textarea>
-        <div class="row top-border" ng-if="Feed.expanded" ng-focus="Feed.expanded = true" ng-blur="Feed.expanded = false">
+        <div class="row top-border" ng-if="Feed.expanded" ng-focus="Feed.expanded = true">
           <div class="col">
             <i class="icon ion-camera" ngf-select ng-model="Feed.media" name="file" class="comfy-padding"
               accept="image/*" ngf-max-size="5MB" required
@@ -47,9 +47,10 @@
         </div>
       
       <div ng-if="Feed.passive == 'feed'">
-        <ion-item ng-repeat="item in Feed.items | orderBy : 'item.createdAt':true"" class="feed">
+        <ion-item ng-repeat="item in Feed.items | orderBy : 'item.createdAt':true" class="feed">
           <div class="row">
-            <p>{{item.text}}</p>
+            <p ng-if="item.text">{{item.text}}</p>
+            <img class="feed-img text-center" ng-if="item.media" ng-src="{{item.media}}" />
           </div>
           <hr>
           <div class="row">
@@ -68,9 +69,27 @@
           </div>
         </ion-item>
       </div>
+      
       <div ng-if="Feed.passive == 'media'">
-        <ion-item ng-repeat="item in Feed.items" class="feed">
-          
+        <ion-item ng-repeat="mediaItem in Feed.media | orderBy : 'mediaItem.createdAt':true" class="feed">
+          <div class="row">
+            <img class="feed-img text-center" ng-src="{{mediaItem.media}}" />
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-20">
+                <div class="feed-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + mediaItem.refUser.image + ')'}"></div>
+            </div>
+            <div class="col-70">
+              <h3 class="capitalize">{{mediaItem.refUser.first}} {{mediaItem.refUser.last}}</h3>
+              <h4>{{mediaItem.createdAt | date : 'short'}}</h4>
+            </div>
+            <div class="col text-right">
+              <i class="icon ion-ios-heart-outline" ng-click="Feed.likeThis(mediaItem._id)"></i>
+              <span style="font-size: 1.3em;">{{mediaItem.likes.length}}</span>
+            </div>
+
+          </div>
         </ion-item>
       </div>
     </div>

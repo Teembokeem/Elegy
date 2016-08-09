@@ -138,6 +138,18 @@
 
   }
 
+  input[type="date"]:before, input[type="text"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before,
+  input[type="text"]:focus:before,
+  input[type="text"]:valid:before  {
+    content: "";
+  }
+
   .index {
 
     .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
@@ -160,6 +172,13 @@
       display: inline !important;
     }
     .ion-ios-information-outline:before, .ion-ios-arrow-down:before {
+      font-size: 1.5em;
+      float: right;
+      color: rgb(23, 119, 158); 
+      margin-top: 10px;
+    }
+
+    .ion-ios-information-outline:before, .ion-ios-arrow-up:before {
       font-size: 1.5em;
       float: right;
       color: rgb(23, 119, 158); 

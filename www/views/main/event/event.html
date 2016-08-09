@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div class=" event-listing-container" ng-show="Event.itemBlock === $index" ng-click="Event.Item.method(Event.Item, Event.Item.vendor)">    
+        <div class=" event-listing-container" ng-show="Event.itemBlock === $index && Event.Item != null || undefined" ng-click="Event.Item.method(Event.Item, Event.Item.vendor)">    
           <!--<marketplace data="Event.item"></marketplace>-->
           <div class="row listing-row">
             <div class="col-33">
@@ -99,21 +99,14 @@
         </div>    
 
         <div class="date-picker" ng-show="Event.itemBlock === $index && part.date">
-          <div class="row">
-            <div class="col">
-              <div class="" >
-                <marketplace ng-hide="Event.showDateBool" data="Event.Date" class="listing-container"></marketplace>
-              </div>
-            </div>
-          </div>
           <div class="row date-container">
-            <div class="col-70">
+            <div class="col-66">
               <div class="date-box">
                 <input type="date" ng-model="Event.Date">
               </div>
             </div>
             <div class="col">
-                <button ng-click="Event.stageDate(Event.Date, $index)" class="button button-balanced">Confirm</button>
+                <button ng-click="Event.stageDate(Event.Date, $index)" class="button button-balanced" style="width: 100%;" >Confirm</button>
             </div>
           </div>
 

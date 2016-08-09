@@ -16,8 +16,16 @@
                     </label>
                 </ion-item>  
                 <ion-item ng-repeat="guest in GuestList.invitees">
-                    <p><strong>{{guest.first}} {{guest.last}}</strong></p>
-                    <p>{{guest.email}}</p>
+                    <div class="row">
+                        <div class="col">
+                            <p><strong>{{guest.first}} {{guest.last}}</strong></p>
+                            <p>{{guest.email}}</p>
+                        </div>
+                        <div class="col-15">
+                            <span ng-if="guest.status == 0">Invited</span>
+                            <span ng-if="guest.status == 1">Accepted</span>
+                        </div>
+                    </div>
                 </ion-item>
             </div>
 
