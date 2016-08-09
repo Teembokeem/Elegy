@@ -7,16 +7,19 @@
     .module('Controllers')
     .controller('Static.controller', StaticController)
   
-  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window', '$scope', 'tokenService', '$http', 'urlFactory'];
-  function StaticController($log, $state, $ionicHistory, $window, $scope, tokenService, $http, urlFactory) {
+  StaticController.$inject = ['$log', '$state', '$ionicHistory', '$window', '$scope', 'tokenService', '$http', 'urlFactory', 'dataService'];
+  function StaticController($log, $state, $ionicHistory, $window, $scope, tokenService, $http, urlFactory, dataService) {
     // INSTANTIATIONS
     $log.instantiate("Static", 'controller');
     console.log("CHECK 1")
     var vm = this;
     $scope.logged = false
-    $scope.user = { image: "img/default.png"}
+    $scope.user = { image: "img/default.png"};
+    $scope.admin = false;
     
-    
+    $scope.$on('issueAdmin', function(event, args) {
+      $scope.admin = true;
+    })
 
     function getUserInfo() {
       var userId = tokenService.decode()
