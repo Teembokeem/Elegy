@@ -6,18 +6,19 @@
     .module('Controllers')
     .controller('UserSignup.controller', UserSignupController);
     
-  UserSignupController.$inject = ['$state', '$log', 'userService', 'authService'];
+  UserSignupController.$inject = ['$state', '$log', 'userService', 'authService', 'dataService'];
   
-  function UserSignupController($state, $log, userService, authService) {
+  function UserSignupController($state, $log, userService, authService, dataService) {
     // INSTANTIATIONS
     $log.instantiate('User Signup', 'controller');
     var vm = this;
+    var refGuest = dataService.retrieveData('refCodeUser');
     
     // LOCAL VARS
     vm.newUser = {
-      first: '',
-      last: '',
-      email: '',
+      first: refGuest ? refGuest.first : '',
+      last: refGuest ? refGuest.last : '',
+      email: refGuest ? refGuest.email : '',
       password: '',
       image: '/img/default.png'
     }
@@ -36,7 +37,7 @@
           if (vm.vendor) {
             $state.go('app.vendor-signup');
           } else {
-            $state.go('app.departed-signup');
+            $state.go('app.departed-tab.home');
           }
         })
         .catch(function(err) {
