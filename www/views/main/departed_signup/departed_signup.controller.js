@@ -26,44 +26,49 @@
     // BOUND FUNCTIONS
     vm.submitDepartedForm = function() {
       $log.info("Sending Departed Form, ");
-      uploadService
-        .uploadFile(vm.cloud.image, null, 'departed')
-        .then(function(done) {
-          $log.info("Success!")
-          vm.newDeparted.image = done;
-          userService
-            .setupEvent(vm.newDeparted)
-            .then(function(event) {
-              $log.info("your token")
-                dataService.setData(['departed'], [event.data.departed]);
-                return eventService.grabEventPackage(tokenService.decode()._id)
-            })
-            .then(function(events) {
-              $log.info("hello there")
-              dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-              if (dataService.retrieveData('beforeState')) {
-                blogService
-                  .grabBlog(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].blog)
-                  .then(function(done) {
-                    dataService.setData(['blog'], [done.data]);
-                    eventService
-                      .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
-                      .then(function(event) {
-                        dataService.setData(['event'], [event])
-                      })
-                    $state.go('app.departed-tab.index', {name: event.first })
-                  })
-                } else {
-                  $state.go('^.home');
-                }
-            })
-            .catch(function(err) {
-              if (err) console.log(err);
-            })
-        })
-        .catch(function(err) {
-          $log.info("your error:", err)
-        })
+      if (vm.cloud.image) {
+        uploadService
+          .uploadFile(vm.cloud.image, null, 'departed')
+          .then(function(done) {
+            $log.info("Success!")
+            vm.newDeparted.image = done;
+            userService
+              .setupEvent(vm.newDeparted)
+              .then(function(event) {
+                $log.info("your token")
+                  dataService.setData(['departed'], [event.data.departed]);
+                  return eventService.grabEventPackage(tokenService.decode()._id)
+              })
+              .then(function(events) {
+                $log.info("hello there")
+                dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+                if (dataService.retrieveData('beforeState')) {
+                  blogService
+                    .grabBlog(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].blog)
+                    .then(function(done) {
+                      dataService.setData(['blog'], [done.data]);
+                      eventService
+                        .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
+                        .then(function(event) {
+                          dataService.setData(['event'], [event])
+                        })
+                      $state.go('app.home')
+                    })
+                  } else {
+                    $state.go('^.home');
+                  }
+              })
+              .catch(function(err) {
+                if (err) console.log(err);
+              })
+          })
+          .catch(function(err) {
+            $log.info("your error:", err)
+          })
+
+      } else {
+        vm.error = 'err'
+      }
     }
 
     // HELPERS
