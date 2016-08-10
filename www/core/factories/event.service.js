@@ -79,7 +79,7 @@
 
         deferred.resolve(process(input, key))
       } else {
-        deferred.reject("transform went wrong :(")
+        deferred.reject()
       }
 
       return deferred.promise;
