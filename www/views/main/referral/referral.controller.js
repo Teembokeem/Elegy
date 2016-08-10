@@ -30,17 +30,21 @@
         $ionicLoading.show({
           templateUrl: 'views/templates/loading.html'
         }).then(function() {
-
           userService
             .setupGuest(vm.newGuest)
-            .then(function(done) {
+            .then(function(user) {
               // $log.info("user Service setupGuest done.", done);
               if (done.error) {
                 $state.go('app.login');
                 $log.info("YOU ALREADY EXIST")
               } else {
-                dataService.setData(['refCodeUser'], [done])
-                $state.go('app.user-signup');
+                 if (user.confirmed) {
+                  $state.go('app.home')
+                } else {
+                  dataService.setData(['refCodeUser'], [done])
+                  $state.go('app.user-signup');
+
+                }
 
               }
               setTimeout(function() {
