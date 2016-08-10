@@ -38,7 +38,7 @@
             .then(function(retrievedData) {
               dataService.setData(['event'], [retrievedData]);
               if (data.admin) {
-                $scope.$emit('issueAdmin',{});
+                dataService.setData(['admin'], [true]);  
                 $state.go('app.departed-tab.index', {name: data.first })
               } else {
                 $state.go('app.departed-tab.feed')

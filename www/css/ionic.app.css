@@ -10196,16 +10196,6 @@ h2.or {
   .departed-signup-view .image-container .img-full-width .ion-camera {
     font-size: 5em !important; }
 
-.departed-signup-view input[type="date"]:before, .departed-signup-view input[type="text"]:before {
-  content: attr(placeholder) !important;
-  color: #aaa; }
-
-.departed-signup-view input[type="date"]:focus:before,
-.departed-signup-view input[type="date"]:valid:before,
-.departed-signup-view input[type="text"]:focus:before,
-.departed-signup-view input[type="text"]:valid:before {
-  content: ""; }
-
 .departed-signup-view .small-container {
   margin-right: 25%;
   margin-left: 25%;

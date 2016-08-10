@@ -1,8 +1,6 @@
 <ion-view view-title="E V E N T">
   <ion-content class="event-view">
-    <div class="row nopad">
-      <backbutton></backbutton>
-    </div>
+    <backbutton></backbutton>
     <ion-item>
         <div class="row nopad">
             <div class="col nopad">
@@ -25,8 +23,8 @@
                 <h2>{{part.title | uppercase}}</h2>
 
             </div>
-            <div class="col-10">
-                <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
+            <div class="col-10" ng-click="Event.openModal( part )" >
+                <i class="icon ion-ios-information-outline"></i>
             </div>
         </div>
     </ion-item>

@@ -17,9 +17,12 @@
     $scope.user = { image: "img/default.png"};
     $scope.admin = false;
     
-    $scope.$on('issueAdmin', function(event, args) {
-      $scope.admin = true;
-    })
+    $scope.$watch(function () { 
+      return window.localStorage.admin
+    },function(admin){
+      admin ? $scope.admin = true : $scope.admin = false
+      console.log("User is admin? ", $scope.logged)
+      })
 
     function getUserInfo() {
       var userId = tokenService.decode()

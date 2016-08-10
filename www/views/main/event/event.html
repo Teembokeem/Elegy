@@ -43,8 +43,8 @@
       <div ng-hide="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != undefined : true" class="container event-data-instantiator">
         <h4>CHOOSE AN OPTION</h4>
         <div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">
-            <div class="col">
-              <h3 ng-click="Event.setupModelOptions(option.type)">{{option.type | uppercase}}</h3>
+            <div class="col" ng-click="Event.setupModelOptions(option.type)" >
+              <h3>{{option.type | uppercase}}</h3>
             </div>
         </div>
       </div>
@@ -52,13 +52,13 @@
       <ion-item ng-show="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
-          <div class="col text-left">
+          <div class="col text-left" ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">
             <i ng-show="!Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
             
-            <h2 ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">{{part.title | uppercase}} </h2>
+            <h2 >{{part.title | uppercase}} </h2>
           </div>
           <!--{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']}}-->
           <div class="col-10">
@@ -109,10 +109,6 @@
                 <button ng-click="Event.stageDate(Event.Date, $index)" class="button button-balanced" style="width: 100%;" >Confirm</button>
             </div>
           </div>
-
-        </div>
-          <!--CHECK MEEEEEEEEE-->
-        </div>
         </div>
 
       </ion-item>
