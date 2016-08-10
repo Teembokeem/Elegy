@@ -1,13 +1,13 @@
-<ion-view view-title="F O R M S">
+<ion-view view-title="">
   <ion-content class="forms-view">
-    <back-button></back-button>
+    <backbutton></backbutton>
     <div ng-switch="Forms.formType">
 
       <div ng-switch-when="paypal">
           paypal
       </div>
 
-      <div ng-switch-when="eulogy">
+      <div ng-switch-when="eulogy" class="container">
           <br>
           <div class="row nopad">
             <div class="col nopad">
@@ -29,19 +29,19 @@
           <br>
           <div class="row">
             <div class="col">
-              <button ng-click="Forms.submitEulogy(Forms.eulogy)" class="add-member">Save</button>  
+              <button ng-click="Forms.submitEulogy(Forms.eulogy)" class="button blue">Save</button>  
             </div>  
           </div>    
       </div>
 
-      <div ng-switch-when="program">
+      <div ng-switch-when="program" class="container">
         <br>
-          <div class=" container program-container">
+          <div class="program-container">
 
-            <div class="members-container container">
+            <div class="members-container">
               <h3 class="form-item">{{'Surviving Family Members' | uppercase}}</h3>
-              <div class="row container" ng-repeat="member in Forms.program.members">
-                <div class="row members-row"> 
+              <div class="row" ng-repeat="member in Forms.program.members">
+                <div class="members-row"> 
                   <span>{{member}}</span>
                 </div>
               </div>
@@ -54,7 +54,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="add-member" ng-click="Forms.processAction('members', Forms.newMember)">Add to List</button>
+                  <button class="button blue" ng-click="Forms.processAction('members', Forms.newMember)">Add to List</button>
                 </div>
               </div>
             </div>
@@ -62,10 +62,8 @@
 
             <div class="members-container container">
               <h3 class="form-item">{{'Pallbearers' | uppercase}}</h3>
-              <div class="row container" ng-repeat="bearer in Forms.program.pallbearers">
-                <div class="row members-row">
+              <div class="row members-row" ng-repeat="bearer in Forms.program.pallbearers">
                   <span>{{bearer}}</span>
-                </div>
               </div>
               <div class="row">
                 <div class="col">
@@ -76,7 +74,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                <button class="add-member" ng-click="Forms.processAction('pallbearers', Forms.newBearer)">Add to List</button>
+                <button class="button blue" ng-click="Forms.processAction('pallbearers', Forms.newBearer)">Add to List</button>
                 </div>
               </div>
             </div>
@@ -84,10 +82,8 @@
 
             <div class="members-container container">
               <h3 class="form-item">{{'Officiant' | uppercase}}</h3>
-              <div class="row container">
                 <div class="row members-row">
                   <span ng-show="Forms.program.officiant ? !Forms.editingOfficiant : false">{{Forms.program.officiant}}</span>
-                </div>
               </div>
               <div class="row">
                 <div class="col">
@@ -98,7 +94,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="add-member" ng-click="Forms.processAction('officiant', Forms.newOfficiant)">{{Forms.editingOfficiant ? 'Confirm Officiant' : 'Edit Officiant'}}</button>
+                  <button class="button blue" ng-click="Forms.processAction('officiant', Forms.newOfficiant)">{{Forms.editingOfficiant ? 'Confirm Officiant' : 'Edit Officiant'}}</button>
                 </div>
               </div>
             </div>
@@ -106,10 +102,8 @@
             
             <div class="members-container container">
               <h3 class="form-item">{{'Eulogizer' | uppercase}}</h3>
-              <div class="row container">
                 <div class="row members-row">
                   <span ng-show="Forms.program.eulogizer ? !Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
-                </div>
               </div>
               <div class="row">
                 <div class="col">
@@ -120,7 +114,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button class="add-member" ng-click="Forms.processAction('eulogizer', Forms.newEulogizer)">{{Forms.editingEulogizer ? 'Confirm Eulogizer' : 'Edit Eulogizer'}}</button>
+                  <button class="button blue" ng-click="Forms.processAction('eulogizer', Forms.newEulogizer)">{{Forms.editingEulogizer ? 'Confirm Eulogizer' : 'Edit Eulogizer'}}</button>
                 </div>
               </div>
             </div>
@@ -128,10 +122,8 @@
 
             <div class="members-container container">
               <h3 class="form-item">{{'Songs' | uppercase}}</h3>
-              <div class="row container" ng-repeat="song in Forms.program.songs">
-                <div class="row members-row">
+              <div class="members-row" ng-repeat="song in Forms.program.songs">
                   <span>{{song}}</span>
-                </div>
               </div>
               <div class="row">
                 <div class="col">
@@ -142,7 +134,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                <button class="add-member" ng-click="Forms.processAction('songs', Forms.newSong)">Add to Songs</button>
+                <button class="button blue" ng-click="Forms.processAction('songs', Forms.newSong)">Add to Songs</button>
                 </div>
               </div>
             </div>
@@ -150,10 +142,8 @@
 
             <div class="members-container container">
               <h3 class="form-item">{{'Readings' | uppercase}}</h3>
-              <div class="row container" ng-repeat="song in Forms.program.readings">
-                <div class="row members-row">
-                  <span>{{song}}</span>
-                </div>
+              <div class="row members-row" ng-repeat="song in Forms.program.readings">
+                <span>{{song}}</span>
               </div>
               <div class="row">
                 <div class="col">
@@ -164,7 +154,7 @@
               </div>
               <div class="row">
                 <div class="col">
-                <button class="add-member" ng-click="Forms.processAction('readings', Forms.newReading)">Add to Readings</button>
+                <button class="button blue" ng-click="Forms.processAction('readings', Forms.newReading)">Add to Readings</button>
                 </div>
               </div>
             </div>

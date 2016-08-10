@@ -7,13 +7,7 @@
       resize: none;
       border: 1px solid black;
       padding: 1em;
-    }
-    
-    button {
-      border: 1px solid black;
-      background-color: white;
-      border-radius: 0.5em;
-      min-width: 50%;
+      border-radius: 5px;
     }
   
   .program-container {
@@ -29,7 +23,6 @@
       background-color: white;
       border-radius: 1em;
       max-width: 35%;
-      margin-right: 2em;
     }
 
 
@@ -39,8 +32,8 @@
 
     .members-row {
       margin-left: auto;
-    margin-right: auto;
-    display: block;
+      margin-right: auto;
+      display: block;
     }
 
     label {
@@ -51,5 +44,9 @@
       padding-bottom: 1em;
       border-bottom: 1px solid rgb(140, 140, 140);
     }
+  }
+
+  .container {
+    margin: 10px;
   }
 }
