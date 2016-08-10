@@ -33,7 +33,7 @@
           userService
             .setupGuest(vm.newGuest)
             .then(function(user) {
-              // $log.info("user Service setupGuest done.", done);
+              $log.info("user Service setupGuest done.", user);
               if (user.error) {
                 $state.go('app.login');
                 $log.info("YOU ALREADY EXIST")
