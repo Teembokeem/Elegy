@@ -26,11 +26,12 @@
         data: formData
       })
       .then(function(res) {
-        $log.info("Success", res);
-
+        $log.info("Success");
+        return res
       })
       .catch(function(err) {
-        $log.info("failure", res);
+        $log.info("failure");
+        return err
       })
     }
 
@@ -41,11 +42,11 @@
         url: urlFactory + '/product/' + id
       })
       .then(function(res) {
-        $log.info("Succcess", res);
+        $log.info("Succcess");
         return res.data.data[0]
       })
       .catch(function(err) {
-        $log.info("failure", err)
+        $log.info("failure")
         return err
       })
     }

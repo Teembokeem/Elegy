@@ -17,13 +17,13 @@
 
     // LOCAL VARS
     vm.user = authService.currentUser();
-    $log.info("your resolve", events)
+    // $log.info("your resolve", events)
     vm.assets = events[0].concat(events[1]);
-    $log.info(vm.assets)
+    // $log.info(vm.assets)
 
     // BOUND FUNCTIONS
     vm.do = function(data) {
-      $log.info('doing stuffz with this event!', data )
+      // $log.info('doing stuffz with this event!', data )
     }
     
     vm.travel = function(data) {

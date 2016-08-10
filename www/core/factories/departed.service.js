@@ -16,7 +16,7 @@
     ////////////////
     function updateEulogy(id, eulogy) { 
       $log.instantiate("Departed Service Update Eulogy", 'method');
-      $log.info("id", id, eulogy)
+      // $log.info("id", id, eulogy)
       return $http({
           method: 'PUT',
           url: urlFactory + '/departed/' + id,

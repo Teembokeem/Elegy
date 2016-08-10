@@ -25,21 +25,21 @@
 
     // BOUND FUNCTIONS
     vm.submitDepartedForm = function() {
-      $log.info("Sending Departed Form, ", vm.newDeparted);
+      $log.info("Sending Departed Form, ");
       uploadService
         .uploadFile(vm.cloud.image, null, 'departed')
         .then(function(done) {
-          $log.info("Success!", done)
+          $log.info("Success!")
           vm.newDeparted.image = done;
           userService
             .setupEvent(vm.newDeparted)
             .then(function(event) {
-              $log.info("your token", event)
+              $log.info("your token")
                 dataService.setData(['departed'], [event.data.departed]);
                 return eventService.grabEventPackage(tokenService.decode()._id)
             })
             .then(function(events) {
-              $log.info("hello there", events)
+              $log.info("hello there")
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               if (dataService.retrieveData('beforeState')) {
                 blogService

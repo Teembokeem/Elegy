@@ -39,7 +39,7 @@
                 }
             })
             .then(function( response ) {
-             $log.info("yes", response)
+             $log.info("yes")
             })
         } else if (imageType == "departed") {
             return response.data.secure_url
@@ -52,15 +52,16 @@
                 }
             })
             .then(function( response ) {
-                console.log(response )
+                // console.log(response )
                 return response
             })
         } else {
-            $log.debug( "Something happened", response )
+            $log.debug( "Something happened" )
         }
       })
       .catch(function(err) {
-          $log.info("ehoh eror", err)
+          $log.info("ehoh eror")
+          return err;
       })
     }
   

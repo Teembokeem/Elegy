@@ -44,14 +44,14 @@
           vm.formPart = formPart;
           vm.program[formPart].push(data);
           vm.newMember = null;
-          $log.info(vm.program);          
+          // $log.info(vm.program);          
           break;
         case 'pallbearers':
         $log.info("doing it 2")
           vm.formPart = formPart;
           vm.program[formPart].push(data);
           vm.newBearer = null;    
-          $log.info(vm.program);      
+          // $log.info(vm.program);      
           break;
         case 'officiant':  
         $log.info("doing it 3")
@@ -60,11 +60,11 @@
             vm.editingOfficiant = false;
             vm.newOfficiant = null;
             vm.program.officiant = data;
-            $log.info(vm.program);
+            // $log.info(vm.program);
             break;
           } else {
             vm.editingOfficiant = true;
-            $log.info(vm.editingOfficiant, vm.newOfficiant)
+            // $log.info(vm.editingOfficiant, vm.newOfficiant)
             break;
           }
         case 'eulogizer':  
@@ -74,10 +74,10 @@
           vm.editingEulogizer = false;
           vm.newEulogizer = null;
           vm.program.eulogizer = data;
-          $log.info(vm.program)
+          // $log.info(vm.program)
         } else {
           vm.editingEulogizer = true;
-          $log.info(vm.editingEulogizer, vm.newEulogizer)
+          // $log.info(vm.editingEulogizer, vm.newEulogizer)
         }
           break;
         case 'songs':
@@ -100,7 +100,7 @@
       eventService
         .updateEvent(vm.program, vm.eventId, vm.step, vm.formType, vm.formPart)
         .then(function(done) {
-          $log.info("Success", done);
+          // $log.info("Success", done);
           eventService
             .retrieveEvent(vm.eventId)
             .then(function(done) {
@@ -121,13 +121,13 @@
       eventService
         .updateEvent(eulogy, vm.eventId, vm.step, vm.formType, null)
         .then(function(event) {
-          $log.info("Success, status should be 2", event);
+          // $log.info("Success, status should be 2", event);
           dataService.setData(['event'], [event]);
-          $log.info("your departed.....", departed)
+          // $log.info("your departed.....", departed)
           departedService
             .updateEulogy(departed, eulogy)
             .then(function(departed) {
-              $log.info("Success, departed saved", departed)
+              // $log.info("Success, departed saved", departed)
               dataService.setData(['departed'], [departed]);
               $state.go('app.departed-tab.event', {step: eventStep.tracker})
             })

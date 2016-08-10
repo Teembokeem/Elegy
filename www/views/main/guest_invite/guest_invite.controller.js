@@ -17,13 +17,15 @@
     var step = dataService.retrieveData('eventStep');
     var attendees = event.details.inviteguests.attendees;
     vm.guestList = attendees
-$log.info('your attendees', attendees)
-    $log.info("guest list,", vm.guestList)
+
+    // LOGS
+// $log.info('your attendees', attendees)
+    // $log.info("guest list,", vm.guestList)
     
 
 
     vm.addPerson = function( email ) {
-      vm.guestList.push(email)
+      vm.guestList.push(email.toLowerCase())
       console.log(vm.guestList)
     }
 
@@ -45,11 +47,11 @@ $log.info('your attendees', attendees)
               user.status = '0'
               newArr.push(user)
               if (idx === done.length - 1) {
-                $log.info("were doing this after we have both:", newArr)
+                // $log.info("were doing this after we have both:", newArr)
                 eventService
                   .updateEvent(newArr, event._id, step.eventKey, step.types[0]['parts'][0]['tracker'])
                   .then(function(done) {
-                    $log.info("success: ", done)
+                    // $log.info("success: ", done)
                     dataService.setData(['event'], [done])
                   })
                   .catch(function(err) {

@@ -24,11 +24,11 @@
         url: urlFactory + '/transactions/' + refVendor
       })
       .then(function(vendorOrders) {
-        $log.info("Success", vendorOrders);
+        $log.info("Success");
         return vendorOrders.data.data
       })
       .catch(function(err) {
-        $log.info('error', err);
+        $log.info('error);
         return err;
       })
     }
@@ -44,11 +44,11 @@
         }
       })
       .then(function(res) {
-        $log.info("success", res)
+        $log.info("success")
         return res.data.data;
       })
       .catch(function(err) {
-        $log.info("error", err)
+        $log.info("error")
         return err
       })
     }
@@ -61,11 +61,11 @@
         data: data
       })
       .then(function(res) {
-        $log.info("success", res.data);
+        $log.info("success");
         return uploadService.uploadFile(img, "/products/" + res.data.data, "product")
       })
       .catch(function(err) {
-        $log.info("error", err)
+        $log.info("error")
         return err;
       })
     }
@@ -86,7 +86,7 @@
 
     // helpers
       function process(input, key) {
-        $log.info("success", input)
+        $log.info("success")
         return input;
       }
 

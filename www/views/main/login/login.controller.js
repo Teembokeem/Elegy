@@ -21,24 +21,25 @@
     
     // BOUND FUNCTIONS
     vm.authenticate = function() {
+      vm.credentials.email = vm.credentials.email.toLowerCase();
       $log.info("Sending vendor credentials. ", vm.credentials);
       authService.queryVendor(vm.credentials)
         .then(function(res) {
-          $log.info("we back in here", res);
+          // $log.info("we back in here", res);
           if (res.data.query) {
             authService
               .logIn(vm.credentials)
               .then(function(decodedToken) {
-                $log.info("Credentials approved, ", decodedToken);
+                // $log.info("Credentials approved, ", decodedToken);
                 return vendorService.grabVendorData(decodedToken._id)
               })
               .then(function(vendorData) {
-                $log.info("vendor data", vendorData)
+                // $log.info("vendor data", vendorData)
                 dataService.setData(['vendor', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.products]);
                 return vendorService.grabVendorOrders(vendorData.vendor._id)
               })
               .then(function(vendorOrders) {
-                $log.info("vendor orders received", vendorOrders);
+                // $log.info("vendor orders received", vendorOrders);
                 dataService.setData(['vendorOrders'], [vendorOrders]);
                 $state.go('app.vendor-tab.vendor-home')
               })
@@ -46,11 +47,11 @@
             authService
               .logIn(vm.credentials)
               .then(function(decodedToken) {
-                $log.info("Credentials approved, ", decodedToken);
+                // $log.info("Credentials approved, ", decodedToken);
                 return eventService.grabEventPackage(decodedToken._id)
               })
               .then(function(events) {
-                $log.info("event package?!?!?!!?!", events)
+                // $log.info("event package?!?!?!!?!", events)
                 dataService.removeData(['planningEvents', 'attendingEvents']);
                 dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               

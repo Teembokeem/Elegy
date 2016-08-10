@@ -14,7 +14,7 @@
 
     // LOCAL VARS
     vm.event = event[0];
-    $log.info("yes your event", event)
+    $log.info("yes your event")
     // BOUND FUNCTIONS
 
 

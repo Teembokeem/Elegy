@@ -15,7 +15,7 @@
     var vm = this;
     vm.productBoiler = ProductDataTemplates.productBoiler
     vm.productTemplate = productType;
-    $log.info("vals", productType, ProductDataTemplates);
+    // $log.info("vals", productType, ProductDataTemplates);
 
     // LOCAL VARS
     vm.product = {
@@ -27,19 +27,19 @@
 
     // BOUND FUNCTIONS
     vm.submitProduct = function() {
-      $log.info(vm.product, "say what")
+      // $log.info(vm.product, "say what")
       vendorService
         .createProduct(vm.product, vm.cloud.image)
         .then(function(res) {
-          $log.info("vendor pre flight info??", vm.product)
+          // $log.info("vendor pre flight info??", vm.product)
           return authService.currentUser();
         })
         .then(function(user) {
-          $log.info("vendor pre flight info??", user)
+          // $log.info("vendor pre flight info??", user)
           return vendorService.grabVendorData(user._id)
         })
         .then(function(vendorData) {
-          $log.info("event package?!?!?!!?!", vendorData)
+          // $log.info("event package?!?!?!!?!", vendorData)
           dataService.setData(['vendor', 'vendorOrders', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.orders, vendorData.vendor.products]);
         
           $state.go('app.vendor-tab.vendor-home')

@@ -33,7 +33,7 @@
         return res
       })
       .catch(function(err) {
-        $log.info("yo wtf", err)
+        // $log.info("yo wtf", err)
         throw err;
       })
 

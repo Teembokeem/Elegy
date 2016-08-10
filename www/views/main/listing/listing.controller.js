@@ -15,7 +15,7 @@
     var vm = this;
     vm.listingType = $stateParams.listingName;
     vm.listing = Listing[0]
-    $log.info("listing", Listing[0]);
+    // $log.info("listing", Listing[0]);
 
 
 

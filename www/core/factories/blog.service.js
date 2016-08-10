@@ -18,17 +18,17 @@
 
     function grabBlog(blogId) {
       $log.instantiate('Blog Service Grab Blog', 'method')
-      $log.info("your blogid", blogId)
+      // $log.info("your blogid", blogId)
       return $http({
         method: 'GET',
         url: urlFactory + '/blog/' + blogId
       })
       .then(function(response) {
-        $log.info("Success from /blog", response)
+        // $log.info("Success from /blog", response)
         return response.data
       })
       .catch(function(err) {
-        $log.info('err', err);
+        // $log.info('err', err);
         return err
       })
     };

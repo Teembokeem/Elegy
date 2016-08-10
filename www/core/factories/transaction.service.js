@@ -26,7 +26,7 @@
         url: urlFactory + '/client_token'
       })
       .then(function(response) {
-        $log.debug("success", response);
+        $log.debug("success");
         return response.data.clientToken
       })
     }
@@ -43,7 +43,7 @@
         }
       })
       .then(function(response) {
-        $log.info("Success", response)
+        $log.info("Success")
         return response
       })
     }

@@ -28,7 +28,7 @@
     vm.reviewItems = false
     vm.toggleRow = false
     vm.reviewingOptions = function() {
-      $log.info("hello", vm.reviewItems)
+      $log.info("hello")
       vm.reviewItems = !vm.reviewItems
     }
 
@@ -56,7 +56,7 @@
       switch(vm.eventStep.eventKey) {
         case 'interment':
         if (vm.eventModel.details.interment != undefined) {
-          $log.info("this is event", vm.eventStep['types'])
+          $log.info("this is event")
             vm.eventItems = vm.eventStep['types'].filter(function(type) {
               return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
             })[0]['parts']
@@ -74,8 +74,8 @@
     }
 
     // LOGS FOR DATA CONFIRMS
-    $log.info("your event:", vm.eventModel)
-    $log.info("did it work?", vm.eventItems)
+    // $log.info("your event:", vm.eventModel)
+    // $log.info("did it work?", vm.eventItems)
     // $log.info("did it work?", vm.eventStep.title === 'Interment')
     // $log.info("did it work?", vm.eventStep['types'])
     
@@ -88,7 +88,7 @@
     }
 
     vm.displayMarketplace = function(param) {
-      $log.info("Event Controller display Marketplace method", param)
+      // $log.info("Event Controller display Marketplace method", param)
       var listings = marketplaceService.grabMarketplaceListings(param);
       listings.then(function(listings) {
         dataService.setData(['listings', 'stepItem'], [listings.data.data, param.toLowerCase()])
@@ -97,24 +97,24 @@
     };
 
     vm.processAction = function(title ,idx, id, tracker) {
-      $log.info("hello", title)
+      // $log.info("hello", title)
       switch(title) {
         case ("Contact Upload"):
-          $log.info("title", title);
+          // $log.info("title", title);
           $state.go('app.departed-tab.guest-invite');
           break;
         case ("Pick a Date"): 
         case ("Ceremony Date"): 
         case ("Burial"): 
         case ("Reception Date"): 
-          $log.info("date picker");
+          // $log.info("date picker");
           vm.showDateBool = true;
           vm.showDate(idx, id);
           break;
         case ('Link Braintree'):
         case ('Write Eulogy'):
         case ('Make Program'):
-          $log.info("heading to forms.")
+          // $log.info("heading to forms.")
           $state.go('app.departed-tab.forms', {tracker: tracker});
           break;
       }
@@ -131,7 +131,7 @@
 
     vm.showItem = function(idx, id) {
       $log.instantiate('Event Controller Show Item', 'method');
-      $log.info("your args", idx, id)
+      // $log.info("your args", idx, id)
       console.log("row being toggled :", vm.toggleRow)
       vm.toggleRow = !vm.toggleRow
 
@@ -151,7 +151,7 @@
           productService
             .grabProduct(id)
             .then(function(serviceData) {
-              $log.info("YES", serviceData)
+              // $log.info("YES", serviceData)
               vm.itemBlock = idx;
               vm.Item = serviceData
               vm.Item.index = idx;
@@ -183,18 +183,18 @@
           vm.Date = new Date(dataService.retrieveData('items')[0]['date'])
           vm.itemBlock = idx;
           vm.stagedDate = [[vm.eventModel['details'][vm.eventStep.eventKey][vm.eventItems['tracker']]]]
-          $log.info(vm.Date, "fdlsafdsalfsdal")
+          // $log.info(vm.Date, "fdlsafdsalfsdal")
         }
     }
 
     vm.stageDate = function(date, idx) {
       $log.instantiate("Event Controller Stage Date", 'method');
-      $log.info("arguments: ", date);
+      // $log.info("arguments: ", date);
       return eventService 
         .updateEvent(date, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep')['eventKey'].toLowerCase(), dataService.retrieveData('eventStep')['types'][0]['parts'][idx]['tracker'], 'date')
         .then(function(response) {
           dataService.setData(['event'], [response])
-          $log.info("hello res!, ", response)
+          // $log.info("hello res!, ", response)
           $state.reload();
       })  
   }
@@ -204,13 +204,13 @@
       return eventService
         .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
         .then(function(res) {
-          $log.info("success", res)
+          // $log.info("success", res)
           dataService.setData(['event'], [res]);
           vm.eventModel = dataService.retrieveData('event');
           vm.eventItems = vm.eventStep['types'].filter(function(type) {
             return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
           })[0]['parts']
-          $log.info(vm.eventModel)
+          // $log.info(vm.eventModel)
         })
   }
 

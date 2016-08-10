@@ -32,8 +32,8 @@
     }
 
     // LOGS
-    $log.info("vm.item:", vm.item, parseFloat(3.00));
-    $log.info("vm.vendor:", vm.vendor);
+    // $log.info("vm.item:", vm.item, parseFloat(3.00));
+    // $log.info("vm.vendor:", vm.vendor);
 
     // BOUND FUNCTIONS
 
@@ -43,11 +43,11 @@
       "dropin",
       { container: "payment-form",
         paymentMethodNonceReceived: function(event, nonce) {
-          $log.debug("nonce received", nonce, event)
+          // $log.debug("nonce received", nonce, event)
           transactionService
             .queryBraintreeTransaction(nonce, vm.transaction)
             .then(function(done) {
-              $log.info("success", done)
+              // $log.info("success", done)
               eventService
                 .updateEvent(done.data, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
                 .then(function(res) {

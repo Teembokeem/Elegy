@@ -32,11 +32,11 @@
         }
       })
       .then(function(res) {
-        $log.info("yes response", res);
+        // $log.info("yes response", res);
         return res.data.data;
       })
       .catch(function(err) {
-        $log.info("hey err", err)
+        // $log.info("hey err", err)
         return err;
       })
     }
@@ -67,7 +67,7 @@
         url: urlFactory + '/events/' + data
       })
       .then(function(res) {
-        $log.info('success', res.data);
+        // $log.info('success', res.data);
         return res.data.data
       })
     }
@@ -97,21 +97,21 @@
         }
       })
       .then(function(res) {
-        $log.info("success", res.data);
+        // $log.info("success", res.data);
         res.data.data.details[sanitizedInsertion] = res.data.option
         return res.data.data
       })
       .catch(function(err) {
-        $log.info("ehoh", err)
+        // $log.info("ehoh", err)
         return err
       })
     }
 
     // helpers
       function process(input, key) {
-        $log.info("yas plas", key)
+        // $log.info("yas plas", key)
         if (key === 'planningEvents') {
-          $log.info("yas plas", key, input)
+          // $log.info("yas plas", key, input)
           input.forEach(function(obj) {
             obj.admin = true;
           })

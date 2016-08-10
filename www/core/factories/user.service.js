@@ -29,11 +29,11 @@
         data: data
       })
       .then(function(done) {
-        $log.info('Success', done)
+        $log.info('Success')
         return done;
       })
       .catch(function(err) {
-        $log.info("err", err);
+        $log.info("err");
         return err;
       })
     }
@@ -57,7 +57,7 @@
         data: data
       })
       .then(function(done){
-        $log.info("HALLO DONE", done)
+        $log.info("HALLO DONE")
         return done
       });
 
@@ -73,7 +73,8 @@
         $log.info("User service Setup Vendor success, storing vals.")
         tokenService.store(res.data.token);
       }).catch(function(err) {
-        $log.info("ehoh.", err)
+        $log.info("ehoh.")
+        return err;
       })
 
       return promise;
@@ -89,10 +90,11 @@
           email: data.email
         }
       }).then(function(res) {
-        $log.info("yo res", res);
+        $log.info("Success");
         return res.data
       }).catch(function(err) {
-        $log.info("errrrrr", err)
+        $log.info("errrrrr")
+        return err
       })
 
       return promise;
@@ -109,11 +111,11 @@
         }
       })
       .then(function(done) {
-        $log.info("Success, ", done)
+        $log.info("Success, ")
         return done.data
       })
       .catch(function(err) {
-        $log.info("error, ", err)
+        $log.info("error, ")
         return err
       })
 

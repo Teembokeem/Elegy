@@ -27,7 +27,7 @@
 
     // BOUND FUNCTIONS
     vm.submitVendorForm = function() {
-      $log.info("Sending Form, ", vm.newVendor);
+      // $log.info("Sending Form, ", vm.newVendor);
       userService
         .setupVendor(vm.newVendor)
         .then(function(res) {

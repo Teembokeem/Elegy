@@ -20,7 +20,7 @@
     vm.orders = dataService.retrieveData('vendorOrders');
 
     // LOGS
-    $log.info("your orders:", vm.orders)
+    // $log.info("your orders:", vm.orders)
 
     // BOUND FUNCTIONS
 
