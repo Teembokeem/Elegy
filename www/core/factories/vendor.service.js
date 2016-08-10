@@ -28,7 +28,7 @@
         return vendorOrders.data.data
       })
       .catch(function(err) {
-        $log.info('error);
+        $log.info('error');
         return err;
       })
     }
