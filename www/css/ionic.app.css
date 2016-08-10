@@ -10205,7 +10205,8 @@ h2.or {
   text-align: left; }
 
 .departed-signup-view .input-label {
-  text-align: left; }
+  text-align: left;
+  font-size: 12px; }
 
 .home-view {
   animation-name: left-content;
@@ -10692,6 +10693,9 @@ h2.or {
 
 .feed-view .ion-ios-heart-outline:before {
   font-size: 2em; }
+
+.user-profile-view .list {
+  margin-top: -20px; }
 
 .user-profile-view .profilePic {
   display: inline-block;
