@@ -14,9 +14,11 @@
     var vm = this;
     var departed = dataService.retrieveData('departed');
     var event = dataService.retrieveData('event');
+    var eventStep = dataService.retrieveData('eventStep');
     var step = dataService.retrieveData('eventStep');
     var attendees = event.details.inviteguests.attendees;
-    vm.guestList = attendees
+    vm.guestList = attendees;
+    vm.all = [];
 
     // LOGS
     // $log.info('your attendees', attendees)
@@ -30,8 +32,21 @@
     }
 
     vm.addEmail = function() {
-      console.log("touch")
-      vm.guestList.unshift(vm.newEmail)
+      console.log("touch");
+      var addedPerson = {
+        first: '',
+        last: '',
+        email: vm.newEmail
+      }
+      
+      vm.guestList.unshift(addedPerson);
+      vm.all.unshift({
+        name: {
+          givenName: '',
+          familyName: ''
+        },
+        emails: [ {value: vm.newEmail} ]
+      })
       console.log("New Guest List", vm.guestList)
       vm.newEmail = ""
     }
@@ -53,6 +68,7 @@
                   .then(function(done) {
                     // $log.info("success: ", done)
                     dataService.setData(['event'], [done])
+                    $state.go('app.departed-tab.event', {step: eventStep.tracker})
                   })
                   .catch(function(err) {
                     $log.info("ehoh error: ", err)
@@ -69,26 +85,26 @@
       opts.hasPhoneNumber = true;
     } 
 
-  $ionicPlatform.ready(function(){
-      $log.info("initializing cordova contacts...")
-        $cordovaContacts.find({})
-          .then(function(allContacts){
-              // Do yo thang with all the contacts!
-              console.log("hi inside ready cordova contacts", allContacts)
-              vm.all = allContacts.filter(function(contact) {
-                return contact.emails != null || undefined 
-              })
+  // $ionicPlatform.ready(function(){
+  //     $log.info("initializing cordova contacts...")
+  //       $cordovaContacts.find({})
+  //         .then(function(allContacts){
+  //             // Do yo thang with all the contacts!
+  //             console.log("hi inside ready cordova contacts", allContacts)
+  //             vm.all = allContacts.filter(function(contact) {
+  //               return contact.emails != null || undefined 
+  //             })
 
-              vm.guestList.forEach(function(attendee) {
-                vm.all.forEach(function(contact, index) {
-                  if (contact.emails[0].value === attendee.email) {
-                    vm.all.splice(index, 1);
-                  }
-                })
-              })
-              console.log(vm.all)
-          });
-   });
+  //             vm.guestList.forEach(function(attendee) {
+  //               vm.all.forEach(function(contact, index) {
+  //                 if (contact.emails[0].value === attendee.email) {
+  //                   vm.all.splice(index, 1);
+  //                 }
+  //               })
+  //             })
+  //             console.log(vm.all)
+  //         });
+  //  });
 
 
     // BOUND FUNCTIONS
