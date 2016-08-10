@@ -22,7 +22,7 @@
     vm.all = [];
 
     // LOGS
-// $log.info('your attendees', attendees)
+    // $log.info('your attendees', attendees)
     // $log.info("guest list,", vm.guestList)
     
 

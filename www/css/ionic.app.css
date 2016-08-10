@@ -10246,6 +10246,14 @@ h2.or {
     margin-top: 14px;
     font-size: 2em;
     color: #0f416a; }
+  .home-view .nobutton {
+    background-color: transparent;
+    width: auto; }
+    .home-view .nobutton .icon:before, .home-view .nobutton .icon:before, .home-view .nobutton .icon-left:before, .home-view .nobutton .icon-right:before {
+      font-size: 30px; }
+  .home-view .item.item-input-short input[type="text"] {
+    margin-left: 40px;
+    margin-right: 40px; }
 
 .event-view {
   animation-name: left-content;
@@ -10354,9 +10362,8 @@ h2.or {
     font-family: 'Gotham-Medium';
     font-weight: 700;
     color: #17779e;
-    margin-top: 2px;
-    font-size: 1.8em;
-    display: inline !important; }
+    margin-top: 5px;
+    font-size: 1.2em; }
   .event-view .index .ion-ios-information-outline:before, .event-view .index .ion-ios-arrow-down:before {
     font-size: 1.5em;
     float: right;
