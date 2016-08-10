@@ -36,7 +36,7 @@
             })
             .then(function(decodedToken) {
               // $log.info('Logged In via Auth service login. ', decodedToken);
-              $state.go('app.departed-tab.home');
+              $state.go('app.home');
             })
             .catch(function(err) {
               $log.error("We got an error! ", err);
