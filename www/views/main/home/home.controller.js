@@ -50,6 +50,30 @@
         })
     }
 
+    vm.validateCode = function(code) {
+      var package = {
+        code: code,
+        email: authService.currentUser().email
+      }
+      userService
+        .setupGuest(package)
+        .then(function(done) {
+          // $log.info("user Service setupGuest done.", done);
+          if (done.error) {
+            $state.go('app.login');
+            $log.info("YOU ALREADY EXIST")
+          } else {
+           eventService
+            .grabEventPackage(decodedToken._id)
+            .then(function(events) {
+              dataService.removeData(['planningEvents', 'attendingEvents']);
+              dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+              $state.reload();
+             })
+          }
+      })
+    }
+
     vm.createDeparted = function() {
       dataService.setData(['beforeState'], [true])
       $state.go('app.departed-signup', {reload: true});
