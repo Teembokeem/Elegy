@@ -10362,9 +10362,8 @@ h2.or {
     font-family: 'Gotham-Medium';
     font-weight: 700;
     color: #17779e;
-    margin-top: 2px;
-    font-size: 1.8em;
-    display: inline !important; }
+    margin-top: 5px;
+    font-size: 1.2em; }
   .event-view .index .ion-ios-information-outline:before, .event-view .index .ion-ios-arrow-down:before {
     font-size: 1.5em;
     float: right;
