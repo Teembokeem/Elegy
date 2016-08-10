@@ -59,4 +59,16 @@
     font-size: 2em;
     color: rgb(15, 65, 106)
   }
+
+  .nobutton {
+    background-color: transparent;
+    width: auto;
+     .icon:before, .icon:before, .icon-left:before, .icon-right:before {
+      font-size: 30px;
+    }
+  }
+  .item.item-input-short input[type="text"] {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }

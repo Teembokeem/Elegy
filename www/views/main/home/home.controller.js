@@ -18,8 +18,9 @@
     // LOCAL VARS
     vm.user = authService.currentUser();
     // $log.info("your resolve", events)
+    $log.info("HERE ARE ASSETS" , events)
     vm.assets = events[0].concat(events[1]);
-    // $log.info(vm.assets)
+    $log.info("HERE ARE ASSETS" , vm.assets)
 
     // BOUND FUNCTIONS
     vm.do = function(data) {

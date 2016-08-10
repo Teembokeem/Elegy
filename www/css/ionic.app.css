@@ -10246,6 +10246,14 @@ h2.or {
     margin-top: 14px;
     font-size: 2em;
     color: #0f416a; }
+  .home-view .nobutton {
+    background-color: transparent;
+    width: auto; }
+    .home-view .nobutton .icon:before, .home-view .nobutton .icon:before, .home-view .nobutton .icon-left:before, .home-view .nobutton .icon-right:before {
+      font-size: 30px; }
+  .home-view .item.item-input-short input[type="text"] {
+    margin-left: 40px;
+    margin-right: 40px; }
 
 .event-view {
   animation-name: left-content;

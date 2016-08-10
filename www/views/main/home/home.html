@@ -10,8 +10,11 @@
       </div>
       <div class="row">
         <div class="col">
-          <label class="item item-input-short">
-            <input type="text" placeholder="Enter Funeral Code" ng-model="Referral.newGuest.code" ng-change="Referral.validateCode()">
+          <label class="item item-input-short item-input-inset">
+            <input ng-focus="Referral.focused = true" type="text" placeholder="Enter Funeral Code" ng-model="Referral.newGuest.code" ng-change="Referral.validateCode()">
+            <button ng-if="Referral.focused == true" class="button button-small nobutton">
+              <i class="icon ion-arrow-right-c"></i>
+            </button>
           </label>
         </div>
       </div>
