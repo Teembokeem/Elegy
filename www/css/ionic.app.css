@@ -10201,6 +10201,12 @@ h2.or {
   margin-left: 25%;
   margin-top: 10vh; }
 
+.departed-signup-view input {
+  text-align: left; }
+
+.departed-signup-view .input-label {
+  text-align: left; }
+
 .home-view {
   animation-name: left-content;
   animation-duration: 1.5s;
@@ -11134,13 +11140,8 @@ h2.or {
   text-align: left;
   resize: none;
   border: 1px solid black;
-  padding: 1em; }
-
-.forms-view button {
-  border: 1px solid black;
-  background-color: white;
-  border-radius: 0.5em;
-  min-width: 50%; }
+  padding: 1em;
+  border-radius: 5px; }
 
 .forms-view .program-container .form-item {
   font-size: 1.5em !important; }
@@ -11152,8 +11153,7 @@ h2.or {
   border: 1px solid black;
   background-color: white;
   border-radius: 1em;
-  max-width: 35%;
-  margin-right: 2em; }
+  max-width: 35%; }
 
 .forms-view .program-container .textarea-stuff {
   display: block; }
@@ -11169,3 +11169,6 @@ h2.or {
 .forms-view .program-container .members-container {
   padding-bottom: 1em;
   border-bottom: 1px solid #8c8c8c; }
+
+.forms-view .container {
+  margin: 10px; }
