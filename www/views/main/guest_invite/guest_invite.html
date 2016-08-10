@@ -2,8 +2,6 @@
     <ion-content class="guest-invite-view">
         <ion-scroll>
             <div class="list">
-                <br>
-                <br>
                 <!--<button ng-click="getContactList()">touch</button>-->
                 <ion-item class="search-input">
                     <label class="item item-input">
@@ -20,7 +18,7 @@
                         Submit
                         </button>
                 </ion-item>   
-                <ion-checkbox ng-repeat="guest in GuestInvite.all" class="item-checkbox-right" ng-click="GuestInvite.addPerson({first:guest.name.givenName, last: guest.name.familyName, email: guest.emails[0].value })">
+                <ion-checkbox ng-repeat="guest in GuestInvite.all | orderBy : 'guest.name.givenName'" class="item-checkbox-right" ng-click="GuestInvite.addPerson({first:guest.name.givenName, last: guest.name.familyName, email: guest.emails[0].value })">
                     <p><strong>{{guest.name.givenName}} {{guest.name.familyName}}</strong></p>
                     <p>{{guest.emails[0].value}}</p>
                 </ion-checkbox>
