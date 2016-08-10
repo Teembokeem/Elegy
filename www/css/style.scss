@@ -172,35 +172,35 @@ button.white {
   }
 }
 
-  @keyframes opacity {
-    0%   {opacity: 0}
-    100% {opacity: 1}
-  }
+  // @keyframes opacity {
+  //   0%   {opacity: 0}
+  //   100% {opacity: 1}
+  // }
 
-  @keyframes opacity-out {
-    0%   {opacity: 1}
-    100% {opacity: 0}
-  }
+  // @keyframes opacity-out {
+  //   0%   {opacity: 1}
+  //   100% {opacity: 0}
+  // }
 
-  @keyframes left-out {
-    from {right: 0; position: relative}
-    to{right: 15%; position: relative}
-  }
+  // @keyframes left-out {
+  //   from {right: 0; position: relative}
+  //   to{right: 15%; position: relative}
+  // }
 
-  @keyframes right-in {
-    from {right: 15%; position: relative}
-    to{right: 0; position: relative}
-  }
+  // @keyframes right-in {
+  //   from {right: 15%; position: relative}
+  //   to{right: 0; position: relative}
+  // }
 
-  @keyframes left-content {
-    from {left: 50px; position: relative}
-    to{left: 0; position: relative}
-  }
+  // @keyframes left-content {
+  //   from {left: 50px; position: relative}
+  //   to{left: 0; position: relative}
+  // }
 
-  @keyframes right-content {
-    from {right: 50px; position: relative}
-    to{right: 0; position: relative}
-  }
+  // @keyframes right-content {
+  //   from {right: 50px; position: relative}
+  //   to{right: 0; position: relative}
+  // }
 
 .cancelIcon {
     position: absolute;
@@ -213,21 +213,21 @@ button.white {
 }
 
 
-.slide-in-right {
-  -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
+// .slide-in-right {
+//   -webkit-transform: translateX(100%);
+//     transform: translateX(100%); }
 
-.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
-  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
-  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+// .slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+//   -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+//   transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
 
-.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
-  -webkit-transform: translateX(0);
-    transform: translateX(0); }
+// .slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+//   -webkit-transform: translateX(0);
+//     transform: translateX(0); }
 
-.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
-  -webkit-transition: all ease-in-out 250ms;
-  transition: all ease-in-out 250ms; }
+// .slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+//   -webkit-transition: all ease-in-out 250ms;
+//   transition: all ease-in-out 250ms; }
 
 .popup-container {
     .popup {
