@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -51,7 +51,7 @@
     }
 
     vm.validateCode = function(code) {
-      $log.info("hi doing stuff to validate code in home", code)
+      $log.info("hi doing stuff to validate code in home")
       var values = {
         code: code,
         email: authService.currentUser().email
@@ -61,7 +61,7 @@
         .then(function(done) {
           // $log.info("user Service setupGuest done.", done);
            eventService
-            .grabEventPackage(decodedToken._id)
+            .grabEventPackage(done._id)
             .then(function(events) {
               dataService.removeData(['planningEvents', 'attendingEvents']);
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
