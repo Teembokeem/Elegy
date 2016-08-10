@@ -51,12 +51,12 @@
     }
 
     vm.validateCode = function(code) {
-      var package = {
+      var values = {
         code: code,
         email: authService.currentUser().email
       }
       userService
-        .setupGuest(package)
+        .setupGuest(values)
         .then(function(done) {
           // $log.info("user Service setupGuest done.", done);
           if (done.error) {
