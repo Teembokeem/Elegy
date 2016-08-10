@@ -25,6 +25,7 @@
     // BOUND FUNCTIONS
 
     vm.validateCode = function() {
+      vm.newGuest.email = vm.newGuest.email.toLowerCase()
       if (vm.newGuest.code.length === 6) {
         $ionicLoading.show({
           templateUrl: 'views/templates/loading.html'
