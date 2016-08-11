@@ -66,12 +66,9 @@
         return step.eventKey === key
       })[0];
       dataService.setData(['eventStep', 'stepIndex'], [step, (step.step - 1).toString()])
-      if (key === 'keepsake') {
-        $state.go('app.departed-tab.forms', {tracker: 'program'});
-      } else {
+     
         $state.go('app.departed-tab.event', {step: step.title})
 
-      }
     }
 
     // HELPERS
