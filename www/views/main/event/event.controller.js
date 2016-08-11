@@ -10,7 +10,7 @@
 
   function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, productService) {
     // INSTANTIATIONS
-    // $log.instantiate('Event', 'controller');
+    $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
     
@@ -55,17 +55,19 @@
     if ($state.is('app.departed-tab.event')) {
       switch(vm.eventStep.eventKey) {
         case 'interment':
-        if (vm.eventModel.details.interment != undefined) {
-          $log.info("this is event")
-            vm.eventItems = vm.eventStep['types'].filter(function(type) {
-              return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
-            })[0]['parts']
-        } else {
-          break
-        }
+          if (vm.eventModel.details.interment != undefined) {
+            $log.info("this is event")
+              vm.eventItems = vm.eventStep['types'].filter(function(type) {
+                return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
+              })[0]['parts']
+          } else {
+            break
+          }
         case 'funeralhome':
         case 'options':
         case 'inviteguests':
+          vm.invitees = vm.eventModel.details.inviteguests.attendees;
+          $log.info("invite guests right now.", vm.invitees)
         case 'keepsake':
           vm.eventItems = vm.eventStep['types'][0]['parts']
       }
