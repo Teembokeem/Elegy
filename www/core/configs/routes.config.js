@@ -77,17 +77,17 @@
         controllerId: 'Referral'
     })
 
-    .state('app.departed-tab.guest-list', {
-        url: '/guest-list',
-        views: {
-          'guests': {
-            templateUrl: 'views/main/guest_list/guest_list.html',
-            controller: 'GuestList.controller',
-            controllerAs: 'GuestList',
-          }
-        },
-        controllerId: 'GuestList'
-    })
+    // .state('app.departed-tab.guest-list', {
+    //     url: '/guest-list',
+    //     views: {
+    //       'guests': {
+    //         templateUrl: 'views/main/guest_list/guest_list.html',
+    //         controller: 'GuestList.controller',
+    //         controllerAs: 'GuestList',
+    //       }
+    //     },
+    //     controllerId: 'GuestList'
+    // })
 
     .state('app.departed-tab.guest-invite', {
         url: '/guest-invite',
@@ -328,6 +328,19 @@
           }
         },
         controllerId: 'Schedule',
+        authorized: true
+    })
+    
+    .state('app.departed-tab.program', {
+        url: '/program',
+        views: {
+          'program': {
+            templateUrl: 'views/main/program/program.html',
+            controller: 'Program.controller',
+            controllerAs: 'Program'
+          }
+        },
+        controllerId: 'Program',
         authorized: true
     })
 
