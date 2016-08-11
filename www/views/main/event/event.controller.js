@@ -26,10 +26,21 @@
     vm.showDateBool = false;
     vm.departed = dataService.retrieveData('departed');
     vm.reviewItems = false
+    vm.showStepsBool = false;
     vm.toggleRow = false
+    vm.optionType;
     vm.reviewingOptions = function() {
       $log.info("hello")
       vm.reviewItems = !vm.reviewItems
+    }
+    vm.showSteps = function(option) {
+      $log.info('peekaboo');
+      if (vm.showStepsBool != option) {
+        vm.showStepsBool = option
+
+      } else {
+        vm.showStepsBool = '';
+      }
     }
 
     // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
@@ -56,10 +67,14 @@
       switch(vm.eventStep.eventKey) {
         case 'interment':
           if (vm.eventModel.details.interment != undefined) {
-            $log.info("this is event")
+            $log.info("this is event", vm.eventStep.eventKey, vm.eventModel)
               vm.eventItems = vm.eventStep['types'].filter(function(type) {
+                $log.info("type vs given", type.type, vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase())
                 return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
-              })[0]['parts']
+              })
+              $log.info("your items", vm.eventItems)
+              vm.eventItems = vm.eventItems[0]['parts']
+              break;
           } else {
             break
           }
@@ -68,8 +83,10 @@
         case 'inviteguests':
           vm.invitees = vm.eventModel.details.inviteguests.attendees;
           $log.info("invite guests right now.", vm.invitees)
+          break;
         case 'keepsake':
           vm.eventItems = vm.eventStep['types'][0]['parts']
+          break;
       }
       
 
@@ -91,10 +108,14 @@
 
     vm.displayMarketplace = function(param) {
       // $log.info("Event Controller display Marketplace method", param)
-      var listings = marketplaceService.grabMarketplaceListings(param);
+      if (param.type) {
+        var listings = marketplaceService.grabMarketplaceListings(param.category);
+      } else {
+        var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
+      }
       listings.then(function(listings) {
-        dataService.setData(['listings', 'stepItem'], [listings.data.data, param.toLowerCase()])
-        $state.go('app.departed-tab.marketplace', {category: param})
+        dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
+        $state.go('app.departed-tab.marketplace', {category: param.category});
       })
     };
 
@@ -107,7 +128,8 @@
           break;
         case ("Pick a Date"): 
         case ("Ceremony Date"): 
-        case ("Burial"): 
+        case ('Visitation Date'):
+        case ("Burial Date"): 
         case ("Reception Date"): 
           // $log.info("date picker");
           vm.showDateBool = true;
@@ -204,6 +226,7 @@
 
     vm.setupModelOptions = function(option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
+      $log.info("your option", option)
       return eventService
         .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
         .then(function(res) {
