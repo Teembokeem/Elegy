@@ -52,7 +52,7 @@
       <ion-item ng-show="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
-          <div class="col text-left" ng-click=" part.category ? Event.displayMarketplace(part.category) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">
+          <div class="col text-left" ng-click=" part.category ? (part.type ? Event.displayMarketplace(part.category, part.type) : Event.displayMarketplace(part.category)) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">
             <i ng-show="!Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
@@ -111,7 +111,31 @@
           </div>
         </div>
 
+
+
       </ion-item>
+         <div ng-show="Event.eventStep.eventKey === 'inviteguests'" class="list guest-stuff">
+            <!--hi-->
+            <!--<button ng-click="getContactList()">touch</button>-->
+            <!--<ion-item class="search-input">
+              <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="text" placeholder="Search">
+              </label>
+            </ion-item>  -->
+            <ion-item ng-repeat="guest in Event.invitees">
+              <div class="row">
+                <div class="col">
+                  <p><strong>{{guest.first}} {{guest.last}}</strong></p>
+                  <p>{{guest.email}}</p>
+                </div>
+                <div class="col-15">
+                  <span ng-if="guest.status == 0">Invited</span>
+                  <span ng-if="guest.status == 1">Accepted</span>
+                </div>
+              </div>
+            </ion-item>
+          </div>
     </div>
   </ion-content>
 </ion-view>
