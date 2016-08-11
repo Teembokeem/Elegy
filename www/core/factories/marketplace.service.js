@@ -91,10 +91,13 @@
     }
 
     // GET METHOD TO DATABASE
-    function grabMarketplaceListings(param) {
+    function grabMarketplaceListings(param, extra) {
       return $http({
         method: 'GET',
-        url: urlFactory + '/products/' + param
+        url: urlFactory + '/products/' + param,
+        data: {
+          type: extra
+        }
       })
       .then(function(listings) {
         return listings
