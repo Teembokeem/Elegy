@@ -222,7 +222,8 @@
               Marketplace: function(dataService) {
                 return dataService.parseData(['listings'], ['marketplace']);
               }
-            }
+            },
+            params: { type: null }
           }
         },
         cache: false,
