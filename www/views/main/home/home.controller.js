@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -22,7 +22,7 @@
     $log.info("your events", vm.assets)
 
     if (vm.assets.length === 0) vm.assets.push({first: 'No Upcoming Events'});
-    // $log.info(vm.assets)
+    $log.info(vm.assets)
 
     // BOUND FUNCTIONS
     vm.do = function(data) {
@@ -51,7 +51,7 @@
     }
 
     vm.validateCode = function(code) {
-      console.log("touch")
+      $log.info("hi doing stuff to validate code in home")
       var values = {
         code: code,
         email: authService.currentUser().email
@@ -60,20 +60,15 @@
         .setupGuest(values)
         .then(function(done) {
           // $log.info("user Service setupGuest done.", done);
-          if (done.error) {
-            $state.go('app.login');
-            $log.info("YOU ALREADY EXIST")
-          } else {
            eventService
-            .grabEventPackage(decodedToken._id)
+            .grabEventPackage(done._id)
             .then(function(events) {
               dataService.removeData(['planningEvents', 'attendingEvents']);
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               $state.reload();
              })
-          }
-      })
-    }
+          })
+      }
 
     vm.createDeparted = function() {
       dataService.setData(['beforeState'], [true])

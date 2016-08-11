@@ -97,7 +97,7 @@
     };
 
     vm.processAction = function(title ,idx, id, tracker) {
-      // $log.info("hello", title)
+      $log.info("hello", title)
       switch(title) {
         case ("Contact Upload"):
           // $log.info("title", title);
@@ -114,7 +114,8 @@
         case ('Link Braintree'):
         case ('Write Eulogy'):
         case ('Make Program'):
-          // $log.info("heading to forms.")
+        case ('Add a Location'):
+          $log.info("heading to forms.")
           $state.go('app.departed-tab.forms', {tracker: tracker});
           break;
       }

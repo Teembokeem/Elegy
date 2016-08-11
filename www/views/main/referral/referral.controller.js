@@ -33,15 +33,15 @@
           userService
             .setupGuest(vm.newGuest)
             .then(function(user) {
-              // $log.info("user Service setupGuest done.", done);
-              if (done.error) {
+              $log.info("user Service setupGuest done.", user);
+              if (user.error) {
                 $state.go('app.login');
                 $log.info("YOU ALREADY EXIST")
               } else {
                  if (user.confirmed) {
                   $state.go('app.home')
                 } else {
-                  dataService.setData(['refCodeUser'], [done])
+                  dataService.setData(['refCodeUser'], [user])
                   $state.go('app.user-signup');
 
                 }

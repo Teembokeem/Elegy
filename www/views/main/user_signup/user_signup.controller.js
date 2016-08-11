@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('UserSignup.controller', UserSignupController);
     
-  UserSignupController.$inject = ['$state', '$log', 'userService', 'authService', 'dataService'];
+  UserSignupController.$inject = ['$state', '$log', 'userService', 'authService', 'dataService', 'eventService'];
   
-  function UserSignupController($state, $log, userService, authService, dataService) {
+  function UserSignupController($state, $log, userService, authService, dataService, eventService) {
     // INSTANTIATIONS
     $log.instantiate('User Signup', 'controller');
     var vm = this;
