@@ -13,9 +13,9 @@
                 <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
             </div>
         </div>
-        <div ng-show="Event.eventStep.eventKey === 'interment'" class="row">
+        <div ng-click="Event.reviewingOptions()" ng-show="Event.eventStep.eventKey === 'interment'" class="row">
           <div class="col-center">
-            <span ng-click="Event.reviewingOptions()">{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
+            <span>{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()]['__t'] : 'Types of Interment' }}</span>
           </div>
         </div>
         <div ng-show="Event.eventStep.eventKey === 'interment'" class="row">
@@ -40,19 +40,27 @@
         </div>
       </div>-->
       <!--2-->
-      <div ng-hide="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != undefined : true" class="container event-data-instantiator">
+      <div ng-hide="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != undefined && Event.reviewItems === false : true" class="container event-data-instantiator">
         <h4>CHOOSE AN OPTION</h4>
-        <div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">
-            <div class="col" ng-click="Event.setupModelOptions(option.type)" >
+        <!--<div class="row" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types">-->
+            <!--<div class="col" ng-click="Event.setupModelOptions(option.type)" >
               <h3>{{option.type | uppercase}}</h3>
             </div>
-        </div>
+        </div>-->
+        <ion-checkbox ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types" class="item-checkbox-right" ng-click="Event.showSteps(option.type)">
+          <h3>{{option.type | uppercase}}</h3>
+          <div ng-if="Event.showStepsBool === option.type" ng-repeat="step in option.parts">
+            <p>{{step.title}}</p>
+          </div>
+        </ion-checkbox>
+        <br>
+        <button class="button blue" ng-click="Event.setupModelOptions(Event.showStepsBool)">Edit This Item</button>
       </div>
 
-      <ion-item ng-show="Event.eventStep.eventKey === 'Interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null : true" ng-repeat="part in Event.eventItems" class="index">
+      <ion-item ng-show="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null && Event.reviewItems === false : true" ng-repeat="part in Event.eventItems" class="index">
         <div class="row">
           <!--2.1-->
-          <div class="col text-left" ng-click=" part.category ? (part.type ? Event.displayMarketplace(part.category, part.type) : Event.displayMarketplace(part.category)) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">
+          <div class="col text-left" ng-click=" part.category ? Event.displayMarketplace(part) : Event.processAction(part.eventKey || part.title, $index, Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'], part.tracker)">
             <i ng-show="!Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
             <i ng-show="Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
