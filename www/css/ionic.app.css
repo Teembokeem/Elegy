@@ -10255,12 +10255,11 @@ h2.or {
     color: #0f416a; }
   .home-view .nobutton {
     background-color: transparent;
-    width: auto; }
+    width: auto;
+    margin-top: 12px;
+    float: left; }
     .home-view .nobutton .icon:before, .home-view .nobutton .icon:before, .home-view .nobutton .icon-left:before, .home-view .nobutton .icon-right:before {
       font-size: 30px; }
-  .home-view .item.item-input-short input[type="text"] {
-    margin-left: 40px;
-    margin-right: 40px; }
 
 .event-view {
   animation-name: left-content;

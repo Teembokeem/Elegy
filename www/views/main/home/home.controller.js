@@ -51,6 +51,7 @@
     }
 
     vm.validateCode = function(code) {
+      console.log("touch")
       var values = {
         code: code,
         email: authService.currentUser().email
