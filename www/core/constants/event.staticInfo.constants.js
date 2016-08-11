@@ -68,6 +68,7 @@
                   test: "Browse through locally listed funeral homes.",
                   category: 'Venue',
                   type: 'donation',
+                  marketplace: 'Donation Centers',
                   tracker: 'bodyDonation'
                 }
               ], 
@@ -95,6 +96,7 @@
                 test: "Browse through locally listed funeral homes.",
                 category: 'Venue',
                 type: 'funeralHome',
+                marketplace: 'Funeral Home',
                 tracker: 'funeralhome'
               }
             ]
@@ -122,7 +124,7 @@
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
                 date: true,
-                tracker: 'visitation'
+                tracker: 'visitationdate'
               },
               {
                 title: 'Ceremony',
