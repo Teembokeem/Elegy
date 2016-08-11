@@ -237,6 +237,90 @@
       background-color: rgb(23, 119, 158); 
     }
   }
+
+  .guest-stuff {
+    h1 {
+      font-size: 2em;
+    }
+
+    .search-input {
+      padding: 0;
+    }
+
+    p {
+          text-align: left;
+          font-size: 20px;
+          font-family: "Gotham-Book";
+      }
+      strong {
+          font-size: 20px;
+          font-family: "Gotham-Book";
+      }
+      input[type="text"] {
+          text-align: left;
+      }
+      .item {
+          p {
+              overflow:visible;
+              white-space: normal;
+          }
+          padding: 5px 20px;
+      }
+
+      .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+          background: #9ec6cd;
+          border-color: #9ec6cd;
+      }
+
+      button.invite-button {
+          background-color: rgb(15, 65, 106);
+          color: white;
+          width: 100%;
+          height: 45px;
+          font-size: 1.5em;
+          border: none;
+          position: absolute;
+          left: 0;
+          z-index: 99;
+      }
+      .list {
+          height: 85vh;
+      }
+
+      .search-input {
+          .item {
+              padding: 5px;
+              border: none;
+          }
+          .ion-search:before {
+              font-size: 1.7em;
+          }
+      }
+
+      .email-input {
+          .item {
+              padding: 5px;
+              border: none;
+          }
+          .ion-ios-email-outline:before {
+              font-size: 2.2em;
+              color: rgb(15, 65, 106);
+          }
+          input[type="text"] {
+              padding-left: 20px;
+              font-size: 20px;
+          }
+          .button-small {
+              max-width: 60px;
+              background-color: #9ec6cd;
+              color: white;
+              z-index: 99;
+              position: absolute;
+              right: 10px;
+              top: 10px;
+          }
+      }
+  }
 }
 
 
