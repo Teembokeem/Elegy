@@ -7,6 +7,51 @@
           paypal
       </div>
 
+      <div ng-switch-when="Venue">
+          <div class=" container">
+            <div class="members-container">
+                <h3 class="form-item">{{'Name of Venue' | uppercase}}</h3>
+                <!--<div class="row">
+                  <div class="members-row"> 
+                    <span>{{Forms.venue.name}}</span>
+                  </div>
+                </div>-->
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Name" ng-model="Forms.venue.name">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <br>
+            <div class="members-container">
+                <h3 class="form-item">{{'Address' | uppercase}}</h3>
+                <!--<div class="row">
+                  <div class="members-row"> 
+                    <span>{{Forms.venue.address}}</span>
+                  </div>
+                </div>-->
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Street" ng-model="Forms.venue.address">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row nopad">
+              <div class="col">
+                <button ng-click="Forms.createCustomVenue()" class="button blue ">
+                    Submit
+                </button>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
       <div ng-switch-when="eulogy" class="container">
           <br>
           <div class="row nopad">
