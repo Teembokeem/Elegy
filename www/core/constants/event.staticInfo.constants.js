@@ -85,12 +85,6 @@
           {
             parts: [
               {
-                title: 'Add a Location',
-                description: "Compare funeral homes near you",
-                test: "Browse through locally listed funeral homes.",
-                tracker: 'funeralhome'
-              },
-              {
                 title: 'Find a Funeral Home',
                 description: "Compare funeral homes near you",
                 test: "Browse through locally listed funeral homes.",
