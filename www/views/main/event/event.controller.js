@@ -80,12 +80,11 @@
           }
         case 'funeralhome':
         case 'options':
+        case 'keepsake':
+          vm.eventItems = vm.eventStep['types'][0]['parts']
         case 'inviteguests':
           vm.invitees = vm.eventModel.details.inviteguests.attendees;
           $log.info("invite guests right now.", vm.invitees)
-          break;
-        case 'keepsake':
-          vm.eventItems = vm.eventStep['types'][0]['parts']
           break;
       }
       
@@ -95,6 +94,7 @@
     // LOGS FOR DATA CONFIRMS
     // $log.info("your event:", vm.eventModel)
     // $log.info("did it work?", vm.eventItems)
+    // $log.info("did it work?", vm.eventStep)
     // $log.info("did it work?", vm.eventStep.title === 'Interment')
     // $log.info("did it work?", vm.eventStep['types'])
     
@@ -108,16 +108,49 @@
 
     vm.displayMarketplace = function(param) {
       // $log.info("Event Controller display Marketplace method", param)
-      if (param.type) {
-        var listings = marketplaceService.grabMarketplaceListings(param.category);
+      if (param.category === 'Venue') {
+        var popup = $ionicPopup.show({
+          templateUrl: 'views/templates/locationQuery.html',
+          title: 'Choose an Option',
+          scope: $scope
+        })
+
+        $scope.$on('hello', function(event, data) {
+          if (data === 'marketplace') {
+            if (param.type) {
+              var listings = marketplaceService.grabMarketplaceListings(param.category);
+            } else {
+              var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
+            }
+            listings.then(function(listings) {
+              dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
+              $state.go('app.departed-tab.marketplace', {category: param.category});
+            })
+          } else {
+            $state.go('app.departed-tab.forms', {tracker: param.category, insertion: param.tracker});
+          }
+          popup.close();
+        })
+        
+
       } else {
-        var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
+        if (param.type) {
+          var listings = marketplaceService.grabMarketplaceListings(param.category);
+        } else {
+          var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
+        }
+        listings.then(function(listings) {
+          dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
+          $state.go('app.departed-tab.marketplace', {category: param.category});
+        })
       }
-      listings.then(function(listings) {
-        dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
-        $state.go('app.departed-tab.marketplace', {category: param.category});
-      })
-    };
+    }
+
+    vm.emitData = function(type) {
+      $scope.$emit('hello', type)
+    }
+
+    
 
     vm.processAction = function(title ,idx, id, tracker) {
       $log.info("hello", title)
@@ -140,7 +173,7 @@
         case ('Make Program'):
         case ('Add a Location'):
           $log.info("heading to forms.")
-          $state.go('app.departed-tab.forms', {tracker: tracker});
+          
           break;
       }
 
@@ -224,11 +257,11 @@
       })  
   }
 
-    vm.setupModelOptions = function(option) {
+    vm.setupModelOptions = function(value, option) {
       $log.instantiate("Event controller setupModelOptions", 'Method');
       $log.info("your option", option)
       return eventService
-        .setupModelOptions(dataService.retrieveData('event')._id, option, dataService.retrieveData('eventStep').title)
+        .setupModelOptions(dataService.retrieveData('event')._id, value, dataService.retrieveData('eventStep').title)
         .then(function(res) {
           // $log.info("success", res)
           dataService.setData(['event'], [res]);
@@ -236,7 +269,8 @@
           vm.eventItems = vm.eventStep['types'].filter(function(type) {
             return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
           })[0]['parts']
-          // $log.info(vm.eventModel)
+          vm.reviewItems = false
+          option.checked = false;
         })
   }
 
