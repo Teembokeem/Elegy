@@ -24,13 +24,13 @@
 
     vm.schedule['Funeral Home'] = {
       date: wholeSchedule.funeralhome.date.date,
-      location: wholeSchedule.funeralhome.funeralhome.item ? productService.getProduct(wholeSchedule.funeralhome.funeralhome.item).address : null,
+      location: wholeSchedule.funeralhome.funeralhome.item ? productService.grabProduct(wholeSchedule.funeralhome.funeralhome.item).address : null,
       matchKey: 'funeralhome'
     }
     if (wholeSchedule.options.ceremony.item !== null) {
       vm.schedule['Ceremony'] = {
         date: wholeSchedule.options.ceremonydate.date,
-        location: productService.getProduct(wholeSchedule.options.ceremony.item).address,
+        location: productService.grabProduct(wholeSchedule.options.ceremony.item).address,
         matchKey: 'options'
       }
     }
@@ -38,7 +38,7 @@
     if (wholeSchedule.options.reception.item !== null) {
       vm.schedule['Reception'] = {
         date: wholeSchedule.options.receptiondate.date,
-        location: productService.getProduct(wholeSchedule.options.reception.item).address,
+        location: productService.grabProduct(wholeSchedule.options.reception.item).address,
         matchKey: 'options'
       }
     }
@@ -46,7 +46,7 @@
     if (wholeSchedule.options.visitation.item !== null) {
       vm.schedule['Visitation'] = {
         date: wholeSchedule.options.visitationdate.date,
-        location: productService.getProduct(wholeSchedule.options.visitation.item).address,
+        location: productService.grabProduct(wholeSchedule.options.visitation.item).address,
         matchKey: 'options'
       }
     }
@@ -54,7 +54,7 @@
     if (wholeSchedule.options.burial.item !== null) {
       vm.schedule['Burial'] = {
         date: wholeSchedule.options.burialdate.date,
-          location: productService.getProduct(wholeSchedule.options.burial.item).address,
+          location: productService.grabProduct(wholeSchedule.options.burial.item).address,
         matchKey: 'options'
       }
     }
