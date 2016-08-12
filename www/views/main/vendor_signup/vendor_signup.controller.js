@@ -54,15 +54,15 @@
 
     vm.submitVendorForm = function() {
       $log.info("Sending Form, ", vm.newVendor);
-      // userService
-      //   .setupVendor(vm.newVendor)
-      //   .then(function(res) {
-      //     console.log("res?", res)
-      //     $state.go('app.vendor-tab.vendor-home');
-      //   })
-      //   .catch(function(err){
-      //     console.log("ohnoes,", err)
-      //   })
+      userService
+        .setupVendor(vm.newVendor)
+        .then(function(res) {
+          console.log("res?", res)
+          $state.go('app.vendor-tab.vendor-home');
+        })
+        .catch(function(err){
+          console.log("ohnoes,", err)
+        })
     };
 
     // HELPERS
