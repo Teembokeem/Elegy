@@ -16,15 +16,17 @@
     vm.params = $stateParams.category
 
     $log.info("your params", $stateParams)
-    // $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace[0])
+    $log.info("Displaying marketplace for: ", $stateParams.category, Marketplace[0])
     vm.listings = Marketplace[0];
-    // $log.info("vm listings", Marketplace[0].length);
+    $log.info("vm listings", Marketplace[0].length);
     
     vm.listings.forEach(function(listing) {
       listing.method = displayListing
     });
 
-    vm.title = dataService.retrieveData('marketplace');
+    if ($stateParams.marketplace != null) {
+      vm.title = $stateParams.marketplace;
+    }
     // marketplaceExtraParamsOCAL VARS
 
     // BOUND FUNCTIONS

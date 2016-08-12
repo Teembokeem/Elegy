@@ -223,9 +223,9 @@
                 return dataService.parseData(['listings'], ['marketplace']);
               }
             },
-            params: { type: null }
           }
         },
+        params: { marketplace: null },
         cache: false,
         controllerId: 'Marketplace',
         authorized: true

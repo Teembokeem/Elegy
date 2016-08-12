@@ -107,7 +107,7 @@
     }
 
     vm.displayMarketplace = function(param) {
-      // $log.info("Event Controller display Marketplace method", param)
+      $log.info("Event Controller display Marketplace method", param)
       if (param.category === 'Venue') {
         var popup = $ionicPopup.show({
           templateUrl: 'views/templates/locationQuery.html',
@@ -123,8 +123,8 @@
               var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
             }
             listings.then(function(listings) {
-              dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
-              $state.go('app.departed-tab.marketplace', {category: param.category});
+              dataService.setData(['listings', 'stepItem'], [listings.data.data, param.category.toLowerCase()])
+              $state.go('app.departed-tab.marketplace', {category: param.category, marketplace: param.marketplace});
             })
           } else {
             $state.go('app.departed-tab.forms', {tracker: param.category, insertion: param.tracker});
