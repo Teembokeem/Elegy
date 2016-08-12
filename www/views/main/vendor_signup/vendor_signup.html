@@ -2,6 +2,18 @@
   <ion-content class="vendor-signup-view">
     <h3>ADD YOUR BUSINESS INFO</h3>
     <ion-toggle ng-model="VendorSignup.newVendor.venue">REGISTER AS A VENUE</ion-toggle>
+    <div ng-show="Vendorsignup.newVendor.venue">
+      <ion-item>
+        <ion-label>Select A Venue Type</ion-label>
+        <ion-select [(ngModel)]="VendorSignup.newVendor.type">
+          <ion-option value="venue" selected="true">Default to Venue</ion-option>
+          <ion-option value="funeralhome">Funeral Home</ion-option>
+          <ion-option value="cemetery">Cemetery</ion-option>
+          <ion-option value="donation">Body Donation Center</ion-option>
+          <ion-option value="church">Church</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
     <div class="list signup-form container">
       <div class="row">
         <div class="col">
