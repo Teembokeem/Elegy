@@ -8,14 +8,15 @@
     .module('Controllers')
     .controller('Forms.controller', FormsController);
   
-  FormsController.$inject = ['$log', '$stateParams', 'dataService', 'eventService', '$state', 'departedService'];
+  FormsController.$inject = ['$log', '$stateParams', 'dataService', 'eventService', '$state', 'departedService', 'vendorService'];
 
-  function FormsController($log, $stateParams, dataService, eventService, $state, departedService) {
+  function FormsController($log, $stateParams, dataService, eventService, $state, departedService, vendorService) {
     // INSTANTIATIONS
     $log.instantiate('Forms', 'Controller');
     var vm = this;
     var eventStep = dataService.retrieveData('eventStep')
     var departed = dataService.retrieveData('departed')._id;
+    var insertionValue = $stateParams.insertion;
     vm.formType = $stateParams.tracker;
     vm.formPart;
     vm.step = dataService.retrieveData('eventStep')['eventKey']
@@ -27,6 +28,8 @@
 
     // LOGS
     $log.info('departed', departed)
+    $log.info('state params', $stateParams)
+    $log.info("form type", vm.formType)
 
     // LOCAL VARS
     switch(vm.formType) {
@@ -34,6 +37,9 @@
         $log.info("program case");
         vm.program = dataService.retrieveData('event')['details']['keepsake']['program']
         break;
+      case 'venue':
+        $log.info("yay venues");
+        
     }
 
     // BOUND FUNCTIONS
@@ -114,6 +120,31 @@
         .catch(function(err) {
           $log.info("error", err)
         })
+    }
+
+    vm.createCustomVenue = function() {
+      $log.info("your vals", vm.venue);
+      vendorService
+        .createCustomVenue(vm.venue)
+        .then(function(product) {
+          eventService
+            .updateEvent(product, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), insertionValue, 'item')
+            .then(function(res) {
+              eventService
+                .retrieveEvent(dataService.retrieveData('event')._id)
+                .then(function(res) {
+                  dataService.setData(['event'], [res]);
+                  $state.go('app.departed-tab.event', {step: eventStep.tracker});
+                })
+                .catch(function(err){
+                  $log.info("ehoh", err)
+                  return err
+                })
+            })
+          })  
+            .catch(function(err) {
+              $log.info("err", err)
+            })
     }
 
     vm.submitEulogy = function(eulogy) {
