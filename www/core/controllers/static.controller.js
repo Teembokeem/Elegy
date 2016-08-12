@@ -14,8 +14,8 @@
     console.log("CHECK 1")
     var vm = this;
     $scope.logged = false
-    $scope.user = { image: "img/default.png"};
     $scope.admin = false;
+    var userId = {}
     
     $scope.$watch(function () { 
       return window.localStorage.admin
@@ -25,8 +25,9 @@
       })
 
     function getUserInfo() {
-      var userId = tokenService.decode()
+      userId = tokenService.decode()
       console.log("HATE", userId)
+      $scope.userImage = userId ? userId.image : '' 
     }
     getUserInfo()
   
@@ -42,8 +43,11 @@
       return window.localStorage.elegy_token
     },function(token){
       token ? $scope.logged = true : $scope.logged = false
+      if ( token ) {
+        getUserInfo()
+      }
       console.log("User is logged? ", $scope.logged)
-      })
+    })
   }
     
 })();
