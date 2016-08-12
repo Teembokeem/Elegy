@@ -47,14 +47,14 @@
               <h3>{{option.type | uppercase}}</h3>
             </div>
         </div>-->
-        <ion-checkbox ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types" class="item-checkbox-right" ng-click="Event.showSteps(option.type)">
+        <ion-checkbox ng-model="option.checked" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types" class="item-checkbox-right" ng-click="Event.showSteps(option.type)">
           <h3>{{option.type | uppercase}}</h3>
           <div ng-if="Event.showStepsBool === option.type" ng-repeat="step in option.parts">
             <p>{{step.title}}</p>
           </div>
         </ion-checkbox>
         <br>
-        <button class="button blue" ng-click="Event.setupModelOptions(Event.showStepsBool)">Edit This Item</button>
+        <button class="button blue" ng-click="Event.setupModelOptions(Event.showStepsBool, option)">Edit This Item</button>
       </div>
 
       <ion-item ng-show="Event.eventStep.eventKey === 'interment' ? Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()] != null && Event.reviewItems === false : true" ng-repeat="part in Event.eventItems" class="index">
@@ -90,9 +90,14 @@
                     <span>{{Event.Item.name | uppercase}}</span>
                   </div>
                 </div>
-                <div class="row">
+                <div ng-show="Event.Item.brand != null" class="row">
                   <div class="col listing-price">
                     <span>{{Event.Item.brand}}</span>
+                  </div>
+                </div>
+                <div ng-show="Event.Item.address != null" class="row">
+                  <div class="col listing-price">
+                    <span>{{Event.Item.address}}</span>
                   </div>
                 </div>
                 <div class="row">
