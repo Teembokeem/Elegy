@@ -30,6 +30,10 @@
         "material",
         'brand',
         'color'
+      ],
+      urn: [
+        'material',
+        'dimensions'
       ]
     }
   })
