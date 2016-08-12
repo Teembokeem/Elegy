@@ -16,7 +16,8 @@
       setupVendor: setupVendor,
       setupGuest: setupGuest,
       createGuests: createGuests,
-      updateRefGuest: updateRefGuest
+      updateRefGuest: updateRefGuest,
+      updateUser: updateUser
     }
 
     return service;
@@ -119,6 +120,23 @@
         return err
       })
 
+    }
+
+    function updateUser( data ) {
+      $log.instantiate("User Service Create Guests", "method")
+      return $http({
+        method: 'PUT',
+        url: urlFactory + '/updateUser',
+        data: data
+      })
+      .then(function(done) {
+        $log.info("Success, ")
+        return done.data
+      })
+      .catch(function(err) {
+        $log.info("error, ")
+        return err
+      })
     }
 
 

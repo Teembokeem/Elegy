@@ -10050,6 +10050,22 @@ h2.or {
   background-image: url("../img/tab-donate-on.png");
   background-size: contain; }
 
+.tabs .tab-item .icon.program {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-program.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.program-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url("../img/tab-program-on.png");
+  background-size: contain; }
+
 .home-nav {
   position: absolute;
   z-index: 999;
@@ -10253,6 +10269,8 @@ h2.or {
     margin-top: 14px;
     font-size: 2em;
     color: #0f416a; }
+  .home-view .item.item-input-short {
+    margin: 0; }
   .home-view .nobutton {
     background-color: transparent;
     width: auto;
@@ -10561,6 +10579,45 @@ h2.or {
   position: absolute;
   right: 10px;
   top: 10px; }
+
+.program-view .switch .passive {
+  color: rgba(160, 160, 160, 0.8);
+  border-style: none !important; }
+
+.program-view .switch .row {
+  margin-top: 0px;
+  padding: 5px 10px;
+  color: #0f416a; }
+
+.program-view .switch .blue-border {
+  padding: 4px 0;
+  border-style: solid;
+  border-bottom-width: 5px;
+  border-color: #17779e; }
+
+.program-view h1.blue {
+  color: #17779e;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: 'Gotham-Medium'; }
+
+.program-view p {
+  font-size: 1.2em;
+  text-align: left; }
+
+.program-view .bold {
+  padding-left: 20px;
+  font-weight: 600; }
+
+.program-view .small-row {
+  padding: 10px; }
+
+.program-view .edit-program-details-title {
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 20em; }
 
 .feed-view .banner {
   -webkit-background-size: cover;

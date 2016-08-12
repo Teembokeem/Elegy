@@ -1,0 +1,45 @@
+.program-view {
+    .switch {
+        .passive {
+            color: rgba(160, 160, 160, 0.8);
+            border-style: none !important;
+        }
+        .row {
+            margin-top: 0px;
+            padding: 5px 10px;
+            color: rgb(15, 65, 106);
+        }
+        .blue-border {
+            padding:4px 0;
+            border-style: solid;
+            border-bottom-width:5px;
+            border-color: rgb(23, 119, 158);
+        }
+    }
+    h1.blue {
+        color: rgb(23, 119, 158);
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: 'Gotham-Medium'
+    }
+    p {
+        font-size: 1.2em;
+        text-align: left;
+    }
+    .bold {
+        padding-left: 20px;
+        font-weight: 600;
+    }
+
+    .small-row {
+        padding: 10px;
+    }
+
+    .edit-program-details-title {
+        font-size: 1em;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        min-width: 20em;
+    }
+}

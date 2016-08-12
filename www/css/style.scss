@@ -350,6 +350,24 @@ h2.or {
   background-size:contain;
 }
 
+.tabs .tab-item .icon.program {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url('../img/tab-program.png');
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.program-on {
+  margin-top: 5px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 75%;
+  background-image: url('../img/tab-program-on.png');
+  background-size:contain;
+}
+
 .home-nav {
   position: absolute;
   z-index: 999;
