@@ -35,6 +35,13 @@
         'material',
         'dimensions'
       ]
+    },
+    venueTypes: {
+      venue: 'Default to Venue',
+      church: 'Church',
+      cemetery: 'Cemetery',
+      funeralhome: 'Funeral Home',
+      donation: 'Body Donation Center'
     }
   })
 
