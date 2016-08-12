@@ -14,6 +14,7 @@
       grabVendorOrders : grabVendorOrders,
       grabVendorData: grabVendorData,
       createProduct: createProduct,
+      createCustomVenue: createCustomVenue,
       parseVendorItems: parseVendorItems
     }
 
@@ -50,6 +51,20 @@
       .catch(function(err) {
         $log.info("error")
         return err
+      })
+    }
+
+    function createCustomVenue(data) {
+      $log.info("Vendor Service Create Custom Venue Method");
+      data.type = 'venue'
+      return $http({
+        method: 'POST',
+        url: urlFactory + '/createCustomVenue',
+        data: data
+      })
+      .then(function(res) {
+        $log.info("Success", res);
+        return res.data
       })
     }
 

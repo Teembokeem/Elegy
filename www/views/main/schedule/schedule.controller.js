@@ -20,7 +20,7 @@
 
     // LOCAL VARS
     var wholeSchedule = dataService.retrieveData('event').details
-    vm.program = dataService.retrieveData('event').details.keepsake.program
+    // vm.program = dataService.retrieveData('event').details.keepsake.program
 
     vm.schedule['Funeral Home'] = {
       date: wholeSchedule.funeralhome.date.date,
@@ -43,21 +43,23 @@
       }
     }
 
-    if (wholeSchedule.options.visitation.date !== null) {
+    if (wholeSchedule.options.visitation.item !== null) {
       vm.schedule['Visitation'] = {
-        date: wholeSchedule.options.visitation.date,
+        date: wholeSchedule.options.visitationdate.date,
+        location: productService.getProduct(wholeSchedule.options.visitation.item).address,
         matchKey: 'options'
       }
     }
 
-    if (wholeSchedule.options.burial.date !== null) {
+    if (wholeSchedule.options.burial.item !== null) {
       vm.schedule['Burial'] = {
-        date: wholeSchedule.options.burial.date,
+        date: wholeSchedule.options.burialdate.date,
+          location: productService.getProduct(wholeSchedule.options.burial.item).address,
         matchKey: 'options'
       }
     }
 
-    console.log("THIS IS THE PROGRAM", vm.program)
+    console.log("THIS IS THE PROGRAM", wholeSchedule)
  
 
     // BOUND FUNCTIONS
