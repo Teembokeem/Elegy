@@ -92,6 +92,7 @@
 
     // GET METHOD TO DATABASE
     function grabMarketplaceListings(param, extra) {
+      $log.info("grab marketplace", param, extra)
       return $http({
         method: 'GET',
         url: urlFactory + '/products/' + param,

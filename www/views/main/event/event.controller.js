@@ -118,9 +118,9 @@
         $scope.$on('hello', function(event, data) {
           if (data === 'marketplace') {
             if (param.type) {
-              var listings = marketplaceService.grabMarketplaceListings(param.category);
-            } else {
               var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
+            } else {
+              var listings = marketplaceService.grabMarketplaceListings(param.category);
             }
             listings.then(function(listings) {
               dataService.setData(['listings', 'stepItem'], [listings.data.data, param.category.toLowerCase()])
