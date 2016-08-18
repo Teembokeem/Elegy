@@ -10,7 +10,7 @@
       <div ng-switch-when="Venue">
           <div class=" container">
             <div class="members-container">
-                <h3 class="form-item">{{'Name of Venue' | uppercase}}</h3>
+                <h3 class="form-item">{{'Name of Venue' }}</h3>
                 <!--<div class="row">
                   <div class="members-row"> 
                     <span>{{Forms.venue.name}}</span>
@@ -26,7 +26,7 @@
               </div>
               <br>
             <div class="members-container">
-                <h3 class="form-item">{{'Address' | uppercase}}</h3>
+                <h3 class="form-item">{{'Address' }}</h3>
                 <!--<div class="row">
                   <div class="members-row"> 
                     <span>{{Forms.venue.address}}</span>
@@ -56,7 +56,7 @@
           <br>
           <div class="row nopad">
             <div class="col nopad">
-            <h1 class="form-title">{{'Eulogy' | uppercase}}</h1>
+            <h1 class="form-title">{{'Eulogy' }}</h1>
             <br>
             <label class="nopad item item-input textarea-stuff">
                 <textarea ng-model="Forms.eulogy" 
@@ -84,7 +84,7 @@
           <div class="program-container">
 
             <div class="members-container">
-              <h3 class="form-item">{{'Surviving Family Members' | uppercase}}</h3>
+              <h3 class="form-item">{{'Surviving Family Members' }}</h3>
               <div class="row" ng-repeat="member in Forms.program.members">
                 <div class="members-row"> 
                   <span>{{member}}</span>
@@ -93,7 +93,7 @@
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                      <input type="text" placeholder="Members" ng-model="Forms.newMember">
+                      <input type="text" placeholder="Full Name" ng-model="Forms.newMember">
                   </label>
                 </div>
               </div>
@@ -106,14 +106,14 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Pallbearers' | uppercase}}</h3>
+              <h3 class="form-item">{{'Pallbearers' }}</h3>
               <div class="row members-row" ng-repeat="bearer in Forms.program.pallbearers">
                   <span>{{bearer}}</span>
               </div>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input type="text" placeholder="Pall Bearers" ng-model="Forms.newBearer">
+                    <input type="text" placeholder="Full Name" ng-model="Forms.newBearer">
                   </label>
                 </div>
               </div>
@@ -126,7 +126,7 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Officiant' | uppercase}}</h3>
+              <h3 class="form-item">{{'Officiant' }}</h3>
                 <div class="row members-row">
                   <span ng-show="Forms.program.officiant ? !Forms.editingOfficiant : false">{{Forms.program.officiant}}</span>
               </div>
@@ -146,7 +146,7 @@
             <br>
             
             <div class="members-container container">
-              <h3 class="form-item">{{'Eulogizer' | uppercase}}</h3>
+              <h3 class="form-item">{{'Eulogist' }}</h3>
                 <div class="row members-row">
                   <span ng-show="Forms.program.eulogizer ? !Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
               </div>
@@ -166,7 +166,7 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Songs' | uppercase}}</h3>
+              <h3 class="form-item">{{'Songs' }}</h3>
               <div class="members-row" ng-repeat="song in Forms.program.songs">
                   <span>{{song}}</span>
               </div>
@@ -186,7 +186,7 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Readings' | uppercase}}</h3>
+              <h3 class="form-item">{{'Readings' }}</h3>
               <div class="row members-row" ng-repeat="song in Forms.program.readings">
                 <span>{{song}}</span>
               </div>
@@ -208,7 +208,7 @@
             <div class="row nopad">
               <div class="col">
                 <button ng-click="Forms.updateProgram()" class="button blue ">
-                    Submit
+                    Save
                 </button>
               </div>
             </div>
