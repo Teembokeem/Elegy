@@ -35,7 +35,7 @@
             <hr>
             <div class="row">
               <div class="col-33">
-                <p class="bold">Name: </p>
+                <p class="bold">Names: </p>
               </div>
               <div class="col-66">
                 <p>{{Program.program.eulogizer}}</p>
@@ -48,7 +48,7 @@
             <hr>
             <div class="row">
               <div class="col-33">
-                <p class="bold">Name: </p>
+                <p class="bold">Names: </p>
               </div>
               <div class="col-66">
                 <p ng-if="Program.program.pallbearers" ng-repeat="person in Program.program.pallbearers" class="capitalize">
@@ -63,7 +63,7 @@
             <hr>
             <div class="row">
               <div class="col-33">
-                <p class="bold">Reading: </p>
+                <p class="bold">Readings: </p>
               </div>
               <div class="col-66">
                 <p ng-if="Program.program.readings" ng-repeat="person in Program.program.readings" class="capitalize">
@@ -78,7 +78,7 @@
             <hr>
             <div class="row">
               <div class="col-33">
-                <p class="bold">Song: </p>
+                <p class="bold">Songs: </p>
               </div>
               <div class="col-66">
                 <p ng-if="Program.program.songs" ng-repeat="person in Program.program.songs" class="capitalize">
@@ -89,7 +89,7 @@
           </div>
         </div>
           <br>
-          <button ng-show="admin" ng-click="Program.travelToStep('keepsake')" class="button blue">{{'Edit Program Details' | uppercase}}</button>
+          <button ng-show="admin" ng-click="Program.travelToStep('keepsake')" class="button blue">Edit Program</button>
       </div>
   </ion-content>
 </ion-view>

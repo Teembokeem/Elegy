@@ -31,6 +31,16 @@
 }
 
 @font-face {
+	font-family: 'Gotham-Light-Italic';
+	src: url('../fonts/GothamLight-Italic.eot');
+	src: url('../fonts/GothamLight-Italic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GothamLight-Italic.woff') format('woff'),
+		url('../fonts/GothamLight-Italic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: 'Bodoni-Regular';
 	src: url('../fonts/BodoniFLF-Roman.eot');
 	src: url('../fonts/BodoniFLF-Roman.eot?#iefix') format('embedded-opentype'),
@@ -244,6 +254,8 @@ button.white {
 h2.or {
   font-weight: 700;
   font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .has-tabs, .bar-footer.has-tabs {
@@ -255,6 +267,7 @@ h2.or {
   color: black;
   width: auto;
   float: left;
+  margin-bottom: 15px;
   .icon {
     vertical-align: bottom;
   }
@@ -406,3 +419,12 @@ h2.or {
 .tab-nav.tabs {
   margin-bottom: 12px;
 }
+
+i.italics {
+  font-family: 'Gotham-Light-Italic';
+}
+
+.button.clear.active, .button.clear.activated {
+  background-color: transparent;
+  border: none;
+}  

@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory', 'dataService', 'vendorService'];
+  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory', 'dataService', 'vendorService', '$ionicModal', '$scope'];
   
-  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory, dataService, vendorService) {
+  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory, dataService, vendorService, $ionicModal, $scope) {
     // INSTANTIATIONS
     $log.instantiate('Login', 'controller')
     var vm = this;
@@ -19,6 +19,9 @@
       password: 'elegy'
     };
     
+    vm.trying = false
+    vm.forgot = false
+
     // BOUND FUNCTIONS
     vm.authenticate = function() {
       vm.credentials.email = vm.credentials.email.toLowerCase();
@@ -87,6 +90,35 @@
     // }
     
     // HELPERS
+
+    $ionicModal.fromTemplateUrl('views/templates/terms.html', {
+      scope: $scope,
+      animation: 'slide-in-right'
+    })
+    .then(function( modal ) {
+      vm.modal = modal;
+    })
+
+    vm.openTerms = function() {
+      vm.modal.show();
+    };
+
+    $scope.closeModal = function() {
+      vm.modal.hide();
+    };
+    
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      vm.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
   }
   
 })();
