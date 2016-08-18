@@ -103,7 +103,8 @@
           .then(function(product) {
             vm.schedule.push( {
               date: wholeSchedule[keySet.prop1][keySet.prop2]['date'],
-              location: product.address,
+              location: product.name,
+              address: product.address,
               matchKey: keySet.prop1,
               dest: keySet.dest
             })

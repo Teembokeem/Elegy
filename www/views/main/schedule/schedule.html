@@ -16,6 +16,7 @@
         <div class="padding">
           <div class="small-row" ng-repeat="value in Schedule.schedule | orderBy: 'date'">
             <h1 class="blue">{{value.dest}}</h1>
+            <button ng-show="admin" class="button blue" ng-click="Schedule.travelToStep(value.matchKey)">Edit Item</button>
             <hr>
             <div class="row" ng-if="value.location">
               <div class="col-33">
@@ -23,6 +24,14 @@
               </div>
               <div class="col-66">
                 <p>{{value.location}}</p>
+              </div>
+            </div>
+            <div class="row" ng-if="value.address">
+              <div class="col-33">
+                <p class="bold">Address</p>
+              </div>
+              <div class="col-66">
+                <p>{{value.address}}</p>
               </div>
             </div>
             <div class="row" ng-if="value.date">
@@ -33,7 +42,13 @@
                 <p>{{value.date | date : 'fullDate'}}</p>
               </div>
             </div>
-            <button ng-show="admin" class="button blue" ng-click="Schedule.travelToStep(value.matchKey)">Edit Item</button>
+            <div class="row" ng-if="value.date">
+              <div class="col-33">
+              </div>
+              <div class="col-66">
+                <p>{{value.date | date : 'shortTime'}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
