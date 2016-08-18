@@ -2,11 +2,11 @@
   <ion-content class="feed-view">
     <div class="holding">
       <div class="banner" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Feed.departed.image + ')'}">
-        <header>
+        <header ng-click="Feed.expandEul =  !Feed.expandEul">
           <h1>
             {{Feed.departed.first}} {{Feed.departed.last}}
-            <i ng-if="Feed.expandEul == false" ng-click="Feed.expandEul = true" style="padding: 10px;" class="icon ion-chevron-down"></i>
-            <i ng-if="Feed.expandEul == true" ng-click="Feed.expandEul = false" style="padding: 10px;" class="icon ion-chevron-up"></i>
+            <i ng-if="Feed.expandEul == false" style="padding: 10px;" class="icon ion-chevron-down"></i>
+            <i ng-if="Feed.expandEul == true" style="padding: 10px;" class="icon ion-chevron-up"></i>
           </h1>
         </header>
       </div>
@@ -14,6 +14,7 @@
         <p class="text-left">
           {{Feed.departed.eulogy}}
         </p>
+            <i ng-if="Feed.expandEul == true" ng-click="Feed.expandEul = !Feed.expandEul" style="padding: 10px;" class="icon ion-chevron-up"></i>
       </div>
 
     </div>
@@ -25,13 +26,16 @@
             <i class="icon ion-camera" ngf-select ng-model="Feed.mediaUpload" name="file" class="comfy-padding"
               accept="image/*" ngf-max-size="5MB" required
               ngf-model-invalid="errorFiles">
-              <span class="addPhoto">Add a photo or video</span>
+              <span class="addPhoto">Add photo or video</span>
               </i>
               <i ng-show="myForm.file.$error.maxSize">File too large
               {{errorFiles[0].size / 1000000|number:1}}MB: max 5M</i>
           </div>
           <div class="col-25">
-            <button type="submit" class="button light-blue post" ng-click="Feed.submitMemory()"> POST</button>
+            <button type="submit" class="button light-blue post" ng-click="Feed.submitMemory()"> Post</button>
+          </div>
+          <div class="col-25">
+            <button type="" class="button light-blue post" ng-click="Feed.expanded = false"> Cancel</button>
           </div>
         </div>
       </div>
