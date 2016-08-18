@@ -32,7 +32,7 @@
     overflow:visible;
     white-space: normal;
   }
-  
+
   .step-container {
       animation-name: left-content;
       animation-duration: 1.5s;
@@ -236,8 +236,13 @@
   }
 
   .date-container {
+
+    .col-50 {
+      margin-left: 3em;
+    }
     button {
       background-color: rgb(23, 119, 158); 
+      color: white;
     }
   }
 
