@@ -5,11 +5,15 @@
     <!--<div class="top-right" ng-click="UserProfile.default = !UserProfile.default">
         <i class="icon ion-gear-a"></i>
     </div>-->
+    <h1>Edit Your Profile</h1>
+    <br>
     <div class="list login-form container" ng-if="UserProfile.default">
         <div class="row nopad">
             <div class="col">
-                <img class="profilePic" ng-src="{{UserProfile.user.image}}" alt="">
+                <img ng-hide="UserProfile.user.newImage" class="profilePic" ng-src="{{UserProfile.user.image}}" alt="">
+                <img ng-show="UserProfile.user.newImage" class="profilePic" ngf-src="UserProfile.user.newImage">
             </div>
+            <div ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="camera-doe"><i ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="icon ion-camera"></i> Edit</div>
         </div>
         <div class="row nopad">
             <div class="col">
@@ -35,13 +39,13 @@
             </div>
         </div>
         <br>
-        <div class="row nopad">
+        <!--<div class="row nopad">
             <div class="col">
             <label class="item item-input">
                 <input type="password" placeholder="Password" ng-model="UserProfile.user.password">
             </label>
             </div>
-        </div>
+        </div>-->
         <br>
         <div class="row">
             <div class="col">
