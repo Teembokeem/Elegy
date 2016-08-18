@@ -26,12 +26,13 @@
         Upcoming Events
       </div>
       <div ng-repeat="departed in Home.assets" class="row item" ng-click="Home.travel(departed)">
-        <div class="col-50 text-left">
+        <div class="col-75 text-left">
           <h2 class="name capitalize">{{departed.first }} {{departed.last }} <i class="italics"> &nbsp;  {{departed.admin ? "Owner" : "Guest"}}</i></h2>
+          <p>DOB DOD</p>
         </div>
-        <div class="col">
+        <!--<div class="col">
 
-        </div>
+        </div>-->
         <div class="col text-right item user-avatar">
           <div class="item-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + departed.image + ')'}">
           </div>
