@@ -26,7 +26,8 @@
             vm.user.image = photoUrl
             userService.updateUser( vm.user )
               .then( function( response ) {
-                vm.user = response.data.data
+                console.log("response", response)
+                vm.user = response
               })
           })
 
