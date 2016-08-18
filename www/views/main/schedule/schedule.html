@@ -14,8 +14,8 @@
       <div class="container schedule">
         <br>
         <div class="padding">
-          <div class="small-row" ng-repeat="(key, value) in Schedule.schedule">
-            <h1 class="blue">{{key}}</h1>
+          <div class="small-row" ng-repeat="value in Schedule.schedule | orderBy: 'date'">
+            <h1 class="blue">{{value.dest}}</h1>
             <hr>
             <div class="row" ng-if="value.location">
               <div class="col-33">
