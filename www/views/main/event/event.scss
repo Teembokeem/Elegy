@@ -32,6 +32,7 @@
     overflow:visible;
     white-space: normal;
   }
+  
   .step-container {
       animation-name: left-content;
       animation-duration: 1.5s;
@@ -42,6 +43,8 @@
         font-size: 2em;
         font-style: bold;
         font-family: Avenir;
+
+
       }
      
       h2 {
@@ -152,12 +155,12 @@
 
   .index {
 
-    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
+    .ion-ios-circle-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
       font-size: 2.5em;
       float: left;
       margin-right: 10px;
     }
-    .ion-ios-close-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
+    .ion-ios-circle-outline:before, .ion-ios-minus-outline:before, .ion-ios-checkmark-outline:before {
       font-size: 2.5em;
       float: left;
       margin-right: 10px;
