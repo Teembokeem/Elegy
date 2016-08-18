@@ -1,4 +1,5 @@
-<ion-view view-title="E V E N T">
+<ion-view view-title="Plan">
+    hello
   <ion-content class="event-view">
     <ion-item>
         <div class="row nopad">
@@ -12,8 +13,8 @@
     <ion-item class="text-center index" ng-repeat="part in Event.EventStaticInfo">
         <div class="row">
             <div class="col text-left" ng-click="Event.moveTo(part, $index)">
-                <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-close-outline"></i>
-                <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-close-outline"></i>
+                <i ng-show="!Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status']" class="icon ion-ios-circle-outline"></i>
+                <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '0'" class="icon ion-ios-circle-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '1'" class="icon ion-ios-minus-outline"></i>
                 <i ng-show="Event.eventModel['details'][Event.eventStep.title.toLowerCase()][part.tracker]['status'] === '2'" class="icon ion-ios-checkmark-outline"></i>
                 <h2>{{part.title | uppercase}}</h2>
