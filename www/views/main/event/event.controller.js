@@ -252,7 +252,7 @@
 
     vm.stageDate = function(date, idx) {
       $log.instantiate("Event Controller Stage Date", 'method');
-      // $log.info("arguments: ", date);
+      $log.info("ARGS DOE: ", date);
       return eventService 
         .updateEvent(date, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep')['eventKey'].toLowerCase(), dataService.retrieveData('eventStep')['types'][0]['parts'][idx]['tracker'], 'date')
         .then(function(response) {
