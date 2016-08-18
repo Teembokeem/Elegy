@@ -10761,6 +10761,8 @@ i.italics {
 
 .user-profile-view .list {
   margin-top: -20px; }
+  .user-profile-view .list .row .col span {
+    font-size: 2em; }
 
 .user-profile-view .camera-doe {
   position: absolute;
