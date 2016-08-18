@@ -109,13 +109,20 @@
 
         <div class="date-picker" ng-show="Event.itemBlock === $index && part.date">
           <div class="row date-container">
-            <div class="col-66">
+            <div class="col-50">
               <div class="date-box">
                 <input type="date" ng-model="Event.Date">
               </div>
             </div>
             <div class="col">
-                <button ng-click="Event.stageDate(Event.Date, $index)" class="button button-balanced" style="width: 100%;" >Confirm</button>
+              <div class="date-box">
+                <input type="time" ng-model="Event.Date">
+              </div>
+            </div>
+          </div>
+          <div class="row date-container">
+            <div class="col">
+                <button ng-click="Event.stageDate(Event.Date, $index)" class="button" style="width: 100%;" >Confirm</button>
             </div>
           </div>
         </div>
