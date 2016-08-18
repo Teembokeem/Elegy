@@ -6,17 +6,17 @@
     .module('Controllers')
     .controller('Login.controller', LoginController);
 
-  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory', 'dataService', 'vendorService', '$ionicModal', '$scope'];
+  LoginController.$inject = ['$log', 'authService', '$state', 'eventService', '$ionicPopup', '$ionicHistory', 'dataService', 'vendorService', '$ionicModal', '$scope', 'tokenService'];
   
-  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory, dataService, vendorService, $ionicModal, $scope) {
+  function LoginController($log, authService, $state, eventService, $ionicPopup, $ionicHistory, dataService, vendorService, $ionicModal, $scope, tokenService) {
     // INSTANTIATIONS
     $log.instantiate('Login', 'controller')
     var vm = this;
     
     // LOCAL VARS
     vm.credentials = {
-      email: 'elegy@gmail.com',
-      password: 'elegy'
+      email: tokenService.decode() ? tokenService.decode().email : 'elegy@gmail.com',
+      password: ''
     };
     
     vm.trying = false
@@ -67,8 +67,15 @@
         })
     };
 
+    if (dataService.retrieveData('elegy_token') != null) {
+      var data = dataService.retrieveData('elegy_token')
       $ionicHistory.clearHistory()
       $ionicHistory.clearCache()
+      dataService.setData(['elegy_token'], [data])
+
+    } else {
+
+    }
       // console.log("clearing caches.")
     // vm.authenticate = function() {
     //   $log.info("Sending Credentials, ", vm.credentials);
