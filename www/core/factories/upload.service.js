@@ -43,6 +43,8 @@
             })
         } else if (imageType == "departed") {
             return response.data.secure_url
+        } else if (imageType == "user") {
+            return response.data.secure_url
         } else if (imageType == "media feed") {
             $http({
                 method: "PUT",
