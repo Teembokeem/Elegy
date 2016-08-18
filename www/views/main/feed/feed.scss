@@ -119,14 +119,18 @@
 
     .eulogy-container {
         margin: 1em;
+        p {
+            font-size: 1.5em;
+        }
     }
 
     button.light-blue.post {
         min-height: 15px;
         line-height: unset;
-        width: 6em;
+        width: 5em;
         font-family: 'Gotham-Medium';
         margin-top: 10px;
+        padding-right: 0.5em;
     }
     .ion-camera:before {
         font-size: 2em;
