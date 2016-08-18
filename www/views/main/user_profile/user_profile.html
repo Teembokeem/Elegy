@@ -5,7 +5,7 @@
     <!--<div class="top-right" ng-click="UserProfile.default = !UserProfile.default">
         <i class="icon ion-gear-a"></i>
     </div>-->
-    <h1>Edit Your Profile</h1>
+    <h1> {{UserProfile.user.email}}</h1>
     <br>
     <div class="list login-form container" ng-if="UserProfile.default">
         <div class="row nopad">
@@ -15,6 +15,8 @@
             </div>
             <div ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="camera-doe"><i ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="icon ion-camera"></i> Edit</div>
         </div>
+
+        <br>
         <div class="row nopad">
             <div class="col">
             <label class="item item-input">
@@ -30,15 +32,6 @@
             </label>
             </div>
         </div>
-        <br>
-        <div class="row nopad">
-            <div class="col">
-            <label class="item item-input">
-                <input type="text" placeholder="Email" ng-model="UserProfile.user.email">
-            </label>
-            </div>
-        </div>
-        <br>
         <!--<div class="row nopad">
             <div class="col">
             <label class="item item-input">
@@ -49,12 +42,11 @@
         <br>
         <div class="row">
             <div class="col">
-                <button class="button clear" ng-click="UserProfile.changeUser()">
+                <button class="button blue" ng-click="UserProfile.changeUser()">
                 Save Changes
                 </button>
             </div>
         </div>
-        <br>
         <div class="row">
             <div class="col">
                 <button class="button blue" ng-click="UserProfile.logout()">
