@@ -10391,11 +10391,11 @@ i.italics {
   .event-view input[type="text"]:focus:before,
   .event-view input[type="text"]:valid:before {
     content: ""; }
-  .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
+  .event-view .index .ion-ios-circle-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
     font-size: 2.5em;
     float: left;
     margin-right: 10px; }
-  .event-view .index .ion-ios-close-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
+  .event-view .index .ion-ios-circle-outline:before, .event-view .index .ion-ios-minus-outline:before, .event-view .index .ion-ios-checkmark-outline:before {
     font-size: 2.5em;
     float: left;
     margin-right: 10px; }
@@ -10733,13 +10733,16 @@ i.italics {
 
 .feed-view .eulogy-container {
   margin: 1em; }
+  .feed-view .eulogy-container p {
+    font-size: 1.5em; }
 
 .feed-view button.light-blue.post {
   min-height: 15px;
   line-height: unset;
-  width: 6em;
+  width: 5em;
   font-family: 'Gotham-Medium';
-  margin-top: 10px; }
+  margin-top: 10px;
+  padding-right: 0.5em; }
 
 .feed-view .ion-camera:before {
   font-size: 2em;

@@ -42,7 +42,7 @@
         url: urlFactory + '/product/' + id
       })
       .then(function(res) {
-        $log.info("Succcess");
+        $log.info("Succcess", res.data.data);
         return res.data.data[0]
       })
       .catch(function(err) {
