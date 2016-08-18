@@ -27,7 +27,7 @@
       </div>
       <div ng-repeat="departed in Home.assets" class="row item" ng-click="Home.travel(departed)">
         <div class="col-50 text-left">
-          <h2 class="name capitalize">{{departed.first }} {{departed.last }} <span> &nbsp;  ({{departed.admin ? "Admin" : "Guest"}})</span></h2>
+          <h2 class="name capitalize">{{departed.first }} {{departed.last }} <i class="italics"> &nbsp;  {{departed.admin ? "Owner" : "Guest"}}</i></h2>
         </div>
         <div class="col">
 

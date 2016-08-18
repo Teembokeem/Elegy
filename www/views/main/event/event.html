@@ -1,17 +1,13 @@
 <ion-view view-title="{{Event.eventStep.title}}">
   <ion-content class="event-view">
     <div class="row nopad">
-      <backbutton></backbutton>
     </div>
     <ion-item>
         <div class="row nopad">
-            <div class="col nopad">
-                <div class="user-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + Event.departed.image + ')'}"></div>
-            </div>
-            <div class="col-75 text-left" style="margin-top: 4px;">
-                <h2>Immediate Decisions</h2>
-                <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
-            </div>
+          <div class="col text-left" style="margin-top: 4px;">
+              <h2>Immediate Decisions</h2>
+              <p>We’re so sorry for your loss. Let us guide you through the initial steps you must take.</p>
+          </div>
         </div>
         <div ng-click="Event.reviewingOptions()" ng-show="Event.eventStep.eventKey === 'interment'" class="row">
           <div class="col-center">
@@ -69,11 +65,11 @@
             <h2 >{{part.title | uppercase}} </h2>
           </div>
           <!--{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']}}-->
-          <div class="col-10">
-            <i ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.eventKey][part.tracker]['item'] )" class="icon ion-ios-arrow-down"></i>
+          <div class="col-10" ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.eventKey][part.tracker]['item'] )">
+            <i class="icon ion-ios-arrow-down"></i>
           </div>
-          <div class="col-10">
-            <i ng-click="Event.openModal( part )" class="icon ion-ios-information-outline"></i>
+          <div class="col-10" ng-click="Event.openModal( part )">
+            <i  class="icon ion-ios-information-outline"></i>
           </div>
         </div>
 

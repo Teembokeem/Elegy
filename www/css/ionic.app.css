@@ -9838,6 +9838,13 @@ a.button {
   font-style: normal; }
 
 @font-face {
+  font-family: 'Gotham-Light-Italic';
+  src: url("../fonts/GothamLight-Italic.eot");
+  src: url("../fonts/GothamLight-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamLight-Italic.woff") format("woff"), url("../fonts/GothamLight-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
   font-family: 'Bodoni-Regular';
   src: url("../fonts/BodoniFLF-Roman.eot");
   src: url("../fonts/BodoniFLF-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/BodoniFLF-Roman.woff") format("woff"), url("../fonts/BodoniFLF-Roman.ttf") format("truetype");
@@ -9958,7 +9965,9 @@ button.white {
 
 h2.or {
   font-weight: 700;
-  font-size: 14px; }
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .has-tabs, .bar-footer.has-tabs {
   top: 40px; }
@@ -9966,7 +9975,8 @@ h2.or {
 .button-clear.button-clear.back-directive {
   color: black;
   width: auto;
-  float: left; }
+  float: left;
+  margin-bottom: 15px; }
   .button-clear.button-clear.back-directive .icon {
     vertical-align: bottom; }
 
@@ -10095,6 +10105,13 @@ h2.or {
 
 .tab-nav.tabs {
   margin-bottom: 12px; }
+
+i.italics {
+  font-family: 'Gotham-Light-Italic'; }
+
+.button.clear.active, .button.clear.activated {
+  background-color: transparent;
+  border: none; }
 
 .login-view img.logo {
   margin-top: 15vh;
@@ -10517,11 +10534,11 @@ h2.or {
 
 .guest-invite-view p {
   text-align: left;
-  font-size: 20px;
+  font-size: 14px;
   font-family: "Gotham-Book"; }
 
 .guest-invite-view strong {
-  font-size: 20px;
+  font-size: 14px;
   font-family: "Gotham-Book"; }
 
 .guest-invite-view input[type="text"] {
@@ -10603,7 +10620,8 @@ h2.or {
 
 .program-view p {
   font-size: 1.2em;
-  text-align: left; }
+  text-align: left;
+  margin-left: 10px; }
 
 .program-view .bold {
   padding-left: 20px;
