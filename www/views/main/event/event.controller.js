@@ -13,6 +13,8 @@
     $log.instantiate('Event', 'controller');
     var vm = this;
     var setter = 0;
+    vm.popup;
+
     
     
     // LOCAL VARS
@@ -42,6 +44,9 @@
         vm.showStepsBool = '';
       }
     }
+    vm.keepsakes = vm.eventStep ?  vm.eventStep.eventKey === 'keepsake' : false;
+
+    // console.log("yas", vm.eventStep.eventKey === 'keepsake')
 
     // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
     //   var numCompleted;
@@ -109,7 +114,7 @@
     vm.displayMarketplace = function(param) {
       $log.info("Event Controller display Marketplace method", param)
       if (param.category === 'Venue') {
-        var popup = $ionicPopup.show({
+        vm.popup = $ionicPopup.show({
           templateUrl: 'views/templates/locationQuery.html',
           title: 'Choose an Option',
           scope: $scope
@@ -129,7 +134,7 @@
           } else {
             $state.go('app.departed-tab.forms', {tracker: param.category, insertion: param.tracker});
           }
-          popup.close();
+          vm.popup.close();
         })
         
 
