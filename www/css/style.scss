@@ -264,8 +264,9 @@ h2.or {
 
 
 .button-clear.button-clear.back-directive {
+  background-color: rgba(0,0,0,0.05);
   color: black;
-  width: auto;
+  width: 100%;
   float: left;
   margin-bottom: 15px;
   .icon {
@@ -427,4 +428,10 @@ i.italics {
 .button.clear.active, .button.clear.activated {
   background-color: transparent;
   border: none;
+}  
+
+.button.active, .button.activated {
+  background-color: rgb(7,38,63);
+  border: none;
+  color: white;
 }  

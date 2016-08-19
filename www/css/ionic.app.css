@@ -9973,8 +9973,9 @@ h2.or {
   top: 40px; }
 
 .button-clear.button-clear.back-directive {
+  background-color: rgba(0, 0, 0, 0.05);
   color: black;
-  width: auto;
+  width: 100%;
   float: left;
   margin-bottom: 15px; }
   .button-clear.button-clear.back-directive .icon {
@@ -10112,6 +10113,11 @@ i.italics {
 .button.clear.active, .button.clear.activated {
   background-color: transparent;
   border: none; }
+
+.button.active, .button.activated {
+  background-color: #07263f;
+  border: none;
+  color: white; }
 
 .login-view img.logo {
   margin-top: 15vh;
