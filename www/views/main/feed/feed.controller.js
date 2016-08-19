@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService', 'blogService'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService', 'blogService', '$ionicLoading'];
 
-  function FeedController($log, dataService, $http, urlFactory, uploadService, authService, blogService) {
+  function FeedController($log, dataService, $http, urlFactory, uploadService, authService, blogService, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
@@ -46,6 +46,13 @@
       }
       if( vm.mediaUpload ) {
         uploadMedia( blogObj )
+        $ionicLoading.show({
+          templateUrl: 'views/templates/working.html'
+        }).then(function() {
+              setTimeout(function() {
+                $ionicLoading.hide()
+              }, 3000)
+        })
       } else if (vm.share) {
         $http( {
           method: "PUT",
