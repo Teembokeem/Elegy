@@ -35,8 +35,8 @@
       $log.info("hello")
       vm.reviewItems = !vm.reviewItems
     }
-    vm.showSteps = function(option) {
-      $log.info('peekaboo');
+    vm.showSteps = function(option, a) {
+      $log.info('peekaboo', option, a);
       if (vm.showStepsBool != option) {
         vm.showStepsBool = option
 
@@ -45,6 +45,7 @@
       }
     }
     vm.keepsakes = vm.eventStep ?  vm.eventStep.eventKey === 'keepsake' : false;
+    vm.inviteguest = vm.eventStep ?  vm.eventStep.eventKey === 'inviteguests' : false;
 
     // console.log("yas", vm.eventStep.eventKey === 'keepsake')
 
@@ -86,8 +87,8 @@
         case 'funeralhome':
         case 'options':
         case 'keepsake':
-          vm.eventItems = vm.eventStep['types'][0]['parts']
         case 'inviteguests':
+          vm.eventItems = vm.eventStep['types'][0]['parts']
           vm.invitees = vm.eventModel.details.inviteguests.attendees;
           $log.info("invite guests right now.", vm.invitees)
           break;
@@ -178,7 +179,7 @@
         case ('Make Program'):
         case ('Add a Location'):
           $log.info("heading to forms.")
-          
+          $state.go('app.departed-tab.forms', {tracker: tracker})
           break;
       }
 
@@ -252,7 +253,7 @@
 
     vm.stageDate = function(date, idx) {
       $log.instantiate("Event Controller Stage Date", 'method');
-      // $log.info("arguments: ", date);
+      $log.info("ARGS DOE: ", date);
       return eventService 
         .updateEvent(date, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep')['eventKey'].toLowerCase(), dataService.retrieveData('eventStep')['types'][0]['parts'][idx]['tracker'], 'date')
         .then(function(response) {

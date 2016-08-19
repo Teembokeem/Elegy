@@ -34,6 +34,11 @@
       margin-left: auto;
       margin-right: auto;
       display: block;
+      padding-top: 1em;
+
+      * {
+        font-size: 1.2em;
+      }
     }
 
     label {
@@ -42,11 +47,18 @@
 
     .members-container {
       padding-bottom: 1em;
-      border-bottom: 1px solid rgb(140, 140, 140);
+      // border-bottom: 1px solid rgb(140, 140, 140);
+
+      // .form-item {
+      //   background-color: rgb(241, 241, 242);
+      //   color: rgb(119, 124, 134);
+      //   height: 2em;
+      //   line-height: 1.2em;
+      // }
     }
   }
 
-  .container {
-    margin: 10px;
-  }
+  // .container {
+  //   margin: 10px;
+  // }
 }

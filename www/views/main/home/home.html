@@ -4,7 +4,7 @@
     <br>
     <br>
     <div class="list">
-      <button ng-click="Home.createDeparted()" class="button blue">Plan an Event</button>
+      <button ng-click="Home.createDeparted()" class="button blue">Plan an Funeral</button>
       <br>
         <h2 class="or">- or -</h2>
       </div>
@@ -23,12 +23,12 @@
       </div>
       <br>
       <div class="item item-divider">
-        Upcoming Events
+        Upcoming Funerals
       </div>
-      <div ng-repeat="departed in Home.assets" class="row item" ng-click="Home.travel(departed)">
+      <div ng-repeat="departed in Home.assets | orderBy: 'first'" class="row item" ng-click="Home.travel(departed)">
         <div class="col-75 text-left">
-          <h2 class="name capitalize">{{departed.first }} {{departed.last }} <i class="italics"> &nbsp;  {{departed.admin ? "Owner" : "Guest"}}</i></h2>
-          <p>DOB DOD</p>
+          <h2 class="name capitalize">{{departed.first }} {{departed.last }} <i class="italics"> &nbsp;  {{departed.admin ? "Admin" : "Guest"}}</i></h2>
+          <p class="name capitalize">{{departed.dob | date: 'yyyy'}} - {{departed.dod | date: 'yyyy'}}</p>
         </div>
         <!--<div class="col">
 
@@ -44,7 +44,7 @@
     </div>
     <div class="list">
       <div class="item item-divider">
-        Past Events
+        Past FUNERALS
       </div>
     </div>
     <br>

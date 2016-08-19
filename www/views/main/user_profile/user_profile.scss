@@ -1,6 +1,25 @@
-.user-profile-view{
+.user-profile-view {
     .list {
         margin-top: -20px;
+
+        .row {
+            .col {
+                span {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .camera-doe {
+        position: absolute;
+        right: 5em;
+        top: 10em;
+        margin: 2em;
+    }
+    h1 {
+        font-size: 2.3em;
+        margin: 0;
     }
     
     .profilePic {
@@ -20,4 +39,6 @@
             font-size: 2em;
         }
     }
+
+    
 }

@@ -123,14 +123,14 @@
     }
 
     function updateUser( data ) {
-      $log.instantiate("User Service Create Guests", "method")
+      $log.instantiate("User Service update user", "method")
       return $http({
         method: 'PUT',
         url: urlFactory + '/updateUser',
         data: data
       })
       .then(function(done) {
-        $log.info("Success, ")
+        $log.info("Success, ", done)
         return done.data
       })
       .catch(function(err) {
