@@ -87,6 +87,13 @@
                   .updateEvent(newArr, event._id, step.eventKey, step.types[0]['parts'][0]['tracker'])
                   .then(function(done) {
                     // $log.info("success: ", done)
+                    $ionicLoading.show({
+                      templateUrl: 'views/templates/success.html'
+                    }).then(function() {
+                      setTimeout(function() {
+                        $ionicLoading.hide()
+                      }, 3000)
+                    })
                     dataService.setData(['event'], [done])
                     $state.go('app.departed-tab.event', {step: eventStep.tracker})
                   })
