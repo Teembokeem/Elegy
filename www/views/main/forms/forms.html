@@ -1,6 +1,8 @@
-<ion-view view-title="">
+<ion-view view-title="{{Forms.title}}">
   <ion-content class="forms-view">
-    <backbutton></backbutton>
+    <div class="row nopad back-button-area">
+      <backbutton></backbutton>
+    </div>
     <div ng-switch="Forms.formType">
 
       <div ng-switch-when="paypal">
@@ -10,7 +12,7 @@
       <div ng-switch-when="Venue">
           <div class=" container">
             <div class="members-container">
-                <h3 class="form-item">{{'Name of Venue' }}</h3>
+                <h3 class="form-item item item-divider">{{'Name of Venue' }}</h3>
                 <!--<div class="row">
                   <div class="members-row"> 
                     <span>{{Forms.venue.name}}</span>
@@ -19,14 +21,14 @@
                 <div class="row">
                   <div class="col">
                     <label class="item item-input">
-                        <input type="text" placeholder="Name" ng-model="Forms.venue.name">
+                        <input type="text" placeholder="Name of Location" ng-model="Forms.venue.name">
                     </label>
                   </div>
                 </div>
               </div>
               <br>
             <div class="members-container">
-                <h3 class="form-item">{{'Address' }}</h3>
+                <h3 class="form-item item item-divider">{{'Address' }}</h3>
                 <!--<div class="row">
                   <div class="members-row"> 
                     <span>{{Forms.venue.address}}</span>
@@ -35,7 +37,28 @@
                 <div class="row">
                   <div class="col">
                     <label class="item item-input">
-                        <input type="text" placeholder="Street" ng-model="Forms.venue.address">
+                        <input type="text" placeholder="Street" ng-model="Forms.venue.street">
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input">
+                        <input type="text" placeholder="City" ng-model="Forms.venue.city">
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input">
+                        <input type="text" placeholder="State" ng-model="Forms.venue.state">
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Zip Code" ng-model="Forms.venue.zip">
                     </label>
                   </div>
                 </div>
@@ -79,21 +102,25 @@
           </div>    
       </div>
 
-      <div ng-switch-when="program" class="container">
+      <div ng-switch-when="program" class="container nopad">
         <br>
           <div class="program-container">
 
             <div class="members-container">
-              <h3 class="form-item">{{'Surviving Family Members' }}</h3>
-              <div class="row" ng-repeat="member in Forms.program.members">
-                <div class="members-row"> 
+              <h3 class="form-item item item-divider">{{'Surviving Family Members' }}</h3>
+              <div class="row item" ng-repeat="member in Forms.program.members">
+                <div class="members-row col-50"> 
                   <span>{{member}}</span>
                 </div>
+                <div class="members-row col"> 
+                  <button ng-click="Forms.removeItem($index, Forms.program.members)">X</button>
+                </div>
               </div>
+              <Br>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                      <input type="text" placeholder="Full Name" ng-model="Forms.newMember">
+                      <input style="border-bottom: 1px solid grey" type="text" placeholder="Click to Add A New Name" ng-model="Forms.newMember">
                   </label>
                 </div>
               </div>
@@ -106,14 +133,20 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Pallbearers' }}</h3>
-              <div class="row members-row" ng-repeat="bearer in Forms.program.pallbearers">
+              <h3 class="form-item item item-divider">{{'Pallbearers' }}</h3>
+              <div class="row item" ng-repeat="bearer in Forms.program.pallbearers">
+                <div class="members-row col-50"> 
                   <span>{{bearer}}</span>
+                </div>
+                <div class="members-row col"> 
+                  <button ng-click="Forms.removeItem($index, Forms.program.pallbearers)">X</button>
+                </div>
               </div>
+              <br>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input type="text" placeholder="Full Name" ng-model="Forms.newBearer">
+                    <input style="border-bottom: 1px solid grey" type="text" placeholder="Full Name" ng-model="Forms.newBearer">
                   </label>
                 </div>
               </div>
@@ -126,14 +159,16 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Officiant' }}</h3>
+              <h3 class="form-item item item-divider">{{'Officiant' }}</h3>
+              <br>
                 <div class="row members-row">
                   <span ng-show="Forms.program.officiant ? !Forms.editingOfficiant : false">{{Forms.program.officiant}}</span>
               </div>
+
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input  ng-hide="Forms.program.officiant ? !Forms.editingOfficiant : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newOfficiant">
+                    <input  style="border-bottom: 1px solid grey" ng-hide="Forms.program.officiant ? !Forms.editingOfficiant : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newOfficiant">
                   </label>
                 </div>
               </div>
@@ -146,14 +181,15 @@
             <br>
             
             <div class="members-container container">
-              <h3 class="form-item">{{'Eulogist' }}</h3>
+              <h3 class="form-item item item-divider">{{'Eulogist' }}</h3>
+              <br>
                 <div class="row members-row">
                   <span ng-show="Forms.program.eulogizer ? !Forms.editingEulogizer : false">{{Forms.program.eulogizer}}</span>
               </div>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input  ng-hide="Forms.program.eulogizer ? !Forms.editingEulogizer : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newEulogizer">
+                    <input  style="border-bottom: 1px solid grey" ng-hide="Forms.program.eulogizer ? !Forms.editingEulogizer : false" type="text" placeholder="{{Forms.program.officiant}}" ng-model="Forms.newEulogizer">
                   </label>
                 </div>
               </div>
@@ -166,14 +202,20 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Songs' }}</h3>
-              <div class="members-row" ng-repeat="song in Forms.program.songs">
+              <h3 class="form-item item item-divider">{{'Songs' }}</h3>
+              <div class="row item" ng-repeat="song in Forms.program.songs">
+                <div class="members-row col-50"> 
                   <span>{{song}}</span>
+                </div>
+                <div class="members-row col"> 
+                  <button ng-click="Forms.removeItem($index, Forms.program.songs)">X</button>
+                </div>
               </div>
+              <Br>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input type="text" placeholder="Song" ng-model="Forms.newSong">
+                    <input style="border-bottom: 1px solid grey" type="text" placeholder="Song" ng-model="Forms.newSong">
                   </label>
                 </div>
               </div>
@@ -186,14 +228,19 @@
             <br>
 
             <div class="members-container container">
-              <h3 class="form-item">{{'Readings' }}</h3>
-              <div class="row members-row" ng-repeat="song in Forms.program.readings">
-                <span>{{song}}</span>
+              <h3 class="form-item item item-divider">{{'Readings' }}</h3>
+              <div class="row item" ng-repeat="song in Forms.program.readings">
+               <div class="members-row col-50">
+                 <span>{{song}}</span>
+                </div> 
+                <div class="members-row col">
+                  <button ng-click="Forms.removeItem($index, Forms.program.readings)">X</button>
+                </div>
               </div>
               <div class="row">
                 <div class="col">
                   <label class="item item-input">
-                    <input type="text" placeholder="Reading" ng-model="Forms.newReading">
+                    <input style="border-bottom: 1px solid grey" type="text" placeholder="Reading" ng-model="Forms.newReading">
                   </label>
                 </div>
               </div>
@@ -204,7 +251,8 @@
               </div>
             </div>
             <br>
-
+            <div class="item item-divider"></div>
+            <br>
             <div class="row nopad">
               <div class="col">
                 <button ng-click="Forms.updateProgram()" class="button blue ">
