@@ -48,15 +48,18 @@
         controllerId: 'UserSignup'
     })
     
-    .state('app.departed-tab.user-profile', {
+    .state('app.user-profile', {
         url: '/user-profile',
-        views: {
-          'profile': {
+        // views: {
+        //   'profile': {
+        //     templateUrl: 'views/main/user_profile/user_profile.html',
+        //     controller: 'UserProfile.controller',
+        //     controllerAs: 'UserProfile',
+        //   }
+        // },
             templateUrl: 'views/main/user_profile/user_profile.html',
             controller: 'UserProfile.controller',
             controllerAs: 'UserProfile',
-          }
-        },
         controllerId: 'UserProfile'
     })
     
