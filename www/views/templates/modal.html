@@ -1,12 +1,12 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-header">
-        <h1 class="title">Something here</h1>
+        <h1 class="title">{{modal.title | uppercase}}</h1>
         <div class="cancelIcon">
             <i class="icon ion-close-round" ng-click="closeModal()"></i>
         </div>
     </ion-header-bar>
     <ion-content class="padding">
-        <h1>{{modal.title}}</h1>
+        <!--<h1>{{modal.title}}</h1>-->
         <p>{{modal.description}}</p>
         <p>{{modal.test}}</p>
     </ion-content>
