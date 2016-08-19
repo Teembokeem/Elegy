@@ -9,11 +9,19 @@
   }
 
   h2.name {
-    margin-top: 18px;
+    margin-top: 9px;
     text-align: left;
     margin-left: 2em;
     color: rgb(119, 124, 134);
     font-family: 'Gotham-Medium'
+  }
+
+  p.name {
+    text-align: left;
+    margin-left: 3em;
+    color: rgb(119, 124, 134);
+    // font-family: 'Gotham-Medium';
+    font-weight: lighter;
   }
 
   .user-avatar {
