@@ -267,7 +267,7 @@ h2.or {
   color: black;
   width: auto;
   float: left;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   .icon {
     vertical-align: bottom;
   }
@@ -428,3 +428,28 @@ i.italics {
   background-color: transparent;
   border: none;
 }  
+
+.popup-container {
+  .popup {
+    .popup-head {
+      * {
+        color: #17779e;
+        font-size: 1.6em;
+        font-weight: bold;
+
+      }
+    }
+
+    .popup-body {
+      height: 20em;
+      
+      * {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+.back-button-area {
+  background-color: lightgrey;
+}
