@@ -25,6 +25,7 @@
     vm.newOfficiant = null;
     vm.editingOfficiant = false;
     vm.editingEulogizer = false;
+    vm.title;
 
     // LOGS
     $log.info('departed', departed)
@@ -35,10 +36,12 @@
     switch(vm.formType) {
       case 'program':
         $log.info("program case");
-        vm.program = dataService.retrieveData('event')['details']['keepsake']['program']
+        vm.program = dataService.retrieveData('event')['details']['keepsake']['program'];
+        vm.title = 'Edit Program'
         break;
-      case 'venue':
+      case 'Venue':
         $log.info("yay venues");
+        vm.title = 'Add Location'
         
     }
 
@@ -124,6 +127,11 @@
 
     vm.createCustomVenue = function() {
       $log.info("your vals", vm.venue);
+      vm.venue.address = vm.venue.street + " " + vm.venue.city +  " " + vm.venue.state +  " " + vm.venue.zip;
+      delete vm.venue.street
+      delete vm.venue.city
+      delete vm.venue.state
+      delete vm.venue.zip
       vendorService
         .createCustomVenue(vm.venue)
         .then(function(product) {
@@ -145,6 +153,10 @@
             .catch(function(err) {
               $log.info("err", err)
             })
+    }
+
+    vm.removeItem = function(index, part) {
+      part.splice(index, 1);
     }
 
     vm.submitEulogy = function(eulogy) {
