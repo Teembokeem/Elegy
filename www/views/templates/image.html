@@ -1,0 +1,11 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header">
+        <div class="cancelIcon">
+            <i class="icon ion-close-round" ng-click="closeModal()"></i>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-scroll zooming="true" direction="xy">
+              <img class="cloudModalImg" ng-src={{Feed.image}}></img>
+        </ion-scroll>
+</ion-modal-view>
