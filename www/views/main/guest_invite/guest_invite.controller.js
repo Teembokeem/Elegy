@@ -74,7 +74,7 @@
       $log.instantiate("Guest Invite Controller Send Invitations", 'method')
       console.log("Final Guest List", vm.guestList)
       userService
-        .createGuests(vm.guestList, departed.inviteHash)
+        .createGuests(vm.guestList, departed.inviteHash, departed)
         .then(function(done) {
           var newArr = [];
           done.forEach(function(user, idx) {
