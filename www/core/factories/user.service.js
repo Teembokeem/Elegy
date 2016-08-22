@@ -101,7 +101,7 @@
       return promise;
     }
 
-    function createGuests(list, code) {
+    function createGuests(list, code, departed) {
       $log.instantiate("User Service Create Guests", "method")
       return $http({
         method: 'PUT',
@@ -109,6 +109,7 @@
         data: {
           list: list,
           code: code,
+          departed: departed
         }
       })
       .then(function(done) {
