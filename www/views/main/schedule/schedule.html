@@ -49,6 +49,14 @@
                 <p>{{value.date | date : 'shortTime'}}</p>
               </div>
             </div>
+            <div class="row" ng-if="value.notes">
+              <div class="col-33">
+                <p class="bold">Notes</p>
+              </div>
+              <div class="col-66">
+                <p>{{value.notes}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
