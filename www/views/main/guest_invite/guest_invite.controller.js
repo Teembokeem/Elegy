@@ -80,7 +80,7 @@
           done.forEach(function(user, idx) {
               user.status = '0'
               newArr.push(user)
-              newArr.concat(existingAttendees)
+              newArr = newArr.concat(existingAttendees)
               if (idx === done.length - 1) {
                 // $log.info("were doing this after we have both:", newArr)
                 eventService
