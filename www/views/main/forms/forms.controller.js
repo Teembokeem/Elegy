@@ -127,7 +127,7 @@
 
     vm.createCustomVenue = function() {
       $log.info("your vals", vm.venue);
-      vm.venue.address = vm.venue.street + " " + vm.venue.city +  " " + vm.venue.state +  " " + vm.venue.zip;
+      vm.venue.address = vm.venue.street + " " + vm.venue.city ? vm.venue.city : "" +  " " + vm.venue.state ? vm.venue.state : "" +  " " + vm.venue.zip ? vm.venue.zip : "";
       delete vm.venue.street
       delete vm.venue.city
       delete vm.venue.state
