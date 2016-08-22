@@ -68,31 +68,31 @@
         prop1: 'funeralhome',
         prop2: 'date',
         prop3: 'funeralhome',
-        dest: 'Funeral Home'
+        dest: 'Funeral Home',
       },
       {
         prop1: 'options',
         prop2: 'ceremonydate',
         prop3: 'ceremony',
-        dest: 'Ceremony'
+        dest: 'Ceremony',
       },
       {
         prop1: 'options',
         prop2: 'receptiondate',
         prop3: 'reception',
-        dest: 'Reception'
+        dest: 'Reception',
       },
       {
         prop1: 'options',
         prop2: 'visitationdate',
         prop3: 'visitation',
-        dest: 'Visitation'
+        dest: 'Visitation',
       },
       {
         prop1: 'options',
         prop2: 'burialdate',
         prop3: 'burial',
-        dest: 'Burial'
+        dest: 'Burial',
       }
     ]
 
@@ -106,7 +106,8 @@
               location: product.name,
               address: product.address,
               matchKey: keySet.prop1,
-              dest: keySet.dest
+              dest: keySet.dest,
+              notes: product.notes
             })
           })
       } else {
