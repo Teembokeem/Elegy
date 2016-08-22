@@ -53,8 +53,10 @@
       <div ng-if="Feed.passive == 'feed'">
         <ion-item ng-repeat="item in Feed.items | orderBy : 'item.createdAt':true" class="feed">
           <div class="row">
-            <p ng-if="item.text">{{item.text}}</p>
-            <img class="feed-img text-center" ng-if="item.media" ng-src="{{item.media}}" />
+            <div class="col">
+              <p ng-if="item.text">{{item.text}}</p>
+              <img class="feed-img text-center" ng-if="item.media" ng-src="{{item.media}}" ng-click="Feed.openModal(item.media)"/>
+            </div>
           </div>
           <hr>
           <div class="row">
@@ -77,7 +79,9 @@
       <div ng-if="Feed.passive == 'media'">
         <ion-item ng-repeat="mediaItem in Feed.media | orderBy : 'mediaItem.createdAt':true" class="feed">
           <div class="row">
-            <img class="feed-img text-center" ng-src="{{mediaItem.media}}" />
+            <div class="col text-center">
+              <img class="feed-img text-center" ng-src="{{mediaItem.media}}" ng-click="Feed.openModal(mediaItem.media)" />
+            </div>
           </div>
           <hr>
           <div class="row">

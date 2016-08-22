@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Feed.controller', FeedController);
   
-  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService', 'blogService', '$ionicLoading'];
+  FeedController.$inject = ['$log', 'dataService', '$http', 'urlFactory', 'uploadService', 'authService', 'blogService', '$ionicLoading', '$ionicModal', '$scope'];
 
-  function FeedController($log, dataService, $http, urlFactory, uploadService, authService, blogService, $ionicLoading) {
+  function FeedController($log, dataService, $http, urlFactory, uploadService, authService, blogService, $ionicLoading, $ionicModal, $scope) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
@@ -97,6 +97,40 @@
             })
         })
     }
+
+    $ionicModal.fromTemplateUrl('views/templates/image.html', {
+      scope: $scope,
+      animation: 'slide-in-right'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+
+    vm.openModal = function(item) {
+      vm.image = item
+      $scope.modal.show()
+      console.log(item,"HERE")
+      console.log("vm.item", vm.image)
+    };
+
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hide', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
+    $scope.$on('modal.shown', function() {
+      console.log('Modal is shown!');
+    });
 
   }
 })();
