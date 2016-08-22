@@ -48,32 +48,32 @@
     vm.inviteguest = vm.eventStep ?  vm.eventStep.eventKey === 'inviteguests' : false;
 
 
-    vm.statuses = {
-        interment: {
-          current: '',
-          total: Object.keys(vm.eventModel.details.interment).length - 4
-        },
-        funeralhome: {
-          current: '',
-          total: Object.keys(vm.eventModel.details.funeralhome).length
+    // vm.statuses = {
+    //     interment: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.interment).length - 4
+    //     },
+    //     funeralhome: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.funeralhome).length
 
-        },
-        options: {
-          current: '',
-          total: Object.keys(vm.eventModel.details.options).length
+    //     },
+    //     options: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.options).length
 
-        },
-        inviteguests: {
-          current: '',
-          total: Object.keys(vm.eventModel.details.inviteguests).length
+    //     },
+    //     inviteguests: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.inviteguests).length
 
-        },
-        keepsake: {
-          current: '',
-          total: Object.keys(vm.eventModel.details.keepsake).length
+    //     },
+    //     keepsake: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.keepsake).length
 
-        }
-      }
+    //     }
+    //   }
 
     if ($state.is('app.departed-tab.event')) {
       switch(vm.eventStep.eventKey) {
@@ -102,11 +102,11 @@
       
 
     } else {
-      Object.keys(vm.eventModel.details).forEach(function(key) {
-        Object.keys(vm.eventModel.details[key]).forEach(function(step) {
-          if (vm.eventModel.details[key][step]) vm.statuses['key'].current ++
-        })
-      })
+      // Object.keys(vm.eventModel.details).forEach(function(key) {
+      //   Object.keys(vm.eventModel.details[key]).forEach(function(step) {
+      //     if (vm.eventModel.details[key][step]) vm.statuses['key'].current ++
+      //   })
+      // })
     }
 
     // LOGS FOR DATA CONFIRMS
