@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('GuestInvite.controller', GuestInviteController);
   
-  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts', '$scope', '$ionicPlatform', 'userService', 'eventService', '$state'];
+  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts', '$scope', '$ionicPlatform', 'userService', 'eventService', '$state', '$ionicLoading'];
 
-  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts, $scope, $ionicPlatform, userService, eventService, $state) {
+  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts, $scope, $ionicPlatform, userService, eventService, $state, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
