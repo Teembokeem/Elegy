@@ -52,7 +52,7 @@
                         .then(function(event) {
                           dataService.setData(['event'], [event])
                         })
-                      $state.go('app.home')
+                      $state.go('app.departed-tab.index', {name: vm.newDeparted.first })
                     })
                   } else {
                     $state.go('^.home');
