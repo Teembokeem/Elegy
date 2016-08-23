@@ -15,9 +15,10 @@
     };
 
     function parseErrorCodes(errCode) {
-      switch (errCode) {
+      switch (errCode.status) {
         case 482:
-          return 'Error: Code already submitted by User:: ' + errCode.body.first + " " + errCode.body.last
+          $log.info("parse error codes 482 received..")
+          return "Error: You've already added the funeral event: " + errCode.body.first + " " + errCode.body.last
           break;
       }
     }

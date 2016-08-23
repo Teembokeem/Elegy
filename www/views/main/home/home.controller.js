@@ -63,8 +63,8 @@
         .then(function(done) {
           $log.info("user Service setupGuest done.", done);
           if (done.error) {
-            $scope.error = errorHandlerService.parseErrorCodes(done.err)
-            $log.info("your err", done.err)
+            $scope.error = errorHandlerService.parseErrorCodes(done.error)
+            $log.info("your err", done.error)
             $log.info("your parsed err", $scope.error)
             vm.popup = $ionicPopup.show({
               templateUrl: 'views/templates/homeCtrl_err.html',
