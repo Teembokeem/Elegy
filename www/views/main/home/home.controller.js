@@ -72,9 +72,10 @@
           })
           .catch(function(err) {
             $scope.error = errorHandlerService.parseErrorCodes(err)
+            $log.info("your err", err)
+            $log.info("your parsed err", $scope.error)
             vm.popup = $ionicPopup.show({
               templateUrl: 'views/templates/homeCtrl_err.html',
-              title: 'Choose an Option',
               scope: $scope
             });
 
