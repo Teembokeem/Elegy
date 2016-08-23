@@ -62,17 +62,9 @@
         .setupGuest(values)
         .then(function(done) {
           $log.info("user Service setupGuest done.", done);
-           eventService
-            .grabEventPackage(done.guest._id)
-            .then(function(events) {
-              dataService.removeData(['planningEvents', 'attendingEvents']);
-              dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-              vm.travel(done.departed);
-             })
-          })
-          .catch(function(err) {
-            $scope.error = errorHandlerService.parseErrorCodes(err)
-            $log.info("your err", err)
+          if (done.error) {
+            $scope.error = errorHandlerService.parseErrorCodes(done.err)
+            $log.info("your err", done.err)
             $log.info("your parsed err", $scope.error)
             vm.popup = $ionicPopup.show({
               templateUrl: 'views/templates/homeCtrl_err.html',
@@ -83,7 +75,18 @@
 
               vm.popup.close();
             })
-          })
+
+          } else {
+          eventService
+            .grabEventPackage(done.guest._id)
+            .then(function(events) {
+              dataService.removeData(['planningEvents', 'attendingEvents']);
+              dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+              vm.travel(done.departed);
+            })
+          }
+        })
+
       }
 
     vm.createDeparted = function() {
@@ -97,7 +100,7 @@
 
     }
 
-    if (dataService.retrieveData('validated') != null ? dataservice.retrieveData('validated') : false) {
+    if (dataService.retrieveData('validated') != null ? dataService.retrieveData('validated') : false) {
       dataService.setData(['validated'], [false])
       console.log("moving..");
       $state.go('app.departed-tab.feed')
