@@ -32,6 +32,11 @@
           </label>
         </div>
       </div>
+      <div ng-show="UserSignup.errorHandler.length > 0" class="row">
+        <div class="col">
+          <label ng-repeat="errorType in UserSignup.errorHandler" class="bar bar-assertive">{{errorType}}</label>
+        </div>
+      </div>
       <br>
       <div class="row">
         <div class="col">
