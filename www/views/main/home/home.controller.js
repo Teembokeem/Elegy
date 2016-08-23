@@ -60,7 +60,7 @@
       userService
         .setupGuest(values)
         .then(function(done) {
-          // $log.info("user Service setupGuest done.", done);
+          $log.info("user Service setupGuest done.", done);
            eventService
             .grabEventPackage(done.guest._id)
             .then(function(events) {
