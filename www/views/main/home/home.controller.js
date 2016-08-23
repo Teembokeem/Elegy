@@ -57,6 +57,7 @@
         code: code,
         email: authService.currentUser().email
       }
+      $log.info("your values", values)
       userService
         .setupGuest(values)
         .then(function(done) {
