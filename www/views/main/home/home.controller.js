@@ -62,7 +62,7 @@
         .then(function(done) {
           // $log.info("user Service setupGuest done.", done);
            eventService
-            .grabEventPackage(done._id)
+            .grabEventPackage(done.guest._id)
             .then(function(events) {
               dataService.removeData(['planningEvents', 'attendingEvents']);
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
