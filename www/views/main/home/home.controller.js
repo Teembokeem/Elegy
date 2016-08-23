@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService', 'errorHandlerService'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService', 'errorHandlerService', '$ionicPopup'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService, errorHandlerService) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService, errorHandlerService, $ionicPopup) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
