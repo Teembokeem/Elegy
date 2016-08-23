@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService', 'errorHandlerService'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService, errorHandlerService) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -69,6 +69,19 @@
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
               vm.travel(done.departed);
              })
+          })
+          .catch(function(err) {
+            $scope.error = errorHandlerService.parseErrorCodes(err)
+            vm.popup = $ionicPopup.show({
+              templateUrl: 'views/templates/homeCtrl_err.html',
+              title: 'Choose an Option',
+              scope: $scope
+            });
+
+            $scope.$on('sup', function(event, data) {
+
+              vm.popup.close();
+            })
           })
       }
 
