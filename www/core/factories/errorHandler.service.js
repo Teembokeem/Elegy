@@ -14,8 +14,8 @@
       parseErrorCodes: parseErrorCodes
     };
 
-    function parseErrorCodes(errCode) = {
-      return switch (errCode) {
+    function parseErrorCodes(errCode) {
+      switch (errCode) {
         case 482:
           return 'Error: Code already submitted by User:: ' + errCode.body.first + " " + errCode.body.last
           break;
