@@ -52,6 +52,7 @@
 
     vm.validateCode = function(code) {
       $log.info("hi doing stuff to validate code in home")
+      dataService.setData(['validated'], [true]);
       var values = {
         code: code,
         email: authService.currentUser().email
@@ -65,7 +66,7 @@
             .then(function(events) {
               dataService.removeData(['planningEvents', 'attendingEvents']);
               dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-              $state.reload();
+              vm.travel(done.departed);
              })
           })
       }
@@ -79,6 +80,12 @@
     vm.uploadMedia = function() {
       console.log("TESTING", vm.media)
 
+    }
+
+    if (dataService.retrieveData('validated') != null ? dataservice.retrieveData('validated') : false) {
+      dataService.setData(['validated'], [false])
+      console.log("moving..");
+      $state.go('app.departed-tab.feed')
     }
 
   }
