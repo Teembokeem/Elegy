@@ -10128,6 +10128,8 @@ i.italics {
   height: 20em; }
   .popup-container .popup .popup-body * {
     font-size: 1.1em; }
+  .popup-container .popup .popup-body .homeCtrlError * {
+    font-size: 1em !important; }
 
 .back-button-area {
   background-color: lightgrey; }
