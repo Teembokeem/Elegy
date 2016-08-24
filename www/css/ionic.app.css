@@ -10153,6 +10153,9 @@ i.italics {
   width: 100%;
   height: 100%; }
 
+.scroll-content {
+  margin-bottom: 40px; }
+
 .login-view img.logo {
   margin-top: 15vh;
   max-width: 200px;
@@ -10274,11 +10277,7 @@ i.italics {
   margin-left: 25%;
   margin-top: 10vh; }
 
-.departed-signup-view input {
-  text-align: left; }
-
 .departed-signup-view .input-label {
-  text-align: left;
   font-size: 12px; }
 
 .home-view {
