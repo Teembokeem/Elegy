@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('GuestInvite.controller', GuestInviteController);
   
-  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts', '$scope', '$ionicPlatform', 'userService', 'eventService', '$state'];
+  GuestInviteController.$inject = ['$log', 'dataService', '$http', 'urlFactory', '$cordovaContacts', '$scope', '$ionicPlatform', 'userService', 'eventService', '$state', '$ionicLoading'];
 
-  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts, $scope, $ionicPlatform, userService, eventService, $state) {
+  function GuestInviteController($log, dataService, $http, urlFactory, $cordovaContacts, $scope, $ionicPlatform, userService, eventService, $state, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Feed', 'controller');
     var vm = this;
@@ -74,13 +74,13 @@
       $log.instantiate("Guest Invite Controller Send Invitations", 'method')
       console.log("Final Guest List", vm.guestList)
       userService
-        .createGuests(vm.guestList, departed.inviteHash)
+        .createGuests(vm.guestList, departed.inviteHash, departed)
         .then(function(done) {
           var newArr = [];
           done.forEach(function(user, idx) {
               user.status = '0'
               newArr.push(user)
-              newArr.concat(existingAttendees)
+              newArr = newArr.concat(existingAttendees)
               if (idx === done.length - 1) {
                 // $log.info("were doing this after we have both:", newArr)
                 eventService

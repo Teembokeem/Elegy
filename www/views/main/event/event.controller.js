@@ -47,27 +47,33 @@
     vm.keepsakes = vm.eventStep ?  vm.eventStep.eventKey === 'keepsake' : false;
     vm.inviteguest = vm.eventStep ?  vm.eventStep.eventKey === 'inviteguests' : false;
 
-    // console.log("yas", vm.eventStep.eventKey === 'keepsake')
 
-    // if ($state.is('app.departed-tab.index') && vm.eventModel.status != '0') {
-    //   var numCompleted;
-    //   var totalItems;
-    //     EventStaticInfo.forEach(function(step) {
-    //       if (step.types.type) {
+    // vm.statuses = {
+    //     interment: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.interment).length - 4
+    //     },
+    //     funeralhome: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.funeralhome).length
 
-    //       } else {
-    //         step.types[0].parts.forEach(function(obj) {
-    //           if (vm.eventModel['details'][step.eventKey][obj.tracker]) {
-    //             numCompleted += vm.eventModel['details'][step.eventKey][obj.tracker]['status']
-    //           }
-    //         })
-    //         totalItems = step.types[0].parts.length;
-    //       }
-    //       vm.stepCompletion.push([numCompleted, totalItems]);
-    //     })
-    //   vm.stepCompletion.push(numCompleted, totalItems);
-    //   $log.info("your array!!!!", vm.stepCompletion)
-    // }
+    //     },
+    //     options: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.options).length
+
+    //     },
+    //     inviteguests: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.inviteguests).length
+
+    //     },
+    //     keepsake: {
+    //       current: '',
+    //       total: Object.keys(vm.eventModel.details.keepsake).length
+
+    //     }
+    //   }
 
     if ($state.is('app.departed-tab.event')) {
       switch(vm.eventStep.eventKey) {
@@ -95,6 +101,12 @@
       }
       
 
+    } else {
+      // Object.keys(vm.eventModel.details).forEach(function(key) {
+      //   Object.keys(vm.eventModel.details[key]).forEach(function(step) {
+      //     if (vm.eventModel.details[key][step]) vm.statuses['key'].current ++
+      //   })
+      // })
     }
 
     // LOGS FOR DATA CONFIRMS

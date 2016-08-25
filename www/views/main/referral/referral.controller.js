@@ -41,7 +41,7 @@
                  if (user.confirmed) {
                   $state.go('app.home')
                 } else {
-                  dataService.setData(['refCodeUser'], [user])
+                  dataService.setData(['refCodeUser'], [user.guest])
                   $state.go('app.user-signup');
 
                 }

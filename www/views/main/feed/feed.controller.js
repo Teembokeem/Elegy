@@ -45,13 +45,33 @@
         refUser: userId
       }
       if( vm.mediaUpload ) {
-        uploadMedia( blogObj )
+        var media = uploadMedia( blogObj )
+        blogObj.media = media;
         $ionicLoading.show({
           templateUrl: 'views/templates/working.html'
         }).then(function() {
-              setTimeout(function() {
-                $ionicLoading.hide()
-              }, 3000)
+            $http( {
+              method: "PUT",
+              url: urlFactory + "/blog/" + blog._id,
+              data: blogObj
+            } ).then( function( response ) {
+              console.log( "REponse here :", response)
+              vm.share = ""
+              vm.media = ""
+              blogService
+                .grabBlog(blog._id)
+                .then(function(done) {
+                  dataService.setData(['blog'], [done.data]);
+                  blog = dataService.retrieveData('blog');
+                  vm.items = response.data.data.posts
+                })
+                .catch(function(err) {
+                  $log.info("error", err);
+                })
+            })
+            setTimeout(function() {
+              $ionicLoading.hide()
+            }, 3000)
         })
       } else if (vm.share) {
         $http( {
@@ -77,7 +97,7 @@
     }
 
     function uploadMedia( blogObj ) {
-      uploadService.uploadFile( vm.mediaUpload, "/blog/" + blog._id, "media feed", blogObj )
+      return uploadService.uploadFile( vm.mediaUpload, "/blog/" + blog._id, "media feed", blogObj )
     }
 
     vm.likeThis = function(id) {

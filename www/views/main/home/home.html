@@ -25,7 +25,7 @@
       <div class="item item-divider">
         Upcoming Funerals
       </div>
-      <div ng-repeat="departed in Home.assets | orderBy: 'first'" class="row item" ng-click="Home.travel(departed)">
+      <div collection-repeat="departed in Home.assets | orderBy: 'first'" class="row item" ng-click="Home.travel(departed)">
         <div class="col-75 text-left">
           <h2 class="name capitalize">{{departed.first }} {{departed.last }} <i class="italics"> &nbsp;  {{departed.admin ? "Admin" : "Guest"}}</i></h2>
           <p class="name capitalize">{{departed.dob | date: 'yyyy'}} - {{departed.dod | date: 'yyyy'}}</p>
@@ -44,7 +44,7 @@
     </div>
     <div class="list">
       <div class="item item-divider">
-        Past FUNERALS
+        Past Funerals
       </div>
     </div>
     <br>
