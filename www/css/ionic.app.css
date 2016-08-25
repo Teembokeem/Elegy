@@ -10158,6 +10158,13 @@ i.italics {
 .scroll-content {
   margin-bottom: 40px; }
 
+.modal-container {
+  margin: 10%; }
+  .modal-container p {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    white-space: pre-line; }
+
 .login-view img.logo {
   margin-top: 15vh;
   max-width: 200px;
