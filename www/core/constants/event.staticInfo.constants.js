@@ -18,6 +18,7 @@
           types: [
             { 
               type: 'traditional', 
+              title: 'Traditional',
               parts: [
                 {
                   title: "Casket",
@@ -42,7 +43,8 @@
                 }
               ]
             },
-            { type: 'Cremation',
+            { type: 'cremation',
+            title: 'Cremation',
               parts: [
                 {
                   title: "Urn",
@@ -53,7 +55,8 @@
                 }
               ],  
             },
-            {type:'Graveside',
+            {type:'graveside',
+            title: 'Graveside',
               parts: [
                 {
                   title: "Urn",
@@ -64,7 +67,8 @@
                 }
               ]
             }, 
-            {type: 'Body Donation',
+            {type: 'bodyDonation',
+            title: 'Body Donation',
               parts: [
                 {
                   title: "Donation Location",
