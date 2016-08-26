@@ -145,7 +145,7 @@
               var listings = marketplaceService.grabMarketplaceListings(param.category);
             }
             listings.then(function(listings) {
-              dataService.setData(['listings', 'stepItem'], [listings.data.data, param.category.toLowerCase()])
+              dataService.setData(['listings', 'stepItem'], [listings.data.data, param.tracker.toLowerCase()])
               $state.go('app.departed-tab.marketplace', {category: param.category, marketplace: param.marketplace});
             })
           } else {
@@ -162,7 +162,7 @@
           var listings = marketplaceService.grabMarketplaceListings(param.category, param.type);
         }
         listings.then(function(listings) {
-          dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.category.toLowerCase(), param.marketplace])
+          dataService.setData(['listings', 'stepItem', 'marketplace'], [listings.data.data, param.tracker.toLowerCase(), param.marketplace])
           $state.go('app.departed-tab.marketplace', {category: param.category});
         })
       }
@@ -337,7 +337,7 @@
             return type.type === vm.eventModel['details'][vm.eventStep.eventKey]['__t'].toLowerCase()
           })[0]['parts']
           vm.reviewItems = false
-          option.checked = false;
+          // option.checked = false;
         })
   }
 
