@@ -17,6 +17,7 @@
     var eventStep = dataService.retrieveData('eventStep')
     var departed = dataService.retrieveData('departed')._id;
     var insertionValue = $stateParams.insertion;
+
     vm.formType = $stateParams.tracker;
     vm.formPart;
     vm.step = dataService.retrieveData('eventStep')['eventKey']
@@ -33,6 +34,36 @@
     $log.info("form type", vm.formType)
 
     // LOCAL VARS
+    // var errCodes = {
+    //   gen: 'Error: Fields are empty: ',
+    //   409: 'Error: email exists, please try another email!',
+    //   email: 'Error: email is not in the proper format. Please use this format: example@[emailProvider].com'
+    // }
+
+    // vm.fieldsHandler = '';
+    // vm.errorHandler = [];
+    // var errDupe = [];
+    // var errArr = [];
+
+    // Object.keys(vm.newUser).forEach(function(prop, idx) {
+    //   if (vm.newUser[prop] === "" && errArr.indexOf(prop) === -1)  {
+    //     errArr.push(prop)
+    //   } else if (errArr.indexOf(prop) != -1) {
+    //     errDupe.push(idx)
+    //   } else if (prop === 'email' && vm.newUser.email.indexOf('@') === -1) {
+    //     vm.errorHandler.push(errCodes.email)
+    //   }
+    //   if (Object.keys(vm.newUser).length - 1 === idx) {
+    //     $log.info("dONE", errArr, errDupe)
+    //     errDupe.forEach(function(num) {
+    //       errArr.splice(num, 1)
+    //     })
+    //     return errArr;
+    //   }
+    // });
+
+
+
     switch(vm.formType) {
       case 'program':
         $log.info("program case");
@@ -127,7 +158,7 @@
 
     vm.createCustomVenue = function() {
       $log.info("your vals", vm.venue);
-      vm.venue.address = vm.venue.street + " " + vm.venue.city != undefined ? vm.venue.city : "" +  " " + vm.venue.state != undefined ? vm.venue.state : "" +  " " + vm.venue.zip != undefined ? vm.venue.zip : "";
+      vm.venue.address = vm.venue.street + " " + vm.venue.city +  " " + vm.venue.state +  " " + vm.venue.zip;
       delete vm.venue.street
       delete vm.venue.city
       delete vm.venue.state
