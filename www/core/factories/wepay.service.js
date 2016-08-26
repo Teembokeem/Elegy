@@ -18,7 +18,7 @@
       $log.instantiate("Wepay Service Grab Access Token", "Method")
       $http({
         method: 'POST',
-        url: urlFactory + '/wepayToken',
+        url: urlFactory + '/grabAccessToken',
         data: {
           code: code
         }
