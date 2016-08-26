@@ -34,6 +34,9 @@
       urn: [
         'material',
         'dimensions'
+      ],
+      flower: [
+        'brand'
       ]
     },
     venueTypes: {
