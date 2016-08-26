@@ -8,13 +8,13 @@
   wepayService.$inject = ['$log', '$http', 'urlFactory'];
   function wepayService($log, $http, urlFactory) {
     var service = {
-      grabAccesstoken: grabAccesstoken
+      grabAccessToken: grabAccessToken
     };
     
     return service;
 
     ////////////////
-    function grabAccesstoken(code) { 
+    function grabAccessToken(code) { 
       $log.instantiate("Wepay Service Grab Access Token", "Method")
       $http({
         method: 'POST',
