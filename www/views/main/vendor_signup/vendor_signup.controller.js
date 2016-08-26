@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('VendorSignup.controller', VendorSignController);
   
-  VendorSignController.$inject = ['$log', 'userService', '$state', '$scope', '$ionicPopup', 'ProductDataTemplates'];
+  VendorSignController.$inject = ['$log', 'userService', '$state', '$scope', '$ionicPopup', 'ProductDataTemplates', 'tokenService', 'vendorService', 'dataService'];
 
-  function VendorSignController($log, userService, $state, $scope, $ionicPopup, ProductDataTemplates) {
+  function VendorSignController($log, userService, $state, $scope, $ionicPopup, ProductDataTemplates, tokenService, vendorService, dataService) {
     // INSTANTIATIONS
     $log.instantiate('Vendor Signup', 'Controller')
     var vm = this;
@@ -57,14 +57,23 @@
       userService
         .setupVendor(vm.newVendor)
         .then(function(res) {
-          console.log("res?", res)
+                return vendorService.grabVendorData(tokenService.decode()._id)
+
+              .then(function(vendorData) {
+                // $log.info("vendor data", vendorData)
+                dataService.setData(['vendor', 'vendorProducts'], [vendorData.vendor, vendorData.vendor.products]);
+                return vendorService.grabVendorOrders(vendorData.vendor._id)
+              })
+              .then(function(vendorOrders) {
+                // $log.info("vendor orders received", vendorOrders);
+                dataService.setData(['vendorOrders'], [vendorOrders]);
           $state.go('app.vendor-tab.vendor-home');
+              })
         })
         .catch(function(err){
           console.log("ohnoes,", err)
         })
-    };
-
+    }
     // HELPERS
   }
 
