@@ -5,15 +5,19 @@
     </div>
     <div class="col listing-box">
       <div class="container listing-description">
-        <div ng-show="listing.__t === 'Venue'" class="row">
+        <div ng-show="listing.__t === 'Venue' && listing.name != null" class="row">
           <div class="col listing-title">
             <span>{{listing.name | uppercase}}</span>
-            {{listing.n}}
           </div>
         </div>
-        <div ng-show="listing.__t === 'Venue'" class="row">
+        <div ng-show="listing.__t === 'Venue' && listing.refVendor.name != null" class="row">
           <div class="col listing-title">
             <span>{{listing.refVendor.name | uppercase}}</span>
+          </div>
+        </div>
+        <div ng-show="listing.__t === 'Venue' && listing.address != null" class="row">
+          <div class="col listing-title">
+            <span>{{listing.address | uppercase}}</span>
           </div>
         </div>
         <div class="row">
