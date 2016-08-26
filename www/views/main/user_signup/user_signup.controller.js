@@ -118,19 +118,7 @@
     }
   }
     // HELPERS
-    function validateValues(user) {
-      $log.info("user doe", user)
-      var errArr = [];
-      Object.keys(user).forEach(function(prop, idx) {
-        if (user[prop] === "")  {
-          errArr.push(prop)
-        }
-        if (Object.keys(user).length - 1 === idx) {
-          $log.info("dONE", errArr)
-          return errArr;
-        }
-      })
-    }
+    
 
   }
   
