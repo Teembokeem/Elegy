@@ -6,14 +6,18 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'productService'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'productService', '$cordovaInAppBrowser', '$rootScope', 'wepayService'];
 
-  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, productService) {
+  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, productService, $cordovaInAppBrowser, $rootScope, wepayService) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
+    var ref;
     var setter = 0;
     vm.popup;
+
+    // LOGS
+      $log.info("suh dude", $cordovaInAppBrowser)
 
     
     
@@ -186,7 +190,15 @@
           vm.showDateBool = true;
           vm.showDate(idx, id);
           break;
-        case ('Link Braintree'):
+        case ('Link Donations'):
+          // $log.info("we doing this", urlFactory);
+          var options = {
+            location: 'yes',
+            clearcache: 'yes',
+            toolbar: 'no'
+          };
+          $cordovaInAppBrowser.open('https://www.wepay.com/v2/oauth2/authorize?client_id=84201&redirect_uri=http://138.68.6.43/btredirect/&scope=manage_accounts,collect_payments,view_user,send_money,preapprove_payments,manage_subscriptions', '_blank', options)
+          break;
         case ('Write Eulogy'):
         case ('Make Program'):
         case ('Add a Location'):
@@ -204,6 +216,43 @@
 
       }
     }
+
+
+    $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event){
+      console.log("load sart", e, event)
+      if (event.url.search("btredirect") != -1 && event.url.search("wepay") === -1) {
+        e.preventDefault();
+        $cordovaInAppBrowser.close();
+        $log.info("YOUR CODE BITCHES", event.url.split("=")[1]);
+        // $state.go('app.departed-tab.wepay', {code: event.url.split("=")[1]})
+        wepayService.grabAccessToken(event.url.split("=")[1])
+        
+      }
+
+    });
+
+    $rootScope.$on('$cordovaInAppBrowser:loadstop', function(e, event){
+      // insert CSS via code / file
+      console.log("load stop")
+      $cordovaInAppBrowser.insertCSS({
+        code: 'body {background-color:blue;}'
+      });
+
+      // insert Javascript via code / file
+      $cordovaInAppBrowser.executeScript({
+        file: 'script.js'
+      });
+    });
+
+    $rootScope.$on('$cordovaInAppBrowser:loaderror', function(e, event){
+      console.log("load error")
+
+    });
+
+    $rootScope.$on('$cordovaInAppBrowser:exit', function(e, event){
+      console.log("exit")
+
+    });
 
     vm.showItem = function(idx, id) {
       $log.instantiate('Event Controller Show Item', 'method');
