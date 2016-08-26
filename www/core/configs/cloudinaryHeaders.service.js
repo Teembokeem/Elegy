@@ -16,7 +16,7 @@
         ////////////////
         function checkHeaders(config) {
             // Check if going to cloudinary
-            if (config.url.indexOf('api.cloudinary') >= 0) {
+            if (config.url.indexOf('api.cloudinary' | "wepay") >= 0) {
                 // Remove headers for cors
                 config.headers['Content-Type'] = undefined;
                 config.headers['X-Requested-With'] = 'XMLHttpRequest';
