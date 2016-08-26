@@ -150,6 +150,28 @@
         // authorized: true
     })
     
+    .state('app.departed-tab.wepay', {
+        url: '/wepay',
+        views: {
+          'event': {
+            templateUrl: 'views/main/wepay/wepay.html',
+            controller: 'Wepay.controller',
+            controllerAs: 'Wepay',
+            // resolve: {
+            //   events: function(dataService) {
+            //     console.log("resolving dependencies")
+            //     return dataService.parseData(['planningEvents', 'attendingEvents'], ['event', 'event'])
+            //   }
+            // },
+
+          }
+        },
+        cache: false,
+        controllerId: 'Wepay',
+        params: { code: null },
+        // authorized: true
+    })
+    
     .state('app.departed-tab', {
       abstract: true, 
       templateUrl: "views/main/tabs/departed_tabs.html"
