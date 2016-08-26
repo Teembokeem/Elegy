@@ -25,8 +25,8 @@
     vm.itemPrice = parseFloat(vm.item[0].price);
     vm.serviceFee = 3.00;
     vm.transaction = {
-      vendor: vm.vendor._id,
-      user: authService.currentUser(),
+      vendor: vm.vendor,
+      user: authService.currentUser()._id,
       product: item._id,
       total: vm.itemPrice + vm.serviceFee
     }
@@ -48,23 +48,43 @@
             .queryBraintreeTransaction(nonce, vm.transaction)
             .then(function(done) {
               // $log.info("success", done)
-              eventService
-                .updateEvent(done.data, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
-                .then(function(res) {
-                  eventService
-                    .retrieveEvent(dataService.retrieveData('event')._id)
-                    .then(function(res) {
-                      dataService.setData(['event'], [res]);
-                      $state.go('app.departed-tab.event');
-                    })
-                    .catch(function(err){
-                      $log.info("ehoh", err)
-                      return err
-                    })
-                })
-                .catch(function(err) {
-                  $log.info("err", err)
-                })
+                    if (dataService.retrieveData('eventStep').eventKey === 'interment') {
+                      eventService
+                        .updateEvent(done.data, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').eventKey.toLowerCase()]['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
+                        .then(function(res) {
+                          eventService
+                            .retrieveEvent(dataService.retrieveData('event')._id)
+                            .then(function(res) {
+                              dataService.setData(['event'], [res]);
+                              $state.go('app.departed-tab.event');
+                            })
+                            .catch(function(err){
+                              $log.info("ehoh", err)
+                              return err
+                            })
+                        })
+                        .catch(function(err) {
+                          $log.info("err", err)
+                        })
+                  } else {
+                    eventService
+                      .updateEvent(done.data, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'transaction')
+                      .then(function(res) {
+                        eventService
+                          .retrieveEvent(dataService.retrieveData('event')._id)
+                          .then(function(res) {
+                            dataService.setData(['event'], [res]);
+                            $state.go('app.departed-tab.event');
+                          })
+                          .catch(function(err){
+                            $log.info("ehoh", err)
+                            return err
+                          })
+                      })
+                      .catch(function(err) {
+                        $log.info("err", err)
+                      })
+                  }
             })
         }
       }
