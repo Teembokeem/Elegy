@@ -17,6 +17,12 @@
       uploadFile: uploadFile
     };
 
+    function autoRotate( url ) {
+        var split = url.split("/upload")
+        split.splice(1,0,"/upload/a_auto")
+        return split.join('')
+    }
+
     // EXPORTED FUNCTIONS
     function uploadFile( file, path, imageType, extra ) {
       $log.instantiate("Upload Service Upload File", "method")
@@ -29,7 +35,7 @@
             }
       })
       .then(function (response){
-        $log.log(response.data.secure_url)
+       response.data.secure_url = autoRotate(response.data.secure_url)
         if (imageType == "product") {
             $http({
                 method: "PUT",
