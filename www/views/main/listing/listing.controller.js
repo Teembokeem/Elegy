@@ -23,24 +23,45 @@
 
     // BOUND FUNCTIONS
     vm.bookmarkItem = function() {
-      $log.instantiate("Listing Controller select item",  "method")
-      eventService
-        .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').title.toLowerCase()]['_id'], dataService.retrieveData('eventStep').title.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
-        .then(function(res) {
+      $log.instantiate("Listing Controller select item",  "method");
+      if (dataService.retrieveData('eventStep').eventKey === 'interment') {
+        eventService
+          .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').eventKey.toLowerCase()]['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
+          .then(function(res) {
+            eventService
+              .retrieveEvent(dataService.retrieveData('event')._id)
+              .then(function(res) {
+                dataService.setData(['event'], [res]);
+                $state.go('app.departed-tab.event');
+              })
+              .catch(function(err){
+                $log.info("ehoh", err)
+                return err
+              })
+          })
+          .catch(function(err) {
+            $log.info("err", err)
+          })
+      } else {
           eventService
-            .retrieveEvent(dataService.retrieveData('event')._id)
+            .updateEvent(vm.listing._id, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
             .then(function(res) {
-              dataService.setData(['event'], [res]);
+              eventService
+                .retrieveEvent(dataService.retrieveData('event')._id)
+                .then(function(res) {
+                  dataService.setData(['event'], [res]);
+                  $state.go('app.departed-tab.event');
+                })
+                .catch(function(err){
+                  $log.info("ehoh", err)
+                  return err
+                })
             })
-            .catch(function(err){
-              $log.info("ehoh", err)
-              return err
+            .catch(function(err) {
+              $log.info("err", err)
             })
-        })
-        .catch(function(err) {
-          $log.info("err", err)
-        })
-      $state.go('app.departed-tab.event');
+
+      }
     }
 
     vm.purchaseItem = function() {
