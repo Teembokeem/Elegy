@@ -33,6 +33,7 @@
 
     function queryBraintreeTransaction(nonce, transaction) {
       $log.instantiate('Transaction Service Query Braintree Transaction', 'method');
+      $log.info("your vals", transaction)
       return $http({
         method: 'POST',
         url: urlFactory + '/transactions/checkout',
