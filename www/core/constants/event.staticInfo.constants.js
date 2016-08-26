@@ -195,10 +195,10 @@
           {
             parts: [
               {
-                title: "Link Braintree",
+                title: "Link Donations",
                 description: "Lorem ipsum",
                 test: "FUCK YOUUUUUUUUUUU",
-                tracker: 'paypal'
+                tracker: 'wepay'
               },
               {
                 title: "Write Eulogy",
