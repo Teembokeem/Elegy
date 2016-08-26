@@ -48,7 +48,7 @@
         <div class="option-selector-container" ng-checked="Event.eventModel.details.interment.__t.toLowerCase() === option.type" ng-repeat="option in Event.EventStaticInfo[Event.stepIndex].types" class="" ng-click="Event.showSteps(option.type, option)">
           <div class="row nopad">
             <div class="col item option-type">
-              {{option.type}}
+              {{option.title}}
             </div>
           </div>
           <div class="container" ng-if="Event.showStepsBool === option.type">
