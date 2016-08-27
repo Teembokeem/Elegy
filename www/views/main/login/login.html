@@ -50,6 +50,13 @@
         </div>
       </div>
       <br>
+      <div ng-show="Login.error" class="row">
+        <div class="col">
+          <span class="bar bar-assertive">{{Login.error.message}}</span>
+          FDSAFDSFSASFA
+        </div>
+      </div>
+      <br>
       <div class="row nopad">
         <div class="col">
           <button ng-click="Login.authenticate()" class="button blue ">
