@@ -50,8 +50,13 @@
             authService
               .logIn(vm.credentials)
               .then(function(decodedToken) {
-                // $log.info("Credentials approved, ", decodedToken);
-                return eventService.grabEventPackage(decodedToken._id)
+                if (decodedToken.data) {
+                  vm.error = decodedToken.data.error
+                  throw decodedToken
+                } else {
+                  return eventService.grabEventPackage(decodedToken._id)
+
+                }
               })
               .then(function(events) {
                 // $log.info("event package?!?!?!!?!", events)
@@ -60,10 +65,12 @@
               
                 $state.go('app.home');
               })
+                
           }
         })
         .catch(function(err) {
-          $log.info("error in authenticate vendor method", err)
+          $log.info("error in authenticate vendor method", err);
+          vm.error = ""
         })
     };
 
