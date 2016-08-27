@@ -37,15 +37,19 @@
       var errDupe = [];
       var errArr = [];
       Object.keys(vm.newUser).forEach(function(prop, idx) {
+        $log.info("your prop", prop, vm.newUser[prop] === "", errArr.indexOf(prop))
         if (vm.newUser[prop] === "" && errArr.indexOf(prop) === -1)  {
           errArr.push(prop)
-        } else if (errArr.indexOf(prop) != -1) {
+        } else if (vm.newUser[prop] === "" && errArr.indexOf(prop) != -1) {
           errDupe.push(idx)
         } else if (prop === 'email' && vm.newUser.email.indexOf('@') === -1) {
+          errArr.push(prop)
           vm.errorHandler.push(errCodes.email)
+        } else {
+
         }
         if (Object.keys(vm.newUser).length - 1 === idx) {
-          $log.info("dONE", errArr, errDupe)
+          $log.info("dONE", errArr, errDupe, vm.newUser)
           errDupe.forEach(function(num) {
             errArr.splice(num, 1)
           })
@@ -114,6 +118,8 @@
       })
       $log.info("your errors", vm.errorHandler)
       vm.fieldsHandler != null ? vm.errorHandler.push(vm.fieldsHandler) : ""
+      // $log.info("your errors", vm.errorHandler)
+
 
     }
   }
