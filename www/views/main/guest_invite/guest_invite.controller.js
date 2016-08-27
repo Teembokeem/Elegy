@@ -50,7 +50,7 @@
         var addedPerson = {
           first: '',
           last: '',
-          email: vm.newEmail
+          email: vm.newEmail.toLowerCase()
         }
         
         // vm.guestList.unshift(addedPerson);
@@ -59,7 +59,7 @@
             givenName: '',
             familyName: ''
           },
-          emails: [ {value: vm.newEmail} ]
+          emails: [ {value: vm.newEmail.toLowerCase()} ]
         })
         console.log("New Guest List", vm.guestList)
         vm.newEmail = ""
