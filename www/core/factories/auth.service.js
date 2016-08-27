@@ -29,7 +29,7 @@
         params: data
       })
       .then(function(res) {
-        $log.info("Auth Service login vendor success");
+        $log.info("Auth Service login vendor success", res);
         return res
       })
       .catch(function(err) {
@@ -42,18 +42,20 @@
 
     function logIn(data) {
       $log.info('Auth Service login')
-      var promise = $http({
+      return $http({
         method: 'POST',
         url: urlFactory + '/token',
         data: data
       })
       .then(function(res) {
-        $log.info('Auth Service login success.')
+        $log.info('Auth Service login success.', res)
         tokenService.store(res.data.token);
         return tokenService.decode();
       })
-
-      return promise;
+      .catch(function(err) {
+        $log.info("err", err)
+        return err
+      })
     }
 
     function isLoggedIn() {
