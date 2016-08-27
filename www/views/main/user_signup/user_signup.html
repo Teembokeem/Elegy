@@ -32,10 +32,13 @@
           </label>
         </div>
       </div>
-      <div ng-show="UserSignup.errorHandler.length > 0" class="row">
-        <div class="col">
-          <label ng-repeat="errorType in UserSignup.errorHandler" class="bar bar-assertive">{{errorType}}</label>
+      <div ng-repeat="errorType in UserSignup.errorHandler" class="container nopad">
+        <div ng-show="UserSignup.errorHandler.length > 0" class="row">
+          <div  class="col">
+            <span class="bar bar-assertive">{{errorType}}</span>
+          </div>
         </div>
+
       </div>
       <br>
       <div class="row">
@@ -43,7 +46,6 @@
           <ion-checkbox class="noborder" ng-model="UserSignup.vendor">Vendor</ion-checkbox>
         </div>
       </div>
-      
       <div class="row nopad">
         <div class="col">
           <button ng-click="UserSignup.submitUserForm()" class="button blue ">
