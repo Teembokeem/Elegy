@@ -26,7 +26,7 @@
       $log.instantiate("Listing Controller select item",  "method");
       if (dataService.retrieveData('eventStep').eventKey === 'interment') {
         eventService
-          .updateEvent(vm.listing._id, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').eventKey.toLowerCase()]['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
+          .updateEvent(vm.listing, dataService.retrieveData('event')['details'][dataService.retrieveData('eventStep').eventKey.toLowerCase()]['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
           .then(function(res) {
             eventService
               .retrieveEvent(dataService.retrieveData('event')._id)
@@ -44,7 +44,7 @@
           })
       } else {
           eventService
-            .updateEvent(vm.listing._id, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
+            .updateEvent(vm.listing, dataService.retrieveData('event')['_id'], dataService.retrieveData('eventStep').eventKey.toLowerCase(), dataService.retrieveData('stepItem'), 'item')
             .then(function(res) {
               eventService
                 .retrieveEvent(dataService.retrieveData('event')._id)
