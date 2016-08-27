@@ -67,20 +67,20 @@
                 }
               ]
             }, 
-            {type: 'bodyDonation',
-            title: 'Body Donation',
-              parts: [
-                {
-                  title: "Donation Location",
-                  description: "Body donation, anatomical donation, or body bequest is the donation of a whole body after death for research and education. Donated bodies are mostly used for medical education and research. They are used for gross anatomy, surgical anatomy, and for furthering medical education.",
-                  test: "Browse through locally listed funeral homes.",
-                  category: 'Venue',
-                  type: 'donation',
-                  marketplace: 'Donation Centers',
-                  tracker: 'bodyDonation'
-                }
-              ], 
-            }
+            // {type: 'bodyDonation',
+            // title: 'Body Donation',
+            //   parts: [
+            //     {
+            //       title: "Donation Location",
+            //       description: "Body donation, anatomical donation, or body bequest is the donation of a whole body after death for research and education. Donated bodies are mostly used for medical education and research. They are used for gross anatomy, surgical anatomy, and for furthering medical education.",
+            //       test: "Browse through locally listed funeral homes.",
+            //       category: 'Venue',
+            //       type: 'donation',
+            //       marketplace: 'Donation Centers',
+            //       tracker: 'bodyDonation'
+            //     }
+            //   ], 
+            // }
           ]
       },
       {
