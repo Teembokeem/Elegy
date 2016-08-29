@@ -10386,7 +10386,7 @@ i.italics {
     border-radius: 50%; }
   .event-view .item p {
     overflow: visible;
-    white-space: normal; }
+    white-space: pre-line; }
   .event-view .step-container {
     animation-name: left-content;
     animation-duration: 1.5s;

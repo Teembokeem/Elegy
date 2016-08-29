@@ -9,7 +9,7 @@
           title: "Interment",
           eventKey: 'interment',
           step: 1,
-          test: "Step 1",
+          header: "Choose an interment option below then use Elegy's marketplace to make any related purchases.",
           description: `A funeral interment is the burial of the person who has died. In many cultures, two major options are offered - a traditional burial (or interred) or cremation. 
           
           Interment is the first step as a way of celebrating the life of the person who has died, and gives the mourners an opportunity to say goodbye and to pay their respects. Very often people share their memories and so it becomes a way of showing solidarity and support to those closest to the deceased person. 
@@ -113,6 +113,7 @@
         title: "Service Options",
         eventKey: 'options',
         step: 3,
+        header: 'By adding details to a particular service option, it will automatically be added to the schedule.',
         description: `Elegy offers aid in planning four of the most common aspects of a funeral. 
         
         Visitation 
@@ -193,6 +194,8 @@
         title: "Invitations",
         eventKey: 'inviteguests',
         step: 4,
+        header: `Use Elegy to notify friends and family of your loss and invite them to share in building a lasting keepsake.
+        Use your own contact list and send an automatic email invitation through Elegy.`,
         description: "There are many ways to cope with loss, one of the most popular methods is by sharing stories and celebrating the memory of those we lose. This is best done by including friends and family in the process.",
         types: [
           {
@@ -211,6 +214,7 @@
         title: "Keepsake Setup",
         eventKey: 'keepsake',
         step: 5,
+        header: 'Take full advantage of Elegy by fully setting up each option below.',
         description: "Part of Elegy's service is to help you create a memorable keepsake. The steps in this section are not necessarily required for the funeral, but aid in building a lasting memory. Elegy also offers certain tools to make the process easier. Including personal donations, bereavement gifts, a digital program and online funeral marketplace.",
         types: [
           {
