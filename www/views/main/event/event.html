@@ -74,7 +74,7 @@
             <h2 >{{part.title | uppercase}} </h2>
           </div>
           <!--{{Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['status']}}-->
-          <div ng-hide="Event.keepsakes || Event.inviteguest" class="col-20" ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.eventKey][part.tracker]['item'] )">
+          <div ng-hide="Event.keepsakes || Event.inviteguest || Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item'] === null" class="col-20" ng-click="part.date ? Event.showDate( $index,  Event.eventModel['details'][Event.eventStep.eventKey.toLowerCase()][part.tracker]['item']) :  Event.showItem( $index,  Event.eventModel['details'][Event.eventStep.eventKey][part.tracker]['item'] )">
             <div>
               <i class="icon ion-ios-arrow-down"></i>
             </div>
