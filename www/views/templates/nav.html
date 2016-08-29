@@ -1,6 +1,6 @@
 <ion-view>
     <ion-nav-bar ng-if="logged" class="bar-stable">
-      <div class="home-nav">
+      <div class="home-nav" ng-if="!vendor">
         <a ui-sref="app.home">
           <div class="home-button">
               <img src="img/elegyHomeButton.png" alt="">
