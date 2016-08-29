@@ -33,18 +33,19 @@
       </div>
       <div class="row">
         <div class="col">
+          <!--{{DepartedSignup.dateSelected}} {{DepartedSignup.newDeparted.dob === null }}{{DepartedSignup.newDeparted}}-->
+            <span class="departed-date">Date of Birth</span>
           <label class="item item-input">
             <!--<input type="date" placeholder="First Name" ng-model="DepartedSignup.newDeparted.dob">-->
-            <!--<span class="input-label">Date of Birth</span>-->
-            <input required="" type="date"  class="form-control" ng-model="DepartedSignup.newDeparted.dob"/>
+            <input required="" type="date" ng-click="DepartedSignup.doDates('dob')" class="form-control" ng-model="DepartedSignup.newDeparted.dob"/>
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
+            <span class=" departed-date">Date of Death</span>
           <label class="item item-input">
-            <!--<span class="input-label">Date of Death</span>-->
-            <input required="" type="date"  placeholder="" class="form-control" ng-model="DepartedSignup.newDeparted.dod"/>
+            <input required="" type="date"  ng-click="DepartedSignup.doDates('dod')" class="form-control" ng-model="DepartedSignup.newDeparted.dod"/>
             <!--<input type="date" placeholder="Last Name" ng-model="DepartedSignup.newDeparted.dod">-->
           </label>
         </div>
