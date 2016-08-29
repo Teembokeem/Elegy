@@ -10289,6 +10289,12 @@ i.italics {
 .departed-signup-view .input-label {
   font-size: 12px; }
 
+.departed-signup-view .signup-form * {
+  text-align: center !important; }
+
+.departed-signup-view .signup-form .login-form .row .col span {
+  color: grey; }
+
 .home-view {
   animation-name: left-content;
   animation-duration: 1.5s;
