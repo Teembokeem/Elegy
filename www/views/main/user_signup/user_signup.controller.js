@@ -25,8 +25,7 @@
       first: refGuest ? refGuest.first : '',
       last: refGuest ? refGuest.last : '',
       email: refGuest ? refGuest.email : '',
-      password: '',
-      image: '../img/default.png'
+      password: ''
     }
     vm.fieldsHandler = '';
     vm.errorHandler = [];
