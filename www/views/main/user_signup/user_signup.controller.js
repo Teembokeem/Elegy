@@ -11,6 +11,7 @@
   function UserSignupController($state, $log, userService, authService, dataService, eventService) {
     // INSTANTIATIONS
     $log.instantiate('User Signup', 'controller');
+    
     var vm = this;
     var refGuest = dataService.retrieveData('refCodeUser');
     var errCodes = {
