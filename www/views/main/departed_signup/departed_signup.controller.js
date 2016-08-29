@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('DepartedSignup.controller', DepartedSignupController);
   
-  DepartedSignupController.$inject = ['$log', 'eventService', 'dataService', '$state', 'tokenService', 'userService', 'uploadService', 'blogService'];
+  DepartedSignupController.$inject = ['$log', 'eventService', 'dataService', '$state', 'tokenService', 'userService', 'uploadService', 'blogService', '$ionicLoading'];
 
-  function DepartedSignupController($log, eventService, dataService, $state, tokenService, userService, uploadService, blogService) {
+  function DepartedSignupController($log, eventService, dataService, $state, tokenService, userService, uploadService, blogService, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Departed Signup', 'controller');
     var vm = this;
@@ -17,8 +17,14 @@
     vm.newDeparted = {
       first: '',
       last: '',
-      dob: '',
-      dod: ''
+      dob: null,
+      dod: null
+    }
+
+    vm.dateSelected;
+
+    vm.doDates = function(selector) {
+      vm.dateSelected = selector;
     }
     
     vm.cloud = {};
@@ -32,42 +38,82 @@
           .then(function(done) {
             $log.info("Success!")
             vm.newDeparted.image = done;
-            userService
-              .setupEvent(vm.newDeparted)
-              .then(function(event) {
-                $log.info("your token")
-                  dataService.setData(['departed'], [event.data.departed]);
-                  return eventService.grabEventPackage(tokenService.decode()._id)
-              })
-              .then(function(events) {
-                $log.info("hello there")
-                dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-                if (dataService.retrieveData('beforeState')) {
-                  blogService
-                    .grabBlog(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].blog)
-                    .then(function(done) {
-                      dataService.setData(['blog'], [done.data]);
-                      eventService
-                        .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
-                        .then(function(event) {
-                          dataService.setData(['event'], [event])
-                        })
-                      $state.go('app.departed-tab.index', {name: vm.newDeparted.first })
-                    })
-                  } else {
-                    $state.go('^.home');
-                  }
-              })
-              .catch(function(err) {
-                if (err) console.log(err);
-              })
+            $ionicLoading.show({
+              templateUrl: 'views/templates/working.html'
+            }).then(function() {
+              userService
+                .setupEvent(vm.newDeparted)
+                .then(function(event) {
+                  $log.info("your token")
+                    dataService.setData(['departed'], [event.data.departed]);
+                    return eventService.grabEventPackage(tokenService.decode()._id)
+                })
+                .then(function(events) {
+                  $log.info("hello there")
+                  dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+                  if (dataService.retrieveData('beforeState')) {
+                    blogService
+                      .grabBlog(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].blog)
+                      .then(function(done) {
+                        dataService.setData(['blog'], [done.data]);
+                        eventService
+                          .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
+                          .then(function(event) {
+                            dataService.setData(['event'], [event])
+                          })
+                        $ionicLoading.hide()
+                        $state.go('app.departed-tab.index', {name: vm.newDeparted.first })
+                      })
+                    } else {
+                      $ionicLoading.hide()
+                      $state.go('^.home');
+                    }
+                })
+                .catch(function(err) {
+                  if (err) console.log(err);
+                })
+            })
           })
           .catch(function(err) {
             $log.info("your error:", err)
           })
 
       } else {
-        vm.error = 'err'
+        $ionicLoading.show({
+              templateUrl: 'views/templates/working.html'
+            }).then(function() {
+              userService
+                .setupEvent(vm.newDeparted)
+                .then(function(event) {
+                  $log.info("your token")
+                    dataService.setData(['departed'], [event.data.departed]);
+                    return eventService.grabEventPackage(tokenService.decode()._id)
+                })
+                .then(function(events) {
+                  $log.info("hello there")
+                  dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+                  if (dataService.retrieveData('beforeState')) {
+                    blogService
+                      .grabBlog(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].blog)
+                      .then(function(done) {
+                        dataService.setData(['blog'], [done.data]);
+                        eventService
+                          .retrieveEvent(dataService.retrieveData('planningEvents')[dataService.retrieveData('planningEvents').length - 1].event)
+                          .then(function(event) {
+                            dataService.setData(['event'], [event])
+                          })
+                        $ionicLoading.hide()
+                        $state.go('app.departed-tab.index', {name: vm.newDeparted.first })
+                      })
+                    } else {
+                      $ionicLoading.hide()
+                      $state.go('^.home');
+                    }
+                })
+                .catch(function(err) {
+                  if (err) console.log(err);
+                })
+            })
       }
     }
 

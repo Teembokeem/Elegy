@@ -37,4 +37,19 @@
   .input-label {
     font-size: 12px;  
   }
+
+  .signup-form {
+    * {
+      text-align: center !important;
+    }
+    .login-form {
+      .row {
+        .col {
+           span {
+                color: grey;
+            }
+        }
+      }
+    }
+  }
 }
