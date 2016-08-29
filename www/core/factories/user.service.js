@@ -132,7 +132,7 @@
       })
       .then(function(done) {
         $log.info("Success, ", done)
-        return done.data
+        return done.data.data
       })
       .catch(function(err) {
         $log.info("error, ")

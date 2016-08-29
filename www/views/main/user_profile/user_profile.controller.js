@@ -19,28 +19,42 @@
 
     vm.changeUser = function() {
       console.log("Updating the user ?", vm.user);
-      if (vm.user.newImage) {
-        uploadService
-          .uploadFile(vm.user.newImage, null, 'user')
-          .then(function(photoUrl) {
-            vm.user.image = photoUrl
-            userService.updateUser( vm.user )
-              .then( function( response ) {
-                console.log("response", response)
-                vm.user = response;
-                authService.refreshToken();
-                $ionicLoading.show({
-                  templateUrl: 'views/templates/userProfile.html'
-                }).then(function() {
-                      setTimeout(function() {
-                        $ionicLoading.hide()
-                        $state.reload();
-                      }, 3000)
+      $ionicLoading.show({
+        templateUrl: 'views/templates/userProfile.html'
+      }).then(function() {
+        if (vm.user.newImage) {
+          uploadService
+            .uploadFile(vm.user.newImage, null, 'user')
+            .then(function(photoUrl) {
+              vm.user.image = photoUrl
+              userService.updateUser( vm.user )
+                .then( function( response ) {
+                  console.log("response", response)
+                  vm.user = response;
+                  authService.refreshToken();
+                  $ionicLoading.hide()
+                  $state.reload();
                 })
-              })
-          })
+                .catch(function(err) {
+                  $log.info("err");
+                })
+            })
+        } else {
+              userService.updateUser( vm.user )
+                .then( function( response ) {
+                  console.log("response", response)
+                  vm.user = response;
+                  authService.refreshToken();
+                  $ionicLoading.hide()
+                  $state.reload();
+                })
+                .catch(function(err) {
+                  $log.info("err");
+                })
 
-      }
+        }
+      })
+
     }
 
     vm.logout = function() {
