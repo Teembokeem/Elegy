@@ -1,23 +1,25 @@
- <ion-tabs ng-class="{'tabs-item-hide' : $root.hideTabs}" class="tabs-icon-top tabs-color-active-positive">
+ <ion-view view-title="Tabs">
+  <ion-tabs ng-class="{'tabs-item-hide' : $root.hideTabs}" class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Tab-less Collection -->
-  <ion-tab title="DASHBOARD" icon-off="ion-ios-speedometer-outline" icon-on="ion-ios-speedometer" href="#/app/vendor-home">
-    <ion-nav-view name="Vendor-Dashboard"></ion-nav-view>
-  </ion-tab>
+    <!-- Tab-less Collection -->
+    <ion-tab title="DASHBOARD" icon-off="ion-ios-speedometer-outline" icon-on="ion-ios-speedometer" href="#/app/vendor-home">
+      <ion-nav-view name="Vendor-Dashboard"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Event Tab -->
-  <ion-tab title="INVENTORY" icon-off="ion-ios-box-outline" icon-on="ion-ios-box" href="#/app/vendor-inventory">
-    <ion-nav-view name="Vendor-Inventory"></ion-nav-view>
-  </ion-tab>
+    <!-- Event Tab -->
+    <ion-tab title="INVENTORY" icon-off="ion-ios-box-outline" icon-on="ion-ios-box" href="#/app/vendor-inventory">
+      <ion-nav-view name="Vendor-Inventory"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Feed Tab -->
-  <ion-tab title="ORDERS" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/app/vendor-orders">
-    <ion-nav-view name="Vendor-Orders"></ion-nav-view>
-  </ion-tab>
+    <!-- Feed Tab -->
+    <ion-tab title="ORDERS" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/app/vendor-orders">
+      <ion-nav-view name="Vendor-Orders"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Event Info Tab -->
-  <ion-tab title="SETTINGS" icon-off="ion-ios-settings" icon-on="ion-ios-settings-strong" href="#/app/vendor-settings">
-    <ion-nav-view name="Vendor-Settings"></ion-nav-view>
-  </ion-tab>
+    <!-- Event Info Tab -->
+    <ion-tab title="SETTINGS" icon-off="ion-ios-settings" icon-on="ion-ios-settings-strong" href="#/app/vendor-settings">
+      <ion-nav-view name="Vendor-Settings"></ion-nav-view>
+    </ion-tab>
 
-</ion-tabs>
+  </ion-tabs>
+ </ion-view>
