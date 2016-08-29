@@ -48,6 +48,15 @@
       }
       console.log("User is logged? ", $scope.logged)
     })
+
+    $scope.$watch(function () { 
+      return window.localStorage.vendor
+    },function(vendor){
+      vendor ? $scope.vendor = true : $scope.vendor = false
+      if ( vendor ) {
+      }
+      console.log("User is vendor? ", $scope.vendor)
+    })
   }
     
 })();
