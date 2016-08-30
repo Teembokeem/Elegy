@@ -264,7 +264,7 @@ h2.or {
 
 
 .button-clear.button-clear.back-directive {
-  background-color: rgba(0,0,0,0.05);
+  // background-color: rgba(0,0,0,0.05);
   color: black;
   width: 100%;
   float: left;
@@ -466,7 +466,12 @@ i.italics {
 }
 
 .back-button-area {
-  background-color: lightgrey;
+  // background-color: lightgrey;
+  // height: 20px;
+
+  * {
+    // height: 1em;
+  }
 }
 
 .image-modal {

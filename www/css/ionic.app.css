@@ -9973,7 +9973,6 @@ h2.or {
   top: 40px; }
 
 .button-clear.button-clear.back-directive {
-  background-color: rgba(0, 0, 0, 0.05);
   color: black;
   width: 100%;
   float: left; }
@@ -10130,9 +10129,6 @@ i.italics {
     font-size: 1.1em; }
   .popup-container .popup .popup-body .homeCtrlError * {
     font-size: 1em !important; }
-
-.back-button-area {
-  background-color: lightgrey; }
 
 .image-modal {
   width: 100% !important;
@@ -10597,9 +10593,9 @@ i.italics {
   width: 50%;
   padding: 10px 5px !important; }
   .loading span {
-    font-family: Avenir;
+    font-family: 'Gotham-Medium';
     font-size: 12px;
-    letter-spacing: 10px; }
+    letter-spacing: 3px; }
 
 .spinner svg {
   stroke: white; }
@@ -10841,7 +10837,7 @@ i.italics {
   margin: 2em; }
 
 .user-profile-view h1 {
-  font-size: 2.3em;
+  font-size: 1.5em;
   margin: 0; }
 
 .user-profile-view .profilePic {
@@ -11329,3 +11325,6 @@ i.italics {
 
 .wepay-view * {
   background-color: red; }
+
+.donate-view * {
+  font-size: 2.3em; }
