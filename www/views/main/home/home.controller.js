@@ -7,9 +7,9 @@
     .module('Controllers')
     .controller('Home.controller', HomeController);
   
-  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService', 'errorHandlerService', '$ionicPopup'];
+  HomeController.$inject = ['urlFactory', '$log', 'authService', 'events', 'dataService', '$state', 'eventService','blogService', '$scope', 'userService', 'errorHandlerService', '$ionicPopup', '$ionicLoading'];
 
-  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService, errorHandlerService, $ionicPopup) {
+  function HomeController(urlFactory, $log, authService, events, dataService, $state, eventService, blogService, $scope, userService, errorHandlerService, $ionicPopup, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Home', 'controller');
     var vm = this;
@@ -52,39 +52,57 @@
 
     vm.validateCode = function(code) {
       $log.info("hi doing stuff to validate code in home")
-      dataService.setData(['validated'], [true]);
-      var values = {
-        code: code,
-        email: authService.currentUser().email
-      }
-      $log.info("your values", values)
-      userService
-        .setupGuest(values)
-        .then(function(done) {
-          $log.info("user Service setupGuest done.", done);
-          if (done.error) {
-            $scope.error = errorHandlerService.parseErrorCodes(done.error)
-            $log.info("your err", done.error)
-            $log.info("your parsed err", $scope.error)
-            vm.popup = $ionicPopup.show({
-              templateUrl: 'views/templates/homeCtrl_err.html',
-              scope: $scope
-            });
-
-            $scope.$on('sup', function(event, data) {
-
-              vm.popup.close();
-            })
-
-          } else {
-          eventService
-            .grabEventPackage(done.guest._id)
-            .then(function(events) {
-              dataService.removeData(['planningEvents', 'attendingEvents']);
-              dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
-              vm.travel(done.departed);
-            })
+       $ionicLoading.show({
+          templateUrl: 'views/templates/working.html'
+        }).then(function() {
+          dataService.setData(['validated'], [true]);
+          var values = {
+            code: code.toLowerCase(),
+            email: authService.currentUser().email
           }
+          $log.info("your values", values)
+          userService
+            .setupGuest(values)
+            .then(function(done) {
+              $log.info("user Service setupGuest done.", done);
+              if (done.error) {
+                $scope.error = errorHandlerService.parseErrorCodes(done.error)
+                $log.info("your err", done.error)
+                $log.info("your parsed err", $scope.error)
+                vm.popup = $ionicPopup.show({
+                  templateUrl: 'views/templates/homeCtrl_err.html',
+                  scope: $scope
+                });
+
+                $scope.$on('sup', function(event, data) {
+
+                  vm.popup.close();
+                })
+                $ionicLoading.hide();
+
+              } else {
+              eventService
+                .grabEventPackage(done.guest._id)
+                .then(function(events) {
+                  dataService.removeData(['planningEvents', 'attendingEvents']);
+                  dataService.setData(['planningEvents', 'attendingEvents'], [events.planningEvents, events.attendingEvents]);
+                  vm.travel(done.departed);
+                $ionicLoading.hide();
+                })
+              }
+            })
+            .catch(function(err) {
+              $log.info("you got errs boyee", err);
+              vm.error = err;
+              $ionicLoading.hide();
+              $ionicLoading.show({
+                templateUrl: 'views/templates/refcodeFail.html'
+              }).then(function() {
+                setTimeout(function(){
+                  $ionicLoading.hide();
+                }, 2000)
+              })
+            })
         })
 
       }
