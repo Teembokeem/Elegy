@@ -1,5 +1,7 @@
 <ion-view>
     <ion-content class="user-profile-view">
+        <br>
+        <br>
     <div class="row nopad back-button-area">
         <br>
         <backbutton>
@@ -8,8 +10,6 @@
     <!--<div class="top-right" ng-click="UserProfile.default = !UserProfile.default">
         <i class="icon ion-gear-a"></i>
     </div>-->
-    <h1> {{UserProfile.user.email}}</h1>
-    <br>
     <div class="list login-form container" ng-if="UserProfile.default">
         <div class="row nopad">
             <div class="col">
@@ -18,8 +18,8 @@
             </div>
             <div ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="camera-doe"><i ngf-select ng-model="UserProfile.user.newImage" accept="image/*" class="icon ion-camera"></i> Edit</div>
         </div>
-
-        <br>
+    <br>
+    <h1> {{UserProfile.user.email}}</h1>
         <div class="row nopad">
             <div class="col">
             <label class="item item-input">
