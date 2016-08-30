@@ -17,7 +17,7 @@
     var errCodes = {
       gen: 'Error: Fields are empty: ',
       409: 'Error: email exists, please try another email!',
-      email: 'Error: email is not in the proper format. Please use this format: example@[emailProvider].com'
+      email: 'Error: email is not in the proper format.'
     }
     
     // LOCAL VARS
