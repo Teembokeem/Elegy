@@ -15,7 +15,7 @@
     
     // LOCAL VARS
     vm.credentials = {
-      email: tokenService.decode() ? tokenService.decode().email : 'elegy@gmail.com',
+      email: tokenService.decode() ? tokenService.decode().email : '',
       password: ''
     };
     
