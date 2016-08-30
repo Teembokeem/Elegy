@@ -219,11 +219,11 @@
         types: [
           {
             parts: [
-              {
-                title: "Link Donations",
-                description: "In order to make payments or receive donations, you must first link a payment method to your account.",
-                tracker: 'wepay'
-              },
+              // {
+              //   title: "Link Donations",
+              //   description: "In order to make payments or receive donations, you must first link a payment method to your account.",
+              //   tracker: 'wepay'
+              // },
               {
                 title: "Write Eulogy",
                 description: "A Eulogy is a speech of praise for whom you have lost. Write it out here and let all the Guests have a chance to read it.",
