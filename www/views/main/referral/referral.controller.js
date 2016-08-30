@@ -26,6 +26,7 @@
 
     vm.validateCode = function() {
       vm.newGuest.email = vm.newGuest.email.toLowerCase()
+      vm.newguest.code = vm.newguest.code.toLowerCase()
       if (vm.newGuest.code.length === 6) {
         $ionicLoading.show({
           templateUrl: 'views/templates/loading.html'
