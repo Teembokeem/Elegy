@@ -50,7 +50,7 @@
     })
 
     $scope.$watch(function () { 
-      return window.localStorage.vendor
+      return window.localStorage.vendor === true
     },function(vendor){
       vendor ? $scope.vendor = true : $scope.vendor = false
       if ( vendor ) {
