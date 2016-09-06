@@ -11125,12 +11125,13 @@ i.italics {
   height: 91.25px !important; }
 
 .marketplace-view img {
-  width: 100%;
+  width: 80%;
   height: 100%;
   border-radius: 0.5em; }
 
-.marketplace-view .listing-title {
+.marketplace-view .listing-title * {
   font-weight: bolder;
+  font-size: 1em;
   letter-spacing: 1px; }
 
 .marketplace-view .listing-box * {

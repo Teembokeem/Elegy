@@ -29,7 +29,8 @@
         personal: '',
         business: ''
       },
-      type: null
+      type: null,
+      image: 'http://school.ncree.org.tw/school/images/icon-address.png'
     };
 
     $scope.newVendor = vm.newVendor;

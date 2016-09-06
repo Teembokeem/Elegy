@@ -240,11 +240,11 @@
                 category: 'Flower',
                 tracker: 'flower'
               },
-              {
-                title: 'Find Counselor',
-                description: "Dealing with loss can be hard. If you are having a tough time dealing with the passing, please use our network of grief counselors to find someone to talk to.",
-                test: "FUCK YOUUUUUUUUUUU"
-              }
+              // {
+              //   title: 'Find Counselor',
+              //   description: "Dealing with loss can be hard. If you are having a tough time dealing with the passing, please use our network of grief counselors to find someone to talk to.",
+              //   test: "FUCK YOUUUUUUUUUUU"
+              // }
             ]
           }
         ]

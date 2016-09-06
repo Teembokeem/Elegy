@@ -2,10 +2,13 @@
 <div class="row">
   <div class="col item listing-header">
     <div class="col-60 listing-names">
-      <span class="listing-name">{{data.name | uppercase}}  <span class="listing-brand">by {{data.brand | uppercase}}</span></span>
+      <span ng-show="data.__t != 'Venue'" class="listing-name">{{data.vendor.first | uppercase}}  </span>
+      <span ng-show="data.__t === 'Venue'" class="listing-name">{{data.address | uppercase}}  </span>
+      <span ng-show="data.__t != 'Venue'"class="listing-brand">by {{data.brand | uppercase}}</span>
+      <span ng-show="data.__t === 'Venue'" class="listing-name">at {{data.brand | uppercase}}  </span>
       <h2 class="listing-vendor">{{data.vendor.businessName | uppercase}}</h2 class="listing-vendor">
     </div>
-    <div class="col listing-price">
+    <div ng-show="data.price" class="col listing-price">
       $ {{data.price | uppercase}}
     </div>
 

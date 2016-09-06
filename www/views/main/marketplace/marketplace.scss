@@ -21,14 +21,18 @@
   }
 
   img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     border-radius: 0.5em;
   }
 
   .listing-title {
-    font-weight: bolder;
-    letter-spacing: 1px;
+    * {
+      font-weight: bolder;
+      font-size: 1em;
+      letter-spacing: 1px;
+
+    }
   }
 
   .listing-box {
