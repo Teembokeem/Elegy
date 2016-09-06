@@ -10449,8 +10449,7 @@ i.italics {
     line-height: 1.5em; }
   .event-view input[type="date"]:before, .event-view input[type="text"]:before {
     content: attr(placeholder) !important;
-    color: #aaa;
-    margin-right: 0.5em; }
+    color: #aaa; }
   .event-view input[type="date"]:focus:before,
   .event-view input[type="date"]:valid:before,
   .event-view input[type="text"]:focus:before,
