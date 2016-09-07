@@ -11303,7 +11303,9 @@ i.italics {
   max-width: 35%; }
 
 .forms-view .program-container .textarea-stuff {
-  display: block; }
+  display: block;
+  margin: 0 1em;
+  padding: 1em; }
 
 .forms-view .program-container .members-row {
   margin-left: auto;
@@ -11318,6 +11320,9 @@ i.italics {
 
 .forms-view .program-container .members-container {
   padding-bottom: 1em; }
+
+.forms-view .eulogy-container {
+  padding: 1em; }
 
 .wepay-view h1 {
   color: red;
