@@ -62,8 +62,8 @@
                 .grabBlog(blog._id)
                 .then(function(done) {
                   dataService.setData(['blog'], [done.data]);
-                  blog = dataService.retrieveData('blog');
-                  vm.items = response.data.data.posts
+                  // blog = dataService.retrieveData('blog');
+                  vm.items = done.data.posts
                 })
                 .catch(function(err) {
                   $log.info("error", err);
@@ -86,8 +86,8 @@
             .grabBlog(blog._id)
             .then(function(done) {
               dataService.setData(['blog'], [done.data]);
-              blog = dataService.retrieveData('blog');
-              vm.items = response.data.data.posts
+              // blog = dataService.retrieveData('blog');
+              vm.items = done.data.posts
             })
             .catch(function(err) {
               $log.info("error", err);
