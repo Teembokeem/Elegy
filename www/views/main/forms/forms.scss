@@ -28,6 +28,8 @@
 
     .textarea-stuff  {
         display: block;
+        margin: 0 1em;
+        padding: 1em;
     }
 
     .members-row {
@@ -43,6 +45,7 @@
 
     label {
       border-style: none;
+
     }
 
     .members-container {
@@ -61,4 +64,8 @@
   // .container {
   //   margin: 10px;
   // }
+
+  .eulogy-container {
+    padding: 1em;
+  }
 }
