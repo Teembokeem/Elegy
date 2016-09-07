@@ -6,9 +6,9 @@
     .module('Controllers')
     .controller('Event.controller', EventController);
   
-  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'productService', '$cordovaInAppBrowser', '$rootScope', 'wepayService'];
+  EventController.$inject = ['$log', 'dataService', '$scope', '$ionicModal', '$ionicPopup', 'EventDataTemplates', 'EventStaticInfo', '$state', 'marketplaceService', '$stateParams', 'eventService', 'productService', '$cordovaInAppBrowser', '$rootScope', 'wepayService', '$ionicLoading'];
 
-  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, productService, $cordovaInAppBrowser, $rootScope, wepayService) {
+  function EventController($log, dataService, $scope, $ionicModal, $ionicPopup, EventDataTemplates, EventStaticInfo, $state, marketplaceService, $stateParams, eventService, productService, $cordovaInAppBrowser, $rootScope, wepayService, $ionicLoading) {
     // INSTANTIATIONS
     $log.instantiate('Event', 'controller');
     var vm = this;
@@ -41,6 +41,13 @@
     }
     vm.showSteps = function(option, a) {
       $log.info('peekaboo', option, a);
+      $ionicLoading.show({
+          templateUrl: 'views/templates/working.html'
+        }).then(function() {
+           setTimeout(function(){
+              $ionicLoading.hide();
+            }, 2000)
+        })
       if (vm.showStepsBool != option) {
         vm.showStepsBool = option
 
