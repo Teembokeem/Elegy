@@ -10130,6 +10130,9 @@ i.italics {
   .popup-container .popup .popup-body .homeCtrlError * {
     font-size: 1em !important; }
 
+.back-button-area {
+  margin-top: 5px; }
+
 .image-modal {
   width: 100% !important;
   height: 100%;
@@ -10565,6 +10568,8 @@ i.italics {
     position: absolute;
     right: 10px;
     top: 10px; }
+  .event-view .ng-repeat-chamber {
+    margin-bottom: 100px; }
 
 .departed-view .user-avatar {
   text-align: center; }
