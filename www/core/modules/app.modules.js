@@ -7,7 +7,8 @@
                       'Services', 
                       'Configs', 
                       'Directives', 
-                      'Constants', 
+                      'Constants',
+                      'Filters', 
                       'ngFileUpload', 
                       'ngCordova'])
 
