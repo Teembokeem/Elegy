@@ -34,8 +34,8 @@
 
         </div>-->
         <div class="col text-right item user-avatar">
-          <div class="item-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + departed.image + ')'}">
-          </div>
+          <!--<div class="item-avatar" ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(' + departed.image + ')'}">-->
+          <img class="item-avatar" ng-src="{{departed.image | size:'w_400,h_400,c_crop,g_face,r_max/w_200'}}">
         </div>
         <div class="col-10 pull-right swipe">
           <i class="icon ion-chevron-right"></i>
